@@ -1,0 +1,73 @@
+/* Shared Match Night pitch skin. Load after legacy page/component styles. */
+.fpl-perspective-field {
+  position:absolute; inset:0; z-index:0; overflow:hidden; border-radius:inherit;
+  pointer-events:none; background:none;
+}
+.fpl-field-svg { display:block; width:100%; height:100%; overflow:hidden; }
+html.night-workspace.scout-workspace :is(.pitch,.cmp-pitch,.share-editor-pitch,.md-pitch) {
+  isolation:isolate; background:#f3f6ef;
+  border:1px solid #dce5d7; border-radius:16px;
+  box-shadow:inset 0 1px 0 #fff;
+}
+html.night-workspace.scout-workspace .md-pitch .fpl-perspective-field { inset:0; }
+html.night-workspace.scout-workspace .totw-panel .pitch {
+  height:auto; min-height:600px; grid-template-rows:repeat(4,minmax(128px,auto));
+  gap:8px; padding:26px 12px 32px; overflow:hidden;
+}
+html.night-workspace.scout-workspace .totw-panel .pitch.is-empty {
+  min-height:320px; height:clamp(320px,36vw,420px); grid-template-rows:1fr; padding:28px;
+}
+html.night-workspace.scout-workspace .pitch-empty {
+  justify-self:center; max-width:100%; padding:16px 24px; border-radius:12px;
+  background:#ffffffed; border:1px solid #d3dfce; color:var(--text-2);
+  font-size:13px; line-height:1.9; box-shadow:0 4px 20px #12382a0a;
+}
+html.night-workspace.scout-workspace :is(.dt-nameplate,.cmp-player-plate,.md-player-plate),
+html.night-workspace.scout-workspace .totw-panel .dt-nameplate {
+  border:1px solid #c8d7c1; border-radius:7px; box-shadow:0 2px 5px #12382a12; overflow:hidden;
+}
+html.night-workspace.scout-workspace :is(.dt-name,.cmp-player-name,.md-player-name),
+html.night-workspace.scout-workspace .totw-panel .dt-name,
+html.night-workspace.scout-workspace #squadModal .cmp-player-name,
+html.night-workspace.scout-workspace .share-player-card:not(.locked) .share-player-name {
+  background:var(--paper); color:var(--text-1); font-weight:700; border-radius:0;
+}
+html.night-workspace.scout-workspace .share-player-card:not(.locked) .share-player-name { border-radius:7px 7px 0 0; }
+html.night-workspace.scout-workspace .share-player-score { border-radius:0 0 7px 7px; }
+/* Keep the same one-line name strip on the pitch and bench, even on a phone.
+ * A long name may ellipsize; its full text remains in the DOM and card title. */
+html.night-workspace.scout-workspace :is(.dt-name,.cmp-player-name,.md-player-name,.share-player-name) {
+  display:block; box-sizing:border-box; min-width:0; min-height:0; max-width:100%;
+  white-space:nowrap; overflow-wrap:normal; word-break:normal; hyphens:none;
+  overflow:hidden; text-overflow:ellipsis; line-height:1.5;
+}
+/* A goalkeeper must not inherit a five-player row's percentage width. */
+html.night-workspace.scout-workspace .md-player { max-width:none; }
+html.night-workspace.scout-workspace #squadModal .cmp-pitch-player { width:96px; flex:0 1 96px; }
+html.night-workspace.scout-workspace :is(.dt-score,.cmp-player-scores) { background:var(--lime);color:var(--ink-900); }
+html.night-workspace.scout-workspace :is(.dt-kit,.cmp-kit,.share-kit) { filter:drop-shadow(0 4px 5px #0004); }
+html.night-workspace.scout-workspace .share-player-card:focus-visible { outline:2px solid var(--lime);outline-offset:4px; }
+html.night-workspace.scout-workspace :is(.cmp-bench-area,.md-bench,.share-bench-area),
+html.night-workspace.scout-workspace #squadModal .cmp-bench-area {
+  background:#f0f4eb; border:1px solid #dce5d7; border-radius:12px; margin-top:8px;
+}
+html.night-workspace.scout-workspace :is(.dt-meta,.dt-owner,.cmp-player-meta,.cmp-bench-label,.share-bench-label,.share-player-meta,.md-player-status,.md-bench-heading),
+html.night-workspace.scout-workspace .totw-panel :is(.dt-meta,.dt-owner),
+html.night-workspace.scout-workspace #squadModal .cmp-bench-label { color:#496344; background:transparent; }
+html.night-workspace.scout-workspace .totw-panel .dt-owner { margin-top:3px; }
+html.night-workspace.scout-workspace .totw-panel .dt-owner.free { color:#315c27; }
+html.night-workspace.scout-workspace .md-state-playing .md-player-status { color:#b64122; }
+html.night-workspace.scout-workspace :is(.pitch-row-gkp,.cmp-pitch-gkp,.share-pitch-row-gkp,.md-row-gkp) { padding-inline:12%; }
+html.night-workspace.scout-workspace :is(.pitch-row-def,.cmp-pitch-def,.share-pitch-row-def,.md-row-def) { padding-inline:7%; }
+html.night-workspace.scout-workspace :is(.pitch-row-mid,.cmp-pitch-mid,.share-pitch-row-mid,.md-row-mid) { padding-inline:4%; }
+html.night-workspace.scout-workspace :is(.pitch-row-fwd,.cmp-pitch-fwd,.share-pitch-row-fwd,.md-row-fwd) { padding-inline:2%; }
+html.night-workspace.scout-workspace .cmp-pitch-row .cmp-pitch-player { min-width:0; flex-shrink:1; }
+/* The sample gallery uses exactly the same field as real teams and their PNG exports. */
+.style-pitch { position:relative; isolation:isolate; clip-path:none; background:#f3f6ef; border:1px solid #dce5d7; border-radius:10px; }
+.style-pitch-row { position:relative; z-index:1; }
+@media(max-width:700px) {
+  html.night-workspace.scout-workspace .totw-panel .pitch { min-height:500px;grid-template-rows:repeat(4,minmax(108px,auto));padding:18px 4px 24px;gap:6px; }
+  html.night-workspace.scout-workspace .totw-panel .pitch.is-empty { min-height:280px;height:320px;grid-template-rows:1fr;padding:20px; }
+  html.night-workspace.scout-workspace .pitch-empty { padding:12px 15px;font-size:12px; }
+  html.night-workspace.scout-workspace :is(.pitch,.cmp-pitch,.share-editor-pitch,.md-pitch) { border-radius:12px; }
+}

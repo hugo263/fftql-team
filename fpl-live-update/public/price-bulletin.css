@@ -1,0 +1,18 @@
+.price-bulletin{margin:12px 0;display:grid;gap:8px;text-align:left}
+.price-bulletin-group{--price-ink:#176344;--price-tint:#edf7f0;display:flex;align-items:baseline;gap:12px;padding:10px 12px;border-radius:10px;background:var(--price-tint);min-width:0}
+.price-bulletin-group--down{--price-ink:#a34336;--price-tint:#fdf0ec}
+.price-bulletin .price-bulletin-label{display:flex;align-items:center;gap:7px;flex-shrink:0;color:var(--price-ink);font-size:12px;font-weight:750;line-height:1.7;margin:0}
+.price-bulletin-label>span{font-size:11px;font-weight:500}
+.price-bulletin .price-bulletin-names{margin:0;color:#33483b;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.price-bulletin--detail{gap:14px;margin:22px 0}
+.price-bulletin--detail .price-bulletin-group{display:block;padding:14px}
+.price-bulletin--detail .price-bulletin-label{font-size:14px;margin-bottom:8px}
+.price-bulletin .price-bulletin-players{list-style:none;margin:0;padding:0}
+.price-bulletin-players>li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:11px 0;border-top:1px solid #14201a0d;font-size:13px;line-height:1.5}
+.price-bulletin-player{display:grid;gap:3px;min-width:0;color:#14201a;overflow-wrap:anywhere}
+.price-bulletin-player>small{color:#647369;font-size:11px}
+.price-bulletin-price{font-variant-numeric:tabular-nums;white-space:nowrap;color:#647369;font-size:12px}
+.price-bulletin-price>strong{color:#14201a}
+.price-bulletin-delta{color:var(--price-ink);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;min-width:56px}
+.price-bulletin .price-bulletin-empty,.price-bulletin .price-bulletin-note{margin:0;color:#647369;font-size:12px;line-height:1.8}
+@media(max-width:540px){.price-bulletin-group{display:block}.price-bulletin .price-bulletin-label{margin-bottom:4px}.price-bulletin--detail .price-bulletin-group{padding:12px}.price-bulletin-players>li{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px}.price-bulletin-price{grid-column:1;grid-row:2}.price-bulletin-delta{grid-column:2;grid-row:1 / span 2}}

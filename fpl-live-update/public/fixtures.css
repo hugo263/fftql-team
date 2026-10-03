@@ -1,0 +1,171 @@
+/* v95 — fixtures.html visual system on the existing, real Draft schedule.
+ * Three existing sections / independent filters / remembered manager stay intact. */
+#tab-fixtures { color:var(--text-1); }
+#tab-fixtures button { cursor:pointer; font:inherit; }
+#tab-fixtures button:disabled { opacity:.35; cursor:default; }
+#tab-fixtures :is(button,select,.fx-scroll,.fx-season-scroll):focus-visible { outline:2px solid var(--final); outline-offset:2px; }
+#tab-fixtures select { max-width:230px; padding:6px 9px; border:1px solid var(--line-strong); border-radius:8px; background:var(--card); color:var(--text-1); font-size:12px; }
+#tab-fixtures .fx-filter { display:flex; align-items:center; gap:8px; color:var(--text-2); font-size:11px; white-space:nowrap; }
+
+/* A compact, bounded seven-round window; the jump menu still covers the season. */
+#tab-fixtures .fx-gw-bar { display:flex; align-items:center; gap:8px; margin:1px 0 18px; min-width:0; }
+#tab-fixtures .fx-gw-choices { display:flex; gap:8px; min-width:0; overflow-x:auto; padding:4px 3px; scrollbar-width:none; }
+#tab-fixtures .fx-gw-choices::-webkit-scrollbar { display:none; }
+#tab-fixtures .fx-gw-pill { flex:0 0 auto; min-width:74px; padding:7px 10px 6px; border:1px solid var(--line-strong); border-radius:11px; background:var(--card); text-align:center; color:var(--text-1); }
+#tab-fixtures .fx-gw-pill b { display:block; font:800 14px/1.4 var(--font-num); }
+#tab-fixtures .fx-gw-pill small { display:block; margin-top:1px; font-size:9.5px; color:var(--text-3); }
+#tab-fixtures .fx-gw-pill[data-state=final] small { color:var(--final); }
+#tab-fixtures .fx-gw-pill[data-state=live] small { color:var(--live); }
+#tab-fixtures .fx-gw-pill[data-state=pending] small { color:var(--pending); }
+#tab-fixtures .fx-gw-pill[aria-pressed=true] { background:var(--ink-900); border-color:var(--ink-900); box-shadow:0 0 0 3px #d9ef9e59; color:var(--lime); }
+#tab-fixtures .fx-gw-pill[aria-pressed=true] small { color:var(--text-on-ink-2); }
+#tab-fixtures .fx-gw-pill:hover { border-color:var(--ink-700); }
+#tab-fixtures .fx-gw-nav { flex:0 0 auto; width:32px; height:32px; padding:0; border:1px solid var(--line-strong); border-radius:9px; background:var(--card); color:var(--text-2); font-size:20px; }
+#tab-fixtures .fx-gw-back { flex:0 0 auto; padding:7px 10px; border:1px dashed var(--line-strong); border-radius:9px; background:none; color:var(--ink-800); font-size:11px; font-weight:700; white-space:nowrap; }
+#tab-fixtures .fx-gw-back:hover { border-color:var(--ink-700); background:var(--card); }
+
+/* Paper inset match rows, centred identities in equal-width cells. */
+html.night-workspace.scout-workspace #tab-fixtures .fx-panel { padding:0; overflow:hidden; }
+html.night-workspace.scout-workspace #tab-fixtures .panel-head { padding:16px 18px 10px; margin:0; border:0; gap:12px; }
+html.night-workspace.scout-workspace #tab-fixtures .panel-head h2 { font-size:17px; }
+#tab-fixtures .fx-detail-meta { display:flex; align-items:center; flex-wrap:wrap; gap:6px 10px; margin:6px 0 0; color:var(--text-3); font-size:10px; }
+#tab-fixtures .fx-state { display:inline-flex; align-items:center; gap:5px; padding:3px 7px; border-radius:20px; background:var(--upcoming-soft); color:var(--upcoming); font-weight:650; }
+#tab-fixtures .fx-state:before { content:""; width:5px; height:5px; border-radius:50%; background:currentColor; }
+#tab-fixtures .fx-state[data-state=live] { color:var(--live); background:var(--live-soft); }
+#tab-fixtures .fx-state[data-state=final] { color:var(--final); background:var(--final-soft); }
+#tab-fixtures .fx-state[data-state=pending] { color:var(--pending); background:var(--pending-soft); }
+#tab-fixtures .fx-round { display:grid; gap:8px; padding:8px 18px 16px; }
+#tab-fixtures .fx-match { position:relative; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:10px; width:100%; padding:12px 22px; border:1px solid transparent; border-radius:12px; background:var(--paper); color:var(--text-1); text-align:center; }
+#tab-fixtures button.fx-match:hover { background:var(--card); border-color:var(--ink-700); }
+#tab-fixtures .fx-manager-dot { display:inline-block; flex:0 0 auto; width:10px; height:10px; border-radius:3px; background:var(--manager-color,var(--text-3)); }
+#tab-fixtures .fx-match-team { display:flex; align-items:center; justify-content:center; gap:8px; min-width:0; text-align:center; }
+#tab-fixtures .fx-match-identity { min-width:0; }
+#tab-fixtures .fx-match-identity b { display:block; font-size:14px; font-weight:700; overflow-wrap:anywhere; line-height:1.45; }
+#tab-fixtures .fx-match-identity small { display:block; margin-top:3px; font-size:10.5px; color:var(--text-3); line-height:1.4; }
+#tab-fixtures .fx-current-rank { color:var(--text-2); white-space:nowrap; }
+#tab-fixtures .fx-following b { text-decoration:underline; text-decoration-color:var(--lime-strong); text-decoration-thickness:3px; text-underline-offset:4px; }
+#tab-fixtures .fx-match-score { display:flex; flex-direction:column; align-items:center; min-width:72px; }
+#tab-fixtures .fx-match-score strong { display:flex; align-items:center; justify-content:center; gap:5px; padding:5px 12px; border-radius:9px; background:var(--ink-900); color:var(--lime); font:800 18px/1.4 var(--font-num); white-space:nowrap; }
+#tab-fixtures .fx-match-score strong i { color:var(--text-on-ink-2); font-style:normal; font-weight:400; }
+#tab-fixtures .fx-match-score .is-loser { color:var(--text-on-ink-2); font-weight:500; }
+#tab-fixtures .fx-match-score .is-winner { color:var(--lime); }
+#tab-fixtures .fx-match-score small { display:none; }
+#tab-fixtures .fx-match-score.fx-upcoming strong { color:var(--upcoming); background:var(--upcoming-soft); font-size:13px; letter-spacing:.06em; padding:5px 12px; }
+#tab-fixtures .fx-match[data-state=live] .fx-scored strong { color:var(--live); background:var(--live-soft); }
+#tab-fixtures .fx-match[data-state=live] .fx-scored strong i { color:var(--live); opacity:.6; }
+#tab-fixtures .fx-match-arrow { position:absolute; right:8px; color:var(--text-3); font-size:11px; }
+
+/* Manager chips keep the existing inline season view and local selection memory. */
+#tab-fixtures .fx-manager-choices { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; padding:8px 18px 16px; }
+#tab-fixtures .fx-manager-choice { display:flex; align-items:center; gap:8px; min-width:0; padding:10px 12px; border:1px solid transparent; border-radius:10px; background:var(--paper); color:var(--text-1); text-align:left; }
+#tab-fixtures .fx-manager-identity { flex:1; min-width:0; }
+#tab-fixtures .fx-manager-choice b { display:block; font-size:13px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#tab-fixtures .fx-manager-choice small { display:block; margin-top:2px; color:var(--text-3); font-size:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#tab-fixtures .fx-manager-rank { flex:0 0 auto; font:500 11px var(--font-num); color:var(--text-3); }
+#tab-fixtures .fx-manager-choice:hover { border-color:var(--ink-700); background:var(--card); }
+#tab-fixtures .fx-manager-choice[aria-pressed=true] { background:var(--ink-900); color:var(--text-on-ink); border-color:var(--ink-900); box-shadow:none; }
+#tab-fixtures .fx-manager-choice[aria-pressed=true] small { color:var(--text-on-ink-2); }
+#tab-fixtures .fx-manager-choice[aria-pressed=true] .fx-manager-rank { color:var(--lime); }
+#tab-fixtures .fx-season-scroll { max-height:420px; overflow:auto; margin:0 18px 18px; border-top:1px solid var(--line); padding-top:8px; }
+#tab-fixtures .fx-manager-empty { padding:22px 8px; margin:0; color:var(--text-3); font-size:13px; }
+#tab-fixtures .fx-season-table { width:100%; min-width:520px; border-collapse:separate; border-spacing:0 5px; font-size:12px; margin:0; }
+#tab-fixtures .fx-season-table :is(th,td) { padding:9px 12px; border:0; text-align:left; vertical-align:middle; background:var(--paper); }
+#tab-fixtures .fx-season-table thead th { position:sticky; top:0; z-index:1; background:var(--card); padding:6px 12px; font-size:10px; font-weight:600; color:var(--text-3); }
+#tab-fixtures .fx-season-table tbody th { width:64px; border-radius:9px 0 0 9px; color:var(--text-2); font:700 12px var(--font-num); }
+#tab-fixtures .fx-season-table tbody td:last-child { border-radius:0 9px 9px 0; white-space:nowrap; }
+#tab-fixtures .fx-season-table tbody td:nth-child(3) { color:var(--text-3); font-size:11px; white-space:nowrap; }
+#tab-fixtures .fx-season-table small { display:block; margin-top:2px; color:var(--text-3); font-size:10px; }
+#tab-fixtures .fx-season-opponent { display:flex; align-items:center; gap:7px; }
+#tab-fixtures .fx-season-opponent b { font-size:12px; }
+#tab-fixtures .fx-season-result { color:var(--draw); font:700 12px var(--font-num); }
+#tab-fixtures .fx-season-result[data-result="胜"] { color:var(--win); }
+#tab-fixtures .fx-season-result[data-result="负"] { color:var(--lose); }
+#tab-fixtures .fx-season-result[data-result=upcoming] { color:var(--upcoming); }
+#tab-fixtures .fx-next-round :is(th,td) { background:var(--ink-900); color:var(--text-on-ink); }
+#tab-fixtures .fx-next-round :is(th,.fx-season-result) { color:var(--lime); }
+#tab-fixtures .fx-next-round :is(small,td:nth-child(3)) { color:var(--text-on-ink-2); }
+
+/* FDR: compact coloured matrix, sticky identity column, relative-rank legend. */
+#tab-fixtures .fx-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:4px 18px 12px; }
+#tab-fixtures .fx-round-nav { display:flex; align-items:center; gap:8px; }
+#tab-fixtures .fx-round-nav label { display:flex; align-items:center; gap:8px; color:var(--text-2); font-size:11px; }
+#tab-fixtures .fx-round-nav button { padding:6px 9px; border:1px solid var(--line-strong); border-radius:8px; background:var(--card); color:var(--text-2); font-size:12px; }
+#tab-fixtures #fxReset { border-style:dashed; color:var(--ink-800); font-size:11px; }
+#tab-fixtures .fx-summary { display:flex; align-items:center; flex-wrap:wrap; gap:8px 14px; margin:0 18px 8px; padding:9px 12px; border-radius:9px; background:var(--paper); color:var(--text-2); font-size:11px; }
+#tab-fixtures .fx-summary strong { color:var(--text-1); font-size:12px; font-weight:650; }
+#tab-fixtures .fx-summary-round { font:700 11px var(--font-num); }
+#tab-fixtures .fx-summary-round span { margin:0 6px; color:var(--text-3); }
+#tab-fixtures .fx-summary small { margin-left:auto; color:var(--text-3); font-size:10px; }
+#tab-fixtures .fx-scroll { overflow:auto; max-height:760px; margin:0 15px 14px; }
+#tab-fixtures .fx-table { width:100%; table-layout:fixed; border-collapse:separate; border-spacing:3px; margin:0; }
+#tab-fixtures .fx-table :is(th,td) { padding:0; border:0; text-align:center; vertical-align:middle; }
+#tab-fixtures .fx-table thead th { position:sticky; top:0; z-index:2; background:var(--card); }
+#tab-fixtures .fx-table th:first-child { position:sticky; left:0; z-index:1; width:173px; padding:5px 8px; background:var(--card); text-align:left; }
+#tab-fixtures .fx-table thead th:first-child { z-index:3; color:var(--text-3); font-size:10px; font-weight:500; }
+#tab-fixtures .fx-table thead button { width:100%; padding:5px 0; border:0; background:none; color:var(--text-2); font:800 11px var(--font-num); }
+#tab-fixtures .fx-table small { display:block; margin-top:2px; font-size:9px; font-weight:500; line-height:1.4; opacity:.8; }
+#tab-fixtures .fx-table thead small { color:var(--text-3); font-family:var(--font); }
+#tab-fixtures .fx-table thead .fx-current-gw button { color:var(--ink-800); }
+#tab-fixtures .fx-team-pick { display:flex; align-items:center; gap:7px; width:100%; padding:4px 0; border:0; background:none; color:var(--text-1); text-align:left; }
+#tab-fixtures .fx-team-pick b { flex:1; min-width:0; font-size:12px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#tab-fixtures .fx-team-rank { color:var(--text-3); font:500 10px var(--font-num); }
+#tab-fixtures .fx-opponent { display:block; width:100%; min-height:48px; padding:6px 4px 5px; border:1px solid transparent; border-radius:7px; background:var(--missing-soft); color:var(--missing); text-align:center; line-height:1.3; }
+#tab-fixtures .fx-opponent b { display:block; font-size:11px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#tab-fixtures .fx-opponent small { font-size:9px; font-weight:600; }
+#tab-fixtures .fx-opponent.fx-current-gw { box-shadow:inset 0 0 0 2px var(--ink-800); }
+#tab-fixtures [data-difficulty="1"] { background:#E4F2E3; color:#2F5D33; }
+#tab-fixtures [data-difficulty="2"] { background:#F3F6D9; color:#6B7016; }
+#tab-fixtures [data-difficulty="3"] { background:#FBF2DC; color:#8A5E00; }
+#tab-fixtures [data-difficulty="4"] { background:#FAE3D3; color:#A44A12; }
+#tab-fixtures [data-difficulty="5"] { background:#F6D7CE; color:#A62B1F; }
+#tab-fixtures .fx-opponent:hover { border-color:var(--ink-700); }
+#tab-fixtures .fx-no-match { display:block; padding:8px; color:var(--text-3); font-size:10px; }
+#tab-fixtures .fx-fdr-legend { display:flex; align-items:center; gap:8px 12px; flex-wrap:wrap; padding:0 18px 10px; color:var(--text-2); font-size:11px; }
+#tab-fixtures .fx-fdr-legend span { display:inline-flex; align-items:center; gap:5px; }
+#tab-fixtures .fx-fdr-legend i { width:14px; height:14px; border-radius:4px; }
+#tab-fixtures .fx-note { margin:0; padding:0 18px 16px; color:var(--text-3); font-size:11px; line-height:1.7; }
+
+@media(max-width:760px) {
+  #tab-fixtures .fx-gw-bar { gap:5px; }
+  #tab-fixtures .fx-gw-choices { gap:6px; }
+  #tab-fixtures .fx-gw-pill { min-width:66px; padding-inline:8px; }
+  #tab-fixtures .fx-gw-back { padding:7px 8px; font-size:10px; }
+  #tab-fixtures .fx-manager-choices { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); }
+  #tab-fixtures .fx-match { padding:10px 16px; gap:8px; }
+  #tab-fixtures .fx-match-identity b { font-size:12.5px; }
+  #tab-fixtures .fx-match-identity small { font-size:9px; }
+  #tab-fixtures .fx-toolbar { gap:10px; }
+  #tab-fixtures .fx-round-nav { flex-wrap:wrap; }
+}
+@media(max-width:560px) {
+  html.night-workspace.scout-workspace #tab-fixtures .panel-head { padding:14px 14px 8px; align-items:flex-start; }
+  html.night-workspace.scout-workspace #tab-fixtures #fxManagerPanel .panel-sub { display:block; margin:4px 0 0; }
+  #tab-fixtures .fx-filter { flex-direction:column; align-items:flex-end; gap:3px; font-size:9px; }
+  #tab-fixtures .fx-filter select { min-height:30px; padding:3px 7px; }
+  #tab-fixtures .fx-detail-meta { gap:5px; font-size:9px; }
+  #tab-fixtures .fx-detail-meta>span:last-child { flex-basis:100%; }
+  #tab-fixtures .fx-gw-nav { width:28px; }
+  #tab-fixtures .fx-gw-pill { min-width:60px; }
+  #tab-fixtures .fx-gw-pill b { font-size:12px; }
+  #tab-fixtures .fx-gw-pill small { font-size:8.5px; }
+  #tab-fixtures .fx-gw-back { max-width:54px; white-space:normal; line-height:1.4; }
+  #tab-fixtures .fx-round { padding:8px 12px 14px; gap:7px; }
+  #tab-fixtures .fx-match { padding:11px 12px; gap:6px; }
+  #tab-fixtures .fx-match-team { flex-direction:column; gap:4px; }
+  #tab-fixtures .fx-match-identity b { font-size:12px; }
+  #tab-fixtures .fx-match-identity small { font-size:8.5px; }
+  #tab-fixtures .fx-match-identity small .fx-current-rank { display:block; }
+  #tab-fixtures .fx-match-team .fx-manager-dot { width:8px; height:5px; }
+  #tab-fixtures .fx-match-score { min-width:62px; }
+  #tab-fixtures .fx-match-score strong { padding:5px 8px; gap:3px; font-size:16px; }
+  #tab-fixtures .fx-match-arrow { right:4px; font-size:9px; }
+  #tab-fixtures .fx-manager-choices { display:flex; overflow-x:auto; padding:8px 14px 14px; scroll-snap-type:x proximity; }
+  #tab-fixtures .fx-manager-choice { flex:0 0 170px; scroll-snap-align:start; }
+  #tab-fixtures .fx-season-scroll { margin:0 14px 14px; }
+  #tab-fixtures .fx-toolbar { padding-inline:14px; }
+  #tab-fixtures .fx-summary { margin-inline:14px; }
+  #tab-fixtures .fx-summary small { flex-basis:100%; margin-left:0; }
+  #tab-fixtures .fx-scroll { margin-inline:11px; }
+  #tab-fixtures .fx-table th:first-child { width:173px; }
+  #tab-fixtures .fx-fdr-legend,#tab-fixtures .fx-note { padding-inline:14px; }
+}

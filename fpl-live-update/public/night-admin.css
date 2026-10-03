@@ -1,0 +1,21 @@
+/* Private analytics visual adaptation only: metrics and authentication unchanged. */
+html.tql-brand.brand-admin{--paper:#F3F5F1;--line:#E3E9E2;--lime:#D9EF9E;--bg:var(--paper);--bg-soft:var(--paper);--card:#fff;--card-strong:var(--paper);--border:var(--line);--text:var(--text-1);--text-dim:var(--text-2);--text-faint:var(--text-3);--accent:var(--final);--blue:var(--upcoming);--red:var(--lose);--shadow:var(--shadow-1);--tql-font:var(--font)}
+html.tql-brand.brand-admin body{background:var(--paper);color:var(--text-1);font:15px/1.55 var(--font);font-variant-numeric:tabular-nums}
+html.tql-brand.brand-admin .admin-topbar{background:linear-gradient(180deg,var(--ink-900),var(--ink-800));border-color:#ffffff18;backdrop-filter:none;color:var(--text-on-ink)}
+html.tql-brand.brand-admin .admin-topbar-inner{max-width:calc(var(--maxw) + 40px);min-height:64px;padding-block:10px}
+html.tql-brand.brand-admin .admin-topbar h1{color:#fff;font-size:17px}.brand-admin .admin-topbar p{color:var(--text-on-ink-2);font-size:10px}
+html.tql-brand.brand-admin .admin-topbar .admin-btn{color:#edf4ee;border-color:#ffffff30;font-size:12px;border-radius:999px;min-height:34px}.brand-admin .admin-topbar .admin-btn:hover{background:#ffffff10;color:var(--lime)}
+html.tql-brand.brand-admin .admin-current-logo img{width:auto;height:34px;aspect-ratio:1853/849;object-fit:contain;filter:none;mix-blend-mode:normal;border-radius:12.5%/27.3%}
+html.tql-brand.brand-admin .admin-main{max-width:var(--maxw);padding:26px 20px;margin:auto}
+html.tql-brand.brand-admin :is(.data-panel,.metric-card,.focus-metric-card){background:#fff;border-color:var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-1)}
+html.tql-brand.brand-admin :is(.metric-value,.focus-metric-value){font-family:var(--font-num);font-variant-numeric:tabular-nums;color:var(--ink-800)}
+html.tql-brand.brand-admin .data-panel-head h3{font-size:17px}.brand-admin .activity-table{font-size:13.5px}.brand-admin .activity-table th{background:#fff;color:var(--text-2);font-size:11.5px;border-bottom:2px solid var(--line-strong)}.brand-admin .activity-table .numeric{font-family:var(--font-num);text-align:right}
+html.tql-brand.brand-admin .exclusion-note{background:var(--ink-100);border-color:var(--line);color:var(--text-2)}
+html.tql-brand.brand-admin .league-link{color:var(--final)}
+html.tql-brand.brand-admin .login-shell{background:radial-gradient(ellipse at 25% 0,#31584350,transparent 65%),var(--ink-900)}
+html.tql-brand.brand-admin .login-card{background:var(--ink-800);color:var(--text-on-ink);border:1px solid #ffffff20;box-shadow:var(--shadow-2);border-radius:18px;padding:28px}
+html.tql-brand.brand-admin .login-card h1{color:#fff}.brand-admin .login-card .eyebrow{color:var(--lime)}
+html.tql-brand.brand-admin .login-card :is(.login-copy,.field-label,.back-link){color:var(--text-on-ink-2)}
+html.tql-brand.brand-admin .login-card .admin-input{background:#ffffff08;border-color:#ffffff30;color:#fff;min-height:43px}
+html.tql-brand.brand-admin .login-card .primary{background:var(--lime);color:var(--ink-900);border:0}
+@media(max-width:640px){html.tql-brand.brand-admin .admin-topbar-inner{padding-inline:12px;gap:10px}.brand-admin .admin-brand{gap:10px}.brand-admin .admin-brand p{display:none}.brand-admin .admin-topbar .admin-btn{font-size:10px;padding-inline:8px}.brand-admin .admin-current-logo img{height:29px}html.tql-brand.brand-admin .admin-main{padding:20px 12px}}

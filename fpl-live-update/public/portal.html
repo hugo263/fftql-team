@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="only light" />
+  <title>TQL FPL · 新闻与 Draft 联赛</title>
+  <meta name="description" content="FPL 新闻聚合与 Draft 联赛入口。查看选人分析、伤停资讯和赛程，进入专属 Draft 联赛工作台。" />
+  <meta name="theme-color" content="#0B1F17" />
+  <link rel="canonical" href="https://fftql.team/" />
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=60" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=60" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=60" />
+  <link rel="manifest" href="/site.webmanifest?v=60" />
+  <link rel="stylesheet" href="/night-tokens.css?v=91" />
+  <link rel="stylesheet" href="/night-shell.css?v=96" />
+  <link rel="stylesheet" href="/portal.css?v=98" />
+  <link rel="stylesheet" href="/light-surfaces.css?v=105" />
+  <link rel="stylesheet" href="/responsive.css?v=105" />
+  <link rel="stylesheet" href="/news-categories.css?v=105" />
+  <link rel="stylesheet" href="/price-bulletin.css?v=104" />
+  <script src="/night-shell.js?v=98" defer></script>
+  <script src="/portal-news-model.js?v=104" defer></script>
+  <script src="/portal.js?v=105" defer></script>
+  <script src="/analytics.js?v=98" defer></script>
+  <script src="/feedback.js?v=35" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header id="top" class="night-site-head">
+    <div class="night-wrap night-head-inner">
+      <a class="night-logo" href="/portal" data-portal-link aria-label="TQL FPL 主站首页"><img src="/brand/tql-badge-preview-v47.png?v=47" width="1853" height="849" alt="TQL" /><span>FPL<span class="brand-dot">.</span></span></a>
+      <nav class="night-global-nav night-inline-nav" aria-label="站点栏目"><a href="#top" data-news-nav aria-current="page">FPL 资讯</a><a href="/#home" data-workbench-link="home">Draft</a></nav>
+      <div class="night-head-action"><span id="editionDate"></span></div>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section class="portal-round" aria-label="比赛周状态"><div><strong id="portalGw">比赛周 —</strong><span id="portalGwState" class="night-state" data-state="missing">正在读取赛程</span></div><span id="portalRoundNote">官方 FPL 数据 · 北京时间</span></section>
+    <section id="news" aria-labelledby="newsTitle">
+      <div class="section-heading">
+        <div><h1 id="newsTitle">FPL 资讯</h1></div>
+        <div class="news-sync"><span class="sync-dot" aria-hidden="true"></span><span id="newsStatus" role="status">正在读取已发布资讯</span><button id="newsRetry" type="button" hidden>重试</button></div>
+      </div>
+      <div class="front-grid">
+        <div class="news-column">
+          <div class="news-controls">
+            <div class="category-tabs" aria-label="按主题筛选新闻"><button type="button" data-category="all" aria-pressed="true">全部</button><button type="button" class="news-category" data-category="prices" aria-pressed="false">价格</button><button type="button" class="news-category" data-category="injuries" aria-pressed="false">伤停</button><button type="button" class="news-category" data-category="lineups" aria-pressed="false">首发</button><button type="button" class="news-category" data-category="fixtures" aria-pressed="false">赛程</button><button type="button" class="news-category" data-category="transfers" aria-pressed="false">转会</button><button type="button" class="news-category" data-category="players" aria-pressed="false">选人</button><button type="button" class="news-category" data-category="teams" aria-pressed="false">球队复盘</button><button type="button" class="news-category" data-category="news" aria-pressed="false">英超快讯</button><button type="button" class="news-category" data-category="strategy" aria-pressed="false">策略</button><button type="button" class="news-category" data-category="rules" aria-pressed="false">规则</button></div>
+            <label class="source-filter"><span class="sr-only">资讯渠道</span><select id="newsChannel"><option value="all">全部渠道</option><option value="news">资讯</option><option value="x">X 动态</option><option value="firstParty">一手来源</option></select></label>
+          </div>
+          <div class="feed-heading"><div><h2>最新资讯 <span id="newsCount" class="news-count"></span></h2></div><label class="news-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg><input id="newsQuery" type="search" placeholder="搜索球员 / 关键词" aria-label="搜索新闻关键词" maxlength="100" /></label></div>
+          <div class="news-mode" aria-label="资讯范围"><button type="button" data-news-mode="all" aria-pressed="true">最新资讯</button><button type="button" data-news-mode="selected" aria-pressed="false">精选推荐</button><span>中文摘要 · 原文可追溯</span></div>
+          <div id="newsList" class="news-list" aria-busy="true"><div class="news-empty"><strong>正在加载资讯</strong>只展示资讯系统已公开发布的内容。</div></div>
+          <button id="moreNews" class="more-news" type="button" hidden>查看更多资讯 <span aria-hidden="true">↓</span></button>
+          <p class="attribution">摘要由资讯聚合系统整理，不代表官方建议；以原文与 FPL 官方公告为准。无原文发布时间时标注收录时间。价格变动仅适用于 Classic，Draft 无队长倍率。</p>
+        </div>
+        <aside class="sidebar" aria-label="价格观察与资讯工具">
+          <section class="price-observation"><div class="price-heading"><h2>价格观察</h2><span>Classic</span></div><p id="pricesStatus">正在读取官方价格</p><div id="priceChanges"></div><a href="https://news.fftql.team/prices">查看官方现价与涨跌 ↗</a></section>
+          <div class="source-directory">
+            <h2>你关心的 FPL 话题</h2>
+            <button class="topic-link" type="button" data-topic="injuries"><span class="source-icon fix">＋</span><span><strong>球队与伤停</strong><small>伤病、停赛、复出消息</small></span><span aria-hidden="true">↗</span></button>
+            <button class="topic-link" type="button" data-topic="players"><span class="source-icon scout">↗</span><span><strong>选人分析</strong><small>表现、数据、差异化选择</small></span><span aria-hidden="true">↗</span></button>
+            <button class="topic-link" type="button" data-topic="strategy"><span class="source-icon allabout">C</span><span><strong>队长与策略</strong><small>正赛队长、筹码与 Draft 策略</small></span><span aria-hidden="true">↗</span></button>
+            <button class="topic-link" type="button" data-topic="fixtures"><span class="source-icon official">▦</span><span><strong>赛程与转会</strong><small>未来对阵、价格与转会选择</small></span><span aria-hidden="true">↗</span></button>
+            <p>媒体报道、官方确认和预测按资讯标签区分，不以预测冒充已确认消息。</p>
+          </div>
+          <div class="source-directory news-tools"><h2>资讯工具</h2><a href="https://news.fftql.team/hot">热点追踪 <span>↗</span></a><a href="https://news.fftql.team/daily">每日简报 <span>↗</span></a><a href="https://news.fftql.team/topics">主题索引 <span>↗</span></a><a href="https://news.fftql.team/starred">资讯收藏 <span>↗</span></a></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap"><div class="footer-brand"><strong>TQL FPL<span>.</span></strong><small>独立 FPL 与 Draft 社区工具，非英超官方产品。</small></div><div class="footer-links"><a href="/share-styles.html" data-share-styles-link>分享图样式</a><button type="button" data-feedback-open>问题反馈</button><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">粤ICP备2026075584号-3</a><a class="footer-admin" href="/admin" aria-label="进入网站管理后台">管理</a></div></div></footer>
+  <dialog id="newsDetailDialog" class="news-detail-dialog" aria-labelledby="newsDetailTitle"><div class="news-detail-top"><span>FPL 资讯</span><button type="button" id="newsDetailClose" aria-label="关闭资讯详情">×</button></div><div id="newsDetailContent"></div></dialog>
+  <noscript><p class="wrap">浏览器未启用 JavaScript。<a href="https://news.fftql.team/">阅读 FPL 资讯</a> · <a href="/draft">进入 Draft 联赛</a></p></noscript>
+  <dialog id="feedbackDialog" class="portal-dialog feedback-dialog" aria-labelledby="feedbackDialogTitle"><div class="dialog-top"><span class="eyebrow">CONTACT</span><button type="button" data-feedback-close aria-label="关闭问题反馈">×</button></div><h2 id="feedbackDialogTitle">问题反馈</h2><p>添加微信，告诉我遇到的问题或想增加的功能。</p><img src="/wechat-feedback.jpg?v=35" alt="问题反馈微信二维码：牛老爷" loading="lazy" /></dialog>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* Final responsive layer: preserve content; scroll wide datasets inside their card. */
+html { -webkit-text-size-adjust:100%; }
+:is(dialog,.modal) { box-sizing:border-box;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow-x:hidden;overscroll-behavior:contain; }
+:is(dialog,.modal) :is(h2,h3,p) { overflow-wrap:anywhere; }
+:is(.table-wrap,.table-scroll,.fx-matrix-scroll,.cmp-table-wrap) { max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch; }
+:is(.panel,.cmp-side,.trade-side,.share-editor,.share-preview,.news-column,.sidebar) { min-width:0; }
+@media(max-width:760px) {
+  html.night-workspace.scout-workspace { --gutter:12px; }
+  html.night-workspace.scout-workspace .draft-workspace-layout { width:calc(100% - 24px);gap:12px;margin-top:12px; }
+  html.night-workspace.scout-workspace .panel { padding:14px 12px; }
+  html.night-workspace.scout-workspace :is(.panel-head,.section-head,.fun-toolbar,.share-toolbar,.compare-toolbar,.trade-toolbar) { gap:10px;flex-wrap:wrap;min-width:0; }
+  html.night-workspace.scout-workspace .panel-head h2 { font-size:17px;line-height:1.5; }
+  html.night-workspace.scout-workspace :is(input,select,textarea) { max-width:100%;font-size:16px;min-width:0; }
+  html.night-workspace.scout-workspace #tabs .nav-primary { display:flex;overflow-x:auto;justify-content:flex-start;gap:0;scrollbar-width:thin; }
+  html.night-workspace.scout-workspace #tabs .nav-primary>button { flex:0 0 auto;min-height:44px;padding:10px 14px;font-size:12px;white-space:nowrap; }
+  html.night-workspace.scout-workspace .nav-secondary { overflow-x:auto;max-width:100%;flex-wrap:nowrap; }
+  html.night-workspace.scout-workspace .nav-secondary>button { flex-shrink:0;min-height:40px;white-space:nowrap; }
+  html.night-workspace.scout-workspace :is(.cmp-pitch,.share-editor-pitch,.pitch) { min-width:0; }
+  html.night-workspace.scout-workspace .cmp-side { padding:12px 8px; }
+  html.night-workspace.scout-workspace :is(.cmp-pitch-row,.share-pitch-row,.pitch-row) { gap:3px;min-width:0;width:100%;box-sizing:border-box; }
+  html.night-workspace.scout-workspace :is(.cmp-pitch,.share-editor-pitch,.pitch) { grid-template-columns:minmax(0,1fr); }
+  html.night-workspace.scout-workspace .totw-panel .dt-card { width:92px;min-width:0;max-width:92px;flex:0 1 92px; }
+  html.night-workspace.scout-workspace .share-player-card { width:96px;min-width:0;max-width:96px;flex:0 1 96px; }
+  html.night-workspace.scout-workspace .cmp-pitch-player { width:84px;min-width:0;max-width:84px;flex:0 1 84px; }
+  html.night-workspace.scout-workspace .dt-name { font-size:10px; }
+  html.night-workspace.scout-workspace :is(.dt-owner,.dt-meta) { font-size:9px;overflow-wrap:anywhere; }
+  html.night-workspace.scout-workspace .share-editor-pitch { padding-inline:3px;height:auto;min-height:520px;grid-template-rows:repeat(4,minmax(116px,auto)); }
+  html.night-workspace.scout-workspace .share-player-name { font-size:10px; }
+  html.night-workspace.scout-workspace .share-player-score { font-size:8px;white-space:normal; }
+  html.night-workspace.scout-workspace .share-bench-row .share-player-card { width:100%;max-width:none; }
+  html.night-workspace.scout-workspace :is(.share-preview canvas,.share-preview img) { max-width:100%;height:auto; }
+  :is(dialog,.modal) { width:calc(100vw - 16px);max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);border-radius:14px; }
+  :is(html.night-workspace.scout-workspace,html.night-match,:host) :is(dialog,.modal) { border-radius:14px; }
+  :is(.md-header,.modal-head,.tm-dialog-heading,.fun-dialog>header,.league-id-guide-head) { gap:10px;padding:12px; }
+  .md-header { align-items:flex-start; }
+  .md-actions { gap:6px; }
+  .md-header h2 { font-size:15px; }
+  html.night-workspace.scout-workspace .md-pitch { min-height:430px; }
+  .md-body { padding:8px; }
+  .md-pitches { grid-template-columns:minmax(0,1fr); }
+  .md-team-head p { line-height:1.7; }
+  .md-state-legend { justify-content:flex-start;padding-inline:4px; }
+  :is(.modal-body,.fun-detail-body,.tm-body) { min-width:0; }
+  .fun-dialog>header { flex-wrap:wrap; }
+  .fun-detail-total { flex-wrap:wrap; }
+  .league-id-guide-body { padding:14px; }
+  .league-id-guide-example { overflow-wrap:anywhere;word-break:break-word; }
+  :is(.feedback-dialog img,.feedback-image) { max-width:100%;height:auto; }
+  .share-buttons { display:flex;gap:8px;flex-wrap:wrap; }
+  .share-buttons>* { flex:1 1 130px; }
+  .share-image-wrap img { max-width:100%;height:auto; }
+  /* Match centre uses the same stylesheet inside and outside the workbench. */
+  .match-select { grid-template-columns:26px minmax(0,1fr) 62px minmax(0,1fr);padding-right:28px;gap:5px; }
+  .match-state-badge { grid-column:2/5;grid-row:2;justify-self:center;margin-top:-3px; }
+  .home-team { grid-column:2;grid-row:1; }.away-team { grid-column:4;grid-row:1; }
+  .match-time { grid-column:1;grid-row:1; }.score-pair { grid-column:3;grid-row:1; }
+  .team { font-size:11px; }.crest { width:22px;height:25px; }
+  .event-share-actions button { min-height:30px; }
+  .date-switch { max-width:calc(100% - 28px);overflow-x:auto; }
+  .news-search { min-width:0; }
+  .site-footer .footer-links { gap:10px 16px; }
+  .admin-page .range-heading { flex-wrap:wrap; }
+  .admin-page .chart-wrap { min-width:0; }
+}
+@media(max-width:380px) {
+  .night-header-inner { padding-inline:12px; }
+  html.night-workspace.scout-workspace .md-actions .md-share-btn { padding:0 6px;gap:3px;font-size:10px; }
+  html.night-workspace.scout-workspace .md-player-score { flex-wrap:wrap;gap:1px 2px; }
+  html.night-workspace.scout-workspace .md-player-name { font-size:9px; }
+  html.night-workspace.scout-workspace .cmp-player-scores { gap:2px;font-size:8px; }
+  html.night-workspace.scout-workspace .dt-kit-img { max-width:35px; }
+  .event-card,.event-card:has(.event-share-actions) { padding-inline:10px;grid-template-columns:26px minmax(0,1fr) 70px;gap:5px; }
+  .event-icon { width:26px;height:28px; }
+  .event-share-actions { gap:4px; }.event-share-actions button { padding-inline:4px; }
+  .match-select { padding-left:8px;gap:3px; }.crest { width:20px; }
+}

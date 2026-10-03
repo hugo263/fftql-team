@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN" class="tql-brand matchday-home">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="only light">
+  <meta name="theme-color" content="#12382a"><meta name="description" content="英超比分与 FPL 进球、助攻、红黄牌、零封、防守贡献实时动态">
+  <title>比赛日 · TQL FPL</title>
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=60"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=60"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=60"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=60"><link rel="manifest" href="/site.webmanifest?v=60"><link rel="stylesheet" href="/match-centre.css?v=63">
+  <script defer src="/night-share.js?v=98"></script><script defer src="/match-centre-share.js?v=105"></script><script defer src="/update-stream.js?v=79"></script><script defer src="/live-render.js?v=79"></script><script defer src="/match-centre.js?v=105"></script><script defer src="/analytics.js?v=98"></script>
+  <link rel="stylesheet" href="/match-centre-layout.css?v=90">
+  <link rel="stylesheet" href="/night-tokens.css?v=91"><link rel="stylesheet" href="/night-match.css?v=95">
+  <link rel="stylesheet" href="/night-ui.css?v=97">
+  <link rel="stylesheet" href="/light-surfaces.css?v=105"><link rel="stylesheet" href="/responsive.css?v=105">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="/discover" aria-label="TQL FPL 首页"><img id="brandLogo" src="/brand/tql-badge-preview-v47.png?v=47" alt="TQL FPL" width="1853" height="849"></a>
+      <nav aria-label="主导航"><a class="nav-current" href="/discover" aria-current="page">比赛中心 <span>LIVE</span></a><a href="/?league=47275">Draft 联赛 <span aria-hidden="true">↗</span></a></nav>
+      <form id="leagueForm" class="league-search" action="/" method="get"><label class="sr-only" for="leagueId">Draft 联赛 ID</label><span aria-hidden="true">#</span><input id="leagueId" name="league" inputmode="text" maxlength="160" placeholder="联赛 ID / 官方链接" required><button type="submit">查找联赛 <span aria-hidden="true">↗</span></button></form>
+    </div>
+  </header>
+  <main class="shell night-match">
+    <div class="page-intro">
+      <div><h1>比赛日<span class="title-dot">.</span></h1></div>
+      <div class="intro-actions"><span class="source-label">官方 FPL 数据 · 按比赛状态同步</span><button id="shareRound" class="button primary" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>分享比赛日</button></div>
+    </div>
+    <div class="round-bar"><div><label class="sr-only" for="gwSelect">选择比赛轮次</label><select class="round-pill" id="gwSelect" disabled><option>GW—</option></select></div><span class="snapshot-label"><i></i><span id="snapshotTime">正在连接官方数据</span></span></div>
+    <p id="dataNotice" class="data-notice" role="status" hidden></p>
+    <div class="matchday-grid">
+      <section class="panel events-panel" aria-label="FPL 比赛事件">
+        <div class="panel-heading event-heading"><div><h2 id="feedTitle">赛场动态</h2></div><div class="feed-actions"><button id="refreshData" class="icon-button" title="同步官方数据" aria-label="刷新比赛数据"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1"/></svg><span>刷新</span></button></div></div>
+        <p id="refreshStatus" class="refresh-status" role="status" hidden></p>
+        <div class="event-filters" aria-label="事件类型"><button data-event-filter="all" aria-pressed="true">全部</button><button data-event-filter="ga" aria-pressed="false"><span aria-hidden="true">⚽</span><span data-event-icon="assist" aria-hidden="true"></span>进球 / 助攻</button><button data-event-filter="cards" aria-pressed="false"><span data-event-icon="yellow" aria-hidden="true"></span><span data-event-icon="red" aria-hidden="true"></span>红黄牌</button><button data-event-filter="cs" aria-pressed="false"><span aria-hidden="true">🧤</span>零封</button><button data-event-filter="other" aria-pressed="false"><span aria-hidden="true">＋</span>其他</button></div>
+        <div class="feed-scope"><span id="scopeText">全部比赛</span><span>最新在前 · 本站检测时间，非官方发生时间</span></div>
+        <details class="feed-reading-guide"><summary>计分与归属说明</summary><p class="feed-filter-note">「全部」展示进球／助攻、红黄牌和零封。DC、Bonus、扑点、罚丢点球请在「其他」查看。</p><p id="ownershipNote" class="feed-ownership-note">球员归属按当前 Draft 联赛匹配；归属尚未确认时不会标为自由球员。</p></details>
+        <div id="selectedMatch"></div><p class="sr-only" id="updateAnnouncement" role="status"></p>
+        <div id="feed" class="feed"><div class="empty-state">正在同步 FPL 事件…</div></div>
+        <div class="feed-foot"><span class="feed-end-dot"></span><span id="feedFoot">等待官方数据</span><button id="loadMore" hidden>查看更多动态 ↓</button><small>赛中得分暂定；检测时间不等于发生时间</small></div>
+      </section>
+      <aside class="score-column" aria-label="比赛比分">
+        <section class="panel scores-panel">
+          <div class="panel-heading"><div><h2>实时比分</h2></div><span class="live-count"><i></i><span id="liveCount">等待更新</span></span></div>
+          <div class="date-switch" aria-label="比赛日"><button class="date-arrow" id="previousDay" aria-label="上一比赛日">‹</button><div id="dayChoices"><button data-day="all" aria-pressed="true"><span>全部比赛日</span><b>本轮赛程</b></button></div><button class="date-arrow" id="nextDay" aria-label="下一比赛日">›</button></div>
+          <div class="score-tools"><div class="segmented" aria-label="比赛筛选"><button data-match-filter="all" aria-pressed="true">全部 <span id="matchCount">—</span></button><button data-match-filter="live" aria-pressed="false">进行中 <span id="liveFilterCount">—</span></button><button data-match-filter="starred" aria-pressed="false">已关注</button></div></div>
+          <div class="competition"><span class="league-mark" aria-hidden="true">PL</span><b>Premier League</b><span>英格兰 · 英超</span></div>
+          <div id="matches"><div class="empty-state">正在加载本轮赛程…</div></div>
+          <button id="allMatches" class="all-matches active">查看全部比赛动态 <span aria-hidden="true">↗</span></button>
+        </section>
+        <section class="watch-note"><span class="note-icon" aria-hidden="true">↗</span><div><h3>你的联赛，也在这里。</h3><p>从比赛现场，回到经理之间的较量。</p><a id="recentLeagueLink" href="/?league=47275#weekly">进入 Draft 工作台 <span aria-hidden="true">→</span></a></div></section>
+        <details class="scoring-guide"><summary>计分标记怎么读？ <span>＋</span></summary><div><p><b>G / A</b>　进球 / FPL 助攻，助攻可能更正。</p><p><b>YC / RC</b>　黄牌 / 红牌，分别 −1 / −3；红牌扣分已含黄牌，不重复累计。</p><p><b>CS</b>　本人出场满 60 分钟且未失球时暂计零封；换下后失球不扣已获零封。</p><p><b>DC</b>　防守贡献：后卫达 10 次、中前场达 12 次，每场 +2，未达标不计分。</p><p>事件上的 ± 分只描述该项，不是球员总分。官方总分已包含这些分数，不能重复累加。赛后仍可能修订。</p><p>首次同步显示本场累计，后续显示本站检测到的变化。官方数据不提供逐球时间，检测时间不是发生时间。零封失去只能从本站已观察到的状态变化识别。</p><a href="https://fantasy.premierleague.com/help/rules" target="_blank" rel="noopener">官方计分规则 ↗</a></div></details>
+        <p class="crest-note">队徽使用 FPL 官方图片资源，标识权利归各俱乐部所有；本站非官方产品。</p>
+        <button class="guide-link" id="showLeagueGuide">不知道联赛 ID 在哪？ <span>↗</span></button>
+      </aside>
+    </div>
+    <div class="prototype-note"><p>比分和计分来自官方 FPL：比赛时后端每 10 秒检查，赛后待结算每分钟检查，其余时段每 3 小时检查，开赛自动切换；有变化自动推送，实际速度取决于官方数据更新及响应时间。首次同步为累计摘要，新增事件从本站开始观测后记录。</p></div>
+  </main>
+  <footer class="footer shell"><span>TQL FPL <span class="footer-dot">●</span> 为每一位认真玩的经理。</span><div><button id="showFeedback">问题反馈</button><span>非官方 FPL 工具</span></div></footer>
+  <div class="icp-footer" style="padding:16px 20px 24px;text-align:center;font-size:12px;line-height:1.8;color:#687b68"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">粤ICP备2026075584号-3</a></div>
+  <dialog id="shareDialog" aria-labelledby="shareTitle"><div class="modal-head"><div><h2 id="shareTitle">比赛进展</h2></div><button id="closeShare" class="close-button" aria-label="关闭分享">×</button></div><div class="share-image-wrap"><img id="sharePreview" alt="包含比分与 FPL 事件的分享图片"></div><div class="share-buttons"><button id="copyImage" class="button primary">复制图片</button><a id="downloadImage" class="button" download="tql-matchday.png">下载图片</a></div><p id="shareStatus" class="modal-help" role="status">图片包含网站地址与快照时间。</p></dialog>
+  <dialog id="guideDialog" aria-labelledby="guideTitle"><div class="modal-head"><h2 id="guideTitle">找到你的 Draft 联赛 ID</h2><button data-close-dialog="guideDialog" class="close-button" aria-label="关闭联赛 ID 说明">×</button></div><ol class="guide-steps"><li>登录官方 Draft，进入你的联赛。</li><li>管理员打开 Edit / Settings / Invite 页面。</li><li>网址 <code>/league/47275/edit</code> 中的 <b>47275</b> 就是联赛 ID。</li></ol><p class="modal-help">普通成员可在电脑开发者工具的 Network 中搜索 details，查看 /api/league/数字/details 中的数字。</p><a class="button primary" href="https://draft.premierleague.com/" target="_blank" rel="noopener">打开官方 Draft ↗</a></dialog>
+  <dialog id="feedbackDialog" aria-labelledby="feedbackTitle"><div class="modal-head"><h2 id="feedbackTitle">问题反馈</h2><button data-close-dialog="feedbackDialog" class="close-button" aria-label="关闭问题反馈">×</button></div><p class="modal-help">扫码添加微信，告诉我你的建议。</p><img class="feedback-image" src="/wechat-feedback.jpg?v=35" alt="联系网站作者的微信二维码"></dialog>
+  <div id="toast" role="status"></div>
+</body>
+</html>

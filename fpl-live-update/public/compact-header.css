@@ -1,0 +1,152 @@
+/* Workbench masthead only. No changes to entry/admin pages or module geometry. */
+html.tql-brand.scout-workspace .compact-header {
+  position: static;
+  margin: 0;
+  padding: 0;
+  background: var(--tql-paper);
+  border-bottom: 1px solid var(--tql-line);
+}
+html.tql-brand.scout-workspace .compact-header-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  max-width: 1304px;
+  min-height: 64px;
+  margin: 0 auto;
+  padding: 8px 32px;
+}
+html.tql-brand.scout-workspace .compact-header .tql-wordmark img { width: 190px; height: 40px; }
+/* Local v47 preview: the user's original lime badge has a different aspect
+   ratio. Preserve its colors and full lettering; round off the opaque
+   checkerboard corners along the badge outline without editing the PNG. */
+html.tql-brand.scout-workspace .compact-header .tql-wordmark.tql-logo-preview img {
+  width: 100px;
+  height: auto;
+  max-height: 46px;
+  aspect-ratio: 1853 / 849;
+  object-fit: contain;
+  filter: none;
+  mix-blend-mode: normal;
+  border-radius: 12.5% / 27.3%;
+}
+html.tql-brand.scout-workspace .compact-league {
+  min-width: 0;
+  padding-left: 24px;
+  border-left: 1px solid var(--tql-line);
+}
+html.tql-brand.scout-workspace .compact-league h1 {
+  overflow: hidden;
+  color: var(--tql-forest);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -.2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+html.tql-brand.scout-workspace .compact-league-meta { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+html.tql-brand.scout-workspace .compact-header .badge {
+  padding: 0 5px;
+  border-color: var(--tql-line);
+  background: var(--tql-canvas);
+  color: var(--tql-muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+html.tql-brand.scout-workspace .compact-header .badge-live { background: #edf3e8; color: #286a4b; border-color: #c8d8c0; }
+html.tql-brand.scout-workspace .compact-actions { display: flex; align-items: center; gap: 8px; }
+html.tql-brand.scout-workspace .compact-updated { max-width: 190px; color: var(--tql-muted); font-size: 10px; line-height: 1.5; }
+html.tql-brand.scout-workspace .compact-header .btn {
+  min-height: 36px;
+  padding: 6px 12px;
+  border-color: var(--tql-line);
+  background: white;
+  color: var(--tql-forest);
+  font-size: 11px;
+  white-space: nowrap;
+}
+html.tql-brand.scout-workspace .compact-header .btn:hover { color: var(--tql-forest); background: var(--tql-canvas); border-color: #9cb38f; }
+html.tql-brand.scout-workspace .compact-header .compact-search-submit { background: var(--tql-forest); border-color: var(--tql-forest); color: white; }
+html.tql-brand.scout-workspace .compact-header .compact-search-submit:hover { background: #286a4b; border-color: #286a4b; }
+html.tql-brand.scout-workspace .compact-league-search { display: flex; align-items: center; gap: 6px; margin: 0; }
+html.tql-brand.scout-workspace .compact-league-search input { width: 128px; height: 36px; min-width: 0; padding: 6px 10px; border: 1px solid var(--tql-line); border-radius: 6px; background: var(--tql-canvas); color: var(--tql-forest); font-size: 13px; }
+html.tql-brand.scout-workspace .compact-league-search input::placeholder { color: var(--tql-muted); }
+html.tql-brand.scout-workspace .compact-header .compact-guide-button { background: var(--tql-canvas); font-weight: 600; }
+html.tql-brand.scout-workspace #btnRefresh { position: relative; gap: 4px; flex-shrink: 0; }
+html.tql-brand.scout-workspace .compact-refresh-icon { display: inline-flex; width: 18px; height: 18px; flex: 0 0 18px; }
+html.tql-brand.scout-workspace .compact-refresh-icon svg { display: block; width: 100%; height: 100%; }
+html.tql-brand.scout-workspace #btnRefresh.is-refreshing .compact-refresh-label { visibility: hidden; }
+html.tql-brand.scout-workspace #btnRefresh.is-refreshing .compact-refresh-icon { position: absolute; left: calc(50% - 9px); top: calc(50% - 9px); }
+html.tql-brand.scout-workspace #btnRefresh.is-refreshing { cursor: wait; }
+@keyframes compact-refresh-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: no-preference) {
+  html.tql-brand.scout-workspace #btnRefresh.is-refreshing .compact-refresh-icon svg { animation: compact-refresh-spin 1.8s linear infinite; }
+}
+
+html.tql-brand.scout-workspace .compact-header + .tabs-shell .tabs { height: 44px; }
+html.tql-brand.scout-workspace .compact-header + .tabs-shell .tab { height: 44px; }
+
+@media (max-width: 1000px) {
+  /* Keep update failures readable by assistive technology without widening the masthead. */
+  html.tql-brand.scout-workspace .compact-updated { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  html.tql-brand.scout-workspace .compact-header-inner { gap: 16px; }
+  html.tql-brand.scout-workspace .compact-league { padding-left: 16px; }
+}
+@media (max-width: 780px) {
+  html.tql-brand.scout-workspace .compact-header-inner { padding-inline: 16px; gap: 12px; }
+  html.tql-brand.scout-workspace .compact-header .tql-wordmark img { width: 156px; height: 34px; }
+  html.tql-brand.scout-workspace .compact-league { padding-left: 12px; }
+  html.tql-brand.scout-workspace .compact-league h1 { font-size: 14px; }
+}
+@media (max-width: 640px) {
+  html.tql-brand.scout-workspace .compact-header-inner { grid-template-columns: minmax(0, 1fr) auto; gap: 0 8px; min-height: 0; padding: 0 12px; }
+  html.tql-brand.scout-workspace .compact-header .tql-wordmark { min-height: 54px; }
+  html.tql-brand.scout-workspace .compact-header .tql-wordmark img { --compact-logo-width: clamp(92px, calc(100vw - 236px), 152px); width: var(--compact-logo-width); height: calc(var(--compact-logo-width) / 4.6); }
+  html.tql-brand.scout-workspace .compact-actions { grid-column: 2; grid-row: 1; gap: 6px; }
+  html.tql-brand.scout-workspace .compact-header .btn { min-height: 36px; padding-inline: 9px; }
+  html.tql-brand.scout-workspace .compact-league-search input { width: 88px; padding-inline: 6px; font-size: 16px; }
+  html.tql-brand.scout-workspace .compact-header .compact-search-submit { width: 60px; padding-inline: 4px; }
+  html.tql-brand.scout-workspace #btnRefresh { width: 36px; padding: 0; font-size: 17px; }
+  html.tql-brand.scout-workspace .compact-refresh-label { display: none; }
+  html.tql-brand.scout-workspace .compact-league { grid-column: 1 / -1; grid-row: 2; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 34px; padding: 5px 0; border-left: 0; border-top: 1px solid var(--tql-line); }
+  html.tql-brand.scout-workspace .compact-league h1 { min-width: 0; font-size: 12px; }
+  html.tql-brand.scout-workspace .compact-league-meta { flex-shrink: 0; gap: 4px; margin: 0; }
+  html.tql-brand.scout-workspace .compact-header .badge-season { display: none; }
+  html.tql-brand.scout-workspace .compact-header .badge { padding-inline: 4px; font-size: 9px; }
+}
+
+/* ID help stays within the shared masthead; module styling is untouched. */
+html.league-id-guide-open { overflow: hidden; }
+dialog.league-id-guide { width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); padding: 0; margin: auto; border: 1px solid var(--tql-line); border-radius: 16px; background: var(--tql-paper, #fff); color: var(--tql-forest, #12382a); box-shadow: 0 24px 80px #12382a33; overflow-y: auto; }
+dialog.league-id-guide::backdrop { background: #102c2466; backdrop-filter: blur(3px); }
+.league-id-guide-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px 24px 18px; border-bottom: 1px solid var(--tql-line); }
+.league-id-guide-kicker { font-size: 10px; letter-spacing: 1.5px; color: var(--tql-muted); }
+.league-id-guide-head h2 { margin: 6px 0 0; font-size: 23px; line-height: 1.35; }
+.league-id-guide-head button { flex: 0 0 34px; height: 34px; border: 0; border-radius: 50%; background: var(--tql-canvas); color: var(--tql-forest); font-size: 23px; cursor: pointer; }
+.league-id-guide-body { padding: 18px 24px 24px; font-size: 14px; line-height: 1.75; }
+.league-id-guide-body p { margin: 0 0 14px; }
+.league-id-guide-body h3 { margin: 20px 0 8px; font-size: 16px; }
+.league-id-guide-body ol { margin: 8px 0 16px; padding-left: 22px; }
+.league-id-guide-body li { padding-left: 3px; margin: 8px 0; }
+.league-id-guide-body a { color: #286a4b; text-decoration: underline; text-underline-offset: 3px; }
+.league-id-guide-body code { font-size: 12px; overflow-wrap: anywhere; }
+.league-id-guide-example { padding: 14px; border: 1px solid var(--tql-line); border-radius: 10px; background: var(--tql-canvas); }
+.league-id-guide-example > span { display: block; font-size: 11px; color: var(--tql-muted); margin-bottom: 5px; }
+.league-id-guide-example mark { padding: 3px; border-radius: 4px; background: #d8ed9b; color: #12382a; font-weight: 800; }
+.league-id-guide-example p { font-size: 12px; margin: 8px 0 0; }
+.league-id-guide-body details { border-top: 1px solid var(--tql-line); padding-top: 12px; margin-top: 16px; font-size: 12px; }
+.league-id-guide-body summary { cursor: pointer; font-weight: 600; }
+.league-id-guide-done { width: 100%; margin-top: 20px; min-height: 42px; border: 0; border-radius: 8px; background: var(--tql-forest); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.league-id-guide button:focus-visible,.league-id-guide summary:focus-visible { outline: 3px solid #90b06a; outline-offset: 3px; }
+@media (max-width: 640px) {
+  html.tql-brand.scout-workspace .compact-actions { grid-column: 1 / -1; grid-row: 2; padding: 0 0 10px; min-width: 0; }
+  html.tql-brand.scout-workspace .compact-league-search { flex: 1; min-width: 0; }
+  html.tql-brand.scout-workspace .compact-league-search input { flex: 1; width: 0; }
+  html.tql-brand.scout-workspace .compact-header .compact-guide-button { padding-inline: 7px; }
+  html.tql-brand.scout-workspace .compact-league { grid-column: 2; grid-row: 1; flex-direction: column; align-items: flex-end; justify-content: center; border-top: 0; padding: 4px 0; gap: 2px; }
+  html.tql-brand.scout-workspace .compact-league h1 { max-width: 190px; }
+  .league-id-guide-head { padding: 20px 18px 14px; }
+  .league-id-guide-body { padding: 14px 18px 20px; }
+  .league-id-guide-head h2 { font-size: 21px; }
+}

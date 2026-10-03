@@ -1,0 +1,3 @@
+/* Visible on phones too: cached results are never presented as newly updated. */
+.snapshot-sync-notice { margin: 0 0 14px; padding: 10px 14px; border: 1px solid #dce5ca; border-radius: 6px; background: #f4f8eb; color: #50663e; font-size: 12px; line-height: 1.6; }
+.snapshot-sync-notice[hidden] { display: none; }

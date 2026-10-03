@@ -1,0 +1,19 @@
+/* Shared category palette: keep labels visible; color is a secondary cue. */
+.news-category[data-category="prices"]{--category-ink:#176344;--category-bg:#E6F4EB;--category-line:#B8DAC7}
+.news-category[data-category="injuries"]{--category-ink:#A22F42;--category-bg:#FDEDEF;--category-line:#F0C4CC}
+.news-category[data-category="lineups"]{--category-ink:#285D96;--category-bg:#EAF2FD;--category-line:#BED4EE}
+.news-category[data-category="fixtures"]{--category-ink:#7D5715;--category-bg:#FFF5DA;--category-line:#EAD29C}
+.news-category[data-category="transfers"]{--category-ink:#804098;--category-bg:#F5ECFB;--category-line:#DFC5EC}
+.news-category[data-category="players"]{--category-ink:#086B72;--category-bg:#E3F5F5;--category-line:#ACDADD}
+.news-category[data-category="teams"]{--category-ink:#485899;--category-bg:#ECEDFC;--category-line:#CACFF0}
+.news-category[data-category="news"]{--category-ink:#4B6275;--category-bg:#EDF2F6;--category-line:#C7D4DE}
+.news-category[data-category="strategy"]{--category-ink:#9B4A1F;--category-bg:#FFF0E5;--category-line:#EBC8AC}
+.news-category[data-category="rules"]{--category-ink:#8D4668;--category-bg:#F9EBF3;--category-line:#E3C3D4}
+.news-category[data-category]{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:3px 9px;border:1px solid var(--category-line,#D2DBD3);border-radius:999px;background:var(--category-bg,#EDF2EE);color:var(--category-ink,#40584A);font-size:11px;font-weight:650;line-height:1.5;text-decoration:none;white-space:nowrap}
+.news-category[data-category]::before{content:none}
+/* The uncolored "all" option and every category use the same control geometry.
+ * Otherwise flex-wrap stretches the first row to its tallest button. */
+.category-tabs{align-items:center;gap:6px}
+.category-tabs>button,.category-tabs>button.news-category[data-category]{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;height:36px;min-height:36px;padding:0 12px;font-size:12px;font-weight:650;line-height:1;white-space:nowrap}
+button.news-category[data-category][aria-pressed="true"]{background:var(--category-ink);border-color:var(--category-ink);color:#fff}
+.news-category[data-category]:focus-visible{outline:2px solid var(--category-ink);outline-offset:3px}

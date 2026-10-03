@@ -1,0 +1,5 @@
+:host{display:block;--forest:#12382a;--lime:#d9ef9e;--canvas:#f3f5f1;--muted:#728176;--line:#e1e7de;--red:#a74037;--blue:#3a6595;color-scheme:light;font:14px "Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--forest);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+main.shell{max-width:none;padding:0}
+.page-intro{padding:8px 0 20px}.page-intro h1{font-size:27px;letter-spacing:-.6px}.page-intro .intro-copy{margin-top:6px}
+.page-intro .eyebrow{display:none}.watch-note{display:none}
+@media(max-width:760px){.page-intro{padding:4px 0 16px}.page-intro h1{font-size:24px}.intro-actions{max-width:58%}.source-label{text-align:right;line-height:1.5}.intro-copy{font-size:10px}}

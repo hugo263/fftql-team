@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scout-workspace tql-brand night-workspace">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="only light" />
+  <title>TQL FPL · Draft 联赛实时工作台</title>
+  <meta name="theme-color" content="#0B1F17" />
+  <script>
+    // Start data loading while the browser downloads the styles and application scripts.
+    (() => {
+      const raw = new URLSearchParams(location.search).get('league');
+      const id = /^\d{1,10}$/.test(raw || '') && Number(raw) > 0 ? Number(raw) : null;
+      if (id) document.documentElement.classList.add('scout-workspace');
+      window.__fplInitialSnapshot = fetch(id ? `/api/league/${id}` : '/api/snapshot', { signal: AbortSignal.timeout(45000) })
+        .then(async response => {
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+          return { data };
+        }).catch(error => ({ error }));
+      // The independent homepage must not wait for a whole Draft league build
+      // or for its template / JavaScript download waterfall before fetching scores.
+      if (!location.hash || location.hash === '#home') {
+        window.__fplInitialMatchCentre = fetch('/api/match-centre', { signal: AbortSignal.timeout(30000) })
+          .then(async response => {
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+            return { data };
+          }).catch(error => ({ error }));
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/style.css?v=68" />
+  <link rel="stylesheet" href="/workspace-scout.css?v=35" />
+  <link rel="stylesheet" href="/workspace-refined.css?v=68" />
+  <link rel="stylesheet" href="/trade-manager-details.css?v=85.1" />
+  <link rel="stylesheet" href="/fun-rankings.css?v=86.3" />
+  <link rel="stylesheet" href="/fixtures.css?v=95" />
+  <link rel="stylesheet" href="/match-view.css?v=40" />
+  <link rel="stylesheet" href="/manager-view.css?v=37" />
+  <link rel="stylesheet" href="/loading.css?v=58" />
+  <link rel="stylesheet" href="/match-results.css?v=52" />
+  <link rel="stylesheet" href="/trade-countdown.css?v=97" />
+  <link rel="stylesheet" href="/tql-brand.css?v=46" />
+  <link rel="stylesheet" href="/compact-header.css?v=75" />
+  <link rel="stylesheet" href="/night-tokens.css?v=91" />
+  <link rel="stylesheet" href="/night-shell.css?v=96" />
+  <link rel="stylesheet" href="/night-workspace.css?v=95" />
+  <link rel="stylesheet" href="/night-ui.css?v=97" />
+  <link rel="stylesheet" href="/light-surfaces.css?v=105" />
+  <link rel="stylesheet" href="/pitch.css?v=105" />
+  <link rel="stylesheet" href="/responsive.css?v=105" />
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=60" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=60" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=60" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=60" />
+  <link rel="manifest" href="/site.webmanifest?v=60" />
+</head>
+<body>
+  <!-- Header -->
+  <header id="top" class="night-site-head">
+    <div class="night-wrap night-head-inner">
+      <a class="night-logo" href="/portal" data-portal-link aria-label="TQL FPL 主站首页"><img id="brandLogo" src="/brand/tql-badge-preview-v47.png?v=47" alt="TQL" width="1853" height="849" /><span>FPL<span class="brand-dot">.</span></span></a>
+      <nav class="night-global-nav night-inline-nav" aria-label="站点栏目"><a href="/portal#top" data-portal-link="#top">FPL 资讯</a><a href="#home" data-workbench-link="home" aria-current="page">Draft</a></nav>
+      <div class="night-head-action"><button id="btnRefresh" class="night-header-refresh" title="立即获取最新官方数据" aria-label="刷新数据" aria-busy="false"><span class="compact-refresh-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5"/><path d="M19.2 7A8 8 0 1 0 20 15"/></svg></span><span class="compact-refresh-label">刷新</span></button></div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <div class="tabs-shell">
+    <nav class="tabs" id="tabs">
+      <div class="nav-primary" aria-label="主要功能">
+        <button class="tab active" data-tab="home">比赛中心</button>
+        <button class="tab" data-tab="weekly">本轮战报</button>
+        <button class="nav-group" data-group="rankings">联赛榜单</button>
+        <button class="tab" data-tab="fixtures">联赛赛程</button>
+        <button class="nav-group" data-group="trading">交易中心</button>
+        <button class="nav-group" data-group="tools">阵容工具</button>
+      </div>
+      <div class="nav-secondary" data-nav-group="rankings" hidden>
+        <button class="tab" data-tab="standings">积分榜</button>
+        <button class="tab" data-tab="fun">趣味榜</button>
+      </div>
+      <div class="nav-secondary" data-nav-group="trading" hidden>
+        <button class="tab" data-tab="trades">交易动态与收益</button>
+        <button class="tab" data-tab="freeagents">自由球员</button>
+        <button class="tab" data-tab="trade">交易评估</button>
+      </div>
+      <div class="nav-secondary" data-nav-group="tools" hidden>
+        <button class="tab" data-tab="compare">阵容对比</button>
+        <button class="tab" data-tab="share">阵容分享</button>
+        <button class="tab" data-tab="predict">下轮预测</button>
+      </div>
+    </nav>
+  </div>
+
+  <div class="draft-workspace-layout">
+    <aside class="draft-sidebar" aria-label="当前联赛与切换联赛">
+      <details id="draftLeagueSwitch" class="draft-league-entry" open>
+        <summary><span><span class="night-kicker">YOUR LEAGUE, YOUR GAME</span><span class="draft-switch-label">切换联赛</span></span><span class="draft-switch-indicator" aria-hidden="true">＋</span></summary>
+        <div class="draft-switch-body">
+          <div class="draft-current-league"><span class="draft-current-label">当前联赛</span><h1 id="leagueName">Draft 联赛</h1><div class="draft-league-meta"><span id="seasonBadge" class="badge badge-season">2026/27</span><span id="gwBadge" class="badge">GW—</span><span id="gwStateBadge" class="badge badge-live">—</span></div></div>
+          <form class="compact-league-search draft-entry-form" action="/" method="get" role="search" aria-label="按 ID 进入 Draft 联赛">
+            <label for="headerLeagueId">Draft 联赛 ID</label>
+            <div class="draft-entry-controls"><span class="draft-entry-hash" aria-hidden="true">#</span><input id="headerLeagueId" name="league" type="text" inputmode="numeric" autocomplete="off" placeholder="输入联赛 ID" required maxlength="10" pattern="[0-9]*[1-9][0-9]*" title="请输入 1 至 10 位数字联赛 ID，且不能为 0" /></div>
+            <button type="submit" class="btn draft-entry-submit">打开联赛 <span aria-hidden="true">↗</span></button>
+            <button id="headerLeagueGuideOpen" type="button" class="draft-entry-help" aria-haspopup="dialog" aria-controls="headerLeagueGuide">怎么查找联赛 ID？</button>
+          </form>
+          <p id="updatedAt" class="draft-data-updated" role="status">数据加载中…</p>
+        </div>
+      </details>
+    </aside>
+  <main class="container draft-workspace-main">
+    <p id="initialLoadNotice" class="snapshot-sync-notice" role="status">正在读取联赛数据…</p>
+    <p id="snapshotSyncNotice" class="snapshot-sync-notice" role="status" hidden></p>
+    <section id="tab-home" class="tabpanel active">
+      <div id="homeContent"><p class="home-loading" role="status">正在加载比赛首页…</p></div>
+    </section>
+    <section id="tab-fun" class="tabpanel">
+      <div class="panel fun-panel">
+        <div class="panel-head"><h2 data-kicker="THE LEAGUE SIDE QUESTS">联赛趣味榜 <span id="funStatus" class="panel-sub"></span></h2></div>
+        <div class="fun-toolbar"><label>轮次 <select id="funGw" aria-label="趣味榜轮次"><option value="all" selected>所有轮次</option></select></label></div>
+        <p id="funNotice" class="fun-note" role="status"></p>
+        <div id="funBoards" class="fun-boards"></div>
+      </div>
+    </section>
+    <section id="tab-fixtures" class="tabpanel">
+      <div class="fx-gw-bar" aria-label="选择对阵轮次">
+        <button type="button" id="fxMatchPrev" class="fx-gw-nav" aria-label="上一轮对阵">‹</button>
+        <div id="fxGwChoices" class="fx-gw-choices" role="group" aria-label="比赛周"></div>
+        <button type="button" id="fxMatchNext" class="fx-gw-nav" aria-label="下一轮对阵">›</button>
+        <button type="button" id="fxMatchReset" class="fx-gw-back">回到当前轮</button>
+      </div>
+      <div class="panel fx-panel" id="fxMatchPanel">
+        <div class="panel-head"><div><h2 id="fxDetailTitle">每轮对阵</h2><p id="fxDetailMeta" class="fx-detail-meta" role="status"></p></div><label class="fx-filter">跳转轮次<select id="fxMatchGw" aria-label="选择每轮对阵 GW"></select></label></div>
+        <div id="fxRounds"></div>
+      </div>
+      <div class="panel fx-panel" id="fxManagerPanel">
+        <div class="panel-head"><h2 data-kicker="MANAGER FIXTURES">经理赛程 <span class="panel-sub" id="fxManagerMeta" aria-live="polite"></span></h2></div>
+        <div id="fxManagerChoices" class="fx-manager-choices" role="group" aria-label="选择经理查看整季赛程"></div>
+        <div id="fxManagerSeason" class="fx-season-scroll" tabindex="0" role="region" aria-label="经理整季对手，按轮次排列"></div>
+      </div>
+      <div class="panel fx-panel">
+        <div class="panel-head fx-heading">
+          <h2>FDR <span class="panel-sub">联赛赛程总览</span></h2>
+        </div>
+        <div class="fx-toolbar">
+          <div class="fx-round-nav"><button type="button" id="fxPrev" aria-label="上一比赛周">←</button><label>起始轮次<select id="fxGw" aria-label="赛程起始 GW"></select></label><button type="button" id="fxNext" aria-label="下一比赛周">→</button><button type="button" id="fxReset">回到当前赛程</button></div>
+          <label class="fx-filter">显示范围<select id="fxRange" aria-label="赛程显示范围"><option value="6">未来 6 轮</option><option value="12">未来 12 轮</option><option value="38">至赛季结束</option></select></label>
+        </div>
+        <div class="fx-summary" id="fxSummary" role="status"></div>
+        <div class="fx-scroll" tabindex="0" role="region" aria-label="联赛对手总览，可横向滚动"><table class="fx-table" id="fxTable"></table></div>
+        <div class="fx-fdr-legend" aria-label="按对手当前排名分成五档，从较易到较难"><span>对手强度</span><span><i data-difficulty="1"></i>较易</span><span><i data-difficulty="2"></i>偏易</span><span><i data-difficulty="3"></i>中等</span><span><i data-difficulty="4"></i>偏难</span><span><i data-difficulty="5"></i>较难</span></div>
+        <p class="fx-note"># 为对手当前联赛排名；配色按全联赛当前排名分成五档，仅辅助比较，不是官方 FDR 或胜负预测。排名暂无时显示灰色。Draft 对阵无主客场加成，时间为北京时间的 GW 阵容截止，并非单场开球。点击色块查看该轮全部对阵。</p>
+      </div>
+    </section>
+
+    <!-- ============ Tab 1: Weekly Update ============ -->
+    <section id="tab-weekly" class="tabpanel">
+      <div class="gw-slicer-wrap">
+        <span class="gw-slicer-label">比赛周</span>
+        <div class="sort-switch gw-slicer" id="gwSlicer"></div>
+        <span class="report-context" id="reportContext" role="status"></span>
+      </div>
+      <div class="trade-countdowns" id="tradeCountdowns" aria-label="接下来的交易时间"></div>
+
+      <div class="panel results-panel">
+        <div class="panel-head">
+          <h2 data-kicker="THE RESULTS"><span id="reportMatchTitle">本轮对阵</span> <span class="panel-sub" id="lastGwLabel"></span></h2>
+        </div>
+        <div id="lastGwMatchList" class="match-list"></div>
+        <p class="match-open-note">点击一场对阵，查看双方当轮阵容与球员得分。</p>
+      </div>
+
+      <div class="panel totw-panel">
+        <div class="panel-head">
+          <h2 data-kicker="THE STANDOUT XI">Team of the Week <span class="panel-sub" id="dreamTeamLabel"></span></h2>
+          <div class="legend">
+            <span class="legend-item"><span class="dot dot-free"></span>自由球员</span>
+          </div>
+        </div>
+        <div class="pitch-wrap">
+          <div class="pitch" id="dreamTeamPitch"></div>
+        </div>
+        <div class="dt-note" id="dreamTeamNote">Team of the Week：按所选 GW 实际得分选出的最佳阵容，进行中的轮次自动更新。球衣为 FPL 官方球衣，Draft 无队长加倍。</div>
+      </div>
+
+      <div class="panel trend-panel">
+        <div class="panel-head">
+          <h2 data-kicker="THE SEASON SO FAR">联赛每轮趋势</h2>
+          <select id="trendPlayerSel" class="input trend-select" aria-label="选择玩家"></select>
+        </div>
+        <div class="chart-box"><canvas id="gwTrendChart"></canvas></div>
+      </div>
+      <div id="weeklyFunSummary" class="fun-weekly-summary"></div>
+    </section>
+
+    <!-- ============ Tab 2: Trade Center ============ -->
+    <section id="tab-trades" class="tabpanel">
+      <div class="panel trade-eval-panel">
+        <div class="panel-head">
+          <h2 data-kicker="AFTER THE DEAL">交易评价 <span class="panel-sub" id="tcEvalLabel"></span></h2>
+        </div>
+        <div class="trade-return-grid">
+          <section class="trade-return-card" aria-labelledby="tcCurrentTitle">
+            <div class="trade-return-head">
+              <div><span class="trade-return-kicker">THIS GAMEWEEK</span><h3 id="tcCurrentTitle">本轮交易收益／损失</h3></div>
+              <span class="trade-return-badge" id="tcCurrentLabel"></span>
+            </div>
+            <label class="trade-round-filter" for="tcGwSel"><span>轮次</span><select id="tcGwSel" class="input trend-select" aria-label="选择交易收益的 GW"></select></label>
+            <p class="trade-return-intro">换入得分 − 换出得分。默认显示最新有得分的一轮；新交易所属 GW 自动加入轮次，可提前查看成交操作，比赛得分产生后更新收益。</p>
+            <div class="trade-return-summary" id="tcCurrentSummary"></div>
+            <div class="trade-return-list" id="tcCurrentReturns" aria-live="polite"></div>
+            <p class="trade-return-note">姓名后的贡献分：换入计入球员得分，换出扣除球员得分；逐人相加为右侧净收益。只计所选 GW 生效的成交操作，同轮中转球员抵消；直接交易按双方视角计算。</p>
+          </section>
+          <section class="trade-return-card" aria-labelledby="tcHistoryTitle">
+            <div class="trade-return-head">
+              <div><span class="trade-return-kicker">BEST SIGNINGS</span><h3 id="tcHistoryTitle">历史引援收益榜</h3></div>
+              <span class="trade-return-badge" id="tcHistoryLabel"></span>
+            </div>
+            <div class="trade-history-tabs" id="tcHistoryTabs" role="tablist" aria-label="历史收益排名方式">
+              <button type="button" id="tcHistoryPlayersTab" role="tab" aria-selected="true" aria-controls="tcHistoryReturns" data-view="players">按球员</button>
+              <button type="button" id="tcHistoryManagersTab" role="tab" aria-selected="false" aria-controls="tcHistoryReturns" tabindex="-1" data-view="managers">按经理</button>
+            </div>
+            <p class="trade-return-intro" id="tcHistoryIntro">按每名引援持有期间的累计得分，从高到低排列。</p>
+            <div class="trade-return-ranking-head"><span id="tcHistoryNameHead">引援球员 / 所属经理</span><span id="tcHistoryScoreHead">累计收益</span></div>
+            <div class="trade-return-list trade-return-history" id="tcHistoryReturns" role="tabpanel" aria-labelledby="tcHistoryPlayersTab" aria-live="polite"></div>
+            <p class="trade-return-note" id="tcHistoryNote">从交易生效 GW 起累计，转出生效 GW 起停止；重新买入单独计算。按上方所选 GW 回看，不计入其后的得分。</p>
+          </section>
+        </div>
+        <div class="table-note" id="tcReturnNote">使用 Draft 官方球员得分，包含替补球员，无队长加倍；这是球员得分比较，不等同于经理首发阵容实际增加的积分。实时数据仍可能随官方结算修正。</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-kicker="THE TRANSFER ROOM">交易动态 <span class="panel-sub" id="tcTxLabel"></span></h2>
+          <div class="panel-head-controls">
+            <select id="tcTxGwSel" class="input trend-select" aria-label="选择交易明细的 GW"></select>
+            <div class="sort-switch" id="tcFilter">
+              <button class="sort-btn active" data-mode="done">已成交</button>
+              <button class="sort-btn" data-mode="all">所有交易</button>
+            </div>
+          </div>
+        </div>
+        <div id="tcTxSummary" class="tx-summary"></div>
+      </div>
+
+    </section>
+
+    <!-- ============ Tab 3: Standings ============ -->
+    <section id="tab-standings" class="tabpanel">
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-kicker="THE LEAGUE TABLE">联赛积分榜 <span id="standingsLiveLabel" class="panel-sub"></span></h2>
+          <div class="sort-switch" id="standingsSort">
+            <button class="sort-btn active" data-sort="rank">H2H 积分</button>
+            <button class="sort-btn" data-sort="pointsFor">总得分</button>
+            <button class="sort-btn" data-sort="squadValue">阵容价值</button>
+            <button class="sort-btn" data-sort="projected">预计得分</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table standings-table" id="standingsTable">
+            <thead>
+              <tr>
+                <th class="ta-c">#</th>
+                <th>玩家</th>
+                <th class="ta-c" id="standingsScoreHead">H2H</th>
+                <th class="ta-c" id="standingsRecordHead">W-D-L</th>
+                <th class="ta-r" id="standingsLiveHead">本轮分</th>
+                <th class="ta-r" id="standingsForHead">得分</th>
+                <th class="ta-r" id="standingsAgainstHead">失分</th>
+                <th class="ta-r">价值 £M</th>
+                <th class="ta-r" id="standingsProjectedHead">预计得分</th>
+                <th class="ta-c">近5轮</th>
+              </tr>
+            </thead>
+            <tbody id="standingsBody"></tbody>
+          </table>
+        </div>
+        <div class="table-note" id="standingsNote">点击任意玩家查看其当前阵容 · 价值按经典 FPL 市场价合计</div>
+      </div>
+    </section>
+
+    <!-- ============ Tab 4: Free Agents ============ -->
+    <section id="tab-freeagents" class="tabpanel" data-screen-label="自由球员市场">
+      <div class="grid kpi-row" id="freeAgentKpis"></div>
+      <div class="panel">
+        <div class="panel-head free-agent-head">
+          <div>
+            <h2 data-kicker="THE WAIVER WIRE">自由球员市场 <span class="panel-sub" id="freeAgentLabel"></span></h2>
+            <p class="free-agent-lede">展示当前未被本联赛任何球队持有的球员，默认排除已离队或不可用球员。</p>
+          </div>
+          <div class="free-agent-filters">
+            <input id="freeAgentSearch" class="input" type="search" placeholder="搜索球员或球队…" autocomplete="off" />
+            <select id="freeAgentTeam" class="select" aria-label="按球队筛选">
+              <option value="">全部球队</option>
+            </select>
+            <select id="freeAgentStatus" class="select" aria-label="按状态筛选">
+              <option value="signable">可签约</option>
+              <option value="available">健康可出场</option>
+              <option value="risk">伤停或存疑</option>
+              <option value="all">全部（含不可用）</option>
+            </select>
+          </div>
+        </div>
+        <div class="free-agent-toolbar">
+          <div class="sort-switch" id="freeAgentPos" aria-label="按位置筛选">
+            <button class="sort-btn active" data-pos="" data-label="全部">全部</button>
+            <button class="sort-btn" data-pos="GKP" data-label="门将">门将</button>
+            <button class="sort-btn" data-pos="DEF" data-label="后卫">后卫</button>
+            <button class="sort-btn" data-pos="MID" data-label="中场">中场</button>
+            <button class="sort-btn" data-pos="FWD" data-label="前锋">前锋</button>
+          </div>
+          <div class="sort-switch" id="freeAgentSort" aria-label="自由球员排序">
+            <button class="sort-btn active" data-sort="epNext">下轮预计</button>
+            <button class="sort-btn" data-sort="totalPoints">总得分</button>
+            <button class="sort-btn" data-sort="form">近期状态</button>
+            <button class="sort-btn" data-sort="ppg">场均得分</button>
+            <button class="sort-btn" data-sort="nowCost">身价</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table free-agent-table">
+            <thead>
+              <tr>
+                <th>球员</th>
+                <th class="ta-c">位置</th>
+                <th>状态</th>
+                <th class="ta-r">身价</th>
+                <th class="ta-r" id="freeLastGwHead">上轮</th>
+                <th class="ta-r">总分</th>
+                <th class="ta-r">Form</th>
+                <th class="ta-r">PPG</th>
+                <th class="ta-r">xGI/90</th>
+                <th class="ta-r" id="freeNextGwHead">下轮预计</th>
+                <th class="ta-r">分钟</th>
+              </tr>
+            </thead>
+            <tbody id="freeAgentBody"></tbody>
+          </table>
+        </div>
+        <div class="free-agent-pager" id="freeAgentPager"></div>
+        <div class="table-note">自由球员口径：球员 owner 为空；“可签约”包含健康、存疑、伤病和停赛球员，不包含状态为不可用的球员。</div>
+      </div>
+    </section>
+
+    <!-- ============ Tab 5: Squad Share ============ -->
+    <section id="tab-share" class="tabpanel" data-screen-label="阵容分享">
+      <div class="share-layout">
+        <div class="panel share-editor-panel">
+          <div class="panel-head">
+            <div>
+              <h2 data-kicker="YOUR SQUAD, YOUR TERMS">阵容交易名片</h2>
+              <p class="share-lede">点击球员切换状态：紫色为“非卖品”，其余球员均表示可以谈交易。</p>
+            </div>
+            <select id="shareEntrySelect" class="select" aria-label="选择要分享的球队"></select>
+          </div>
+          <div class="share-toolbar">
+            <div class="share-legend" aria-label="交易状态图例">
+              <span><i class="share-dot tradable"></i>可以谈</span>
+              <span><i class="share-dot locked"></i>非卖品</span>
+            </div>
+            <button id="shareClearLocks" class="btn btn-ghost" type="button">全部设为可交易</button>
+          </div>
+          <div id="shareSquadGrid" class="share-squad-pitch-shell"></div>
+          <label class="field-label share-message-label" for="shareMessage">给联赛玩家的附言</label>
+          <textarea id="shareMessage" class="input share-message" rows="3" maxlength="90">紫色球员不卖，其他都可以谈，欢迎私聊交易。</textarea>
+        </div>
+
+        <aside class="panel share-preview-panel">
+          <div class="panel-head">
+            <div>
+              <h2 data-kicker="READY TO SHARE">微信分享图片</h2>
+              <p class="share-lede" id="shareSummary">选择非卖品后，图片会实时更新。</p>
+            </div>
+          </div>
+          <div class="share-canvas-shell">
+            <canvas id="shareCanvas" width="1080" height="1440" aria-label="阵容交易分享图片预览"></canvas>
+          </div>
+          <div class="share-actions">
+            <button id="shareCopyImage" class="btn btn-ghost" type="button">复制图片</button>
+            <button id="shareCopyLink" class="btn btn-ghost" type="button">复制链接</button>
+            <button id="shareDownloadImage" class="btn btn-ghost" type="button">下载 PNG</button>
+            <button id="shareNative" class="btn btn-primary" type="button">分享图片</button>
+          </div>
+          <p class="share-feedback" id="shareFeedback" role="status"></p>
+          <p class="table-note">图片内含可扫码直达的二维码；“复制链接”可在微信中粘贴为可点击网址。图片格式本身不支持内嵌点击区域。</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ Tab 6: Squad Compare ============ -->
+    <section id="tab-compare" class="tabpanel">
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-kicker="HEAD TO HEAD">阵容对比</h2>
+          <div class="compare-controls">
+            <select id="cmpLeft" class="select" aria-label="左侧球队"></select>
+            <button class="btn btn-ghost btn-swap" id="btnSwap" title="交换双方">⇄</button>
+            <select id="cmpRight" class="select" aria-label="右侧球队"></select>
+            <div class="cmp-view-switch" id="cmpViewSwitch" role="group" aria-label="阵容显示方式">
+              <button class="cmp-view-btn active" data-view="pitch" aria-pressed="true">▦ 球场</button>
+              <button class="cmp-view-btn" data-view="list" aria-pressed="false">☷ 列表</button>
+            </div>
+          </div>
+        </div>
+        <div id="compareBody"></div>
+      </div>
+    </section>
+
+    <!-- ============ Tab 7: Predict ============ -->
+    <section id="tab-predict" class="tabpanel">
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-kicker="LOOKING AHEAD"><span id="predictTitle">对阵预测</span> <span class="panel-sub" id="predictLabel"></span></h2>
+        </div>
+        <div id="predictBody"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-kicker="THE PROJECTED TABLE"><span id="projectedTitle">预计得分排行</span> <span class="panel-sub">基于 FPL 官方 ep_next × Draft 首发 XI</span></h2>
+        </div>
+        <div class="chart-box chart-half"><canvas id="projectedChart"></canvas></div>
+      </div>
+    </section>
+
+    <!-- ============ Tab 8: Trade Evaluator ============ -->
+    <section id="tab-trade" class="tabpanel">
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-kicker="MAKE AN INFORMED TRADE">交易评估器</h2>
+        </div>
+        <p class="trade-intro">
+          拟交易时把双方给出的球员分别加入两边，系统会按近期状态、场均得分、xG/xA、
+          下轮赛程难度等维度给出评估建议，帮助快速判断一笔交易是否划算。
+        </p>
+        <div class="trade-grid">
+          <div class="trade-side">
+            <h3 class="trade-side-title">我方给出</h3>
+            <div class="player-picker">
+              <input id="tradeSearchA" class="input" placeholder="搜索球员（名字 / 球队 / 位置）…" autocomplete="off" />
+              <div class="picker-pos" id="pickerPosA">
+                <button class="sort-btn active" data-pos="">全部</button>
+                <button class="sort-btn" data-pos="GKP">GKP</button>
+                <button class="sort-btn" data-pos="DEF">DEF</button>
+                <button class="sort-btn" data-pos="MID">MID</button>
+                <button class="sort-btn" data-pos="FWD">FWD</button>
+              </div>
+              <div class="picker-results" id="pickerResultsA"></div>
+            </div>
+            <div class="picked-list" id="pickedListA"></div>
+          </div>
+          <div class="trade-vs">
+            <div class="vs-badge">VS</div>
+          </div>
+          <div class="trade-side">
+            <h3 class="trade-side-title">对方给出</h3>
+            <div class="player-picker">
+              <input id="tradeSearchB" class="input" placeholder="搜索球员（名字 / 球队 / 位置）…" autocomplete="off" />
+              <div class="picker-pos" id="pickerPosB">
+                <button class="sort-btn active" data-pos="">全部</button>
+                <button class="sort-btn" data-pos="GKP">GKP</button>
+                <button class="sort-btn" data-pos="DEF">DEF</button>
+                <button class="sort-btn" data-pos="MID">MID</button>
+                <button class="sort-btn" data-pos="FWD">FWD</button>
+              </div>
+              <div class="picker-results" id="pickerResultsB"></div>
+            </div>
+            <div class="picked-list" id="pickedListB"></div>
+          </div>
+        </div>
+        <div id="tradeVerdict"></div>
+      </div>
+    </section>
+  </main>
+  </div>
+
+  <!-- Squad modal -->
+  <div class="modal-backdrop" id="squadModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="squadModalTitle" tabindex="-1">
+      <div class="modal-head">
+        <h3 id="squadModalTitle">阵容</h3>
+        <button class="btn btn-ghost modal-close" id="squadModalClose" aria-label="关闭阵容详情">✕</button>
+      </div>
+      <div class="modal-body" id="squadModalBody"></div>
+    </div>
+  </div>
+
+  <dialog id="matchDetailDialog" class="match-detail-dialog" aria-labelledby="matchDetailTitle" aria-describedby="matchDetailMeta">
+    <header class="md-header">
+      <div class="md-header-copy"><h2 id="matchDetailTitle">对战详情</h2><p id="matchDetailMeta"></p></div>
+      <div class="md-actions">
+        <button type="button" class="md-share-btn" id="matchDetailShare" disabled title="复制双球场图片到剪贴板，可粘贴到微信">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h12v12H8zM16 8V4H4v12h4"/></svg><span>复制图片</span>
+        </button>
+        <button type="button" class="md-close" id="matchDetailClose" aria-label="关闭对战详情">×</button>
+      </div>
+    </header>
+    <div class="md-notice-row"><p id="matchDetailNotice" role="status"></p><button type="button" class="md-retry" id="matchDetailRetry" hidden>重试</button></div>
+    <div class="md-body" id="matchDetailBody" aria-busy="false"></div>
+    <div class="md-share-feedback"><span id="matchShareFeedback" role="status"></span><a id="matchShareImage" hidden target="_blank" rel="noopener">查看图片</a></div>
+  </dialog>
+
+  <dialog id="headerLeagueGuide" class="league-id-guide" aria-labelledby="headerLeagueGuideTitle" aria-describedby="headerLeagueGuideIntro">
+    <div class="league-id-guide-head">
+      <div><span class="league-id-guide-kicker">FIND YOUR LEAGUE</span><h2 id="headerLeagueGuideTitle" tabindex="-1">怎么查找联赛 ID？</h2></div>
+      <button type="button" id="headerLeagueGuideClose" aria-label="关闭联赛 ID 说明">×</button>
+    </div>
+    <div class="league-id-guide-body">
+      <p id="headerLeagueGuideIntro">需要的是 <strong>Draft 联赛的数字 ID</strong>，不是球队 ID，也不是加入联赛的邀请码。</p>
+      <h3>我是联赛管理员</h3>
+      <ol>
+        <li>在浏览器打开并登录 <a href="https://draft.premierleague.com/" target="_blank" rel="noopener noreferrer">官方 FPL Draft ↗</a>，找到你的联赛。</li>
+        <li>打开联赛的 <strong>Edit（编辑）</strong> 页面，查看浏览器地址栏的完整网址。</li>
+        <li>找到 <code>/league/</code> 后面的数字，这就是联赛 ID。复制数字，回到本页输入即可。</li>
+      </ol>
+      <div class="league-id-guide-example"><span>网址示例</span><code>draft.premierleague.com/league/<mark>47275</mark>/edit</code><p>这个示例的联赛 ID 是 <strong>47275</strong>；请使用你自己网址中的数字。</p></div>
+      <h3>我是普通联赛成员</h3>
+      <p>没有 Edit 入口？最简单的办法是请联赛管理员按上面的步骤，把数字 ID 发到群里。<strong>同一联赛的所有成员使用同一个 ID。</strong></p>
+      <details><summary>电脑上自行查询（进阶方法）</summary><ol><li>登录官方 Draft 并打开浏览器开发者工具，切换到 <strong>Network（网络）</strong>。</li><li>进入目标联赛或刷新联赛页面，在网络请求中搜索 <code>details</code>。</li><li>找到该联赛的 <code>/api/league/数字/details</code> 请求；其中的数字就是 ID。若出现多个结果，查看响应中的联赛名称确认。</li></ol><p>只需要复制数字，无需向本站提供密码、Cookie 或登录信息。</p></details>
+      <button type="button" id="headerLeagueGuideDone" class="league-id-guide-done">知道了，填写联赛 ID</button>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <span><strong>TQL FPL<span class="tql-brand-dot" aria-hidden="true"></span></strong> Draft 联赛工作台 <span class="footer-divider">/</span> Premier League Official APIs<br><span class="footer-fine">后端每 15 分钟检查，关键时间点追加同步；有变化自动推送，完赛轮次保留结果。非官方页面，积分可能随官方结算修正。<span id="liveRefreshNote" hidden>900</span><span id="refreshNote" hidden>15</span><br>匿名访问统计用于改进页面，不保存原始 IP。</span></span>
+    <button class="feedback-link" type="button" data-feedback-open>问题反馈</button>
+  </footer>
+  <div class="icp-footer" style="padding:16px 20px 24px;text-align:center;font-size:12px;line-height:1.8;color:#687b68"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">粤ICP备2026075584号-3</a></div>
+
+  <dialog id="feedbackDialog" class="feedback-dialog" aria-labelledby="feedbackDialogTitle">
+    <div class="feedback-dialog-card">
+      <button class="feedback-dialog-close" type="button" data-feedback-close aria-label="关闭问题反馈">×</button>
+      <div class="feedback-dialog-copy">
+        <span class="feedback-dialog-kicker">CONTACT</span>
+        <h2 id="feedbackDialogTitle">问题反馈</h2>
+        <p>扫码添加微信，告诉我遇到的问题或你的改进建议。</p>
+      </div>
+      <img src="/wechat-feedback.jpg?v=35" alt="微信二维码：牛老爷" />
+    </div>
+  </dialog>
+
+  <script>
+    // Resolve the initial module before analytics records the page view.
+    (() => {
+      const tabs = [...document.querySelectorAll('#tabs .tab')];
+      const selected = tabs.find(tab => tab.dataset.tab === location.hash.slice(1));
+      if (!selected) return;
+      tabs.forEach(tab => tab.classList.toggle('active', tab === selected));
+      document.querySelectorAll('.tabpanel').forEach(panel => panel.classList.toggle('active', panel.id === `tab-${selected.dataset.tab}`));
+    })();
+  </script>
+  <script src="/vendor/chart.umd.js"></script>
+  <script src="/timeline.js?v=83"></script>
+  <script src="/trade-countdown.js?v=97"></script>
+  <script src="/night-share.js?v=98"></script>
+  <script src="/pitch.js?v=105"></script>
+  <script src="/match-share.js?v=101.2"></script>
+  <script src="/update-stream.js?v=79"></script>
+  <script src="/match-view.js?v=84"></script>
+  <script src="/analytics.js?v=98"></script>
+  <script src="/fixtures.js?v=95"></script>
+  <script src="/home-tab.js?v=105"></script>
+  <script src="/trade-manager-details.js?v=85"></script>
+  <script src="/fun-model.js?v=86"></script>
+  <script src="/fun-rankings.js?v=97"></script>
+  <script src="/app.js?v=105"></script>
+  <script src="/feedback.js?v=35"></script>
+  <script src="/workspace-ui.js?v=93"></script>
+  <script src="/night-shell.js?v=98"></script>
+  <script src="/league-id-guide.js?v=75"></script>
+</body>
+</html>

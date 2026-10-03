@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>TQL 管理后台</title>
+  <meta name="theme-color" content="#171C26" />
+  <link rel="icon" type="image/svg+xml" href="/admin-icon.svg?v=20261002a" />
+  <link rel="stylesheet" href="/admin.css?v=20261002a" />
+  <link rel="stylesheet" href="/responsive.css?v=101.2" />
+</head>
+<body>
+  <section class="login-shell" id="loginView">
+    <form class="login-card" id="loginForm">
+      <a class="admin-brand" href="/admin" aria-label="TQL 管理后台"><span class="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>Admin Console</small></span></a>
+      <div>
+        <p class="eyebrow">TQL ADMIN</p>
+        <h1>TQL 管理后台</h1>
+        <p class="login-copy">登录后管理 Draft 数据与 FPL 资讯。</p>
+      </div>
+      <label class="field-label" for="adminPassword">管理员密码</label>
+      <input class="admin-input" id="adminPassword" name="password" type="password" autocomplete="current-password" required />
+      <button class="admin-btn primary" type="submit" id="loginButton">登录</button>
+      <p class="form-error" id="loginError" role="alert"></p>
+      <a class="back-link" href="/">返回联赛页面</a>
+    </form>
+  </section>
+
+  <div class="admin-shell hidden" id="dashboardView">
+    <button class="admin-shade hidden" id="adminShade" aria-label="点击遮罩关闭导航" type="button"></button>
+    <aside class="admin-side" id="admin-navigation" aria-label="管理后台导航">
+      <button class="admin-menu-close" id="adminMenuClose" aria-label="关闭导航菜单" type="button">×</button>
+      <a href="/admin" class="admin-brand"><span class="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>Admin Console</small></span></a>
+      <nav class="admin-modules" aria-label="后台模块"><a href="/admin" class="on" aria-current="page">Draft 数据</a><a href="/admin/news">资讯管理</a></nav>
+      <nav class="admin-side-nav"><p class="admin-nav-group">Draft 数据</p>
+        <a href="#draft-overview" class="admin-nav-link on"><span class="admin-nav-icon">▣</span>数据总览</a>
+        <a href="#draft-leagues" class="admin-nav-link"><span class="admin-nav-icon">▦</span>联赛使用</a>
+        <a href="#draft-trend" class="admin-nav-link"><span class="admin-nav-icon">↗</span>流量趋势</a>
+        <a href="#draft-activity" class="admin-nav-link"><span class="admin-nav-icon">≡</span>最近活动</a>
+        <p class="admin-nav-group">资讯管理</p><a href="/admin/news" class="admin-nav-link"><span class="admin-nav-icon">⇄</span>进入资讯后台 ↗</a>
+      </nav><div class="admin-side-foot">只读数据统计 · 北京时间<br />匿名访客统计 · 排除本人流量</div>
+    </aside><div class="admin-workspace">
+      <header class="admin-topbar"><button class="admin-menu" id="adminMenu" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="admin-navigation">☰</button><span class="admin-crumb">Draft 数据 / <b>数据总览</b></span><span class="admin-clock" id="adminClock">北京时间</span><div class="admin-actions"><a class="admin-front-link" href="/">查看前台 ↗</a><button class="admin-logout" id="refreshAnalytics" type="button">刷新</button><span class="admin-avatar" aria-label="管理员">K</span><button class="admin-logout" id="logoutButton" type="button">退出</button></div></header>
+    <main id="draft-overview" class="admin-page" data-screen-label="网站流量总览">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">WEBSITE OVERVIEW</p>
+          <h2>Draft 数据总览</h2>
+          <p id="trackingMeta">正在读取统计数据…</p>
+        </div>
+      </div>
+
+      <p class="analytics-status hidden" id="analyticsStatus" role="status" aria-live="polite"></p>
+      <section class="focus-metric-grid" id="focusMetricGrid" aria-label="今日访问与累计联赛使用"></section>
+      <p class="scope-note" id="todayScope">今日指标：北京时间 00:00 至现在；用户按匿名访客识别，不是注册账户数。</p>
+      <aside class="exclusion-note" aria-label="本人流量排除说明">
+        <div><span class="exclusion-indicator" aria-hidden="true"></span><strong>排除本人流量</strong></div>
+        <p>已登录后台的浏览器会持续排除；其他设备或浏览器需登录后台一次。历史访问仅能排除已识别的匿名访客，不能保证全部历史都已排除。</p>
+        <p id="exclusionMeta">正在读取排除记录…</p>
+      </aside>
+
+      <div class="range-heading">
+        <div><h3>所选时段概览</h3><p>时段指标与图表跟随时间范围；今日指标与累计联赛使用保持独立。</p></div>
+        <div class="range-switch" id="rangeSwitch" role="group" aria-label="统计时间范围">
+          <button data-days="7" type="button">7 天</button>
+          <button class="active" data-days="30" type="button">30 天</button>
+          <button data-days="90" type="button">90 天</button>
+        </div>
+      </div>
+
+      <section class="empty-state hidden" id="emptyState">
+        <h3>统计已开始运行</h3>
+        <p>暂时还没有访问记录。用户访问主页面后，这里会自动出现真实数据。</p>
+      </section>
+
+      <section class="metric-grid" id="metricGrid" aria-label="核心指标"></section>
+
+      <section class="dashboard-grid">
+        <article class="data-panel panel-wide" id="draft-leagues">
+          <div class="data-panel-head">
+            <div><h3>联赛使用明细</h3><p id="leagueUsageMeta">正在读取联赛使用…</p></div>
+            <span class="filter-note">保留日志内累计 · 最多显示 100 个联赛</span>
+          </div>
+          <p class="league-method" id="leagueTrackingNote">打开次数不是页面 PV。历史补录按网页打开 + 成功数据请求关联推断，排除已识别本人及机器人，不含 API 刷新，不保证历史完整；不增加 PV / UV。正在读取补录状态…</p>
+          <div class="activity-table-wrap">
+            <table class="activity-table league-table">
+              <thead><tr><th>联赛 ID</th><th>联赛名称</th><th class="numeric">打开次数</th><th class="numeric">匿名用户</th><th>最近使用</th></tr></thead>
+              <tbody id="leagueUsageRows"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="data-panel panel-wide">
+          <div class="data-panel-head">
+            <div><h3 id="draft-trend">访问趋势</h3><p>页面浏览量、独立访客和会话数</p></div>
+          </div>
+          <div class="chart-large"><canvas id="trendChart"></canvas></div>
+        </article>
+
+        <article class="data-panel">
+          <div class="data-panel-head">
+            <div><h3>功能使用</h3><p>各模块被打开的次数</p></div>
+          </div>
+          <div class="chart-medium"><canvas id="moduleChart"></canvas></div>
+        </article>
+
+        <article class="data-panel">
+          <div class="data-panel-head">
+            <div><h3>访问来源</h3><p>首次进入网站的来源域名</p></div>
+          </div>
+          <div class="chart-medium"><canvas id="sourceChart"></canvas></div>
+        </article>
+
+        <article class="data-panel">
+          <div class="data-panel-head">
+            <div><h3>设备构成</h3><p>桌面、手机和平板访问占比</p></div>
+          </div>
+          <div class="chart-medium"><canvas id="deviceChart"></canvas></div>
+          <div class="compact-list" id="browserList"></div>
+        </article>
+
+        <article class="data-panel">
+          <div class="data-panel-head">
+            <div><h3>访问时段</h3><p id="hourChartNote">北京时间，按比赛日 / 非比赛日拆分每小时累计浏览量（PV）。</p></div>
+          </div>
+          <div class="chart-medium"><canvas id="hourChart"></canvas></div>
+        </article>
+
+        <article class="data-panel panel-wide">
+          <div class="data-panel-head">
+            <div><h3 id="draft-activity">最近活动</h3><p>匿名访客的页面与功能访问，不包含原始 IP</p></div>
+            <span class="filter-note" id="botNote"></span>
+          </div>
+          <div class="activity-table-wrap">
+            <table class="activity-table">
+              <thead><tr><th>时间</th><th>活动</th><th>模块</th><th>来源</th><th>设备</th><th>匿名访客</th></tr></thead>
+              <tbody id="recentActivity"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+    </div>
+  </div>
+
+  <div class="icp-footer" style="padding:16px 20px 24px;text-align:center;font-size:12px;line-height:1.8;color:#687b68"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">粤ICP备2026075584号-3</a></div>
+
+  <script src="/vendor/chart.umd.js"></script>
+  <script src="/admin.js?v=20261002a"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+/* v97 — draft-home.html component details, shared by all Draft modules and
+ * the match centre's isolated template. Loaded after legacy layout styles.
+ * This layer does not alter tab hierarchy, pitch geometry or data semantics. */
+:root,:host {
+  --ui-chip-radius:999px;
+  --ui-field-radius:8px;
+  --ui-label-radius:7px;
+  --ui-chip-size:12.5px;
+  --ui-note-size:11px;
+}
+
+/* One filter language: paper outline → deep green / lime selection. */
+:is(html.night-workspace.scout-workspace,.night-match) :is(.sort-switch,.picker-pos,.cmp-view-switch,.trade-history-tabs,.event-filters,.segmented) {
+  gap:8px; padding:0; border:0; background:none; border-radius:0;
+}
+:is(html.night-workspace.scout-workspace,.night-match) :is(.sort-switch,.picker-pos,.cmp-view-switch,.trade-history-tabs,.event-filters,.segmented) > button {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  min-height:32px; padding:6px 12px; border:1px solid var(--line-strong);
+  border-radius:var(--ui-chip-radius); background:var(--card); color:var(--text-2);
+  font:600 var(--ui-chip-size)/1.4 var(--font); white-space:nowrap; box-shadow:none;
+  cursor:pointer; transition:background .15s,border-color .15s,color .15s;
+}
+:is(html.night-workspace.scout-workspace,.night-match) :is(.sort-switch,.picker-pos,.cmp-view-switch,.trade-history-tabs,.event-filters,.segmented) > button:is(.active,[aria-pressed=true],[aria-selected=true]) {
+  background:var(--ink-800); border-color:var(--ink-800); color:var(--lime);
+}
+:is(html.night-workspace.scout-workspace,.night-match) :is(.sort-switch,.picker-pos,.cmp-view-switch,.trade-history-tabs,.event-filters,.segmented) > button:hover {
+  border-color:var(--ink-700);
+}
+html.night-workspace.scout-workspace #tabs .nav-secondary .tab { border-color:var(--line-strong); min-height:32px; height:auto; font-weight:600; }
+html.night-workspace.scout-workspace #tabs .nav-secondary .tab.active { border-color:var(--ink-800); }
+
+/* Small actions and fields, without touching the shared masthead. */
+html.night-workspace.scout-workspace .draft-workspace-main .btn,
+.night-match .button {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  min-height:34px; padding:7px 14px; border:1px solid var(--line-strong);
+  border-radius:var(--ui-chip-radius); background:var(--card); color:var(--text-1);
+  font:600 13px/1.4 var(--font); box-shadow:none;
+}
+html.night-workspace.scout-workspace .draft-workspace-main .btn-primary,
+.night-match .button.primary { background:var(--lime); border-color:var(--lime); color:var(--lime-ink); }
+html.night-workspace.scout-workspace .draft-workspace-main .btn:hover,
+.night-match .button:hover { border-color:var(--ink-700); color:var(--ink-800); }
+html.night-workspace.scout-workspace .draft-workspace-main .btn-primary:hover,
+.night-match .button.primary:hover { background:var(--lime-strong); border-color:var(--lime-strong); color:var(--lime-ink); filter:none; }
+:is(html.night-workspace.scout-workspace,.night-match) :is(.draft-workspace-main button,.button):disabled { opacity:.45; cursor:not-allowed; }
+:is(html.night-workspace.scout-workspace,.night-match) :is(.input,.select,.select-sm,select,textarea.input) {
+  border:1px solid var(--line-strong); border-radius:var(--ui-field-radius);
+  background:var(--card); color:var(--text-1); min-height:34px;
+  padding:6px 10px; font:500 12.5px/1.5 var(--font); box-shadow:none;
+}
+:is(html.night-workspace.scout-workspace,.night-match) :is(.input,.select,select)::placeholder { color:var(--text-3); }
+:is(html.night-workspace.scout-workspace,.night-match) :is(button,a,input,select,textarea,[tabindex]):focus-visible { outline:2px solid var(--final); outline-offset:3px; }
+:is(html.night-workspace.scout-workspace,.night-match) :is(.field-label,.trade-round-filter,.fun-toolbar label,.gw-slicer-label) { font-size:12px; font-weight:500; color:var(--text-2); }
+html.night-workspace.scout-workspace .panel-head { align-items:center; gap:10px 12px; }
+html.night-workspace.scout-workspace :is(.panel-head h2,.fun-card h3) { font-size:17px; font-weight:700; letter-spacing:0; }
+html.night-workspace.scout-workspace :is(.panel-sub,.table-note,.share-lede,.free-agent-lede,.trade-intro,.trade-return-intro,.trade-return-note,.fun-rule,.fun-note,.match-open-note) { font-size:var(--ui-note-size); color:var(--text-3); line-height:1.7; }
+
+/* Tiny badges use the same size, corner and typographic hierarchy. */
+:is(html.night-workspace.scout-workspace,.night-match) :is(.pos-pill,.tx-kind,.own-tag,.cmp-formation,.trade-return-badge,.verdict-badge) {
+  display:inline-flex; align-items:center; gap:4px; min-height:22px;
+  padding:3px 7px; border:0; border-radius:var(--ui-label-radius);
+  font:600 11px/1.35 var(--font); white-space:nowrap;
+  background:var(--paper); color:var(--text-2);
+}
+html.night-workspace.scout-workspace .pos-GKP { background:var(--pending-soft); color:var(--pending); }
+html.night-workspace.scout-workspace .pos-DEF { background:var(--upcoming-soft); color:var(--upcoming); }
+html.night-workspace.scout-workspace .pos-MID { background:#F0EBF5; color:#76538E; }
+html.night-workspace.scout-workspace .pos-FWD { background:var(--live-soft); color:var(--lose); }
+html.night-workspace.scout-workspace :is(.tx-kind.kind-t,.own-tag.mine,.cmp-formation,.trade-return-badge) { background:var(--ink-100); color:var(--ink-800); }
+html.night-workspace.scout-workspace :is(.tx-kind.kind-w,.own-tag.ok) { background:var(--upcoming-soft); color:var(--upcoming); }
+html.night-workspace.scout-workspace .tx-kind.kind-f { background:var(--final-soft); color:var(--final); }
+html.night-workspace.scout-workspace :is(.own-tag.warn,.v-even) { background:var(--pending-soft); color:var(--pending); }
+html.night-workspace.scout-workspace .v-good { background:var(--final-soft); color:var(--final); }
+html.night-workspace.scout-workspace .v-bad { background:var(--live-soft); color:var(--lose); }
+
+/* State is always a colour AND an existing, meaningful text label. */
+:is(html.night-workspace.scout-workspace,.night-match) :is(.fa-status,.fx-state,.match-state-badge,.live-count) {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  min-height:23px; padding:5px 9px; border:0; border-radius:999px;
+  font:600 11.5px/1 var(--font); white-space:nowrap;
+}
+:is(html.night-workspace.scout-workspace,.night-match) :is(.fa-status,.fx-state,.match-state-badge):before { content:""; width:7px; height:7px; flex:0 0 auto; border-radius:50%; background:currentColor; }
+html.night-workspace.scout-workspace .fa-status.available { background:var(--final-soft); color:var(--final); }
+html.night-workspace.scout-workspace .fa-status.doubtful { background:var(--pending-soft); color:var(--pending); }
+html.night-workspace.scout-workspace :is(.fa-status.injured,.fa-status.suspended) { background:var(--live-soft); color:var(--lose); }
+html.night-workspace.scout-workspace .fa-status.unavailable { background:var(--missing-soft); color:var(--missing); }
+html.night-workspace.scout-workspace #tab-fixtures .fx-state { font-size:11.5px; padding:5px 9px; gap:6px; }
+html.night-workspace.scout-workspace #tab-fixtures .fx-state:before { width:7px; height:7px; }
+
+/* Table rhythm, neutral ranks and quiet manager identities. */
+html.night-workspace.scout-workspace :is(.table,.trade-cmp-table) { font:400 13.5px/1.5 var(--font); }
+html.night-workspace.scout-workspace :is(.table,.trade-cmp-table) th {
+  padding:10px 12px; background:var(--card); border-bottom:2px solid var(--line-strong);
+  color:var(--text-3); font-size:11.5px; font-weight:600;
+}
+html.night-workspace.scout-workspace :is(.table,.trade-cmp-table) td { padding:10px 12px; border-color:var(--line); }
+html.night-workspace.scout-workspace .table :is(td.ta-r,td.ta-c):not(.rank-cell) { font-family:var(--font-num); }
+html.night-workspace.scout-workspace :is(.team-name,.fa-player-copy strong,.trade-return-copy strong,.fun-identity strong) { font-size:13.5px; font-weight:600; color:var(--text-1); }
+html.night-workspace.scout-workspace :is(.team-manager,.fa-player-copy span,.fun-identity small,.trade-manager-line) { font:400 11px/1.5 var(--font); color:var(--text-3); }
+html.night-workspace.scout-workspace .night-manager-mark { display:inline-block; width:10px; height:10px; margin-right:7px; border-radius:3px; vertical-align:0; background:var(--manager-color,var(--text-3)); }
+html.night-workspace.scout-workspace .night-rank,
+html.night-workspace.scout-workspace :is(.trade-return-rank,.fun-rank) {
+  display:inline-grid; place-items:center; width:24px; height:24px; margin:0;
+  border-radius:7px; background:var(--paper); color:var(--text-3); font:700 12px/1 var(--font-num);
+}
+html.night-workspace.scout-workspace :is(.night-rank.is-leading,.trade-return-rank.top,.fun-rank.top) { background:var(--ink-800); color:var(--lime); }
+html.night-workspace.scout-workspace .rank-cell { white-space:nowrap; color:var(--text-3); font-size:11px; }
+html.night-workspace.scout-workspace .rank-cell :is(.trend-up,.trend-down,.trend-flat) { display:inline-block; min-width:18px; margin-left:3px; font-size:9px; }
+html.night-workspace.scout-workspace .form-dot { min-width:23px; width:auto; height:23px; padding:0 3px; border-radius:7px; font:600 10px/1 var(--font-num); }
+html.night-workspace.scout-workspace .form-dot.g { background:var(--final-soft); color:var(--final); }
+html.night-workspace.scout-workspace .form-dot.r { background:var(--live-soft); color:var(--lose); }
+html.night-workspace.scout-workspace .form-dot.n { background:var(--missing-soft); color:var(--missing); }
+html.night-workspace.scout-workspace .free-agent-pager { font-size:11px; color:var(--text-3); gap:12px; }
+
+/* Trades: remove the old coloured top borders and tinted legacy row boxes. */
+html.night-workspace.scout-workspace .trade-return-card { background:var(--card); border:1px solid var(--line); border-radius:18px; }
+html.night-workspace.scout-workspace .trade-return-head h3 { font-size:16px; font-weight:700; }
+html.night-workspace.scout-workspace .trade-return-ranking-head { padding:8px 10px; border-radius:7px; background:var(--paper); color:var(--text-3); font-size:11px; }
+html.night-workspace.scout-workspace .trade-return-metric { background:var(--paper); padding:12px 10px; border-radius:10px; }
+html.night-workspace.scout-workspace .trade-return-metric strong { font:700 23px/1.3 var(--font-num); }
+html.night-workspace.scout-workspace .trade-return-score b { font:700 20px/1.3 var(--font-num); }
+html.night-workspace.scout-workspace .trade-return-player-points { font:600 10.5px/1.5 var(--font-num); }
+html.night-workspace.scout-workspace :is(.trade-return-warning,.data-notice) { padding:9px 12px; border:1px solid #9a6a0020; border-radius:8px; background:var(--pending-soft); color:var(--pending); font-size:11px; }
+html.night-workspace.scout-workspace .trade-manager-hint { font-size:11px; font-weight:600; color:var(--ink-800); }
+html.night-workspace.scout-workspace .tx-group { padding:14px 16px; border:1px solid var(--line); border-radius:12px; background:var(--card); }
+html.night-workspace.scout-workspace .tx-manager { font-size:13.5px; font-weight:600; color:var(--text-1); }
+html.night-workspace.scout-workspace .tx-count { margin-left:auto; padding:2px 7px; border-radius:7px; background:var(--paper); font:500 11px/1.5 var(--font-num); color:var(--text-3); }
+html.night-workspace.scout-workspace .tx-row { padding:9px 10px; border-radius:8px; background:var(--paper); color:var(--text-1); font-size:12px; }
+html.night-workspace.scout-workspace .tx-meta { font:400 11px/1.5 var(--font); color:var(--text-3); }
+html.night-workspace.scout-workspace .tx-in { color:var(--final); }
+html.night-workspace.scout-workspace .tx-out { color:var(--lose); }
+
+/* Fixture controls retain their independent filters and full-season navigation. */
+html.night-workspace.scout-workspace #tab-fixtures :is(.fx-gw-back,.fx-round-nav button) { border:1px solid var(--line-strong); border-radius:999px; background:var(--card); font:600 12px/1.4 var(--font); padding:6px 12px; }
+html.night-workspace.scout-workspace #tab-fixtures .fx-gw-nav { border-radius:999px; }
+html.night-workspace.scout-workspace #tab-fixtures .fx-match-identity b { font-size:13.5px; font-weight:600; }
+html.night-workspace.scout-workspace #tab-fixtures .fx-match-score strong { font-weight:700; }
+html.night-workspace.scout-workspace #tab-fixtures .fx-manager-rank { display:grid; place-items:center; width:24px; height:24px; border-radius:7px; background:#ffffff70; font:600 11px var(--font-num); }
+html.night-workspace.scout-workspace #tab-fixtures .fx-manager-choice[aria-pressed=true] .fx-manager-rank { background:#ffffff0c; }
+html.night-workspace.scout-workspace .gw-slicer-wrap { padding:10px 14px; background:var(--card); border-color:var(--line); border-radius:12px; }
+html.night-workspace.scout-workspace .gw-slicer .sort-btn { border-radius:10px; min-width:64px; padding:7px 10px; font:700 12px/1.4 var(--font-num); }
+html.night-workspace.scout-workspace .gw-slicer .sort-btn.active { box-shadow:none; }
+
+/* Squad tools: the same inset surfaces, nameplates, tags and action shapes. */
+html.night-workspace.scout-workspace :is(.cmp-side-title h3,.trade-side-title) { font-size:14px; font-weight:700; color:var(--text-1); }
+html.night-workspace.scout-workspace :is(.cmp-stat,.squad-row,.picked-row) { background:var(--paper); border-color:var(--line); border-radius:8px; }
+html.night-workspace.scout-workspace .cmp-stat { font-size:11px; padding:8px 9px; }
+html.night-workspace.scout-workspace .cmp-stat b { font:700 13px var(--font-num); color:var(--ink-800); }
+html.night-workspace.scout-workspace :is(.squad-cost,.squad-pts,.pick-opt .cost) { font-family:var(--font-num); }
+html.night-workspace.scout-workspace .picker-pos { margin:8px 0 0; }
+html.night-workspace.scout-workspace .picker-results { background:var(--card); border-color:var(--line-strong); border-radius:12px; box-shadow:var(--shadow-2); }
+html.night-workspace.scout-workspace .pick-opt { border-color:var(--line); padding:10px 12px; color:var(--text-1); font-size:12.5px; }
+html.night-workspace.scout-workspace .pick-opt:hover { background:var(--paper); }
+html.night-workspace.scout-workspace .picked-row .rm { display:grid; place-items:center; width:26px; height:26px; border-radius:50%; color:var(--lose); background:var(--live-soft); }
+html.night-workspace.scout-workspace :is(.share-canvas-shell,.share-editor-pitch,.cmp-pitch) { border-radius:12px; }
+html.night-workspace.scout-workspace .share-toolbar { border-color:var(--line); padding-block:12px; }
+html.night-workspace.scout-workspace .share-legend { font-size:11px; color:var(--text-2); }
+html.night-workspace.scout-workspace .share-lock-badge { border-radius:999px; font-size:9px; }
+html.night-workspace.scout-workspace .pred-row { padding:14px 16px; border-radius:12px; }
+html.night-workspace.scout-workspace .pred-team { font-size:13.5px; font-weight:600; }
+html.night-workspace.scout-workspace .pred-est { font:700 21px/1.3 var(--font-num); }
+html.night-workspace.scout-workspace .pred-bar { border-radius:999px; height:5px; }
+
+/* Fun boards and dialogs keep real counts, pending flags and all detail rows. */
+html.night-workspace.scout-workspace .fun-card { border-radius:18px; box-shadow:var(--shadow-1); }
+html.night-workspace.scout-workspace .fun-rule { min-height:0; }
+html.night-workspace.scout-workspace .fun-table-head { background:var(--paper); color:var(--text-3); font-size:11px; }
+html.night-workspace.scout-workspace .fun-value { font:700 20px/1.3 var(--font-num); }
+html.night-workspace.scout-workspace .fun-share { border-radius:999px; padding:5px 9px; font:600 11px/1.4 var(--font); }
+html.night-workspace.scout-workspace :is(.md-share-btn,.md-retry) { border-radius:999px; font:600 12px var(--font); }
+html.night-workspace.scout-workspace :is(.md-close,.modal-close,.fun-close,.tm-close) { width:34px; height:34px; min-height:34px; padding:0; border-radius:50%; }
+html.night-workspace.scout-workspace .tm-dialog-heading>div>span { display:none; }
+html.night-workspace.scout-workspace .tm-columns { background:var(--ink-100); color:var(--text-2); border-radius:7px; }
+html.night-workspace.scout-workspace .tm-round-heading { background:var(--paper); border-color:var(--line); }
+html.night-workspace.scout-workspace .tm-source { color:var(--text-2); }
+html.night-workspace.scout-workspace .tm-player strong { font-family:var(--font-num); }
+html.night-workspace.scout-workspace .tm-dialog :is(.positive,.tm-in .tm-player strong) { color:var(--final); }
+html.night-workspace.scout-workspace .tm-dialog .negative { color:var(--lose); }
+html.night-workspace.scout-workspace .fun-dialog .fun-share { background:#ffffff0c; border-color:#ffffff30; color:var(--lime); }
+html.night-workspace.scout-workspace .fun-dialog :is(.fun-note,.fun-share-status,.fun-detail-total span,.fun-bench small,.fun-detail-round h3 span) { color:var(--text-on-ink-2); }
+html.night-workspace.scout-workspace #squadModal .cmp-side-title h3 { color:var(--text-on-ink); }
+html.night-workspace.scout-workspace #squadModal .cmp-stat { background:#ffffff08; border-color:#ffffff15; color:var(--text-on-ink-2); }
+html.night-workspace.scout-workspace #squadModal .cmp-stat b { color:var(--lime); }
+
+/* Match centre details also use this layer in the ShadowRoot. */
+.night-match :is(.event-filters,.segmented) { padding:4px 18px 12px; }
+.night-match .score-tools { padding:0 0 4px; }
+.night-match #refreshData { padding:5px 0 5px 8px; min-height:32px; border:0; border-radius:7px; background:none; color:var(--text-2); font:600 12.5px var(--font); }
+.night-match .event-card,.night-match .event-card:has(.event-share-actions) { min-height:82px; padding:10px 18px; gap:4px 10px; grid-template-columns:34px minmax(0,1fr) 102px; }
+.night-match .event-player-club { font-size:12px; font-weight:500; }
+.night-match .event-owner-tag { margin-top:4px; border-left-width:4px; font-size:11px; padding:0 7px; }
+.night-match .event-points { font-size:15px; font-weight:700; }
+.night-match .event-observation { display:flex; align-items:baseline; justify-content:flex-end; gap:0 4px; flex-wrap:wrap; }
+.night-match .event-result :is(.event-minute,.event-type-label) { font-size:11px; line-height:1.5; }
+.night-match .event-type-label:before { content:"· "; }
+.night-match .event-share-actions button { border-radius:7px; font-size:11px; padding:3px 8px; min-height:26px; }
+.night-match .component-player .event-player-name { font-size:13px; }
+.night-match .component-player .event-player-club { font-size:11px; }
+.night-match .component-player .event-owner-tag { font-size:10px; }
+.night-match .goal-component .points-chip { font-size:12px; }
+.night-match .score-group-heading { font-size:12.5px; font-weight:600; padding:8px 18px; }
+.night-match .score-group-heading span { font-size:11px; }
+.night-match .live-count i { width:7px; height:7px; }
+.night-match .match-select { grid-template-columns:40px minmax(0,1fr) auto minmax(0,1fr) 76px; gap:8px; padding:11px 38px 11px 18px; }
+.night-match .match-time { font-size:11px; }
+.night-match .team-name { font-size:13.5px; font-weight:600; }
+.night-match .score-pair { min-width:68px; padding:5px 9px; border-radius:9px; font-size:20px; }
+.night-match .score-minute { font-size:10px; }
+.night-match .star { font-size:17px; right:7px; width:24px; color:var(--line-strong); }
+.night-match .star[aria-pressed=true] { color:#E8B93E; }
+.night-match .completed-matches-toggle { padding:12px 18px; font-size:12.5px; }
+.night-match .completed-toggle-hint { font-size:11px; }
+.night-match .date-switch [data-day] { border-radius:10px; padding:6px 12px; }
+.night-match :is(.feed-scope,.feed-reading-guide,.timeline-label,.feed-foot,.scoring-guide) { font-size:11px; }
+.night-match .data-notice { border-radius:8px; }
+.night-match #gwSelect { background:var(--ink-800); color:var(--lime); border-color:var(--ink-800); font-family:var(--font-num); border-radius:7px; }
+:is(#shareDialog,#guideDialog,#feedbackDialog) .button { display:inline-flex; align-items:center; justify-content:center; min-height:34px; padding:7px 14px; border:1px solid #ffffff30; border-radius:999px; font:600 13px/1.4 var(--font); background:#ffffff0c; color:var(--text-on-ink); }
+:is(#shareDialog,#guideDialog) .button.primary { background:var(--lime); color:var(--lime-ink); border-color:var(--lime); }
+:is(#shareDialog,#guideDialog,#feedbackDialog) .close-button { width:34px; height:34px; border-radius:50%; background:#ffffff0d; border:1px solid #ffffff20; color:var(--text-on-ink); }
+
+@media(max-width:1199px) and (min-width:761px) {
+  .night-match .match-select { grid-template-columns:30px minmax(0,1fr) auto minmax(0,1fr) 62px; gap:5px; padding:11px 29px 11px 12px; }
+  .night-match .team-name { font-size:12px; }
+  :is(html.night-workspace.scout-workspace,.night-match) .match-state-badge { font-size:10px; padding:5px 6px; gap:4px; }
+  :is(html.night-workspace.scout-workspace,.night-match) .match-state-badge:before { width:5px; height:5px; }
+}
+@media(max-width:700px) {
+  html.night-workspace.scout-workspace :is(.panel-head-controls,.compare-controls,.free-agent-toolbar) { gap:8px; }
+  html.night-workspace.scout-workspace :is(.input,.select,select,textarea.input) { font-size:16px; }
+  html.night-workspace.scout-workspace :is(.table,.trade-cmp-table) { font-size:12px; }
+  html.night-workspace.scout-workspace :is(.table,.trade-cmp-table) :is(th,td) { padding:9px 10px; }
+  html.night-workspace.scout-workspace :is(.team-name,.fa-player-copy strong) { font-size:12.5px; }
+  html.night-workspace.scout-workspace #tab-fixtures .fx-match-identity b { font-size:12.5px; }
+  html.night-workspace.scout-workspace .trade-return-copy strong { font-size:13px; }
+  html.night-workspace.scout-workspace .cmp-view-switch { flex-wrap:wrap; }
+}
+@media(max-width:760px) {
+  .night-match .event-card,.night-match .event-card:has(.event-share-actions) { padding:11px 14px; grid-template-columns:30px minmax(0,1fr) 96px; gap:4px 8px; }
+  .night-match :is(.event-filters,.segmented) { padding-inline:14px; }
+  :is(html.night-workspace.scout-workspace,.night-match) .event-filters>button { font-size:12px; padding-inline:10px; }
+  .night-match .event-player-club { font-size:11px; }
+  .night-match .event-owner-tag { font-size:10px; }
+  .night-match .event-result :is(.event-minute,.event-type-label) { font-size:10px; }
+  .night-match .match-select { grid-template-columns:28px minmax(0,1fr) auto minmax(0,1fr) 58px; gap:5px; padding:11px 28px 11px 10px; }
+  .night-match .team-name { font-size:11px; }
+  .night-match .match-time { font-size:10px; }
+  :is(html.night-workspace.scout-workspace,.night-match) .match-state-badge { padding:5px 6px; gap:4px; font-size:9.5px; }
+  :is(html.night-workspace.scout-workspace,.night-match) .match-state-badge:before { width:5px; height:5px; }
+  .night-match .score-pair { min-width:59px; padding:5px; font-size:18px; }
+  .night-match .score-minute { font-size:9px; }
+  .night-match .star { right:2px; }
+}
+@media(max-width:380px) {
+  .night-match .match-select { grid-template-columns:24px minmax(0,1fr) auto minmax(0,1fr) 52px; gap:4px; padding-left:8px; }
+  :is(html.night-workspace.scout-workspace,.night-match) .match-state-badge { font-size:9px; padding:5px 4px; gap:3px; }
+  :is(html.night-workspace.scout-workspace,.night-match) .event-filters>button { font-size:11px; padding-inline:8px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  :is(html.night-workspace.scout-workspace,.night-match) :is(button,.live-count i,.match-state-badge:before) { transition:none; animation:none; }
+}

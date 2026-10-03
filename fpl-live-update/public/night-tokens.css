@@ -1,0 +1,18 @@
+/* Match Night, adapted from the approved DESIGN.md. Shared with Shadow DOM. */
+:root, :host {
+  --ink-900:#0B1F17; --ink-800:#12382A; --ink-700:#1B4A37; --ink-100:#E7EFE9;
+  --lime:#D9EF9E; --lime-strong:#C4E86E; --lime-ink:#2A3A12;
+  --paper:#F3F5F1; --card:#fff; --line:#E3E9E2; --line-strong:#CBD5CB;
+  --text-1:#14201A; --text-2:#4A5A50; --text-3:#748178;
+  --text-on-ink:#EDF4EE; --text-on-ink-2:#A9BCB0;
+  --live:#E4572E; --live-soft:#FDEDE7; --upcoming:#2F6FED; --upcoming-soft:#EAF1FE;
+  --final:#3E7C4F; --final-soft:#E9F3EB; --pending:#9A6A00; --pending-soft:#FBF2DC;
+  --missing:#6B7770; --missing-soft:#EFF1EF; --win:#3E7C4F; --lose:#B3402A; --draw:#6B7770;
+  --r-sm:8px; --r-md:12px; --r-lg:18px;
+  --shadow-1:0 1px 2px rgba(11,31,23,.06),0 2px 8px rgba(11,31,23,.05);
+  --shadow-2:0 8px 28px rgba(11,31,23,.16);
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --font-num:"SF Mono","DIN Alternate","Roboto Mono",ui-monospace,monospace;
+  --maxw:1240px; --gutter:20px;
+}
+@media(max-width:640px){:root,:host{--gutter:12px}}

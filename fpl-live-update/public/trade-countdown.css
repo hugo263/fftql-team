@@ -1,0 +1,51 @@
+/* v97 — reference night scoreboards, still using official Draft window times. */
+.trade-countdowns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-bottom:18px; grid-column:1/-1; }
+.trade-clock {
+  --clock-signal:#D9EF9E; --clock-glow:#d9ef9e33;
+  position:relative; isolation:isolate; overflow:hidden; min-width:0;
+  padding:16px 18px 14px; border:1px solid #d9ef9e38; border-radius:16px;
+  color:#EDF4EE; box-shadow:var(--shadow-1,0 4px 16px #0b1f1710);
+  background:repeating-linear-gradient(90deg,#ffffff06 0 46px,transparent 46px 92px),linear-gradient(150deg,#10321F,#0B1F17 55%,#08160F);
+}
+.trade-clock-close { --clock-signal:#FF9F80; --clock-glow:#ff9f8033; border-color:#ff9f8038; }
+.trade-clock:before { content:""; position:absolute; top:-70px; left:12%; width:220px; height:150px; background:radial-gradient(ellipse,var(--clock-glow),transparent 70%); pointer-events:none; }
+.trade-clock-content { position:relative; display:flex; align-items:center; gap:16px; }
+.trade-clock-icon { position:relative; display:grid; place-items:center; width:58px; height:58px; border-radius:50%; border:1.5px solid #d9ef9e8c; flex-shrink:0; color:var(--clock-signal); background:#d9ef9e12; }
+.trade-clock-icon:before { content:""; position:absolute; inset:4px; border:1px dashed #d9ef9e4d; border-radius:50%; }
+.trade-clock-close .trade-clock-icon { border-color:#ff9f8099; background:#ff9f8014; }
+.trade-clock-close .trade-clock-icon:before { border-color:#ff9f804d; }
+.trade-clock-icon svg { width:26px; height:26px; }
+.trade-clock-copy { flex:1; min-width:0; }
+.trade-clock-heading { display:flex; align-items:baseline; flex-wrap:wrap; gap:5px 8px; }
+.trade-clock-heading h3 { margin:0; color:#EDF4EE; font:800 13.5px/1.4 var(--font,inherit); }
+.trade-clock-gw { color:var(--clock-signal); font:600 10.5px/1.4 var(--font-num,monospace); white-space:nowrap; }
+.trade-clock-date { margin-left:auto; color:#A9BCB0; font:400 10.5px/1.5 var(--font-num,monospace); white-space:nowrap; }
+.trade-clock-date span { font-family:var(--font,inherit); font-size:9px; }
+.trade-clock-digits { display:flex; gap:4px; align-items:center; margin:8px 0; }
+.trade-clock-digits>span { display:inline-flex; align-items:baseline; gap:4px; }
+.trade-clock-digits b { position:relative; display:grid; place-items:center; min-width:34px; padding:2px 4px; border-radius:8px; border:1px solid #d9ef9e47; color:var(--clock-signal); background:linear-gradient(#ffffff17,#ffffff08); font:800 21px/1.35 var(--font-num,monospace); font-variant-numeric:tabular-nums; }
+.trade-clock-close .trade-clock-digits b { border-color:#ff9f8047; }
+.trade-clock-digits b:after { content:""; position:absolute; top:50%; left:0; right:0; height:1px; background:#00000055; }
+.trade-clock-digits small { color:#A9BCB0; font-size:10px; line-height:1; }
+.trade-clock-separator { color:var(--clock-signal); font:800 16px/1 var(--font-num,monospace); opacity:.55; }
+.trade-clock-note { position:relative; margin:6px 0 0; color:#A9BCB0; font-size:10.5px; line-height:1.5; }
+.trade-clock-empty { font-size:13px; margin:12px 0; color:#A9BCB0; }
+.trade-clock-watermark { position:absolute; right:-14px; bottom:-18px; width:110px; height:110px; color:var(--clock-signal); opacity:.10; pointer-events:none; z-index:-1; }
+.trade-clock-progress { height:4px; overflow:hidden; border-radius:99px; background:#ffffff0b; margin-top:7px; }
+.trade-clock-progress>span { display:block; height:100%; background:linear-gradient(90deg,#D9EF9E,#9BCB4E); border-radius:99px; }
+.trade-clock-close .trade-clock-progress>span { background:linear-gradient(90deg,#FF9F80,#E4572E); }
+@media(max-width:700px) {
+  .trade-countdowns { grid-template-columns:1fr; gap:12px; }
+  .trade-clock { padding:14px 16px 12px; }
+  .trade-clock-content { gap:13px; }
+  .trade-clock-icon { width:50px; height:50px; }
+  .trade-clock-digits b { font-size:19px; min-width:31px; }
+  .trade-clock-digits small { font-size:9px; }
+  .trade-clock-separator { font-size:14px; }
+  .trade-clock-date { flex-basis:100%; margin-left:0; font-size:10px; }
+}
+@media(max-width:380px) {
+  .trade-clock-digits { gap:3px; }
+  .trade-clock-digits>span { gap:3px; }
+  .trade-clock-digits b { min-width:27px; padding-inline:3px; }
+}

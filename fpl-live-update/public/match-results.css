@@ -1,0 +1,17 @@
+/* Local v52: uniform two-cell scores for weekly results only. */
+#lastGwMatchList .match-card { grid-template-columns: minmax(0,1fr) 116px minmax(0,1fr); }
+#lastGwMatchList .match-side { flex-direction: row; align-items: center; gap: 8px; flex-wrap: wrap; }
+#lastGwMatchList .match-side.right { justify-content: flex-end; }
+#lastGwMatchList .match-side.winner .match-team { color: #174a30; font-weight: 850; }
+#lastGwMatchList .match-result-badge { background: #d9ef9e; color: #174a30; border: 1px solid #bad778; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 800; line-height: 1.5; }
+#lastGwMatchList .match-score { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0; padding: 0; overflow: hidden; border: 1px solid #dfe7d8; border-radius: 6px; background: #f2f5ed; letter-spacing: -.5px; }
+#lastGwMatchList .match-score-number { display: grid; place-items: center; min-height: 42px; padding: 4px 0; font-size: 22px; font-weight: 850; font-variant-numeric: tabular-nums; }
+#lastGwMatchList .match-score-number.is-winner { color: white; background: #1c5136; }
+#lastGwMatchList .match-score-number.is-loser { color: #7d8879; font-weight: 650; }
+#lastGwMatchList .match-score-pending { grid-column: 1 / -1; padding: 9px; }
+@media(max-width:640px) {
+  #lastGwMatchList .match-card { grid-template-columns: minmax(0,1fr) 104px minmax(0,1fr); gap: 8px; }
+  #lastGwMatchList .match-team { overflow-wrap: anywhere; }
+  #lastGwMatchList .match-side { gap: 5px; }
+  #lastGwMatchList .match-score-number { font-size: 20px; }
+}

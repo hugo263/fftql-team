@@ -1,0 +1,52 @@
+/* Shared light dialogs. Also loaded inside the match centre's ShadowRoot. */
+/* Public pages intentionally stay light, including on dark-system phones.
+ * `only` opts out of browser automatic darkening where supported. It cannot
+ * override every third-party browser's user-forced night mode. */
+:root,html.tql-brand,:host { color-scheme:light; color-scheme:only light; }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(dialog,.modal) {
+  --text:#14201a; --text-dim:#4a5a50; --text-faint:#748178;
+  color-scheme:light; color-scheme:only light; background:#fff; color:#14201a; border:1px solid #dce5d7;
+  border-radius:18px; box-shadow:0 24px 80px #0b1f1729;
+}
+:is(html.night-workspace.scout-workspace,html.night-match,:host) dialog::backdrop { background:#14251e66;backdrop-filter:blur(4px); }
+html.night-workspace.scout-workspace .modal-backdrop { background:#14251e66;backdrop-filter:blur(4px); }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.md-header,.modal-head,.tm-dialog-heading,.fun-dialog>header,.league-id-guide-head,.feedback-dialog-card) {
+  background:#fff; color:#14201a; border-color:#e3e9e2;
+}
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.md-header h2,.md-team-head h3,.modal-head h2,.modal-head h3,.tm-dialog-heading h2,.fun-dialog h2,.league-id-guide-head h2,.feedback-dialog-copy h2) { color:#14201a; }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.md-header-copy p,.md-team-head p,.md-state-legend,.md-scoring-note,.manager-view-subtitle,.manager-view-context,.manager-view-score-note,.manager-view-pitch-heading,.tm-dialog-heading span,.feedback-dialog-copy p,.modal-help,.modal-head .eyebrow,.league-id-guide-kicker) { color:#607166; }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.md-close,.modal-close,.tm-close,.fun-close,.league-id-guide-head button,.close-button) {
+  display:inline-grid; place-items:center; width:36px; height:36px; flex:none;
+  background:#f3f5f1; color:#294332; border:1px solid #dce5d7; border-radius:50%;
+}
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.md-share-btn,.fun-share,.share-buttons .button) {
+  background:#f0f4eb; color:#244a33; border:1px solid #ccd9c4; border-radius:8px;
+}
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.md-header,.modal-head,.tm-dialog-heading,.fun-dialog>header) { border-bottom:1px solid #e3e9e2; }
+html.night-workspace.scout-workspace .md-body { background:#f7f9f5; }
+html.night-workspace.scout-workspace .md-side { background:#fff;border-color:#dce5d7;border-radius:14px; }
+html.night-workspace.scout-workspace .md-team-head { background:#fff;border-radius:0; }
+html.night-workspace.scout-workspace .md-team-score { background:#edf4e3;border:1px solid #d9e5ca;border-radius:10px;padding:8px 12px; }
+html.night-workspace.scout-workspace .md-team-score strong { color:#23492d; }
+html.night-workspace.scout-workspace .md-team-score span { color:#607166; }
+html.night-workspace.scout-workspace .md-progress { background:#f3f6ee;color:#607166;border-color:#e3e9e2; }
+html.night-workspace.scout-workspace .md-progress b { color:#23492d; }
+html.night-workspace.scout-workspace :is(.md-notice-row,.md-share-feedback) { background:#fff;color:#607166;border-color:#e3e9e2; }
+html.night-workspace.scout-workspace :is(.md-notice-row p,.md-loading) { color:#607166; }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.md-share-feedback a,.league-id-guide-body a) { color:#315c27; }
+html.night-workspace.scout-workspace #squadModal .manager-view-summary>span { background:#f3f6ee;border-color:#e3e9e2;color:#607166;border-radius:10px; }
+html.night-workspace.scout-workspace #squadModal .manager-view-summary b { color:#23492d; }
+html.night-workspace.scout-workspace .fun-detail-round { border-color:#e3e9e2; }
+html.night-workspace.scout-workspace .fun-detail-round h3 { color:#315c27; }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) :is(.league-id-guide-example,.share-image-wrap) { background:#f3f6ee;border-color:#dce5d7; }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) .guide-steps code { background:#edf4e3;color:#315c27; }
+:is(html.night-workspace.scout-workspace,html.night-match,:host) dialog :is(button,a):focus-visible { outline:2px solid #49794a;outline-offset:3px; }
+html.night-workspace.scout-workspace #matchDetailDialog :is(.md-progress,.md-player-status,.md-bench-heading,.md-state-legend,.md-scoring-note) { color:#496344; }
+html.night-workspace.scout-workspace #matchDetailDialog .md-state-playing .md-player-status { color:#b64122; }
+html.night-workspace.scout-workspace .fun-dialog :is(.fun-note,.fun-share-status,.fun-detail-total span,.fun-bench small,.fun-detail-round h3 span) { color:#607166; }
+html.night-workspace.scout-workspace .fun-dialog .fun-share { background:#edf4e3;color:#315c27;border-color:#ccd9c4; }
+:is(#shareDialog,#guideDialog,#feedbackDialog) :is(.button,.close-button) { background:#f0f4eb;color:#244a33;border-color:#ccd9c4; }
+.portal-dialog,.style-feedback { color-scheme:light;color-scheme:only light;background:#fff;color:#14201a;border-color:#dce5d7; }
+:is(.portal-dialog,.style-feedback) :is(p,li,.eyebrow) { color:#607166; }
+:is(.portal-dialog,.style-feedback) :is(button,a) { color:#315c27;border-color:#ccd9c4; }
+.portal-dialog code { background:#edf4e3;color:#315c27; }

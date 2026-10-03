@@ -1,0 +1,246 @@
+/* TQL FPL brand skin. Load last; business layout and pitch geometry stay in their existing stylesheets. */
+html.tql-brand {
+  --tql-forest: #12382a;
+  --tql-lime: #d9ef9e;
+  --tql-canvas: #f3f5f1;
+  --tql-paper: #fff;
+  --tql-muted: #627469;
+  --tql-line: #dce4d9;
+  --tql-font: "Helvetica Neue", "Arial", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --bg: var(--tql-canvas);
+  --bg-soft: var(--tql-canvas);
+  --card: var(--tql-paper);
+  --card-hover: #edf3e8;
+  --card-strong: #edf3e8;
+  --text: var(--tql-forest);
+  --text-dim: var(--tql-muted);
+  --text-faint: var(--tql-muted);
+  --text-muted: var(--tql-muted);
+  --border: var(--tql-line);
+  --accent: #286a4b;
+  --accent-dim: var(--tql-forest);
+  --forest: var(--tql-forest);
+  --forest-deep: var(--tql-forest);
+  --lime: var(--tql-lime);
+  --mint: var(--tql-lime);
+  --ink: var(--tql-forest);
+  --muted: var(--tql-muted);
+  --line: var(--tql-line);
+  --canvas: var(--tql-canvas);
+  --paper: var(--tql-paper);
+  --heading: var(--tql-font);
+  --body: var(--tql-font);
+  --shadow: none;
+  --radius: 8px;
+  color-scheme: light;
+}
+html.tql-brand body {
+  background: var(--tql-canvas);
+  color: var(--tql-forest);
+  font-family: var(--tql-font);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+html.tql-brand :is(button, input, select, textarea) { font-family: var(--tql-font); }
+html.tql-brand :is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid #286a4b;
+  outline-offset: 3px;
+}
+html.tql-brand ::selection { background: var(--tql-lime); color: var(--tql-forest); }
+html.tql-brand .tql-wordmark {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--tql-forest);
+  text-decoration: none;
+}
+html.tql-brand .tql-wordmark img {
+  display: block;
+  width: 210px;
+  height: 44px;
+  max-width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  /* The approved mark is centered on a 3:1 production canvas. This shallow
+     frame removes only its surrounding clearspace, never any letter. */
+  object-fit: cover;
+  object-position: center;
+  /* The opaque asset's clearspace is RGB 240–247, not pure white.
+     Lift it to white before multiply so it takes the header's exact surface
+     color instead of leaving a gray rectangle. Keep the original PNG intact. */
+  filter: brightness(1.07);
+  mix-blend-mode: multiply;
+}
+html.tql-brand .tql-brand-dot { display: inline-block; width: .4em; height: .4em; margin-left: .15em; border-radius: 50%; background: var(--tql-lime); vertical-align: baseline; }
+
+/* Workbench: keep all score, trade, injury and live-state semantic colors intact. */
+html.tql-brand.scout-workspace .scout-utility {
+  color: var(--tql-muted);
+  background: var(--tql-paper);
+  border-bottom: 1px solid var(--tql-line);
+}
+html.tql-brand.scout-workspace .scout-utility-inner { height: auto; min-height: 64px; padding-block: 10px; }
+html.tql-brand.scout-workspace .scout-utility a { color: var(--tql-forest); font-weight: 700; }
+html.tql-brand.scout-workspace .scout-utility a:hover { color: #286a4b; }
+html.tql-brand.scout-workspace .preview-status { color: var(--tql-muted); }
+html.tql-brand.scout-workspace .topbar { background: var(--tql-forest); }
+html.tql-brand.scout-workspace .brand { min-width: 0; }
+html.tql-brand.scout-workspace .brand h1 {
+  color: white;
+  font-family: var(--tql-font);
+  font-weight: 800;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+html.tql-brand.scout-workspace .scout-product-label { color: var(--tql-lime); font-weight: 700; }
+html.tql-brand.scout-workspace .topbar .btn {
+  border-color: #6a8476;
+  border-radius: 6px;
+  color: white;
+  background: transparent;
+  font-weight: 700;
+}
+html.tql-brand.scout-workspace .topbar .btn:hover { border-color: var(--tql-lime); background: #244d3b; }
+html.tql-brand.scout-workspace .topbar .update-info a.btn {
+  color: var(--tql-forest);
+  background: var(--tql-lime);
+  border-color: var(--tql-lime);
+}
+html.tql-brand.scout-workspace .tabs-shell { background: white; border-color: var(--tql-line); box-shadow: none; }
+html.tql-brand.scout-workspace .tab { color: var(--tql-muted); font-weight: 700; transition: none; }
+html.tql-brand.scout-workspace .tab:hover { color: var(--tql-forest); background: var(--tql-canvas); }
+html.tql-brand.scout-workspace .tab.active {
+  color: var(--tql-forest);
+  background: var(--tql-lime);
+  border-bottom-color: var(--tql-forest);
+  border-radius: 6px 6px 0 0;
+  font-weight: 800;
+}
+html.tql-brand.scout-workspace :is(.panel, .kpi) { border-color: var(--tql-line); border-radius: 8px; box-shadow: none; }
+html.tql-brand.scout-workspace :is(.panel-head h2, .trade-return-head h3, .cmp-side-title h3, .trade-side-title) {
+  color: var(--tql-forest);
+  font-family: var(--tql-font);
+  font-style: normal;
+  font-weight: 800;
+}
+html.tql-brand.scout-workspace h2[data-kicker]::before { color: var(--tql-muted); font-weight: 700; }
+html.tql-brand.scout-workspace .kpi-value { font-family: var(--tql-font); font-weight: 800; color: var(--tql-forest); }
+html.tql-brand.scout-workspace .kpi-row .kpi:first-child { background: var(--tql-forest); border-color: var(--tql-forest); }
+html.tql-brand.scout-workspace .kpi-row .kpi:first-child .kpi-value { color: var(--tql-lime); }
+html.tql-brand.scout-workspace .kpi-row .kpi:first-child :is(.kpi-label, .kpi-extra) { color: #dce8da; }
+html.tql-brand.scout-workspace :is(.btn, .sort-btn, .input, .select, .cmp-view-switch, .cmp-view-btn, .trade-history-tabs) { border-radius: 6px; }
+html.tql-brand.scout-workspace .btn-primary { color: white; border-color: var(--tql-forest); background: var(--tql-forest); font-weight: 700; }
+html.tql-brand.scout-workspace .btn-primary:hover { color: white; background: #286a4b; border-color: #286a4b; }
+html.tql-brand.scout-workspace :is(.sort-btn.active, .cmp-view-btn.active),
+html.tql-brand.scout-workspace .trade-history-tabs button[aria-selected="true"] {
+  background: var(--tql-forest);
+  border-color: var(--tql-forest);
+  color: var(--tql-lime);
+  box-shadow: none;
+}
+html.tql-brand.scout-workspace :is(.input, .select) { background: white; color: var(--tql-forest); border-color: var(--tql-line); }
+html.tql-brand.scout-workspace :is(.input, .select):focus { border-color: #286a4b; box-shadow: none; }
+html.tql-brand.scout-workspace .table thead { background: var(--tql-canvas); }
+html.tql-brand.scout-workspace .table th { color: var(--tql-muted); font-weight: 700; }
+html.tql-brand.scout-workspace .table tbody tr:hover { background: #edf3e8; }
+html.tql-brand.scout-workspace .footer { color: var(--tql-muted); border-color: var(--tql-line); background: white; }
+html.tql-brand.scout-workspace .tabpanel.active { animation: none; }
+
+/* Entry page: solid brand surfaces; remove the decorative grid and floating shadows. */
+html.tql-brand.brand-entry .site-header { color: var(--tql-forest); background: white; border-color: var(--tql-line); }
+html.tql-brand.brand-entry .header-meta > a { color: var(--tql-forest); background: var(--tql-lime); border-color: var(--tql-lime); border-radius: 6px; }
+html.tql-brand.brand-entry .header-meta > a:hover { background: #cce68a; border-color: #cce68a; }
+html.tql-brand.brand-entry .data-status { color: var(--tql-muted); }
+html.tql-brand.brand-entry :is(.data-status i, .preview-live i) { background: var(--tql-lime); box-shadow: none; }
+html.tql-brand.brand-entry .data-status i { border: 1px solid #799851; }
+html.tql-brand.brand-entry .entry-screen::before { display: none; }
+html.tql-brand.brand-entry :is(.hero-copy h1, .entry-card h2, .guide-heading h2) { font-family: var(--tql-font); font-weight: 850; font-style: normal; }
+html.tql-brand.brand-entry .hero-copy h1 { letter-spacing: -.045em; }
+html.tql-brand.brand-entry :is(.entry-card, .workspace-preview, .league-id-guide) { border-radius: 8px; border-color: var(--tql-line); box-shadow: none; }
+html.tql-brand.brand-entry :is(.entry-card, .league-id-guide) { background: white; }
+html.tql-brand.brand-entry :is(.entry-card-head p, .guide-heading p, .guide-steps li > b, .guide-steps em, .entry-shortcuts button span) { color: var(--tql-forest); }
+html.tql-brand.brand-entry .entry-card-head > span { color: var(--tql-forest); background: var(--tql-lime); border-color: var(--tql-lime); border-radius: 6px; }
+html.tql-brand.brand-entry .input-shell { border-color: var(--tql-line); border-radius: 6px; background: var(--tql-canvas); }
+html.tql-brand.brand-entry .input-shell:focus-within { border-color: #286a4b; box-shadow: none; }
+html.tql-brand.brand-entry .input-mark { color: var(--tql-forest); }
+html.tql-brand.brand-entry #buildButton { color: white; background: var(--tql-forest); border-radius: 6px; font-weight: 800; }
+html.tql-brand.brand-entry #buildButton:hover { background: #286a4b; transform: none; }
+html.tql-brand.brand-entry .entry-shortcuts button:hover { color: var(--tql-forest); background: #edf3e8; }
+html.tql-brand.brand-entry :is(.guide-heading a, .guide-tip) { border-radius: 6px; }
+html.tql-brand.brand-entry :is(.guide-steps code, .league-id-guide details code) { color: var(--tql-forest); background: var(--tql-canvas); overflow-wrap: anywhere; }
+html.tql-brand.brand-entry .guide-tip { color: var(--tql-forest); background: #edf3e8; }
+html.tql-brand.brand-entry .preview-pitch { background: transparent; }
+html.tql-brand.brand-entry .pitch-line i { background: var(--tql-lime); box-shadow: none; }
+html.tql-brand.brand-entry .line-one i { background: white; }
+html.tql-brand.brand-entry :is(.header-meta > a, .input-shell, #buildButton) { transition: none; }
+
+/* Admin: light data surfaces, accessible text, and quiet green controls. Chart colors are configured in JS. */
+html.tql-brand.brand-admin { --blue: #537966; --purple: #809958; --red: #b44157; --orange: #9b701c; }
+html.tql-brand.brand-admin :is(.login-card, .focus-metric-card, .metric-card, .data-panel) {
+  color: var(--tql-forest);
+  background: white;
+  border-color: var(--tql-line);
+  border-radius: 8px;
+  box-shadow: none;
+}
+html.tql-brand.brand-admin .admin-topbar { background: white; border-color: var(--tql-line); backdrop-filter: none; }
+html.tql-brand.brand-admin .admin-brand { min-width: 0; }
+html.tql-brand.brand-admin :is(.login-card h1, .admin-brand h1, .page-heading h2, .range-heading h3, .data-panel-head h3) { font-weight: 800; font-style: normal; }
+html.tql-brand.brand-admin .eyebrow { color: var(--tql-forest); }
+html.tql-brand.brand-admin .admin-input { border-radius: 6px; background: var(--tql-canvas); }
+html.tql-brand.brand-admin .admin-input:focus { border-color: #286a4b; box-shadow: none; }
+html.tql-brand.brand-admin .admin-btn { color: var(--tql-forest); background: white; border-color: var(--tql-line); border-radius: 6px; font-weight: 700; }
+html.tql-brand.brand-admin .admin-btn:hover { color: var(--tql-forest); background: #edf3e8; border-color: #9cb38f; }
+html.tql-brand.brand-admin .admin-btn.primary { color: white; background: var(--tql-forest); border-color: var(--tql-forest); }
+html.tql-brand.brand-admin .admin-btn.primary:hover { background: #286a4b; }
+html.tql-brand.brand-admin .focus-metric-card { border-top-color: var(--tql-forest); }
+html.tql-brand.brand-admin .focus-metric-card:first-child { color: white; background: var(--tql-forest); border-color: var(--tql-forest); }
+html.tql-brand.brand-admin .focus-metric-card:first-child .metric-value { color: var(--tql-lime); }
+html.tql-brand.brand-admin .focus-metric-card:first-child :is(.metric-label, .metric-caption) { color: #dce8da; }
+html.tql-brand.brand-admin .focus-metric-card:nth-child(2) { border-top-color: #7d9962; }
+html.tql-brand.brand-admin .focus-metric-card:nth-child(3) { border-top-color: #a2bd70; }
+html.tql-brand.brand-admin .metric-value { font-weight: 800; font-variant-numeric: tabular-nums; }
+html.tql-brand.brand-admin :is(.exclusion-note, .range-switch, .analytics-status, .empty-state) { border-color: var(--tql-line); border-radius: 6px; background: #edf3e8; }
+html.tql-brand.brand-admin .exclusion-indicator { background: #8cac57; }
+html.tql-brand.brand-admin .range-switch button { border-radius: 6px; font-weight: 700; }
+html.tql-brand.brand-admin .range-switch button.active { color: var(--tql-lime); background: var(--tql-forest); }
+html.tql-brand.brand-admin .analytics-status.is-error { color: #9c3348; background: #fff1f3; border-color: #e8bec7; }
+html.tql-brand.brand-admin .league-link { color: #286a4b; font-weight: 700; }
+html.tql-brand.brand-admin .league-link:hover { color: var(--tql-forest); }
+html.tql-brand.brand-admin .activity-table th { color: var(--tql-muted); background: var(--tql-canvas); font-weight: 700; }
+html.tql-brand.brand-admin .activity-table td { border-bottom-color: var(--tql-line); }
+html.tql-brand.brand-admin .event-chip { color: var(--tql-forest); background: #edf3e8; border-radius: 6px; }
+html.tql-brand.brand-admin .event-chip.tab { color: var(--tql-forest); background: var(--tql-lime); }
+html.tql-brand.brand-admin .compact-item { border-radius: 6px; }
+
+html.tql-brand :is(.feedback-dialog, .match-detail-dialog) { border-radius: 8px; }
+html.tql-brand .feedback-dialog { box-shadow: 0 12px 36px #12382a26; }
+html.tql-brand :is(.feedback-dialog, .match-detail-dialog)::backdrop { backdrop-filter: none; }
+
+/* Only header adaptation is new; existing responsive module/pitch rules remain untouched. */
+@media (max-width: 780px) {
+  html.tql-brand.scout-workspace .scout-utility-inner { gap: 12px; }
+  html.tql-brand.scout-workspace .scout-utility-inner > div { gap: 10px; min-width: 0; }
+  html.tql-brand.scout-workspace .tql-wordmark img { width: 178px; height: 38px; }
+}
+@media (max-width: 640px) {
+  html.tql-brand .tql-wordmark img { width: 158px; height: 36px; }
+  html.tql-brand.scout-workspace .scout-utility-inner { min-height: 56px; }
+  html.tql-brand.scout-workspace .preview-status { display: none; }
+  html.tql-brand.brand-entry .header-inner { gap: 12px; }
+  html.tql-brand.brand-admin .admin-brand { flex-wrap: wrap; }
+}
+@media (max-width: 390px) {
+  html.tql-brand .tql-wordmark img { width: 140px; height: 34px; }
+  html.tql-brand.scout-workspace .tql-wordmark img { width: 140px; height: 34px; }
+  html.tql-brand.scout-workspace .scout-utility-inner { gap: 8px; }
+  html.tql-brand.scout-workspace .scout-utility a:not(.tql-wordmark) { font-size: 10px; }
+  html.tql-brand.brand-entry .header-meta > a { padding-inline: 8px; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.tql-brand { scroll-behavior: auto !important; }
+  html.tql-brand *, html.tql-brand *::before, html.tql-brand *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
