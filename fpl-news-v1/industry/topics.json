@@ -1,0 +1,378 @@
+{
+  "exportedAt": "2026-09-30",
+  "groups": [
+    {
+      "key": "company",
+      "name": "球队",
+      "blurb": "按球队追踪球员与阵容资讯"
+    },
+    {
+      "key": "field",
+      "name": "玩法",
+      "blurb": "区分 Classic 与 Draft"
+    },
+    {
+      "key": "genre",
+      "name": "消息分类",
+      "blurb": "按决策需要查找消息"
+    }
+  ],
+  "topics": [
+    {
+      "slug": "ars",
+      "name": "阿森纳",
+      "group": "company",
+      "entityId": "ars",
+      "tags": [
+        "阿森纳",
+        "entity:ars"
+      ],
+      "definition": "阿森纳的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "avl",
+      "name": "阿斯顿维拉",
+      "group": "company",
+      "entityId": "avl",
+      "tags": [
+        "阿斯顿维拉",
+        "entity:avl"
+      ],
+      "definition": "阿斯顿维拉的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "bou",
+      "name": "伯恩茅斯",
+      "group": "company",
+      "entityId": "bou",
+      "tags": [
+        "伯恩茅斯",
+        "entity:bou"
+      ],
+      "definition": "伯恩茅斯的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "bre",
+      "name": "布伦特福德",
+      "group": "company",
+      "entityId": "bre",
+      "tags": [
+        "布伦特福德",
+        "entity:bre"
+      ],
+      "definition": "布伦特福德的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "bha",
+      "name": "布莱顿",
+      "group": "company",
+      "entityId": "bha",
+      "tags": [
+        "布莱顿",
+        "entity:bha"
+      ],
+      "definition": "布莱顿的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "che",
+      "name": "切尔西",
+      "group": "company",
+      "entityId": "che",
+      "tags": [
+        "切尔西",
+        "entity:che"
+      ],
+      "definition": "切尔西的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "cov",
+      "name": "考文垂",
+      "group": "company",
+      "entityId": "cov",
+      "tags": [
+        "考文垂",
+        "entity:cov"
+      ],
+      "definition": "考文垂的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "cry",
+      "name": "水晶宫",
+      "group": "company",
+      "entityId": "cry",
+      "tags": [
+        "水晶宫",
+        "entity:cry"
+      ],
+      "definition": "水晶宫的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "eve",
+      "name": "埃弗顿",
+      "group": "company",
+      "entityId": "eve",
+      "tags": [
+        "埃弗顿",
+        "entity:eve"
+      ],
+      "definition": "埃弗顿的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "ful",
+      "name": "富勒姆",
+      "group": "company",
+      "entityId": "ful",
+      "tags": [
+        "富勒姆",
+        "entity:ful"
+      ],
+      "definition": "富勒姆的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "hul",
+      "name": "赫尔城",
+      "group": "company",
+      "entityId": "hul",
+      "tags": [
+        "赫尔城",
+        "entity:hul"
+      ],
+      "definition": "赫尔城的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "ips",
+      "name": "伊普斯维奇",
+      "group": "company",
+      "entityId": "ips",
+      "tags": [
+        "伊普斯维奇",
+        "entity:ips"
+      ],
+      "definition": "伊普斯维奇的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "lee",
+      "name": "利兹联",
+      "group": "company",
+      "entityId": "lee",
+      "tags": [
+        "利兹联",
+        "entity:lee"
+      ],
+      "definition": "利兹联的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "liv",
+      "name": "利物浦",
+      "group": "company",
+      "entityId": "liv",
+      "tags": [
+        "利物浦",
+        "entity:liv"
+      ],
+      "definition": "利物浦的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "mci",
+      "name": "曼城",
+      "group": "company",
+      "entityId": "mci",
+      "tags": [
+        "曼城",
+        "entity:mci"
+      ],
+      "definition": "曼城的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "mun",
+      "name": "曼联",
+      "group": "company",
+      "entityId": "mun",
+      "tags": [
+        "曼联",
+        "entity:mun"
+      ],
+      "definition": "曼联的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "new",
+      "name": "纽卡斯尔",
+      "group": "company",
+      "entityId": "new",
+      "tags": [
+        "纽卡斯尔",
+        "entity:new"
+      ],
+      "definition": "纽卡斯尔的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "nfo",
+      "name": "诺丁汉森林",
+      "group": "company",
+      "entityId": "nfo",
+      "tags": [
+        "诺丁汉森林",
+        "entity:nfo"
+      ],
+      "definition": "诺丁汉森林的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "tot",
+      "name": "热刺",
+      "group": "company",
+      "entityId": "tot",
+      "tags": [
+        "热刺",
+        "entity:tot"
+      ],
+      "definition": "热刺的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "sun",
+      "name": "桑德兰",
+      "group": "company",
+      "entityId": "sun",
+      "tags": [
+        "桑德兰",
+        "entity:sun"
+      ],
+      "definition": "桑德兰的 FPL 相关资讯。",
+      "related": []
+    },
+    {
+      "slug": "classic",
+      "name": "Classic",
+      "group": "field",
+      "tags": [
+        "Classic"
+      ],
+      "definition": "适用于 Classic 的资讯。",
+      "related": []
+    },
+    {
+      "slug": "draft",
+      "name": "Draft",
+      "group": "field",
+      "tags": [
+        "Draft"
+      ],
+      "definition": "适用于 Draft 的资讯。",
+      "related": []
+    },
+    {
+      "slug": "prices",
+      "name": "价格变动",
+      "group": "genre",
+      "tags": [
+        "价格变动"
+      ],
+      "definition": "已发生的 Classic 球员价格涨跌，价格预测须明确标注预测",
+      "related": []
+    },
+    {
+      "slug": "injuries",
+      "name": "伤停与复出",
+      "group": "genre",
+      "tags": [
+        "伤停与复出"
+      ],
+      "definition": "球员伤病、停赛、缺阵、康复与复出",
+      "related": []
+    },
+    {
+      "slug": "lineups",
+      "name": "首发与轮换",
+      "group": "genre",
+      "tags": [
+        "首发与轮换"
+      ],
+      "definition": "已确认首发、出场时间和轮换风险，预测阵容须标预测",
+      "related": []
+    },
+    {
+      "slug": "fixtures",
+      "name": "赛程变化",
+      "group": "genre",
+      "tags": [
+        "赛程变化"
+      ],
+      "definition": "比赛改期、空白轮、双赛轮和赛程难度变化",
+      "related": []
+    },
+    {
+      "slug": "transfers",
+      "name": "转会与新援",
+      "group": "genre",
+      "tags": [
+        "转会与新援"
+      ],
+      "definition": "现实转会、注册、球员加盟离队和新增球员",
+      "related": []
+    },
+    {
+      "slug": "players",
+      "name": "球员与选人分析",
+      "group": "genre",
+      "tags": [
+        "球员与选人分析"
+      ],
+      "definition": "球员比较、性价比、选人参考和 Draft 排名，不包含球队整体复盘或获奖快讯",
+      "related": []
+    },
+    {
+      "slug": "teams",
+      "name": "球队复盘",
+      "group": "genre",
+      "tags": ["球队复盘"],
+      "definition": "球队阶段表现、攻防数据、体系与阵容角色趋势，帮助经理判断球队资产",
+      "related": []
+    },
+    {
+      "slug": "news",
+      "name": "英超快讯",
+      "group": "genre",
+      "tags": ["英超快讯"],
+      "definition": "英超正式获奖、纪录等有实质内容的信息更新，不收球队宣传",
+      "related": []
+    },
+    {
+      "slug": "strategy",
+      "name": "FPL 策略",
+      "group": "genre",
+      "tags": [
+        "FPL 策略"
+      ],
+      "definition": "Classic 队长筹码换人、Draft 豁免交易和玩法策略",
+      "related": []
+    },
+    {
+      "slug": "rules",
+      "name": "规则与公告",
+      "group": "genre",
+      "tags": [
+        "规则与公告"
+      ],
+      "definition": "官方玩法、计分、截止时间和规则说明",
+      "related": []
+    }
+  ]
+}

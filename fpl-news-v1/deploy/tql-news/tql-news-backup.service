@@ -1,0 +1,10 @@
+[Unit]
+Description=Back up TQL news database and uploads locally
+After=postgresql.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/tql-news/current/deploy/tql-news/backup.py
+UMask=0077
+Nice=10
+PrivateTmp=yes

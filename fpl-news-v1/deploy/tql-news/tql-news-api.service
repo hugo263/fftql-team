@@ -1,0 +1,25 @@
+[Unit]
+Description=TQL FPL news API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+User=tql-news
+WorkingDirectory=/opt/tql-news/current
+EnvironmentFile=/etc/tql-news/app.env
+ExecStart=/usr/local/bin/node apps/api/src/main.ts
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=210
+StateDirectory=tql-news
+StateDirectoryMode=0700
+PrivateTmp=yes
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target

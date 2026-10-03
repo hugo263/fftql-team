@@ -1,0 +1,70 @@
+/* Public news tools share the main site's Match Night palette and masthead.
+ * Scoped to public routes: the existing administration UI keeps its own tokens. */
+html[data-public-site="tql"] {
+  color-scheme:light; color-scheme:only light; overflow-y:scroll; scrollbar-gutter:stable;
+  --bg:#f3f5f1; --bg-sunk:#eff1ec; --bg-muted:#e7efe9;
+  --surface:#fff; --surface-2:#fff; --raised:#fff; --sidebar:#fff;
+  --daybar:#f3f5f1; --field:#f3f5f1;
+  --ink:#14201a; --ink-2:#4a5a50; --ink-3:#647369; --ink-4:#748178;
+  --line:#e3e9e2; --line-strong:#cbd5cb; --line-soft:#edf0eb;
+  --accent:#12382a; --accent-ink:#1b4a37; --accent-soft:#e7efe9;
+  --accent-softer:#f0f4eb; --accent-contrast:#d9ef9e;
+  --shadow-card:0 1px 2px #0b1f170a,0 2px 8px #0b1f1708;
+  --shadow-card-hover:0 4px 16px #0b1f1710;
+  --page-max-wide:1240px; --page-max-reading:1160px;
+  --tql-head-height:62px;
+}
+html[data-public-site="tql"] body,
+html[data-public-site="tql"] body:has(.report-shell) { background:var(--bg); }
+.tql-public-site { min-height:100dvh; }
+.tql-site-header { position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0b1f17,#12382a);color:#edf4ee;box-shadow:0 1px 0 #d9ef9e24; }
+.tql-site-header-inner { display:grid;grid-template-columns:auto minmax(0,1fr) 168px;align-items:center;gap:20px;width:min(100% - 40px,1480px);height:var(--tql-head-height);margin-inline:auto; }
+.tql-site-logo { display:inline-flex;align-items:center;gap:9px;flex-shrink:0;text-decoration:none;white-space:nowrap;color:#fff;font-size:20px;font-weight:800;letter-spacing:-.6px;line-height:1; }
+.tql-site-logo img { display:block;width:auto;height:34px;max-width:none;aspect-ratio:1853/849;object-fit:contain;border-radius:12.5%/27.3%; }
+.tql-brand-dot { color:#d9ef9e; }
+.tql-global-nav { display:flex;align-self:stretch;gap:3px;min-width:0;margin-left:12px; }
+.tql-global-nav a { position:relative;display:flex;align-items:center;justify-content:center;padding:0 18px;color:#a9bcb0;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none; }
+.tql-global-nav a:hover { color:#fff;background:#ffffff05; }
+.tql-global-nav a[aria-current="page"] { color:#d9ef9e; }
+.tql-global-nav a[aria-current="page"]::after { content:"";position:absolute;bottom:0;left:14px;right:14px;height:3px;border-radius:3px 3px 0 0;background:#d9ef9e; }
+.tql-header-note { text-align:right;font-size:12px;color:#a9bcb0; }
+.tql-tools-layout { display:flex;max-width:1480px;min-height:calc(100dvh - var(--tql-head-height) - 90px);margin-inline:auto; }
+.tql-tools-sidebar { top:var(--tql-head-height);height:calc(100dvh - var(--tql-head-height));background:transparent;border-right:0; }
+.tql-tools-sidebar a[aria-current="page"] { color:#d9ef9e;background:#12382a;border-radius:10px; }
+.tql-tools-sidebar a[aria-current="page"]>span { color:inherit; }
+.tql-tools-footer { display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 24px;border-top:1px solid var(--line);padding:24px 20px;color:var(--ink-3);font-size:12px; }
+.tql-tools-footer a { text-decoration:none; }
+.tql-public-site .card { border-radius:16px;border-color:var(--line); }
+.tql-public-site .tql-panel { border-radius:16px; }
+.tql-public-site .report-shell { background:var(--surface);border:1px solid var(--line);border-radius:16px; }
+.tql-public-site .report-shell>aside { top:var(--tql-head-height);height:calc(100dvh - var(--tql-head-height));border-radius:16px 0 0 16px; }
+.tql-public-site :is(a,button,input,select,summary):focus-visible { outline:2px solid #3e7c4f;outline-offset:3px; }
+.tql-public-site #main { scroll-margin-top:calc(var(--tql-head-height) + 12px); }
+@media(max-width:960px) {
+  .tql-tools-footer { padding-bottom:calc(80px + env(safe-area-inset-bottom)); }
+  .tql-public-site .report-shell { padding-inline:12px;margin-top:16px; }
+}
+@media(max-width:700px) {
+  html[data-public-site="tql"] { --tql-head-height:56px; }
+  .tql-site-header-inner { grid-template-columns:auto minmax(0,1fr) 32px;gap:10px; }
+  .tql-site-logo { font-size:16px; }
+  .tql-site-logo img { height:30px; }
+  .tql-global-nav { margin-left:0;gap:0; }
+  .tql-global-nav a { padding-inline:9px;font-size:12px; }
+  .tql-global-nav a[aria-current="page"]::after { left:7px;right:7px; }
+  .tql-header-note { visibility:hidden;overflow:hidden;white-space:nowrap; }
+}
+@media(max-width:640px) { .tql-site-header-inner { width:calc(100% - 24px); } }
+@media(max-width:760px) {
+  .tql-public-site :is(input,select,textarea) { font-size:16px;max-width:100%;min-width:0; }
+  .tql-public-site :is(article,section,main) { min-width:0; }
+  .tql-public-site :is(h1,h2,h3,p) { overflow-wrap:anywhere; }
+  .tql-public-site dialog { max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);overscroll-behavior:contain; }
+  .tql-public-site :is(table,pre) { max-width:100%; }
+  .tql-public-site pre { overflow:auto; }
+}
+@media(max-width:360px) {
+  .tql-site-logo img { height:27px; }
+  .tql-site-logo>span { display:none; }
+  .tql-global-nav a { padding-inline:8px; }
+}

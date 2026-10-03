@@ -1,0 +1,48 @@
+{
+  "sources": [
+    {
+      "id": "rss-ffscout",
+      "name": "Fantasy Football Scout",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.fantasyfootballscout.co.uk/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 60,
+      "tags": [
+        "FPL",
+        "媒体"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-allaboutfpl",
+      "name": "AllAboutFPL",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://allaboutfpl.com/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 60,
+      "tags": [
+        "FPL",
+        "媒体"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    }
+  ]
+}

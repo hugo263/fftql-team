@@ -1,0 +1,2549 @@
+{
+  "auditedAt": "2026-09-05T06:59:47.140Z",
+  "gw": 3,
+  "counts": {
+    "draft": 652,
+    "classic": 652
+  },
+  "duplicateDraftCodes": [],
+  "duplicateClassicCodes": [],
+  "unmappedDraftPlayers": [],
+  "events": [
+    {
+      "id": 1,
+      "finished": true,
+      "data_checked": true,
+      "deadline_time": "2026-08-21T17:30:00Z"
+    },
+    {
+      "id": 2,
+      "finished": true,
+      "data_checked": true,
+      "deadline_time": "2026-08-28T17:30:00Z"
+    },
+    {
+      "id": 3,
+      "finished": false,
+      "data_checked": false,
+      "deadline_time": "2026-09-04T17:30:00Z"
+    }
+  ],
+  "rounds": [
+    {
+      "gw": 1,
+      "liveDraftCount": 610,
+      "liveClassicCount": 610,
+      "missingDraftStats": [
+        {
+          "id": 611,
+          "name": "Wan-Bissaka"
+        },
+        {
+          "id": 612,
+          "name": "Methalie"
+        },
+        {
+          "id": 613,
+          "name": "Hadjam"
+        },
+        {
+          "id": 614,
+          "name": "Ahoka"
+        },
+        {
+          "id": 615,
+          "name": "Di Gregorio"
+        },
+        {
+          "id": 616,
+          "name": "Bouaddi"
+        },
+        {
+          "id": 617,
+          "name": "Goretzka"
+        },
+        {
+          "id": 618,
+          "name": "Cho"
+        },
+        {
+          "id": 619,
+          "name": "Palacios"
+        },
+        {
+          "id": 620,
+          "name": "Diouf"
+        },
+        {
+          "id": 621,
+          "name": "McAidoo"
+        },
+        {
+          "id": 622,
+          "name": "Braithwaite"
+        },
+        {
+          "id": 623,
+          "name": "Bentley"
+        },
+        {
+          "id": 624,
+          "name": "Cozier-Duberry"
+        },
+        {
+          "id": 625,
+          "name": "Zepa"
+        },
+        {
+          "id": 626,
+          "name": "Cairns"
+        },
+        {
+          "id": 627,
+          "name": "Zetterer"
+        },
+        {
+          "id": 628,
+          "name": "Barcola"
+        },
+        {
+          "id": 629,
+          "name": "Allan"
+        },
+        {
+          "id": 630,
+          "name": "Harwood-Bellis"
+        },
+        {
+          "id": 631,
+          "name": "Mbaye"
+        },
+        {
+          "id": 632,
+          "name": "Andrés"
+        },
+        {
+          "id": 633,
+          "name": "Ahanor"
+        },
+        {
+          "id": 634,
+          "name": "Chilwell"
+        },
+        {
+          "id": 635,
+          "name": "Timber"
+        },
+        {
+          "id": 636,
+          "name": "Osorio"
+        },
+        {
+          "id": 637,
+          "name": "Maitland-Niles"
+        },
+        {
+          "id": 638,
+          "name": "Larsson"
+        },
+        {
+          "id": 639,
+          "name": "Ángel"
+        },
+        {
+          "id": 640,
+          "name": "Affengruber"
+        },
+        {
+          "id": 641,
+          "name": "Ansah"
+        },
+        {
+          "id": 642,
+          "name": "Vaz"
+        },
+        {
+          "id": 643,
+          "name": "Norton-Cuffy"
+        },
+        {
+          "id": 644,
+          "name": "Thomas"
+        },
+        {
+          "id": 645,
+          "name": "Mouzakitis"
+        },
+        {
+          "id": 646,
+          "name": "Flemming"
+        },
+        {
+          "id": 647,
+          "name": "Bard"
+        },
+        {
+          "id": 648,
+          "name": "Bahoya"
+        },
+        {
+          "id": 649,
+          "name": "Fernandez-Pardo"
+        },
+        {
+          "id": 650,
+          "name": "Fofana"
+        },
+        {
+          "id": 651,
+          "name": "J.Angulo"
+        },
+        {
+          "id": 652,
+          "name": "Azeez"
+        }
+      ],
+      "duplicateClassicLiveIds": [],
+      "playedCount": 310,
+      "totalDiscrepancies": [],
+      "draftExplainDiscrepancies": [],
+      "classicExplainDiscrepancies": [],
+      "defconAwardedCount": 31,
+      "contributors": [
+        {
+          "id": 87,
+          "classicId": 87,
+          "code": 191866,
+          "name": "Ajer",
+          "pos": 2,
+          "draftTotal": 8,
+          "classicTotal": 8,
+          "minutes": 90,
+          "draftExplainTotal": 8,
+          "classicExplainTotal": 8,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 98,
+          "classicId": 98,
+          "code": 204580,
+          "name": "Janelt",
+          "pos": 3,
+          "draftTotal": 9,
+          "classicTotal": 9,
+          "minutes": 90,
+          "draftExplainTotal": 9,
+          "classicExplainTotal": 9,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 151,
+          "classicId": 151,
+          "code": 577016,
+          "name": "Acheampong",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 15,
+          "classicDefensiveContribution": 15,
+          "draftDefcon": [
+            {
+              "fixture": 10,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 10,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ]
+        },
+        {
+          "id": 173,
+          "classicId": 173,
+          "code": 461102,
+          "name": "Thomas",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 1,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 1,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 200,
+          "classicId": 200,
+          "code": 437499,
+          "name": "Lacroix",
+          "pos": 2,
+          "draftTotal": 6,
+          "classicTotal": 6,
+          "minutes": 90,
+          "draftExplainTotal": 6,
+          "classicExplainTotal": 6,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 10,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 10,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 202,
+          "classicId": 202,
+          "code": 427623,
+          "name": "Richards",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 16,
+          "classicDefensiveContribution": 16,
+          "draftDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ]
+        },
+        {
+          "id": 210,
+          "classicId": 210,
+          "code": 496221,
+          "name": "Wharton",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 14,
+          "classicDefensiveContribution": 14,
+          "draftDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ]
+        },
+        {
+          "id": 214,
+          "classicId": 214,
+          "code": 209400,
+          "name": "Kamada",
+          "pos": 3,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 14,
+          "classicDefensiveContribution": 14,
+          "draftDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ]
+        },
+        {
+          "id": 237,
+          "classicId": 237,
+          "code": 440993,
+          "name": "Ndiaye",
+          "pos": 3,
+          "draftTotal": 9,
+          "classicTotal": 9,
+          "minutes": 90,
+          "draftExplainTotal": 9,
+          "classicExplainTotal": 9,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 244,
+          "classicId": 244,
+          "code": 609873,
+          "name": "Armstrong",
+          "pos": 3,
+          "draftTotal": 8,
+          "classicTotal": 8,
+          "minutes": 90,
+          "draftExplainTotal": 8,
+          "classicExplainTotal": 8,
+          "defensiveContribution": 16,
+          "classicDefensiveContribution": 16,
+          "draftDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 3,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ]
+        },
+        {
+          "id": 255,
+          "classicId": 255,
+          "code": 246301,
+          "name": "J.Cuenca",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 10,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 10,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 277,
+          "classicId": 277,
+          "code": 108416,
+          "name": "Egan",
+          "pos": 2,
+          "draftTotal": 8,
+          "classicTotal": 8,
+          "minutes": 90,
+          "draftExplainTotal": 8,
+          "classicExplainTotal": 8,
+          "defensiveContribution": 21,
+          "classicDefensiveContribution": 21,
+          "draftDefcon": [
+            {
+              "fixture": 4,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 21
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 4,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 21
+            }
+          ]
+        },
+        {
+          "id": 304,
+          "classicId": 304,
+          "code": 216616,
+          "name": "O'Shea",
+          "pos": 2,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 18,
+          "classicDefensiveContribution": 18,
+          "draftDefcon": [
+            {
+              "fixture": 5,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 18
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 5,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 18
+            }
+          ]
+        },
+        {
+          "id": 309,
+          "classicId": 309,
+          "code": 501390,
+          "name": "Núñez",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 79,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 5,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 5,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 327,
+          "classicId": 327,
+          "code": 434752,
+          "name": "Bijol",
+          "pos": 2,
+          "draftTotal": 10,
+          "classicTotal": 10,
+          "minutes": 90,
+          "draftExplainTotal": 10,
+          "classicExplainTotal": 10,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 332,
+          "classicId": 332,
+          "code": 220627,
+          "name": "Justin",
+          "pos": 2,
+          "draftTotal": 10,
+          "classicTotal": 10,
+          "minutes": 90,
+          "draftExplainTotal": 10,
+          "classicExplainTotal": 10,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 335,
+          "classicId": 335,
+          "code": 466525,
+          "name": "Stach",
+          "pos": 3,
+          "draftTotal": 13,
+          "classicTotal": 13,
+          "minutes": 90,
+          "draftExplainTotal": 13,
+          "classicExplainTotal": 13,
+          "defensiveContribution": 16,
+          "classicDefensiveContribution": 16,
+          "draftDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ]
+        },
+        {
+          "id": 338,
+          "classicId": 338,
+          "code": 199598,
+          "name": "Ampadu",
+          "pos": 3,
+          "draftTotal": 5,
+          "classicTotal": 5,
+          "minutes": 90,
+          "draftExplainTotal": 5,
+          "classicExplainTotal": 5,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 356,
+          "classicId": 356,
+          "code": 97032,
+          "name": "Virgil",
+          "pos": 2,
+          "draftTotal": 2,
+          "classicTotal": 2,
+          "minutes": 90,
+          "draftExplainTotal": 2,
+          "classicExplainTotal": 2,
+          "defensiveContribution": 11,
+          "classicDefensiveContribution": 11,
+          "draftDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": 367,
+          "classicId": 367,
+          "code": 243298,
+          "name": "Gakpo",
+          "pos": 3,
+          "draftTotal": 12,
+          "classicTotal": 12,
+          "minutes": 90,
+          "draftExplainTotal": 12,
+          "classicExplainTotal": 12,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 445,
+          "classicId": 445,
+          "code": 465642,
+          "name": "Thiaw",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 15,
+          "classicDefensiveContribution": 15,
+          "draftDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ]
+        },
+        {
+          "id": 447,
+          "classicId": 447,
+          "code": 220237,
+          "name": "Botman",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 449,
+          "classicId": 449,
+          "code": 487838,
+          "name": "Hall",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 11,
+          "classicDefensiveContribution": 11,
+          "draftDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": 459,
+          "classicId": 459,
+          "code": 547719,
+          "name": "L.Miley",
+          "pos": 3,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 75,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 9,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 472,
+          "classicId": 472,
+          "code": 575476,
+          "name": "Murillo",
+          "pos": 2,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 14,
+          "classicDefensiveContribution": 14,
+          "draftDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 6,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ]
+        },
+        {
+          "id": 498,
+          "classicId": 498,
+          "code": 221466,
+          "name": "Senesi",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 16,
+          "classicDefensiveContribution": 16,
+          "draftDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ]
+        },
+        {
+          "id": 502,
+          "classicId": 502,
+          "code": 122798,
+          "name": "Robertson",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 11,
+          "classicDefensiveContribution": 11,
+          "draftDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": 544,
+          "classicId": 544,
+          "code": 84450,
+          "name": "Xhaka",
+          "pos": 3,
+          "draftTotal": 9,
+          "classicTotal": 9,
+          "minutes": 90,
+          "draftExplainTotal": 9,
+          "classicExplainTotal": 9,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 5,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 5,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 555,
+          "classicId": 566,
+          "code": 483067,
+          "name": "Silva",
+          "pos": 2,
+          "draftTotal": 2,
+          "classicTotal": 2,
+          "minutes": 90,
+          "draftExplainTotal": 2,
+          "classicExplainTotal": 2,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 8,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 8,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 556,
+          "classicId": 565,
+          "code": 513545,
+          "name": "M.Sangaré",
+          "pos": 3,
+          "draftTotal": 14,
+          "classicTotal": 14,
+          "minutes": 75,
+          "draftExplainTotal": 14,
+          "classicExplainTotal": 14,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 2,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 586,
+          "classicId": 586,
+          "code": 606930,
+          "name": "Mendy",
+          "pos": 2,
+          "draftTotal": 15,
+          "classicTotal": 15,
+          "minutes": 63,
+          "draftExplainTotal": 15,
+          "classicExplainTotal": 15,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 4,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 4,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        }
+      ],
+      "statKeys": [
+        "minutes",
+        "goals_scored",
+        "assists",
+        "clean_sheets",
+        "goals_conceded",
+        "own_goals",
+        "penalties_saved",
+        "penalties_missed",
+        "yellow_cards",
+        "red_cards",
+        "saves",
+        "bonus",
+        "bps",
+        "influence",
+        "creativity",
+        "threat",
+        "ict_index",
+        "starts",
+        "expected_goals",
+        "expected_assists",
+        "expected_goal_involvements",
+        "expected_goals_conceded",
+        "clearances_blocks_interceptions",
+        "recoveries",
+        "tackles",
+        "defensive_contribution",
+        "total_points",
+        "in_dreamteam"
+      ]
+    },
+    {
+      "gw": 2,
+      "liveDraftCount": 626,
+      "liveClassicCount": 626,
+      "missingDraftStats": [
+        {
+          "id": 627,
+          "name": "Zetterer"
+        },
+        {
+          "id": 628,
+          "name": "Barcola"
+        },
+        {
+          "id": 629,
+          "name": "Allan"
+        },
+        {
+          "id": 630,
+          "name": "Harwood-Bellis"
+        },
+        {
+          "id": 631,
+          "name": "Mbaye"
+        },
+        {
+          "id": 632,
+          "name": "Andrés"
+        },
+        {
+          "id": 633,
+          "name": "Ahanor"
+        },
+        {
+          "id": 634,
+          "name": "Chilwell"
+        },
+        {
+          "id": 635,
+          "name": "Timber"
+        },
+        {
+          "id": 636,
+          "name": "Osorio"
+        },
+        {
+          "id": 637,
+          "name": "Maitland-Niles"
+        },
+        {
+          "id": 638,
+          "name": "Larsson"
+        },
+        {
+          "id": 639,
+          "name": "Ángel"
+        },
+        {
+          "id": 640,
+          "name": "Affengruber"
+        },
+        {
+          "id": 641,
+          "name": "Ansah"
+        },
+        {
+          "id": 642,
+          "name": "Vaz"
+        },
+        {
+          "id": 643,
+          "name": "Norton-Cuffy"
+        },
+        {
+          "id": 644,
+          "name": "Thomas"
+        },
+        {
+          "id": 645,
+          "name": "Mouzakitis"
+        },
+        {
+          "id": 646,
+          "name": "Flemming"
+        },
+        {
+          "id": 647,
+          "name": "Bard"
+        },
+        {
+          "id": 648,
+          "name": "Bahoya"
+        },
+        {
+          "id": 649,
+          "name": "Fernandez-Pardo"
+        },
+        {
+          "id": 650,
+          "name": "Fofana"
+        },
+        {
+          "id": 651,
+          "name": "J.Angulo"
+        },
+        {
+          "id": 652,
+          "name": "Azeez"
+        }
+      ],
+      "duplicateClassicLiveIds": [],
+      "playedCount": 312,
+      "totalDiscrepancies": [],
+      "draftExplainDiscrepancies": [],
+      "classicExplainDiscrepancies": [],
+      "defconAwardedCount": 29,
+      "contributors": [
+        {
+          "id": 4,
+          "classicId": 4,
+          "code": 226597,
+          "name": "Gabriel",
+          "pos": 2,
+          "draftTotal": 8,
+          "classicTotal": 8,
+          "minutes": 90,
+          "draftExplainTotal": 8,
+          "classicExplainTotal": 8,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 20,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 20,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "classicId": 13,
+          "code": 204480,
+          "name": "Rice",
+          "pos": 3,
+          "draftTotal": 5,
+          "classicTotal": 5,
+          "minutes": 84,
+          "draftExplainTotal": 5,
+          "classicExplainTotal": 5,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 20,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 20,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 43,
+          "classicId": 43,
+          "code": 166989,
+          "name": "Tielemans",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 60,
+          "classicId": 60,
+          "code": 463981,
+          "name": "Hill",
+          "pos": 2,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 69,
+          "classicId": 69,
+          "code": 503139,
+          "name": "Scott",
+          "pos": 3,
+          "draftTotal": 12,
+          "classicTotal": 12,
+          "minutes": 86,
+          "draftExplainTotal": 12,
+          "classicExplainTotal": 12,
+          "defensiveContribution": 15,
+          "classicDefensiveContribution": 15,
+          "draftDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ]
+        },
+        {
+          "id": 84,
+          "classicId": 84,
+          "code": 432830,
+          "name": "Collins",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 87,
+          "classicId": 87,
+          "code": 191866,
+          "name": "Ajer",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 17,
+          "classicDefensiveContribution": 17,
+          "draftDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 17
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 17
+            }
+          ]
+        },
+        {
+          "id": 229,
+          "classicId": 229,
+          "code": 17761,
+          "name": "Tarkowski",
+          "pos": 2,
+          "draftTotal": 12,
+          "classicTotal": 12,
+          "minutes": 90,
+          "draftExplainTotal": 12,
+          "classicExplainTotal": 12,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 230,
+          "classicId": 230,
+          "code": 480455,
+          "name": "Branthwaite",
+          "pos": 2,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 233,
+          "classicId": 233,
+          "code": 224967,
+          "name": "Mykolenko",
+          "pos": 2,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 237,
+          "classicId": 237,
+          "code": 440993,
+          "name": "Ndiaye",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 259,
+          "classicId": 259,
+          "code": 219924,
+          "name": "Diop",
+          "pos": 2,
+          "draftTotal": 2,
+          "classicTotal": 2,
+          "minutes": 90,
+          "draftExplainTotal": 2,
+          "classicExplainTotal": 2,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 277,
+          "classicId": 277,
+          "code": 108416,
+          "name": "Egan",
+          "pos": 2,
+          "draftTotal": 9,
+          "classicTotal": 9,
+          "minutes": 90,
+          "draftExplainTotal": 9,
+          "classicExplainTotal": 9,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 13,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 13,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 306,
+          "classicId": 306,
+          "code": 449429,
+          "name": "Greaves",
+          "pos": 2,
+          "draftTotal": -1,
+          "classicTotal": -1,
+          "minutes": 90,
+          "draftExplainTotal": -1,
+          "classicExplainTotal": -1,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 334,
+          "classicId": 334,
+          "code": 522047,
+          "name": "Muharemović",
+          "pos": 2,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 19,
+          "classicDefensiveContribution": 19,
+          "draftDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ]
+        },
+        {
+          "id": 335,
+          "classicId": 335,
+          "code": 466525,
+          "name": "Stach",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 16,
+          "classicDefensiveContribution": 16,
+          "draftDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 16
+            }
+          ]
+        },
+        {
+          "id": 362,
+          "classicId": 362,
+          "code": 606702,
+          "name": "Jacquet",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 76,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 11,
+          "classicDefensiveContribution": 11,
+          "draftDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": 368,
+          "classicId": 368,
+          "code": 424876,
+          "name": "Szoboszlai",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 432,
+          "classicId": 432,
+          "code": 516895,
+          "name": "Mainoo",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 79,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 15,
+          "classicDefensiveContribution": 15,
+          "draftDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 18,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ]
+        },
+        {
+          "id": 449,
+          "classicId": 449,
+          "code": 487838,
+          "name": "Hall",
+          "pos": 2,
+          "draftTotal": 11,
+          "classicTotal": 11,
+          "minutes": 90,
+          "draftExplainTotal": 11,
+          "classicExplainTotal": 11,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 15,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 15,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 469,
+          "classicId": 469,
+          "code": 215136,
+          "name": "N.Williams",
+          "pos": 2,
+          "draftTotal": 6,
+          "classicTotal": 6,
+          "minutes": 90,
+          "draftExplainTotal": 6,
+          "classicExplainTotal": 6,
+          "defensiveContribution": 12,
+          "classicDefensiveContribution": 12,
+          "draftDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": 471,
+          "classicId": 471,
+          "code": 227444,
+          "name": "Milenković",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 13,
+          "classicDefensiveContribution": 13,
+          "draftDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 13
+            }
+          ]
+        },
+        {
+          "id": 481,
+          "classicId": 481,
+          "code": 215379,
+          "name": "Anderson",
+          "pos": 3,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 81,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 14,
+          "classicDefensiveContribution": 14,
+          "draftDefcon": [
+            {
+              "fixture": 11,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 11,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ]
+        },
+        {
+          "id": 532,
+          "classicId": 532,
+          "code": 223827,
+          "name": "Ballard",
+          "pos": 2,
+          "draftTotal": 8,
+          "classicTotal": 8,
+          "minutes": 90,
+          "draftExplainTotal": 8,
+          "classicExplainTotal": 8,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 19,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 19,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 533,
+          "classicId": 533,
+          "code": 200834,
+          "name": "Mukiele",
+          "pos": 2,
+          "draftTotal": 9,
+          "classicTotal": 9,
+          "minutes": 90,
+          "draftExplainTotal": 9,
+          "classicExplainTotal": 9,
+          "defensiveContribution": 19,
+          "classicDefensiveContribution": 19,
+          "draftDefcon": [
+            {
+              "fixture": 19,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 19,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ]
+        },
+        {
+          "id": 555,
+          "classicId": 566,
+          "code": 483067,
+          "name": "Silva",
+          "pos": 2,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 12,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 556,
+          "classicId": 565,
+          "code": 513545,
+          "name": "M.Sangaré",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 14,
+          "classicDefensiveContribution": 14,
+          "draftDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 17,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ]
+        },
+        {
+          "id": 567,
+          "classicId": 558,
+          "code": 204561,
+          "name": "Schlager",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 90,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 15,
+          "classicDefensiveContribution": 15,
+          "draftDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 14,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 15
+            }
+          ]
+        },
+        {
+          "id": 588,
+          "classicId": 588,
+          "code": 570794,
+          "name": "Khalaili",
+          "pos": 2,
+          "draftTotal": 2,
+          "classicTotal": 2,
+          "minutes": 74,
+          "draftExplainTotal": 2,
+          "classicExplainTotal": 2,
+          "defensiveContribution": 14,
+          "classicDefensiveContribution": 14,
+          "draftDefcon": [
+            {
+              "fixture": 11,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 11,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 14
+            }
+          ]
+        }
+      ],
+      "statKeys": [
+        "minutes",
+        "goals_scored",
+        "assists",
+        "clean_sheets",
+        "goals_conceded",
+        "own_goals",
+        "penalties_saved",
+        "penalties_missed",
+        "yellow_cards",
+        "red_cards",
+        "saves",
+        "bonus",
+        "bps",
+        "influence",
+        "creativity",
+        "threat",
+        "ict_index",
+        "starts",
+        "expected_goals",
+        "expected_assists",
+        "expected_goal_involvements",
+        "expected_goals_conceded",
+        "clearances_blocks_interceptions",
+        "recoveries",
+        "tackles",
+        "defensive_contribution",
+        "total_points",
+        "in_dreamteam"
+      ]
+    },
+    {
+      "gw": 3,
+      "liveDraftCount": 652,
+      "liveClassicCount": 652,
+      "missingDraftStats": [],
+      "duplicateClassicLiveIds": [],
+      "playedCount": 30,
+      "totalDiscrepancies": [],
+      "draftExplainDiscrepancies": [],
+      "classicExplainDiscrepancies": [],
+      "defconAwardedCount": 4,
+      "contributors": [
+        {
+          "id": 259,
+          "classicId": 259,
+          "code": 219924,
+          "name": "Diop",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 11,
+          "classicDefensiveContribution": 11,
+          "draftDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "draftExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 90
+            },
+            {
+              "fixture": 21,
+              "stat": "goals_conceded",
+              "points": -1,
+              "value": 2
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 90
+            },
+            {
+              "fixture": 21,
+              "stat": "goals_conceded",
+              "points": -1,
+              "value": 2
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": 304,
+          "classicId": 304,
+          "code": 216616,
+          "name": "O'Shea",
+          "pos": 2,
+          "draftTotal": 3,
+          "classicTotal": 3,
+          "minutes": 90,
+          "draftExplainTotal": 3,
+          "classicExplainTotal": 3,
+          "defensiveContribution": 11,
+          "classicDefensiveContribution": 11,
+          "draftDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "draftExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 90
+            },
+            {
+              "fixture": 21,
+              "stat": "goals_conceded",
+              "points": -1,
+              "value": 2
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ],
+          "classicExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 90
+            },
+            {
+              "fixture": 21,
+              "stat": "goals_conceded",
+              "points": -1,
+              "value": 2
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": 580,
+          "classicId": 579,
+          "code": 445087,
+          "name": "Araujo",
+          "pos": 2,
+          "draftTotal": 8,
+          "classicTotal": 8,
+          "minutes": 90,
+          "draftExplainTotal": 8,
+          "classicExplainTotal": 8,
+          "defensiveContribution": 10,
+          "classicDefensiveContribution": 10,
+          "draftDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "draftExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 90
+            },
+            {
+              "fixture": 21,
+              "stat": "clean_sheets",
+              "points": 4,
+              "value": 1
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ],
+          "classicExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 90
+            },
+            {
+              "fixture": 21,
+              "stat": "clean_sheets",
+              "points": 4,
+              "value": 1
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 10
+            }
+          ]
+        },
+        {
+          "id": 619,
+          "classicId": 619,
+          "code": 218543,
+          "name": "Palacios",
+          "pos": 3,
+          "draftTotal": 4,
+          "classicTotal": 4,
+          "minutes": 77,
+          "draftExplainTotal": 4,
+          "classicExplainTotal": 4,
+          "defensiveContribution": 19,
+          "classicDefensiveContribution": 19,
+          "draftDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ],
+          "classicDefcon": [
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ],
+          "draftExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 77
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ],
+          "classicExplain": [
+            {
+              "fixture": 21,
+              "stat": "minutes",
+              "points": 2,
+              "value": 77
+            },
+            {
+              "fixture": 21,
+              "stat": "defensive_contribution",
+              "points": 2,
+              "value": 19
+            }
+          ]
+        }
+      ],
+      "statKeys": [
+        "minutes",
+        "goals_scored",
+        "assists",
+        "clean_sheets",
+        "goals_conceded",
+        "own_goals",
+        "penalties_saved",
+        "penalties_missed",
+        "yellow_cards",
+        "red_cards",
+        "saves",
+        "bonus",
+        "bps",
+        "influence",
+        "creativity",
+        "threat",
+        "ict_index",
+        "starts",
+        "expected_goals",
+        "expected_assists",
+        "expected_goal_involvements",
+        "expected_goals_conceded",
+        "clearances_blocks_interceptions",
+        "recoveries",
+        "tackles",
+        "defensive_contribution",
+        "total_points",
+        "in_dreamteam"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://draft.premierleague.com/api/bootstrap-static",
+      "requestedAt": "2026-09-05T06:59:45.776Z",
+      "receivedAt": "2026-09-05T06:59:46.953Z"
+    },
+    {
+      "url": "https://fantasy.premierleague.com/api/bootstrap-static/",
+      "requestedAt": "2026-09-05T06:59:45.814Z",
+      "receivedAt": "2026-09-05T06:59:47.139Z"
+    },
+    {
+      "url": "https://fantasy.premierleague.com/api/event/1/live/",
+      "requestedAt": "2026-09-05T06:59:47.141Z",
+      "receivedAt": "2026-09-05T06:59:47.357Z"
+    },
+    {
+      "url": "https://draft.premierleague.com/api/event/1/live",
+      "requestedAt": "2026-09-05T06:59:47.140Z",
+      "receivedAt": "2026-09-05T06:59:47.600Z"
+    },
+    {
+      "url": "https://fantasy.premierleague.com/api/event/2/live/",
+      "requestedAt": "2026-09-05T06:59:47.606Z",
+      "receivedAt": "2026-09-05T06:59:47.752Z"
+    },
+    {
+      "url": "https://draft.premierleague.com/api/event/2/live",
+      "requestedAt": "2026-09-05T06:59:47.605Z",
+      "receivedAt": "2026-09-05T06:59:47.859Z"
+    },
+    {
+      "url": "https://fantasy.premierleague.com/api/event/3/live/",
+      "requestedAt": "2026-09-05T06:59:47.861Z",
+      "receivedAt": "2026-09-05T06:59:47.972Z"
+    },
+    {
+      "url": "https://draft.premierleague.com/api/event/3/live",
+      "requestedAt": "2026-09-05T06:59:47.861Z",
+      "receivedAt": "2026-09-05T06:59:48.479Z"
+    }
+  ]
+}

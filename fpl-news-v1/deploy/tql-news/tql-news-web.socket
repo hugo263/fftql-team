@@ -1,0 +1,12 @@
+[Unit]
+Description=TQL news web listener retained across web restarts
+
+[Socket]
+ListenStream=127.0.0.1:9012
+Accept=no
+Service=tql-news-web.service
+Backlog=512
+NoDelay=true
+
+[Install]
+WantedBy=sockets.target

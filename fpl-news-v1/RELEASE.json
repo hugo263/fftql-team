@@ -1,0 +1,10 @@
+{
+  "name": "TQL FPL news",
+  "release": "20261002-v8-rss-timeout",
+  "target": "https://news.fftql.team",
+  "upstream": "KKKKhazix/AIHOT",
+  "upstreamCommit": "c38705b84058c53bc75c91e6b0faa71c3079f588",
+  "database": "Dedicated tql_news PostgreSQL 15 database on existing Tencent Cloud server",
+  "admin": "Existing fftql.team/admin login; Draft data and news management are parallel modules",
+  "status": "Retains v7 admin; allows 60 s bounded RSS downloads and 30 s direct connect timeout (short caller deadlines still apply). Mainland-to-X API connectivity remains blocked pending an authorized egress route; budgets, credentials and error history remain unchanged."
+}

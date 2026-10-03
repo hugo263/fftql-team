@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily local backup of TQL news
+
+[Timer]
+OnCalendar=*-*-* 04:10:00 Asia/Shanghai
+Persistent=true
+RandomizedDelaySec=60
+Unit=tql-news-backup.service
+
+[Install]
+WantedBy=timers.target

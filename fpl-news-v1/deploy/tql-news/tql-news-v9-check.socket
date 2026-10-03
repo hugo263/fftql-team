@@ -1,0 +1,8 @@
+[Unit]
+Description=TQL news v9 isolated release validation socket
+[Socket]
+ListenStream=127.0.0.1:19012
+Accept=no
+Service=tql-news-v9-check.service
+Backlog=512
+NoDelay=true

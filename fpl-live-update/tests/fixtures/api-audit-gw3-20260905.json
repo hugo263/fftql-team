@@ -1,0 +1,358 @@
+{
+  "at": "2026-09-05T05:47:19.116Z",
+  "entries": [
+    {
+      "entry": 249347,
+      "leagueEntry": 251535,
+      "name": "MustBeRo",
+      "live": 2,
+      "total": 6,
+      "pf": 118,
+      "played": 3,
+      "w": 2,
+      "dr": 0,
+      "loss": 1,
+      "reconstructedTotal": 6,
+      "reconstructedPf": 120
+    },
+    {
+      "entry": 248989,
+      "leagueEntry": 251164,
+      "name": "小新‘s Team",
+      "live": 5,
+      "total": 3,
+      "pf": 111,
+      "played": 3,
+      "w": 2,
+      "dr": 0,
+      "loss": 1,
+      "reconstructedTotal": 6,
+      "reconstructedPf": 116
+    },
+    {
+      "entry": 249042,
+      "leagueEntry": 251219,
+      "name": "On the green",
+      "live": 14,
+      "total": 3,
+      "pf": 95,
+      "played": 3,
+      "w": 2,
+      "dr": 0,
+      "loss": 1,
+      "reconstructedTotal": 6,
+      "reconstructedPf": 109
+    },
+    {
+      "entry": 248500,
+      "leagueEntry": 250649,
+      "name": "英超无双老A",
+      "live": 8,
+      "total": 6,
+      "pf": 89,
+      "played": 3,
+      "w": 2,
+      "dr": 0,
+      "loss": 1,
+      "reconstructedTotal": 6,
+      "reconstructedPf": 97
+    },
+    {
+      "entry": 249080,
+      "leagueEntry": 251259,
+      "name": "郑",
+      "live": 4,
+      "total": 3,
+      "pf": 68,
+      "played": 3,
+      "w": 2,
+      "dr": 0,
+      "loss": 1,
+      "reconstructedTotal": 6,
+      "reconstructedPf": 72
+    },
+    {
+      "entry": 249175,
+      "leagueEntry": 251356,
+      "name": "加布惊焰软糖形态",
+      "live": 8,
+      "total": 3,
+      "pf": 61,
+      "played": 3,
+      "w": 2,
+      "dr": 0,
+      "loss": 1,
+      "reconstructedTotal": 6,
+      "reconstructedPf": 69
+    },
+    {
+      "entry": 251307,
+      "leagueEntry": 253508,
+      "name": "LubA",
+      "live": 0,
+      "total": 4,
+      "pf": 101,
+      "played": 3,
+      "w": 1,
+      "dr": 1,
+      "loss": 1,
+      "reconstructedTotal": 4,
+      "reconstructedPf": 101
+    },
+    {
+      "entry": 249034,
+      "leagueEntry": 251210,
+      "name": "罡罡",
+      "live": 1,
+      "total": 1,
+      "pf": 75,
+      "played": 3,
+      "w": 1,
+      "dr": 1,
+      "loss": 1,
+      "reconstructedTotal": 4,
+      "reconstructedPf": 76
+    },
+    {
+      "entry": 254531,
+      "leagueEntry": 256745,
+      "name": "zxy_英超无双",
+      "live": 3,
+      "total": 3,
+      "pf": 86,
+      "played": 3,
+      "w": 1,
+      "dr": 0,
+      "loss": 2,
+      "reconstructedTotal": 3,
+      "reconstructedPf": 89
+    },
+    {
+      "entry": 248562,
+      "leagueEntry": 250717,
+      "name": "英超不倒翁",
+      "live": 0,
+      "total": 3,
+      "pf": 82,
+      "played": 3,
+      "w": 1,
+      "dr": 0,
+      "loss": 2,
+      "reconstructedTotal": 3,
+      "reconstructedPf": 82
+    },
+    {
+      "entry": 248928,
+      "leagueEntry": 251101,
+      "name": "林良鋒",
+      "live": 11,
+      "total": 0,
+      "pf": 71,
+      "played": 3,
+      "w": 1,
+      "dr": 0,
+      "loss": 2,
+      "reconstructedTotal": 3,
+      "reconstructedPf": 82
+    },
+    {
+      "entry": 260583,
+      "leagueEntry": 262841,
+      "name": "Eve2026",
+      "live": 0,
+      "total": 3,
+      "pf": 76,
+      "played": 3,
+      "w": 1,
+      "dr": 0,
+      "loss": 2,
+      "reconstructedTotal": 3,
+      "reconstructedPf": 76
+    },
+    {
+      "entry": 248793,
+      "leagueEntry": 250959,
+      "name": "马先生之殇",
+      "live": 0,
+      "total": 3,
+      "pf": 66,
+      "played": 3,
+      "w": 1,
+      "dr": 0,
+      "loss": 2,
+      "reconstructedTotal": 3,
+      "reconstructedPf": 66
+    },
+    {
+      "entry": 249316,
+      "leagueEntry": 251503,
+      "name": "bees",
+      "live": 10,
+      "total": 0,
+      "pf": 53,
+      "played": 3,
+      "w": 1,
+      "dr": 0,
+      "loss": 2,
+      "reconstructedTotal": 3,
+      "reconstructedPf": 63
+    }
+  ],
+  "players": [
+    {
+      "id": 350,
+      "name": "A.Becker",
+      "total": 10,
+      "event": 8,
+      "live": 8,
+      "bonus": 1,
+      "explain": [
+        [
+          [
+            {
+              "name": "Minutes played",
+              "points": 2,
+              "value": 90,
+              "stat": "minutes"
+            },
+            {
+              "name": "Clean sheets",
+              "points": 4,
+              "value": 1,
+              "stat": "clean_sheets"
+            },
+            {
+              "name": "Saves",
+              "points": 1,
+              "value": 5,
+              "stat": "saves"
+            },
+            {
+              "name": "Bonus",
+              "points": 1,
+              "value": 1,
+              "stat": "bonus"
+            }
+          ],
+          21
+        ]
+      ]
+    },
+    {
+      "id": 372,
+      "name": "Mac Allister",
+      "total": 5,
+      "event": 2,
+      "live": 2,
+      "bonus": 0,
+      "explain": [
+        [
+          [
+            {
+              "name": "Minutes played",
+              "points": 2,
+              "value": 83,
+              "stat": "minutes"
+            },
+            {
+              "name": "Clean sheets",
+              "points": 1,
+              "value": 1,
+              "stat": "clean_sheets"
+            },
+            {
+              "name": "Yellow cards",
+              "points": -1,
+              "value": 1,
+              "stat": "yellow_cards"
+            }
+          ],
+          21
+        ]
+      ]
+    },
+    {
+      "id": 379,
+      "name": "Isak",
+      "total": 23,
+      "event": 13,
+      "live": 13,
+      "bonus": 3,
+      "explain": [
+        [
+          [
+            {
+              "name": "Minutes played",
+              "points": 2,
+              "value": 63,
+              "stat": "minutes"
+            },
+            {
+              "name": "Goals scored",
+              "points": 8,
+              "value": 2,
+              "stat": "goals_scored"
+            },
+            {
+              "name": "Bonus",
+              "points": 3,
+              "value": 3,
+              "stat": "bonus"
+            }
+          ],
+          21
+        ]
+      ]
+    },
+    {
+      "id": 580,
+      "name": "Araujo",
+      "total": 9,
+      "event": 8,
+      "live": 8,
+      "bonus": 0,
+      "explain": [
+        [
+          [
+            {
+              "name": "Minutes played",
+              "points": 2,
+              "value": 90,
+              "stat": "minutes"
+            },
+            {
+              "name": "Clean sheets",
+              "points": 4,
+              "value": 1,
+              "stat": "clean_sheets"
+            },
+            {
+              "name": "Defensive Contribution",
+              "points": 2,
+              "value": 10,
+              "stat": "defensive_contribution"
+            }
+          ],
+          21
+        ]
+      ]
+    }
+  ],
+  "sources": [
+    "https://draft.premierleague.com/api/league/47275/details",
+    "https://draft.premierleague.com/api/event/3/live",
+    "https://draft.premierleague.com/api/bootstrap-static",
+    "https://draft.premierleague.com/api/entry/{league_entry.entry_id}/event/3"
+  ],
+  "notes": [
+    "Observed official GW3 on 2026-09-05; fixtures and values are historical test evidence, not fixed application data.",
+    "entries[].live is independently calculated from Draft event3 picks at position<=11 and Draft live total_points.",
+    "entries[].total/pf are official table baseline through GW2; reconstructedTotal/Pf include the active GW3 exactly once.",
+    "Do not rely on matches_played from official standings: API said 38 although W/D/L sum2.",
+    "Official H2H GW3 MustBeRo score was4; locked picks plus Draft live produced2, reflecting upstream league aggregate lag.",
+    "All 14 current and completed event2 entry_history values were empty {}; live subs arrays empty.",
+    "Completed Draft picks already have substitutions applied to positions: entry248500 GW2 subs564 for140; picks564 pos1,140 pos12.",
+    "Live total_points already includes awarded bonus; A.Becker8 incl1,Gakpo11 incl2,Isak13 incl3.",
+    "Current bootstrap total_points already includes event3: A.Becker10,Mac Allister5,Isak23,Araujo9."
+  ]
+}
