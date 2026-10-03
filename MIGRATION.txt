@@ -1,0 +1,61 @@
+FFTQL source migration candidate
+
+This directory contains a locally prepared source-only copy of the two sibling
+projects. It is not a Git repository and has not been uploaded or deployed.
+The original projects, README files, AGENTS files and release/version documents
+remain unchanged. Historical version statements are preserved, including stale
+ones; they must not be read as a fresh production verification.
+
+Layout
+  fpl-live-update/  Main portal, Draft workbench, scoring, static assets and proxy
+  fpl-news-v1/      News API, web, worker, database migrations and industry package
+
+No actual config.json, environment file, runtime data, analytics, caches,
+database dump, upload, feedback record, generated build, installed dependency,
+log, output folder or private key is included.
+Five upstream documentation screenshots are withheld; their documentation
+references are unchanged. All existing public website images, including the
+public feedback QR image, are included under the confirmed upload scope.
+Production brand assets, fonts, source SQL, LICENSE/NOTICE, package-lock.json,
+public API test fixtures and labelled example JSONL fixtures are retained.
+
+Only preparation files differ from source:
+  - new root migration note and ignore rules
+  - new main-project ignore rules and configuration/environment examples
+  - extended news-project Git/Docker ignore rules
+  - news .env.example: outbound safety switches off; blank/local development fields
+No website feature, dependency version, release statement or deployment script
+was changed.
+
+Configuration
+  Main: copy config.example.json to untracked config.json in the eventual cloud
+  workspace. Optional secrets belong only in an untracked .env, explicitly loaded
+  with Node 24 --env-file; none are generated here.
+  News: copy .env.example to an untracked .env and configure an isolated database
+  plus development-only signing/admin settings in that environment later.
+  All collection, model, Feishu and IndexNow switches in the example remain off.
+  Both projects default to web port 3000; choose distinct local web ports when
+  running them together and align the main news proxy with the chosen API port.
+  Current SSO domain binding is production-specific and is not reconfigured here.
+
+Cloud environment requirements to resolve in a later phase
+  Node.js >=24.11, npm, PostgreSQL 17, Git and curl.
+  Reinstall dependencies on Linux; do not copy the Mac node_modules or build.
+  Tests must use an isolated database ending in _test or _ci.
+  No installation, migration, test, server, collector or sender has been run here.
+  The inherited news CI workflow is nested under fpl-news-v1/.github and will not
+  activate automatically from the monorepo root. It also retains an upstream
+  expectation of 18 seed sources, while the current industry file lists 2.
+  The Dockerfile does not explicitly install curl needed by the X SOCKS path.
+  Some helper/deployment scripts contain Mac/temp/production paths; do not execute
+  them as cloud bootstrap scripts without a separate review.
+
+Approval boundary
+  The user approved importing the clean source and existing public website images
+  into a new private hugo263/fftql-team repository. No remote is configured here.
+  New OAuth authorization, token creation or persistent permission expansion
+  requires separate approval. Production deployment and feature work are outside
+  this migration step. Do not overwrite an existing repository with unknown contents.
+
+The sibling review/ directory outside this candidate holds the detailed file,
+exclusion, integrity and scan reports. It is not part of the upload candidate.
