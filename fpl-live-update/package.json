@@ -1,0 +1,12 @@
+{
+  "name": "fpl-draft-weekly",
+  "version": "1.0.0",
+  "description": "FPL Draft league weekly update workbench for 英超无双 Draft league",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
