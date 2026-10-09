@@ -11,9 +11,9 @@
 .news-category[data-category="rules"]{--category-ink:#8D4668;--category-bg:#F9EBF3;--category-line:#E3C3D4}
 .news-category[data-category]{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:3px 9px;border:1px solid var(--category-line,#D2DBD3);border-radius:999px;background:var(--category-bg,#EDF2EE);color:var(--category-ink,#40584A);font-size:11px;font-weight:650;line-height:1.5;text-decoration:none;white-space:nowrap}
 .news-category[data-category]::before{content:none}
-/* The uncolored "all" option and every category use the same control geometry.
- * Otherwise flex-wrap stretches the first row to its tallest button. */
+/* Match the article badges, including the uncolored "all" filter.
+ * Keep each row centered instead of stretching buttons when the filters wrap. */
 .category-tabs{align-items:center;gap:6px}
-.category-tabs>button,.category-tabs>button.news-category[data-category]{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;height:36px;min-height:36px;padding:0 12px;font-size:12px;font-weight:650;line-height:1;white-space:nowrap}
+.category-tabs>button,.category-tabs>button.news-category[data-category]{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;height:auto;min-height:0;padding:3px 9px;font-size:11px;font-weight:650;line-height:1.5;white-space:nowrap}
 button.news-category[data-category][aria-pressed="true"]{background:var(--category-ink);border-color:var(--category-ink);color:#fff}
 .news-category[data-category]:focus-visible{outline:2px solid var(--category-ink);outline-offset:3px}

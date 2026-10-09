@@ -45,6 +45,25 @@ html.night-workspace.scout-workspace :is(.dt-name,.cmp-player-name,.md-player-na
 html.night-workspace.scout-workspace .md-player { max-width:none; }
 html.night-workspace.scout-workspace #squadModal .cmp-pitch-player { width:96px; flex:0 1 96px; }
 html.night-workspace.scout-workspace :is(.dt-score,.cmp-player-scores) { background:var(--lime);color:var(--ink-900); }
+/* Compact one-line captions; each pitch explains the abbreviations below its players. */
+html.night-workspace.scout-workspace .cmp-player-scores {
+  display:flex;flex-wrap:nowrap;align-items:baseline;justify-content:center;gap:2px;line-height:1.25;padding:4px 1px;
+}
+html.night-workspace.scout-workspace .cmp-player-scores>span,
+html.night-workspace.scout-workspace #squadModal .cmp-player-scores>span {
+  display:flex;flex-direction:row;align-items:baseline;justify-content:center;gap:1px;min-width:0;flex-shrink:0;
+}
+html.night-workspace.scout-workspace .cmp-player-scores b,
+html.night-workspace.scout-workspace #squadModal .cmp-player-scores b { font-size:1.125em; }
+html.night-workspace.scout-workspace .cmp-score-separator { font-size:.8em;opacity:.65; }
+html.night-workspace.scout-workspace .cmp-pitch,
+html.night-workspace.scout-workspace #squadModal .cmp-pitch { padding-bottom:28px; }
+html.night-workspace.scout-workspace .cmp-pitch-legend {
+  position:absolute;right:9px;bottom:6px;z-index:2;max-width:calc(100% - 18px);
+  display:flex;flex-wrap:wrap;justify-content:flex-end;gap:2px 7px;padding:2px 5px;
+  border-radius:4px;background:#f3f6efeb;color:#496344;font-size:8px;line-height:1.3;
+}
+html.night-workspace.scout-workspace .cmp-pitch-legend>span { white-space:nowrap; }
 html.night-workspace.scout-workspace :is(.dt-kit,.cmp-kit,.share-kit) { filter:drop-shadow(0 4px 5px #0004); }
 html.night-workspace.scout-workspace .share-player-card:focus-visible { outline:2px solid var(--lime);outline-offset:4px; }
 html.night-workspace.scout-workspace :is(.cmp-bench-area,.md-bench,.share-bench-area),
@@ -70,4 +89,10 @@ html.night-workspace.scout-workspace .cmp-pitch-row .cmp-pitch-player { min-widt
   html.night-workspace.scout-workspace .totw-panel .pitch.is-empty { min-height:280px;height:320px;grid-template-rows:1fr;padding:20px; }
   html.night-workspace.scout-workspace .pitch-empty { padding:12px 15px;font-size:12px; }
   html.night-workspace.scout-workspace :is(.pitch,.cmp-pitch,.share-editor-pitch,.md-pitch) { border-radius:12px; }
+}
+@media(max-width:380px) {
+  html.night-workspace.scout-workspace .cmp-player-plate .cmp-player-scores,
+  html.night-workspace.scout-workspace #squadModal .cmp-player-plate .cmp-player-scores { font-size:7px;gap:0;padding-inline:0; }
+  html.night-workspace.scout-workspace .cmp-player-scores>span,
+  html.night-workspace.scout-workspace #squadModal .cmp-player-scores>span { gap:1px; }
 }

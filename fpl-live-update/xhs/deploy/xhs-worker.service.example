@@ -1,0 +1,25 @@
+[Unit]
+Description=TQL Xiaohongshu content workflow worker (manual/mock only)
+After=local-fs.target
+
+[Service]
+Type=simple
+# Existing main service currently runs as root. Review least-privilege ownership before production.
+# Choose an existing service identity with access to XHS_DATA_DIR; do not create/grant identities implicitly.
+User=REPLACE_WITH_REVIEWED_SERVICE_USER
+WorkingDirectory=/opt/fpl-weekly
+EnvironmentFile=/etc/fpl-xhs.env
+ExecStart=/usr/local/bin/node /opt/fpl-weekly/xhs/worker.cjs
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=25
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/fpl-xhs
+MemoryMax=256M
+
+[Install]
+WantedBy=multi-user.target

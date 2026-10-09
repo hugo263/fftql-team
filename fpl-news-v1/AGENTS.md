@@ -1,4 +1,18 @@
+> 管理后台已上线（2026-10-08 14:14，北京时间）：用户明确授权 Draft 全部数据单页展示、接入真实数据并上线。主站新增条件 XHS 路由及统一后台界面，Draft 无“本页内容”分项导航；资讯 current=`/opt/tql-news/releases/20261008-v14-admin-workspace`，后端仍为 v14，未发布本地下方 v15。只切资讯 web，API/采集 worker 未重启；反馈暂停功能/源码与现有配置保留。小红书生产私有库 `/var/lib/fpl-xhs`、隔离独立 `fpl-xhs-worker` 已启用，mock 关闭，只有人工辅助；没有账号凭据或真实发帖。636 项测试、HTTPS 鉴权/SSO/真实数据与桌面手机验收通过。原始源码仅同步本轮文件，待发布 v15 后端仍保留。发布文件清单、备份、回滚与成本见 `RELEASE-admin-workspace-20261008.txt`；不要用旧后台或全量旧目录覆盖此发布。
+
 # 给 Agent 的说明
+
+## 同篇原创追加价格 · revision 2，runtime仍v14（2026-10-08）
+
+用户授权直接更新已上线专题 `tql-international-20261008`，已加入9/21—10/8价格汇总：13人净涨、63人净跌，展示全13涨＋重点8跌，现价核至10/8 09:40；FPL.page完整历史与本站26条重叠、76人现价核验通过。article/publication/override均为2，原published/discovered/timeline仍 `2026-10-08T01:28:49.840Z`，公开排序/身份保留；重复dry-run返回already-updated/changed=false。主站配套v109，正文五节五图、原八行国家队表和21行价格表。保持selected=false/silent=true，不发通知、不调用模型、不排正文任务；没有切v14 runtime或修改采集/预算/配置，待v15继续独立未发布。修订前快照 `/opt/tql-news/backups/editorial-international-prices-20261008/before.json`；服务器脚本 `/opt/tql-news/editorial-international-prices-20261008/`，本地源码/证据在 `/Users/ken/Documents/ChatGPT/fftql.team/deploy/international-prices-20261008/`。完整发布与回滚边界见 `../fpl-live-update/RELEASE-v109.md`；旧revision和下方历史保留，不能把静态回滚当作正文还原。
+
+## 手工原创内容已发布 · runtime 仍 v14（2026-10-08）
+
+用户批准本篇预览并授权上线，已通过现有 v14 runtime 有审计地发布原创 `tql-international-20261008`（《FPL 资讯｜英超回来了！国际比赛日盘点与 GW6 队长参考》）。分类 strategy、30 个搜索别名，普通池 selected=false/silent=true；允许本站全文归档，不发送通知、不调用模型、不排正文处理任务。主站配套 v108.1，仅对 API 返回的本篇装饰专题卡；正文四图八行。没有切换 `/opt/tql-news/current`、部署后端或改采集/预算/配置，下方待发布 v15 不包含在本次授权和发布中。发布前快照 `/opt/tql-news/backups/editorial-international-20261008/before.json`；脚本/payload 在 `/Users/ken/Documents/ChatGPT/fftql.team/deploy/international-20261008/`，完整记录见 `../fpl-live-update/RELEASE-v108.md`。后续撤回使用当前 override version 和既有可见性接口写新审计，不能直接删除或把静态回滚当作数据撤回；以下历史条目保留。
+
+## 本地待发布 v15 · 资讯范围与同事件去重（2026-10-07）
+
+用户指出两条卡瓦哈尔/赫塔菲资讯无英超关联且重复。只读线上核查：预筛错误PASS（理由凭空推断FPL资格），低分22/30仍进入普通池；后台已归为同一fact47，普通pool/all API/RSS却未折叠。本地prefilter明确独立范围硬条件，analyze新增scope/逐字原文证据，范围外BLOCK、证据不足UNKNOWN；pool在当前筛选/搜索范围内按fact去重后分页计数，保留不同fact进展及旧详情链接。all API/RSS同步。两条撤回脚本review-fpl-scope-v15.ts已准备，但未执行。**未运行测试/构建/浏览器验收，未上线，未改生产数据**，遵守用户未说上线不测试约定；current仍v14，主站v106。详情 `deploy/tql-news/PENDING-v15-fpl-scope-dedup.md`。后续上线不能覆盖v14网络修复或重跑历史模型收费；先核对版本、隔离验证，再有审计撤回这两条。
 
 ## 当前生产 v14 · RSS 网络恢复（2026-10-03）
 

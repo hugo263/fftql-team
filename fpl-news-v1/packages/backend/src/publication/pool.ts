@@ -3,7 +3,7 @@ import type { PoolResponse, TimelineFilters } from "@aihot/contracts/site";
 import { beijingDate, beijingMidnight } from "@aihot/contracts/time";
 import { one, sql, withCustomPlans, type Db } from "../db.ts";
 import {
-  categoryCondition, channelCondition, ITEM_COLUMNS, ITEM_FROM, listedCondition, tagCondition, toFeedItemSummary, topicCondition,
+  categoryCondition, channelCondition, ITEM_COLUMNS, ITEM_FROM, listedCondition, poolRepresentativeCondition, tagCondition, toFeedItemSummary, topicCondition,
   type ItemRow,
 } from "./items.ts";
 
@@ -62,9 +62,9 @@ export function searchTerms(q: string): string[] {
 }
 
 /** Default search: subject, title or summary match (search_text), newest first. */
-export function directMatchCondition(terms: string[]) {
+export function directMatchCondition(terms: string[], alias = "p") {
   if (terms.length === 0) return sql``;
-  return terms.reduce((acc, t) => sql`${acc} AND p.search_text LIKE ${"%" + t + "%"}`, sql``);
+  return terms.reduce((acc, t) => sql`${acc} AND ${sql(alias + '.search_text')} LIKE ${"%" + t + "%"}`, sql``);
 }
 
 /**
@@ -72,13 +72,13 @@ export function directMatchCondition(terms: string[]) {
  * the start of a body whose full text may be shown, as the API documents it ("title / Chinese
  * title / Chinese summary / body"). Results stay in time order.
  */
-export function publicMatchCondition(terms: string[]) {
+export function publicMatchCondition(terms: string[], alias = "p") {
   if (terms.length === 0) return sql``;
   // Keep the body lookup correlated to the time-ordered candidates. Without OFFSET 0, PostgreSQL
   // may hash every matching body in pool_search before serving even the first 40 recent items.
   return terms.reduce(
-    (acc, t) => sql`${acc} AND (p.search_text LIKE ${"%" + t + "%"} OR EXISTS (
-      SELECT 1 FROM pool_search ps WHERE ps.article_id = p.article_id AND ps.body LIKE ${"%" + t + "%"} OFFSET 0))`,
+    (acc, t) => sql`${acc} AND (${sql(alias + '.search_text')} LIKE ${"%" + t + "%"} OR EXISTS (
+      SELECT 1 FROM pool_search ps WHERE ps.article_id = ${sql(alias + '.article_id')} AND ps.body LIKE ${"%" + t + "%"} OFFSET 0))`,
     sql``,
   );
 }
@@ -116,6 +116,8 @@ export async function loadPool(query: PoolQuery): Promise<PoolResponse> {
   const q = query.q?.trim() || null;
   const tab = q && query.tab === "relevance" ? "relevance" : "time";
   const terms = q ? searchTerms(q) : [];
+  const representative = poolRepresentativeCondition(now, query, alias =>
+    tab === 'relevance' ? publicMatchCondition(terms, alias) : directMatchCondition(terms, alias));
   const filters = sql`${channelCondition(query.channel)} ${categoryCondition(query.category)} ${tagCondition(query.tag)} ${topicCondition(query.topicTags)}`;
   const offset = (page - 1) * POOL_PAGE_SIZE;
   const cap = POOL_MAX_PAGES * POOL_PAGE_SIZE;
@@ -130,12 +132,12 @@ export async function loadPool(query: PoolQuery): Promise<PoolResponse> {
       // Page ids from the timeline index first, then the joins for those rows only.
       const rows = await db<ItemRow[]>`
         WITH page AS (
-          SELECT p.article_id FROM publications p WHERE ${listedCondition(now)} AND p.eligible ${filters}
+          SELECT p.article_id FROM publications p WHERE ${listedCondition(now)} AND p.eligible ${filters} ${representative}
           ORDER BY p.timeline_at DESC, p.article_id DESC LIMIT ${POOL_PAGE_SIZE} OFFSET ${offset})
         SELECT ${ITEM_COLUMNS} ${ITEM_FROM} WHERE p.article_id IN (SELECT article_id FROM page)
         ORDER BY p.timeline_at DESC, p.article_id DESC`;
       return { rows, total: await poolCount(filterKey, () => db<{ n: number }[]>`
-        SELECT count(*) AS n FROM (SELECT 1 FROM publications p WHERE ${listedCondition(now)} AND p.eligible ${filters} LIMIT ${cap}) t`) };
+        SELECT count(*) AS n FROM (SELECT 1 FROM publications p WHERE ${listedCondition(now)} AND p.eligible ${filters} ${representative} LIMIT ${cap}) t`) };
     }
     if (tab === "relevance") {
       // Rank narrow rows first: no article bodies or translations enter the sort/count. The public
@@ -162,7 +164,7 @@ export async function loadPool(query: PoolQuery): Promise<PoolResponse> {
         WITH matches AS ${splitFields ? sql`MATERIALIZED` : sql`NOT MATERIALIZED`} (${matches}), scored AS MATERIALIZED (
           SELECT p.article_id, p.timeline_at, matches.part + (${titleScore}) AS rel
           FROM matches JOIN publications p ON p.article_id = matches.article_id JOIN sources s ON s.id = p.source_id
-          WHERE ${listedCondition(now)} AND p.eligible ${filters}
+          WHERE ${listedCondition(now)} AND p.eligible ${filters} ${representative}
         ), page AS MATERIALIZED (
           SELECT article_id, rel FROM scored ORDER BY rel DESC, timeline_at DESC, article_id DESC
           LIMIT ${POOL_PAGE_SIZE} OFFSET ${offset}
@@ -177,14 +179,14 @@ export async function loadPool(query: PoolQuery): Promise<PoolResponse> {
     // search rows, where one- and two-character terms scan a small table instead of every item.
     const rows = await db<ItemRow[]>`
       WITH page AS (
-        SELECT p.article_id FROM publications p WHERE ${listedCondition(now)} AND p.eligible ${filters} ${directMatchCondition(terms)}
+        SELECT p.article_id FROM publications p WHERE ${listedCondition(now)} AND p.eligible ${filters} ${directMatchCondition(terms)} ${representative}
         ORDER BY p.timeline_at DESC, p.article_id DESC LIMIT ${POOL_PAGE_SIZE} OFFSET ${offset})
       SELECT ${ITEM_COLUMNS} ${ITEM_FROM} WHERE p.article_id IN (SELECT article_id FROM page)
       ORDER BY p.timeline_at DESC, p.article_id DESC`;
     const direct = terms.reduce((acc, t) => sql`${acc} AND ${like(sql`ps.direct`, t)}`, sql``);
     const { n } = one(await db<{ n: number }[]>`
       SELECT count(*) AS n FROM (SELECT 1 FROM pool_search ps JOIN publications p ON p.article_id = ps.article_id
-        WHERE ${listedCondition(now)} AND p.eligible ${filters} ${direct} LIMIT ${cap}) t`);
+        WHERE ${listedCondition(now)} AND p.eligible ${filters} ${direct} ${representative} LIMIT ${cap}) t`);
     return { rows, total: Number(n) };
   };
 
@@ -192,7 +194,8 @@ export async function loadPool(query: PoolQuery): Promise<PoolResponse> {
   const today = beijingDate(now);
   const meta = one(await sql<{ today_count: number; updated_at: Date | null }[]>`
     SELECT (SELECT count(*) FROM publications p
-      WHERE ${listedCondition(now)} AND p.eligible AND p.timeline_at >= ${beijingMidnight(today)} ${filters}) AS today_count,
+      WHERE ${listedCondition(now)} AND p.eligible AND p.timeline_at >= ${beijingMidnight(today)} ${filters}
+        ${poolRepresentativeCondition(now, query, alias => sql`AND ${sql(alias + '.timeline_at')} >= ${beijingMidnight(today)}`)}) AS today_count,
       (SELECT max(p.updated_at) FROM publications p WHERE p.eligible) AS updated_at`);
 
   return {

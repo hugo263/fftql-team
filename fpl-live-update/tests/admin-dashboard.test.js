@@ -74,7 +74,7 @@ async function harness() {
 
 test('admin assets are cache-busted and the three focus metrics precede selected-period analytics', () => {
   assert.match(adminHtml, /admin\.css\?v=20261002a/);
-  assert.match(adminHtml, /admin\.js\?v=20261002a/);
+  assert.match(adminHtml, /admin\.js\?v=20261008c/);
   assert.ok(adminHtml.indexOf('id="focusMetricGrid"') < adminHtml.indexOf('id="metricGrid"'));
   assert.ok(adminHtml.indexOf('id="focusMetricGrid"') < adminHtml.indexOf('id="rangeSwitch"'));
   assert.match(adminHtml, /打开次数/);

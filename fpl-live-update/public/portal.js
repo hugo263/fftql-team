@@ -11,7 +11,7 @@
   const newsUrl=id=>'https://news.fftql.team/items/'+encodeURIComponent(id);
   const external=(href,label,classes)=>{ const a=element('a',classes,label); a.href=href; a.target='_blank'; a.rel='noopener noreferrer'; return a; };
   function articleLink(item,classes,label=item.title) {
-    const a=element('a',classes,label); a.href=newsUrl(item.id);
+    const a=element('a',classes,label); a.href=window.TQLEditorial?.matches(item) ? window.TQLEditorial.url : newsUrl(item.id);
     a.addEventListener('click',event=>{ if(event.button===0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {event.preventDefault(); openDetail(item,a);} });
     return a;
   }
@@ -50,7 +50,9 @@
   }
   function render() {
     const fragment=document.createDocumentFragment();
-    items.forEach((item,index)=>{
+    const displayItems=window.TQLEditorial ? window.TQLEditorial.order(items) : items;
+    displayItems.forEach((item,index)=>{
+      if(window.TQLEditorial?.matches(item)) { fragment.append(window.TQLEditorial.card(item,articleLink)); return; }
       const row=element('article','story'); row.dataset.category=item.category || '';
       row.append(element('span','story-index',String(index+1).padStart(2,'0')));
       const copy=element('div'), title=element('h3'); title.append(articleLink(item));
@@ -110,6 +112,7 @@
   const dialog=$('newsDetailDialog');
   async function openDetail(item,trigger) {
     const version=++detailVersion; returnFocus=trigger;
+    dialog.classList.toggle('tql-editorial',!!window.TQLEditorial?.matches(item));
     const title=element('h2','',item.title);title.id='newsDetailTitle';
     $('newsDetailContent').replaceChildren(categoryBadge(item),title,meta(item,'story-meta'),item.priceBatch?priceBulletin(item.priceBatch,true):element('p','detail-summary',item.summary || '正在读取资讯详情…'));
     if(!dialog.open) dialog.showModal();
@@ -117,6 +120,14 @@
       const response=await fetch('/api/news/items/'+encodeURIComponent(item.id),{signal:AbortSignal.timeout(10000)});
       if(!response.ok) throw Error('Detail unavailable');
       const detail=await response.json();if(version!==detailVersion || !dialog.open) return;
+      if(window.TQLEditorial?.matches(item)) {
+        const article=await window.TQLEditorial.article();
+        if(version!==detailVersion || !dialog.open) return;
+        $('newsDetailContent').replaceChildren(article);
+        window.TQLEditorial.bind(article,()=>dialog.close());
+        $('newsDetailTitle').focus({preventScroll:true});
+        return;
+      }
       const batch=model.normalizePriceBatch(detail.priceBatch) || item.priceBatch;
       const summary=batch?priceBulletin(batch,true):element('p','detail-summary',detail.summary || item.summary || '该条资讯暂无摘要。');
       const links=element('div','detail-links'), original=model.safeOriginal(detail.links?.original);

@@ -1,3 +1,5 @@
+Historical preparation record from 2026-10-03; see README.md and FRONTEND_HANDOFF.md for the 2026-10-09 backup and sharing status.
+
 FFTQL source migration candidate
 
 This directory contains a locally prepared source-only copy of the two sibling

@@ -2,7 +2,7 @@
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
-const ADMIN_COLORS = ['#4f46e5', '#8b93f8', '#1d5fd1', '#b45309', '#7c3aed', '#15803d'];
+const ADMIN_COLORS = ['#246b58', '#8eafa0', '#5b7daa', '#b58b50', '#9a8baa', '#6e9879'];
 const adminState = { days: 30, data: null, charts: [], requestId: 0, controller: null };
 
 function escapeHtml(value) {
@@ -151,7 +151,7 @@ function renderCharts(data) {
     data: {
       labels: data.trend.map((row) => row.date.slice(5)),
       datasets: [
-        { label: '浏览量', data: data.trend.map((row) => row.pageviews), borderColor: ADMIN_COLORS[0], backgroundColor: 'rgba(79,70,229,.08)', fill: true, tension: .35, borderWidth: 2, pointRadius: 2 },
+        { label: '浏览量', data: data.trend.map((row) => row.pageviews), borderColor: ADMIN_COLORS[0], backgroundColor: 'rgba(36,107,88,.08)', fill: true, tension: .35, borderWidth: 2, pointRadius: 2 },
         { label: '访客', data: data.trend.map((row) => row.visitors), borderColor: ADMIN_COLORS[1], tension: .35, borderWidth: 2, pointRadius: 2 },
         { label: '会话', data: data.trend.map((row) => row.sessions), borderColor: ADMIN_COLORS[2], tension: .35, borderWidth: 1.5, pointRadius: 1 },
       ],

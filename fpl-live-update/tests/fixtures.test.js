@@ -6,6 +6,33 @@ const snapshot = () => ({ meta: { reportGw: 3, lastFinishedGw: 3, reportLive: fa
   managers: [{entryId:11,rank:2},{entryId:22,rank:1}],
   events: [{id:4,deadline:'2026-09-12T12:30:00Z'}],
   leagueSchedule: [3,4,5,6,7,8,9,10,38].map(gw => ({gw,entry1Id:11,entry2Id:22,entry1:'A',entry2:'B',started:gw===3,finished:gw===3,entry1Points:0,entry2Points:0})) });
+test('GW rail holds its window when choosing interior rounds', () => {
+  const available = Array.from({length:38}, (_,i)=>i+1);
+  const initial = fx.railWindow(available,5);
+  assert.deepEqual(initial,[3,4,5,6,7,8,9]);
+  for (const gw of [4,5,6,7,8]) assert.deepEqual(fx.railWindow(available,gw,3,true),initial);
+});
+test('GW rail edge selection reveals one neighbour without repeated shifts on refresh', () => {
+  const available = Array.from({length:38}, (_,i)=>i+1);
+  assert.deepEqual(fx.railWindow(available,3,3,true),[2,3,4,5,6,7,8]);
+  assert.deepEqual(fx.railWindow(available,9,3,true),[4,5,6,7,8,9,10]);
+  assert.deepEqual(fx.railWindow(available,9,4),[4,5,6,7,8,9,10]);
+  assert.deepEqual(fx.railWindow(available,3,3),[3,4,5,6,7,8,9]);
+});
+test('GW rail respects season boundaries, missing rounds and short schedules', () => {
+  const available = Array.from({length:38}, (_,i)=>i+1);
+  assert.deepEqual(fx.railWindow(available,1,1,true),[1,2,3,4,5,6,7]);
+  assert.deepEqual(fx.railWindow(available,38,32,true),[32,33,34,35,36,37,38]);
+  assert.deepEqual(fx.railWindow([1,3,5],5,1,true),[1,3,5]);
+  assert.deepEqual(fx.railWindow([],0),[]);
+  assert.deepEqual(fx.railWindow([1,3,5,7,9,11,13,15,17],13,1,true),[3,5,7,9,11,13,15]);
+});
+test('a distant GW jump becomes visible; resetting the anchor restores the default window', () => {
+  const available = Array.from({length:38}, (_,i)=>i+1);
+  assert.deepEqual(fx.railWindow(available,20,3,true),[15,16,17,18,19,20,21]);
+  assert.deepEqual(fx.railWindow(available,5,20,true),[4,5,6,7,8,9,10]);
+  assert.deepEqual(fx.railWindow(available,6,null),[4,5,6,7,8,9,10]);
+});
 test('full calendar defaults to next unfinished round and caps windows at season end', () => {
   const s = snapshot();
   assert.equal(fx.defaultGw(s),4);
@@ -53,7 +80,7 @@ test('page order is matchups, manager season, FDR; removed intro stays absent', 
   assert.ok(html.indexOf('id="fxMatchPanel"') < html.indexOf('id="fxManagerPanel"'));
   assert.ok(html.indexOf('id="fxManagerPanel"') < html.indexOf('id="fxTable"'));
   assert.doesNotMatch(html,/下一轮遇见谁，未来几轮怎么走/);
-  assert.match(html,/fixtures\.js\?v=95/);
+  assert.match(html,/fixtures\.js\?v=106/);
   assert.match(html,/fixtures\.css\?v=95/);
   assert.doesNotMatch(html, /<select[^>]+id="fxManager"/);
   assert.match(html, /id="fxManagerChoices"[^>]+role="group"/);

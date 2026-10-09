@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-08",
+  "browser": "Codex in-app browser",
+  "origin": "http://127.0.0.1:4328",
+  "originalAdminLogin": "passed with synthetic local password",
+  "actualUIFlow": [
+    "create synthetic account",
+    "create draft",
+    "upload PNG using file chooser",
+    "save and request review",
+    "approve bound version/account/time",
+    "observe queued state and audit",
+    "restart local service; persistent drafts preserved",
+    "save video draft and request review"
+  ],
+  "desktop": {
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  "mobileEditor": [
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "dialogWidth": 352,
+      "dialogScrollWidth": 352
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "dialogWidth": 282,
+      "dialogScrollWidth": 282
+    }
+  ],
+  "calendar": {
+    "month": "2026-10",
+    "days": 31,
+    "weekdayHeaders": 7,
+    "leadingCells": 3,
+    "mobileWidth": 390,
+    "mobileScrollWidth": 390
+  },
+  "video": {
+    "source": "synthetic local AVFoundation H264",
+    "duration": 1,
+    "width": 160,
+    "height": 120,
+    "readyState": 4,
+    "observedPlayingTime": 0.181717,
+    "endedAt": 1,
+    "ended": true,
+    "error": null
+  },
+  "consoleErrors": [],
+  "realPublication": false,
+  "platformAccountVerified": false
+}

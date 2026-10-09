@@ -50,3 +50,7 @@ secrets.json
 id_rsa*
 id_ed25519*
 
+
+.local-xhs/
+*.sqlite-wal
+*.sqlite-shm

@@ -1,0 +1,65 @@
+TQL 管理后台上线记录 · 2026-10-08
+
+用户本轮授权：Draft 全部数据放在同一总览页，接入真实数据后上线后台。
+上线时间：2026-10-08 14:14:47（Asia/Shanghai）。未执行 Git 推送，未向小红书提交帖子。
+正式入口：https://fftql.team/admin
+小红书：https://fftql.team/admin/xhs
+资讯：主站后台“FPL 资讯管理”沿用单点登录进入 news.fftql.team。
+
+已实现
+- 整体后台采用已确认的 Miora 参考样式：登录页、统一导航、Draft、资讯、小红书。
+- Draft 仅保留“Draft 数据总览”入口；指标、联赛明细、访问趋势、功能、来源、设备、时段和最近活动均在该页。7/30/90 天切换不跳新页面。
+- Draft 复用生产真实统计接口、上海时区、本人和机器人排除及历史补录口径；验收时累计 17 个联赛。未灌入演示数字。
+- 资讯复用线上 PostgreSQL/API；本次仅修改 4 个前端源文件及构建，首屏验证 50 条真实资讯，原有审核、审计与单点登录继续有效。列表卡片明确是本页统计。
+- 小红书私有内容库、最终版本预览、素材、账号显示名、不可变版本确认、日历/时区、持久任务、锁/恢复、有限重试、结果核实与审计已启用。数据库、素材初始为空，未导入本地样例。
+- 状态分别记录系统排期、平台接受、审核、公开发布；编辑会使原批准失效。取消交付中的内容需回执确认；结果不明先核实，不直接重发。
+- FPL 内容保存资料截至时间、freshUntil 和 expiresAt；已知重要变化可人工标记并暂停，过时默认暂停。本版没有自动新闻变化检测服务，不会自动改写并发布。
+
+通道边界与后续操作
+- 正式通道只有“人工辅助”，mock 关闭；服务器端官方适配器未开放。当前没有真实发布浏览器、账号凭据或平台调用。
+- 尚未验证你的账号支持的图文/视频官方定时、时间窗口、格式数量、查询/取消回执能力；不能视为已自动发布或具备跨平台 exactly-once。
+- 使用者可先在“账号与通道”保存显示名，然后上传私有素材、保存草稿、确认版本与时间。此处不接收密码/Cookie/令牌。
+- 计划到时人工辅助任务要求人工处理；系统排期不等于平台接受。人工在官方平台操作后填写真实回执，结果未确认时保持待核实。
+- 后续需在官方创作者平台核实账号能力，再单独授权通道接入及指定的一篇真实验收。账号凭据保存、费用或权限扩大仍需另行批准。
+
+测试证据
+- 主站 579 / 579、小红书 40 / 40、资讯前端 17 / 17，共 636 项通过。
+- 资讯本次在生产 v14 精确源文件基础上构建，前端类型检查和生产构建通过。未把本地待发布 v15 后端的改动/类型问题带到线上。
+- XHS 测试覆盖正常排期、重启恢复、重复触发、多 worker、批准后修改、取消竞争、平台排期后改期、账号失效、结果不明、缺素材、过期、夏令时和时区转换，以及鉴权、上传、备份恢复隔离；全部使用合成测试数据/适配器。
+- 生产 HTTPS 验证：未登录私有接口/资源 401、跨源写 403、XHS no-store、上海时间 2026-10-09 12:00 转 UTC 04:00、真实 Draft 与资讯数据、SSO、生产 SSR 均通过。没有写入生产测试内容或发布任务。
+- 1440×960 与 390×844 浏览器验收：Draft 全部区块同页；时段切换、菜单与跨模块跳转可用；三个模块无横向溢出，未捕获页面脚本错误。
+- worker 隔离测试：SQLite/调度可用；代码只读、宿主凭据不可见、不能连接主站网络。正式 worker active / enabled，检查时 0 次异常重启，约 14 MiB 内存。
+- 原线上 12,000 个受保护文件哈希保持；资讯 API/采集 worker PID 保持；反馈、主站 config、新闻 env、Nginx 配置不变。
+- 证据目录：/Users/ken/Documents/ChatGPT/fftql.team/output/admin-live-20261008
+  main-tests.txt / xhs-tests.txt / news-tests.txt / news-typecheck.txt / news-build.txt
+  activation-and-smoke.txt / worker-isolation.txt / service-status.txt / preservation.json
+  draft-desktop.png / draft-mobile.png / news-desktop.png / news-mobile.png / xhs-desktop.png / xhs-mobile.png
+
+部署结构与权限
+- 主站仅部署 manifest 中 17 个文件：9 行条件路由接入、后台静态界面、独立 xhs 运行模块。不覆盖其他公开页面或 data。
+- 资讯 current=/opt/tql-news/releases/20261008-v14-admin-workspace；从生产 20261003-v14-rss-retry 克隆，替换前端界面与构建。保留旧 hashed assets。仅重启 web，不重启其 socket/API/采集 worker。
+- 主站新增 /etc/systemd/system/fpl-weekly.service.d/xhs.conf，读取 /etc/fpl-xhs.env（0600）；原 config.json 不变。主站重启一次激活模块。
+- 正式数据库和素材：/var/lib/fpl-xhs，目录 0700，数据库及素材 0600；在 release 之外，受原管理员鉴权保护。
+- 独立服务 fpl-xhs-worker，开机启动、失败自动恢复、256 MiB 上限。沿用主站既有 root 身份，但在 RootDirectory=/var/lib/fpl-xhs-runtime 内运行，删除 capabilities、禁网络；仅挂载只读 Node/系统库/xhs 代码和可写 XHS 私有数据目录。未创建新服务账号或新增外部访问授权；这不是 rootless 部署。后续真实通道必须重新评估运行边界。
+- 不采集/上传真实小红书凭据，平台网络通道保持不可用；日志不记录 Cookie、密码或 token。
+
+发布步骤（本轮已执行）
+1. 核对线上版本与目标哈希；从线上取前端构建输入，叠加 4 个 UI 文件后本地构建/验证。
+2. prepare.py 生成精确 payload + manifest；stage.py 核对基线、备份主站、克隆 v14、测试隔离 worker。
+3. activate.py 写入精确文件、新建私有空库/隔离服务，重启主站；原子切换资讯 current 并只重启 web。
+4. auth-smoke.cjs 在服务器进程内复用现有签名密钥执行鉴权检查；短期 Cookie 仅存内存，未写入文件或输出。
+5. verify-preservation.py 确认受保护代码/配置与资讯后台进程保持。同步原始项目时也只合并本次文件，本地未发布 v15 保留。
+注：部署脚本是有基线和目标不存在保护的一次性发布脚本，不能盲目重复运行。
+
+回滚
+服务器私有备份与脚本：/opt/fftql-admin-deploy/20261008-workspace
+执行前读取 /opt/fftql-admin-deploy/20261008-workspace/rollback.py 并核对当前状态。
+命令：python3 /opt/fftql-admin-deploy/20261008-workspace/rollback.py
+脚本校验本轮文件仍匹配才恢复，遇到后续改动会拒绝覆盖；停用 XHS worker，移除本次新增 unit/env/drop-in，恢复原主站代码并重启；资讯 current 恢复 20261003-v14-rss-retry，只重启 web。
+不删除或还原 XHS 数据库、素材、审计，不修改资讯 PostgreSQL。数据恢复应另外暂停写入，成套备份 SQLite + 素材并隔离恢复任务，见 xhs/docs/DEPLOYMENT.md。代码回滚不能当成平台取消。
+本轮没有执行生产回滚或数据恢复。
+
+新增成本与维护
+- 本轮没有购买服务、升级套餐、增加付费调用或创建云资源；新增固定订阅费用为 0。沿用现有 VPS/磁盘，worker 检查时约 14 MiB，初始数据库约 228 KiB。
+- 正式素材当前限总量 2 GiB；以后素材、备份占用增加，是否扩容及费用另行确认。本项目不沿用其他项目预算。
+- 首版未添加主动通知或跨服务器备份服务；后台可查看异常与审计，系统进程可自动恢复。外部备份位置/容量和提醒渠道待另行确定。

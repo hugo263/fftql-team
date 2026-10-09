@@ -1,0 +1,4457 @@
+{
+  "snapshot_date": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "scope": "source-only; main v111; local news includes undeployed v15",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 700,
+      "sha256": "90160af9a5d6f7e32eb158d5cb40beb725cbc07b3361c015f0a36affbd90ca7b"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 789,
+      "sha256": "bcb7e8a8f5138002078030a836b7f5ba2dceedecb2dd763b6740c926a712855c"
+    },
+    {
+      "path": "FRONTEND_HANDOFF.md",
+      "bytes": 5473,
+      "sha256": "134c28bf01f3ed8ddb5f4c098051565c8366e10872d88e21727331216c58b1ed"
+    },
+    {
+      "path": "MIGRATION.txt",
+      "bytes": 3769,
+      "sha256": "21e0e7b6ef3046c15154026010317fe7e7268101903bb7cb93bc0afcb4eda76f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2958,
+      "sha256": "8687d381564aeef888e319e56ec3d542b98f8089598c6975a386c682f9dac170"
+    },
+    {
+      "path": "fpl-live-update/.env.example",
+      "bytes": 263,
+      "sha256": "3d5999a1f29d780bd984690ed51864b5c3bb8056e3c87b838913207ef12da5df"
+    },
+    {
+      "path": "fpl-live-update/.gitignore",
+      "bytes": 552,
+      "sha256": "3ff8719064d0f7124622d42032be799d387b4a6d821275d72c9082c89075709b"
+    },
+    {
+      "path": "fpl-live-update/AGENTS.md",
+      "bytes": 75798,
+      "sha256": "7877ae7156d8ed3944de8329bf07b5f27c59d0cab49dc1af1e9138b0b851a994"
+    },
+    {
+      "path": "fpl-live-update/BRAND-v43.md",
+      "bytes": 3393,
+      "sha256": "07f657894137f239c1fd4e4e7d8293aabf8f8b7dd95bd7a4e8b2d048c4651b57"
+    },
+    {
+      "path": "fpl-live-update/DEFCON-AUDIT-20260905.md",
+      "bytes": 3733,
+      "sha256": "87758a94583fc84cbfc4a60f032c6667676c68a7c18986270c597de5139c7f7b"
+    },
+    {
+      "path": "fpl-live-update/PORTAL-v89-pending.md",
+      "bytes": 3040,
+      "sha256": "f74c37497001dbcb36190cae8c8ef154fe9faa92ba8ada27e3853cefc6157534"
+    },
+    {
+      "path": "fpl-live-update/PREVIEW-v49.md",
+      "bytes": 2530,
+      "sha256": "5682f1852df2c2ca159bca42edb54666aeee04f6c01c354af6bc9cd07adb6139"
+    },
+    {
+      "path": "fpl-live-update/README.md",
+      "bytes": 42818,
+      "sha256": "26cc35e7b159445df4f5ecc5b2a16f5cb971de6ea1e66a585f7025861cf7f2c7"
+    },
+    {
+      "path": "fpl-live-update/REFRESH-v79-pending.md",
+      "bytes": 6325,
+      "sha256": "359040eaf580fef790ef41d437e5ef78e736564984d87f70bc7af00b963b47a7"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-admin-workspace-20261008.txt",
+      "bytes": 7761,
+      "sha256": "cb57b0943f9847a13714220e6303976e643238cd366f15060c9ebeaa0f9f13b4"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v101.md",
+      "bytes": 2911,
+      "sha256": "9abc120aafb78eda9d5814e69af6c946642c44cbc34fcf3333008017a15a80a0"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v102.md",
+      "bytes": 998,
+      "sha256": "d6542974b554006d3f40a029088be101b6ae0cd9491e2eb1d78f52b5cdf630ec"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v103.md",
+      "bytes": 1313,
+      "sha256": "e2c91fa23cf95fdf033e5c3d43184be3e41194f115d2b8fe8d9d97119f0dfe61"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v104-pending.md",
+      "bytes": 3036,
+      "sha256": "e06cf48e4bf67d42378ae56922eeb5da8ff5180ccd14f5eecb5533aecf9463c1"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v105.md",
+      "bytes": 2137,
+      "sha256": "2014710dd8325533eca9406ea7a84cb445d106f932a8eb5ffa1d5b144322444a"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v106.md",
+      "bytes": 1996,
+      "sha256": "6403fce9429d10ef135b6d6d13b0d1f1a76c143f94507d863a0eef254f194ef9"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v107.md",
+      "bytes": 2700,
+      "sha256": "42d77901576aea0178a53e5ebb0c61b77a1032051f8d11f6d33585d70b8acefa"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v108.md",
+      "bytes": 6026,
+      "sha256": "3fd5769eb0b949bff79d3e2344eaa556a8bda1f1aa9c73ae8e35515d9c0c1dd3"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v109.md",
+      "bytes": 7606,
+      "sha256": "b3823fed77b24952f45b540961dcad728ac88748d6242fdb21cedef09d43937d"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v110.md",
+      "bytes": 3248,
+      "sha256": "66d106d46933480c215cccfe58111ca225002c10366a4bb3157f22205d0cab5c"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v111.md",
+      "bytes": 3076,
+      "sha256": "4c0c9101ce4ba1e636729f5f7fb471cdeb8bf600ced783a6aeb396365255adac"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v35.md",
+      "bytes": 1706,
+      "sha256": "6139445c3bb3cfb5b0e87c659f1d0c758b2e307034097a7886b62cf9c4bc4018"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v36.md",
+      "bytes": 2616,
+      "sha256": "4d59dea5baf31a13ccee159d3d7dfd9b6fbf70e4af69268acf20c13f8e3069e7"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v37.md",
+      "bytes": 4121,
+      "sha256": "be9c0b7372f97d8095967ab9b102322331220306547eb051c856d8f6d139a9e2"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v38-pending.md",
+      "bytes": 5780,
+      "sha256": "8804adb8c3dc35c8285debf3e5bb2ed4e0e65106a11d1ab220cf0099a30d0e9f"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v40.md",
+      "bytes": 4002,
+      "sha256": "273b0adf3102a3030c0455129d4cde43fa08d7710cd3bd6f6b63ad63166a7036"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v41.md",
+      "bytes": 5447,
+      "sha256": "67db6cf798cf533927c9cc38d6c225ebdf3b95b23757e6076fa24d75d28cfcfd"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v42.md",
+      "bytes": 3482,
+      "sha256": "e31e7282ea5877ef0dfcaa8926e19903d988f3a73072824d9b2794133185ccc1"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v43.md",
+      "bytes": 2568,
+      "sha256": "776ddc69faf675a0a4eb3de1205202c33c44600783bf3eda9351ee764afca9cb"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v46.md",
+      "bytes": 2783,
+      "sha256": "dc353c8ce9e7badca943da6e161bcc5be2c1b6e5bcd53484f8d0c82a3f490a32"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v47.md",
+      "bytes": 1469,
+      "sha256": "5f03fb079e6d47bf13d03a38d40749319f8facb52132fa4d32058ecae05637d9"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v48.md",
+      "bytes": 2423,
+      "sha256": "aa5b0d1b6efc26b9d02a46e12d0ff27dab138ea58492e62be00ae28ba7269ef8"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v53.md",
+      "bytes": 2751,
+      "sha256": "06f8d14c9d903ce3e8e7ee59131518ac5f7775977da088aedd5d0d9e7bb17e89"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v55.md",
+      "bytes": 964,
+      "sha256": "b92bd8921659d74e684d6cf3960fbbfadef75e91ff9453dafdc63ac246cb5b83"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v56.md",
+      "bytes": 1269,
+      "sha256": "63b9b4030722c21455bd81d879e2d3d76fe65fe3f74d775c6cb1deac1d95583e"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v57.md",
+      "bytes": 2003,
+      "sha256": "e83e05d79ff301232e41f8c9f72bbf9e7644c1ba3387f7496fa9502535f6127a"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v58.md",
+      "bytes": 3280,
+      "sha256": "ddaa0ee7f8e940c4ba8454a759f3cfcdb606605faeec20750976bada60c54dad"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v59.md",
+      "bytes": 4477,
+      "sha256": "880b593c92256334c0402cf7940dc4d81bee9fcd3eef11d32cc788308b36f01d"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v60.md",
+      "bytes": 5082,
+      "sha256": "848bb4aa3a2e9e9138b9976c48e0a5a2431af0e2f2c54331f9b9f81c464a9409"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v61.md",
+      "bytes": 2365,
+      "sha256": "0d5cff1219905738d44512aaf42901de68a611f44981a51e2fd3cda4fbdeae7b"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v62.md",
+      "bytes": 3178,
+      "sha256": "3b895d5e945d1f9947cd2761396b66f9856e8c7080398cf32df41784829bec94"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v63.md",
+      "bytes": 3151,
+      "sha256": "304b0a8d4f28160d1a8f86770e83d3d1402891e23e39906eee3cd8fe12126df2"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v64-pending.md",
+      "bytes": 1716,
+      "sha256": "99dd32c45f2c105680172c1e28b0de52c01ba19219d27e8db44115c90d9ee3eb"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v65.md",
+      "bytes": 3481,
+      "sha256": "db94d00a0d2c3d1458fa6be637f516fa279303763f77cb660fd4337f8dfe6046"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v66-pending.md",
+      "bytes": 1840,
+      "sha256": "fad2189141addda253336f0beca26bff2fea1ff0a5683e65057a950849bd01a0"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v67-pending.md",
+      "bytes": 2143,
+      "sha256": "dc88ac95a37c89cc5a9759e83a9ff0c84b92bc91f2b3b084e30a43fabe631ebf"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v68-pending.md",
+      "bytes": 1420,
+      "sha256": "b29d1eacfd95950386ddc08a75227f5f7a65878addb94bb7e8167ec7f3be7935"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v73.md",
+      "bytes": 1733,
+      "sha256": "501c7a847629bdf01255ae2870b3257d2cef5f228c9397ff74f4ba829e46d12c"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v77.md",
+      "bytes": 1314,
+      "sha256": "b2a136411f578f3ee6b71bae210de5f707a2011e118c665a759d3d020e1b8e98"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v79.md",
+      "bytes": 4928,
+      "sha256": "c50790bbbabf7ae090f6281259bf5b003a4c7b764fa1192d49ca187122cb4235"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v80.md",
+      "bytes": 2565,
+      "sha256": "53c87f0a917a66488e0a63467508d84fef51e188c9534ef097012d7e77c1ae7c"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v81.md",
+      "bytes": 2296,
+      "sha256": "33b49efd565476ac5126a4397dc60498c520e49e0e9a2b1a92f13de1118d2c00"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v82.md",
+      "bytes": 3224,
+      "sha256": "32828f35da3bdb76a79b96d0970d8112498bcb80fb2d5c2a45489f2ca72e86c5"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v83.md",
+      "bytes": 3853,
+      "sha256": "871a7e97ad9fdb4cfdd38b9676e5a7440445516dee97b179f85a0416fd365a68"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v84.md",
+      "bytes": 2852,
+      "sha256": "816c671792f9c491c98c134d1d852a448c9ed7efc4da6dcc04368471da4d3394"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v85.md",
+      "bytes": 1756,
+      "sha256": "8f527a2f0b97aaf0156ba0dada3b4d1c63be2b12d14e773e5e2e01897e9c89a7"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v86.md",
+      "bytes": 3485,
+      "sha256": "6d205dd7ed764ec01023bdaf8789d86f4e9f7b0fe312dbd0ca9f98751e923504"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v88.md",
+      "bytes": 3697,
+      "sha256": "3c74eb5a9bd095d66882096c37523b4e96520282b27aba21dde7df6e43a4a4ec"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v90.md",
+      "bytes": 2798,
+      "sha256": "edaf0f418547163908257434cec1ff91f9d0ade1a091035a8b55c3cfdd6088a7"
+    },
+    {
+      "path": "fpl-live-update/RELEASE-v98.md",
+      "bytes": 3742,
+      "sha256": "16999a4f15f192a2958ae2314d9ac3fc69e9dcf499e8d9ffbaf3881e9621372d"
+    },
+    {
+      "path": "fpl-live-update/admin-news-sso.js",
+      "bytes": 2012,
+      "sha256": "daff8e26d6eb4b3b5dc8719d22a8fad4a72da356115df26578ccd55dd8a01ccd"
+    },
+    {
+      "path": "fpl-live-update/analytics-backfill.js",
+      "bytes": 10312,
+      "sha256": "a1b206c745d397f33acf0a43c60394b0bb49489f7f3535b55599020175291986"
+    },
+    {
+      "path": "fpl-live-update/analytics-history.js",
+      "bytes": 1624,
+      "sha256": "765b4491254b1e99694b263f97c65e1335be060427d0872b7e167b4e6d8b2783"
+    },
+    {
+      "path": "fpl-live-update/analytics-identity.js",
+      "bytes": 3048,
+      "sha256": "9ba0d35656718359567a0f0c3933c2be9d05e8f470b29e6211c29785008bd960"
+    },
+    {
+      "path": "fpl-live-update/analytics-matchdays.js",
+      "bytes": 2085,
+      "sha256": "108672fc46c469c514fc236671596c81848e57d99c7bc9dc3230761f9bb1de8e"
+    },
+    {
+      "path": "fpl-live-update/analytics-report.js",
+      "bytes": 11205,
+      "sha256": "e9fab41749e7134da3cd2858c66dc228d52d2809981ba50cb58e455559a2934f"
+    },
+    {
+      "path": "fpl-live-update/auto-subs.js",
+      "bytes": 13080,
+      "sha256": "2b300f1a977c427c306fc2f2cb7b671298578561c1f9198a296b64151e8fcce2"
+    },
+    {
+      "path": "fpl-live-update/config.example.json",
+      "bytes": 128,
+      "sha256": "cceae2847049f6c68ded14f03fa148f1b6bfc9cd555306655b0bf4261506b799"
+    },
+    {
+      "path": "fpl-live-update/fun-rankings.js",
+      "bytes": 5227,
+      "sha256": "f3507e603cb93d097abed8bd2f64454ca19492f4f36ff0ce3ff2e1d93d7e8037"
+    },
+    {
+      "path": "fpl-live-update/gameweek-rollover.js",
+      "bytes": 4627,
+      "sha256": "d2d5e94c3274aed137834edd67a027645616c7c01c88a3c6b6f0d08c3837cbb1"
+    },
+    {
+      "path": "fpl-live-update/live-scoring.js",
+      "bytes": 6632,
+      "sha256": "b80380b416700a97a1676374c0a6f3ae66408697048282c6714299c98776831d"
+    },
+    {
+      "path": "fpl-live-update/match-centre.js",
+      "bytes": 29173,
+      "sha256": "d6d0d6728044194dccbc5544f99d9bfdd78b1a284b9ed39d62bd27d267974c3c"
+    },
+    {
+      "path": "fpl-live-update/match-detail.js",
+      "bytes": 20085,
+      "sha256": "72ac3d2d1a7bdc9dcca0b418803e656c089681ad800722d90fd4fadb2b85a042"
+    },
+    {
+      "path": "fpl-live-update/news-proxy.js",
+      "bytes": 2798,
+      "sha256": "c8e2f3a15d8a9aa3cc1a4b73fcec6c7b0e4353781467f5ab932412c0c5b4c81b"
+    },
+    {
+      "path": "fpl-live-update/package.json",
+      "bytes": 262,
+      "sha256": "253f9f615d1ee4573437b94e1dcc2c9e5d013cec149357e072ee82c230f58728"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icon.svg",
+      "bytes": 219,
+      "sha256": "e4501e17fde8221b38538f072132f28f99fdd90fd29339936ecb61aa14d902dc"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/apple-touch-icon-precomposed.png",
+      "bytes": 3459,
+      "sha256": "781ddff7b912e957c6832f12e4d6c1e3400c28ba3410a4caedc40bb1bc04589e"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/apple-touch-icon.png",
+      "bytes": 3459,
+      "sha256": "781ddff7b912e957c6832f12e4d6c1e3400c28ba3410a4caedc40bb1bc04589e"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/favicon-16x16.png",
+      "bytes": 279,
+      "sha256": "d10bdd4e69252bc0c960cd07fea966ec971abbe833cf29df423695df2bff6039"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/favicon-32x32.png",
+      "bytes": 641,
+      "sha256": "5a978004086aea3d8237fcfeb66479ec385f78392f8962d9d41e3a705efccf26"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/favicon-48x48.png",
+      "bytes": 1115,
+      "sha256": "77c2682ba52da736eb506005f30e99c976ce2253ee8aff3ba5c49b2119c1f742"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/favicon.ico",
+      "bytes": 15086,
+      "sha256": "09925220534be3d749f81607b507a4e0870030660d2e5ee300545b38b2364da9"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/favicon.png",
+      "bytes": 16115,
+      "sha256": "f93c9114d1e8a35fa074326ba4b8aea98b2815d3c3557c3c9b49810f9bec1991"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/icon-192.png",
+      "bytes": 3797,
+      "sha256": "d7ed649026ed0709d5f78c484a613711ce15f2d57b2fc9aeee57f4965a896950"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/icon-512.png",
+      "bytes": 12355,
+      "sha256": "e86ca731be0de669eafe2e393d907168ca09e079af8ca44b807690a5d22e8395"
+    },
+    {
+      "path": "fpl-live-update/public/admin-icons/site.webmanifest",
+      "bytes": 388,
+      "sha256": "d62292583ec768e41dda088696b9755afebfd68695640fd307ae3575e267fff3"
+    },
+    {
+      "path": "fpl-live-update/public/admin-workspace.css",
+      "bytes": 12860,
+      "sha256": "e85bb47dec316fc24dd4e662351f0c4977590a98989d10055f4f9831a6377add"
+    },
+    {
+      "path": "fpl-live-update/public/admin.css",
+      "bytes": 23043,
+      "sha256": "268b3d424476ed90f4d2ae368a77d4962d3729e3054a0ace3fd42d7639d39dda"
+    },
+    {
+      "path": "fpl-live-update/public/admin.html",
+      "bytes": 10063,
+      "sha256": "8fe7e2e9900b9990192251146ea70043373f741e770cd30321a39c7a1a551980"
+    },
+    {
+      "path": "fpl-live-update/public/admin.js",
+      "bytes": 20705,
+      "sha256": "fc01d7ea43840d76f9d5b87e9eabf2d9c504434345678f1d4a664af1ab1b8556"
+    },
+    {
+      "path": "fpl-live-update/public/analytics.js",
+      "bytes": 4314,
+      "sha256": "3d1fa3ed1cc279c3bab1dddcfa25669c91a23792397d7eb1452890d2f496ea87"
+    },
+    {
+      "path": "fpl-live-update/public/app.js",
+      "bytes": 111994,
+      "sha256": "6efaaaf0a0d2bfa5304268a001ff8b3f0cd1aff2b77f70d845f281027a21d176"
+    },
+    {
+      "path": "fpl-live-update/public/apple-touch-icon-precomposed.png",
+      "bytes": 3465,
+      "sha256": "6ca76b3f87feaf9ac8fbe4f9b725f9f87d1a239fba1ea87b5255c69246f10b7f"
+    },
+    {
+      "path": "fpl-live-update/public/apple-touch-icon.png",
+      "bytes": 3465,
+      "sha256": "6ca76b3f87feaf9ac8fbe4f9b725f9f87d1a239fba1ea87b5255c69246f10b7f"
+    },
+    {
+      "path": "fpl-live-update/public/articles/fpl-international-20261008.html",
+      "bytes": 20930,
+      "sha256": "e64cc77a13aaffbbb02ab1a30697e4e7d74bbfa7b0c1952d2ab1d246f86286c8"
+    },
+    {
+      "path": "fpl-live-update/public/brand/chelsea-bus-v74.png",
+      "bytes": 1096797,
+      "sha256": "ca562af08918d1e0ed6c1fd6ab93d69517c495f96621f881a23a84ce288c276e"
+    },
+    {
+      "path": "fpl-live-update/public/brand/tql-badge-preview-v47.png",
+      "bytes": 1238813,
+      "sha256": "7f62a4faeef9c98c518cd332a799f4f5275e2321568efcae607f204b000f84a2"
+    },
+    {
+      "path": "fpl-live-update/public/brand/tql-icon.png",
+      "bytes": 16246,
+      "sha256": "f995455037952b82d5441ed8c6a596bf11fb75d3907bf07ea583739bac885b2c"
+    },
+    {
+      "path": "fpl-live-update/public/brand/tql-wordmark.png",
+      "bytes": 852946,
+      "sha256": "761117a572ab10b7cd8f38f208626309a884b59f96be23bad03008241787024e"
+    },
+    {
+      "path": "fpl-live-update/public/brand-avatar.jpg",
+      "bytes": 42084,
+      "sha256": "1cfc103ca82f95b439f8b2ab1c761b0471fa59f65a603ded8daf787484bf5501"
+    },
+    {
+      "path": "fpl-live-update/public/compact-header.css",
+      "bytes": 10291,
+      "sha256": "d0bed40584b65ca7d9315be26b0851a2a09fdd3527a8cb67582234ddb7b37729"
+    },
+    {
+      "path": "fpl-live-update/public/discover.css",
+      "bytes": 14764,
+      "sha256": "0f79beaddd4106ac7491302b31d1cb779d04b2a9a4aa303140f8c59d2e311527"
+    },
+    {
+      "path": "fpl-live-update/public/discover.html",
+      "bytes": 10744,
+      "sha256": "2eeefec803fbc0e07998794080a8e746ca1b2989c1dce866e79ca9fb8e4f126a"
+    },
+    {
+      "path": "fpl-live-update/public/discover.js",
+      "bytes": 2221,
+      "sha256": "9dfaa59811a5525508a7b09c967cc3ca24bb9a68fa3097ba7dc8c9478ca50faa"
+    },
+    {
+      "path": "fpl-live-update/public/editorial-roundup.css",
+      "bytes": 22196,
+      "sha256": "7cc26de0d0d27580af9ec72b26f6cd25e4392a833efde2ce062bfd682b433247"
+    },
+    {
+      "path": "fpl-live-update/public/editorial-roundup.js",
+      "bytes": 3547,
+      "sha256": "e2e40246efb517cfb7ce9bf23aa67696056ce0907cc65c4e66d4e72374df7f92"
+    },
+    {
+      "path": "fpl-live-update/public/favicon-16x16.png",
+      "bytes": 277,
+      "sha256": "f29690e1badf36978fd310b8dec2a9d24ecbc998d26e1bdcafbfde920df51d23"
+    },
+    {
+      "path": "fpl-live-update/public/favicon-32x32.png",
+      "bytes": 640,
+      "sha256": "a22254e0efbf25562041247ba5b058630b70c3359744d70e8831bd14e0ab1a8a"
+    },
+    {
+      "path": "fpl-live-update/public/favicon-48x48.png",
+      "bytes": 1127,
+      "sha256": "3329c8db833fe1d48cd4f9f037e8520b8f8cc7604b6a42b01e32091a846f876c"
+    },
+    {
+      "path": "fpl-live-update/public/favicon.ico",
+      "bytes": 15086,
+      "sha256": "a2b68a05d16a8b38158b4a7bb61d41695fdeec8fec57972bba6979e2fe38acc2"
+    },
+    {
+      "path": "fpl-live-update/public/favicon.png",
+      "bytes": 16246,
+      "sha256": "f995455037952b82d5441ed8c6a596bf11fb75d3907bf07ea583739bac885b2c"
+    },
+    {
+      "path": "fpl-live-update/public/feedback.js",
+      "bytes": 447,
+      "sha256": "b5f8df710c66af42416e87895eb2afb2ddac9ca153f9d0fa79018ded46496d51"
+    },
+    {
+      "path": "fpl-live-update/public/fixtures.css",
+      "bytes": 16300,
+      "sha256": "43ed60bb5cc4399b23b3487905391ffa75c86a7b23a4ffdba4da753bcba2e5a7"
+    },
+    {
+      "path": "fpl-live-update/public/fixtures.js",
+      "bytes": 19344,
+      "sha256": "dd3d2a1c62b8766545b7a18f45d0db676fdef5e48b3ab08f012a34292da57a8f"
+    },
+    {
+      "path": "fpl-live-update/public/fun-model.js",
+      "bytes": 2864,
+      "sha256": "2ffaf317648377611c2c3fc5036bb6bb854cea3eb60b630a03266abc930d1898"
+    },
+    {
+      "path": "fpl-live-update/public/fun-rankings.css",
+      "bytes": 5895,
+      "sha256": "8f00e69601e1b19eaa5df122ccb6a572b888b1b2b08986cda84e5b111a495b2e"
+    },
+    {
+      "path": "fpl-live-update/public/fun-rankings.js",
+      "bytes": 10890,
+      "sha256": "7eb5850eab0eecc8a065049c8b1383f299cc3c63443c72f391fe5d0107f4a5f1"
+    },
+    {
+      "path": "fpl-live-update/public/home-tab.css",
+      "bytes": 723,
+      "sha256": "c0682ebf53b23d38bb0995b2917331f52b39689df346a4e5d78f82293dd9df0e"
+    },
+    {
+      "path": "fpl-live-update/public/home-tab.js",
+      "bytes": 5798,
+      "sha256": "e5b322eb4d2a3d3363a2621724d09b3cd023af4f1b0b29caa6483f7a1109b73b"
+    },
+    {
+      "path": "fpl-live-update/public/icon-192.png",
+      "bytes": 3820,
+      "sha256": "f973c1c1e3e782a8d8a350bb9993afe16fe7490e33547f830f4c56c0d3c1d520"
+    },
+    {
+      "path": "fpl-live-update/public/icon-512.png",
+      "bytes": 12494,
+      "sha256": "fa7668326ea718de744401e88038779082918905ab34400b47569001af32d47a"
+    },
+    {
+      "path": "fpl-live-update/public/index.html",
+      "bytes": 36411,
+      "sha256": "9d25a96c934c7d94500413407bcf506fb642422257dbd64057d83f35fd54a4ab"
+    },
+    {
+      "path": "fpl-live-update/public/league-id-guide.js",
+      "bytes": 1371,
+      "sha256": "b44552b9ca1a63daae7b7d060114d1fff6153464e552c3b11685e08be87cf95d"
+    },
+    {
+      "path": "fpl-live-update/public/light-surfaces.css",
+      "bytes": 5417,
+      "sha256": "4c45f69ff692e177634bd8556726b5ac9d3ddaf0ef2a51ab4a7fd42408dda74e"
+    },
+    {
+      "path": "fpl-live-update/public/live-render.js",
+      "bytes": 5105,
+      "sha256": "70748121bf18922a5a41dc0a3b54caa26f32dde69cd4be63f9617ea0a778c66d"
+    },
+    {
+      "path": "fpl-live-update/public/loading.css",
+      "bytes": 314,
+      "sha256": "c8ed02807d1d1dff19d78768edcc0a4fcd49217f79457283f1b3761f84c78fce"
+    },
+    {
+      "path": "fpl-live-update/public/manager-view.css",
+      "bytes": 3668,
+      "sha256": "f6031ee4e1bebc112e30ef1c8303a046cb49284e25ce055c41c6c30168b928ef"
+    },
+    {
+      "path": "fpl-live-update/public/match-centre-layout.css",
+      "bytes": 9691,
+      "sha256": "303dace565a7fc36d0fe97d49729c3c58eb81dcb4df2eb2bc8e2ae6aea6b47b7"
+    },
+    {
+      "path": "fpl-live-update/public/match-centre-share.js",
+      "bytes": 17840,
+      "sha256": "66e107572091552cc538f20aa4b0a37f59fa79ff8d321823bdecded809ab332a"
+    },
+    {
+      "path": "fpl-live-update/public/match-centre.css",
+      "bytes": 19400,
+      "sha256": "e02b5c4e851b2c2d15c56ec8a3556c7b333e8448c65f29a113a9a85bd3dec5d5"
+    },
+    {
+      "path": "fpl-live-update/public/match-centre.js",
+      "bytes": 49523,
+      "sha256": "e8e7a8bd49b76d8b63102d2e75fd8f4d5f2364488b22a22abd16bbfc78662521"
+    },
+    {
+      "path": "fpl-live-update/public/match-results.css",
+      "bytes": 1558,
+      "sha256": "95fa57ed1783ad6f70e15829d68166b0f72f87e53452d9965d0b0e9273c897bc"
+    },
+    {
+      "path": "fpl-live-update/public/match-share.js",
+      "bytes": 18483,
+      "sha256": "1cf3af84d2c72e44253953682dd2a38a94be1e6714c6bd8464ffbd7048b8b5c6"
+    },
+    {
+      "path": "fpl-live-update/public/match-view.css",
+      "bytes": 10154,
+      "sha256": "fda645115d6457c21dfcc7922b7d98f69ae55c618a69f154705ee5e474883452"
+    },
+    {
+      "path": "fpl-live-update/public/match-view.js",
+      "bytes": 34393,
+      "sha256": "da2f97f35f25987b98c8b6f61a318dd6cbcad5a249695132ea956bceecf93516"
+    },
+    {
+      "path": "fpl-live-update/public/news-categories.css",
+      "bytes": 2275,
+      "sha256": "80649d136a65725bf0473b00390f191d013784d99bbcd3a97c748adf7527a100"
+    },
+    {
+      "path": "fpl-live-update/public/night-admin.css",
+      "bytes": 3427,
+      "sha256": "f233bbe0c7e82486ab9dc164d7ce2ea5fbd19e5adbd109ed215f6ce38e7ab008"
+    },
+    {
+      "path": "fpl-live-update/public/night-match.css",
+      "bytes": 19440,
+      "sha256": "f5729e04befff045a9cc144343603ce2a05a304bb0b64a9f1fa23a10c6b648f6"
+    },
+    {
+      "path": "fpl-live-update/public/night-share.js",
+      "bytes": 3434,
+      "sha256": "e50dae627828b342d3a47971567504cfedad8f6cca3b26f612c10bdfcd1c095b"
+    },
+    {
+      "path": "fpl-live-update/public/night-shell.css",
+      "bytes": 9011,
+      "sha256": "2998d761f8a1d43fdacf3b0372892137128f49b24542e64d01524138ea8aa0f8"
+    },
+    {
+      "path": "fpl-live-update/public/night-shell.js",
+      "bytes": 2311,
+      "sha256": "305989a097fa85823248a6f625a8813670c0c2bafa377e99ea379804d88a14c7"
+    },
+    {
+      "path": "fpl-live-update/public/night-tokens.css",
+      "bytes": 1095,
+      "sha256": "2ae5de0e949518dcb62e93c7b28cc355c6006fa10b40197a0fa02d14b48c5596"
+    },
+    {
+      "path": "fpl-live-update/public/night-ui.css",
+      "bytes": 23832,
+      "sha256": "c1b65030b613b013ef0cf48f1aca6447a8f1b0ae2971ba69930168b711680294"
+    },
+    {
+      "path": "fpl-live-update/public/night-workspace.css",
+      "bytes": 31712,
+      "sha256": "956068c8be765b7b0080efd7d3af79e131c324fb348d1e92d72f0cc8dd7e4a2f"
+    },
+    {
+      "path": "fpl-live-update/public/pitch.css",
+      "bytes": 7100,
+      "sha256": "251b0851394c29ccdbcbe0165d51172f1981aa5bb397d81642149b666c269bdd"
+    },
+    {
+      "path": "fpl-live-update/public/pitch.js",
+      "bytes": 4718,
+      "sha256": "be8f485a6c489cf3933849ff735ba630fcd929c0f50e42586a65f37d641c41d4"
+    },
+    {
+      "path": "fpl-live-update/public/portal-news-model.js",
+      "bytes": 3680,
+      "sha256": "e98034528385a87c93785ae37c3926d0b68dbaffc7828126c3a51aad13d2b51b"
+    },
+    {
+      "path": "fpl-live-update/public/portal.css",
+      "bytes": 16100,
+      "sha256": "da29769c820c261f1763fa68683fde24ff4e20e032c01e45f6b32310b7081557"
+    },
+    {
+      "path": "fpl-live-update/public/portal.html",
+      "bytes": 9676,
+      "sha256": "5291edcbdba79d8b109dec5923fc4e275ea570b29d48b3112609c4243d87101b"
+    },
+    {
+      "path": "fpl-live-update/public/portal.js",
+      "bytes": 14955,
+      "sha256": "335f30f8b78fde05728b7b3b5cdb3afaed1ea81e77fbccd6001f215d13f7be75"
+    },
+    {
+      "path": "fpl-live-update/public/price-bulletin.css",
+      "bytes": 2063,
+      "sha256": "0d823a8c2e9065998d4872ac2a0f33f6304d679beda2516a6ec86e68d9291158"
+    },
+    {
+      "path": "fpl-live-update/public/responsive.css",
+      "bytes": 6136,
+      "sha256": "65bf3dfc17960d6826d57584957c2200a2d21f67c9ab13d1c0a6f527c822c813"
+    },
+    {
+      "path": "fpl-live-update/public/share-styles.css",
+      "bytes": 4694,
+      "sha256": "96f10d926db2f4c0c93529854cd51917830576d02f05c7d3410b9df5aed835c2"
+    },
+    {
+      "path": "fpl-live-update/public/share-styles.html",
+      "bytes": 2990,
+      "sha256": "add7dd7e017c9e7759e8169eb2bad41998db5bb2922bb48e0e4398f80d6cd55e"
+    },
+    {
+      "path": "fpl-live-update/public/share-styles.js",
+      "bytes": 2484,
+      "sha256": "8069a39d7feb208200c6279507dab4359de1c085f61641a5f926aac419fe73cf"
+    },
+    {
+      "path": "fpl-live-update/public/site.webmanifest",
+      "bytes": 345,
+      "sha256": "f54cd96e5d625fdd198488ec0ec47dbca186937928a70e0153cde560b71271bd"
+    },
+    {
+      "path": "fpl-live-update/public/style.css",
+      "bytes": 39005,
+      "sha256": "a59ea534d58311323a1af088343233a2dc64d8bcc4f48e2d634047633a7c1a0a"
+    },
+    {
+      "path": "fpl-live-update/public/timeline.js",
+      "bytes": 3379,
+      "sha256": "25a2eaa25347be0c2108dc6b8170160142ede5db4c7b077bdf856b37139615fd"
+    },
+    {
+      "path": "fpl-live-update/public/tql-brand.css",
+      "bytes": 14708,
+      "sha256": "fee5e445c665f5ebfdfc33d0cad90a379efa8359ec035bcb6b332e169cf02d6e"
+    },
+    {
+      "path": "fpl-live-update/public/trade-countdown.css",
+      "bytes": 4246,
+      "sha256": "55e5c6ce5964b4559b0e3f6ad9df258fdb0cb5ba8303ce7b54a3558f55680070"
+    },
+    {
+      "path": "fpl-live-update/public/trade-countdown.js",
+      "bytes": 4737,
+      "sha256": "00c87656a3a92ab63413b5ac1781d835d3055ef766ce1728cdadf6d4892ed9b3"
+    },
+    {
+      "path": "fpl-live-update/public/trade-manager-details.css",
+      "bytes": 4370,
+      "sha256": "b55942feabbd4b44878203636b48e2dbc43ae730856af1c37bf29ab406fab571"
+    },
+    {
+      "path": "fpl-live-update/public/trade-manager-details.js",
+      "bytes": 7431,
+      "sha256": "ec2c6fdce16c7424215e5d72f45662c1476c263ae0d67e1dd042712968058636"
+    },
+    {
+      "path": "fpl-live-update/public/update-stream.js",
+      "bytes": 7105,
+      "sha256": "c05488b915c9f6d4ce182a08eaf78526f7e1073cacda6c0287e777ffb1b398a3"
+    },
+    {
+      "path": "fpl-live-update/public/vendor/chart.umd.js",
+      "bytes": 205637,
+      "sha256": "d46d97a1fd022c5fb29fa2f45ebcbc32202d73aeebf076ce5f7248f5498fc7d7"
+    },
+    {
+      "path": "fpl-live-update/public/wechat-feedback.jpg",
+      "bytes": 143436,
+      "sha256": "1ba549e6cb4a271dba86ee6496050384b96f8be87f375c684e0f72cda8140c23"
+    },
+    {
+      "path": "fpl-live-update/public/workspace-refined.css",
+      "bytes": 29177,
+      "sha256": "343545ca771b9a45e64dca0e5c6e14f500f8c7f328867db913d058cf6349c139"
+    },
+    {
+      "path": "fpl-live-update/public/workspace-scout.css",
+      "bytes": 10904,
+      "sha256": "024092f01887e7bfc5974d12039be09310631b17c490c4de7a7a6d4ce209af80"
+    },
+    {
+      "path": "fpl-live-update/public/workspace-ui.js",
+      "bytes": 3799,
+      "sha256": "ca6357ffcc651e46c009935889a62c4ceb98c2238f5c410ed20159617cc61d3a"
+    },
+    {
+      "path": "fpl-live-update/public-http.js",
+      "bytes": 3889,
+      "sha256": "b50577ec7dd6ce674bb2360a4803a9aa4e666fb01e17afcb3dcdcd4df8560a88"
+    },
+    {
+      "path": "fpl-live-update/public-snapshot.js",
+      "bytes": 9044,
+      "sha256": "ca3e30d33fa3553bdcddddd7f612375f615ccc715a569c66a5b770e16a519955"
+    },
+    {
+      "path": "fpl-live-update/refresh-control.js",
+      "bytes": 2990,
+      "sha256": "ae01810111da9eef77aac67469a5504e5b0aebc0b7e577409933f00ce1f0320e"
+    },
+    {
+      "path": "fpl-live-update/scripts/archive-club-marks.cjs",
+      "bytes": 2995,
+      "sha256": "6513df0b7849aa9065988c60417b5df5d55127bf9d2c886f0ea5955115d08ab9"
+    },
+    {
+      "path": "fpl-live-update/scripts/audit-defcon.cjs",
+      "bytes": 4576,
+      "sha256": "af3018795bbc791945b48f0602c1179b4bf319510590f8c26c5f49666ff671c2"
+    },
+    {
+      "path": "fpl-live-update/scripts/audit-totw-ownership.cjs",
+      "bytes": 7995,
+      "sha256": "018de6a81b4fe78f6d7c36bc0c566e1451287291552a8324258f67975179ae40"
+    },
+    {
+      "path": "fpl-live-update/scripts/backfill-league-usage.cjs",
+      "bytes": 2921,
+      "sha256": "483ab8c97b9e0a8f8aefe3aaa4a71c4f31a714efebe9e048c895f60ad01c0ef0"
+    },
+    {
+      "path": "fpl-live-update/scripts/build-favicons.cjs",
+      "bytes": 4028,
+      "sha256": "c6bfc11110042906d7f3e5e8f9269186f3459654288a6451e7adc5d358ef59b6"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v101-static.cjs",
+      "bytes": 2367,
+      "sha256": "428743a837026d0d6b7fb8c86bce5888dd7c7dfbe9446c0a904e7142a1ffd4c5"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v102-static.cjs",
+      "bytes": 1388,
+      "sha256": "bf69a9df442b7d7b22f1716438d0f28ae8931c54fc60e4102daff6b13c1a00af"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v103-static.cjs",
+      "bytes": 1522,
+      "sha256": "eacf883036180fbf4f4b7e0fb364b9b768a319838ef25760244ab5f62fe3fc16"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v105-static.cjs",
+      "bytes": 2007,
+      "sha256": "dceb82f7a27f1469d22282a781793eee1919707a9ca27aff00f0269f5c26113f"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v106-static.cjs",
+      "bytes": 1991,
+      "sha256": "aeb20a13f24408292ab778bdf5d2b86610fb3e2ba7dce69388989b5084f13bcb"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v107-static.cjs",
+      "bytes": 2725,
+      "sha256": "0fc40b9f42f3a2daed961e31b58bac96b0a25eae9e1cba11568f63bb69d697dc"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v110-static.cjs",
+      "bytes": 2603,
+      "sha256": "928260377285e2e5dcd6eb379864bfedfc8a7d0ee5c7fc1afb22548f6ffb097a"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v111-static.cjs",
+      "bytes": 2603,
+      "sha256": "879bdb3016144e07615f5c4dda5ea86557925c2fb1b0c8799c1e088ab37dea5c"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v98.cjs",
+      "bytes": 4587,
+      "sha256": "1f3551fe0ea1b4c769ef3a393c0ba461ed846e1a819a24becbd8ebad2ccdd9d7"
+    },
+    {
+      "path": "fpl-live-update/scripts/deploy-v99-static.cjs",
+      "bytes": 2134,
+      "sha256": "fc37211c3338a1a63ff3b03621d2270b23eecfc44cc9d5b6dcf5eef60aed6f43"
+    },
+    {
+      "path": "fpl-live-update/scripts/install-club-archive.cjs",
+      "bytes": 2094,
+      "sha256": "bc0b84db213423e0936cf9c8ecf7dcb64c33322cf0135d95866be0dfe77326a6"
+    },
+    {
+      "path": "fpl-live-update/scripts/prepare-v98.cjs",
+      "bytes": 1624,
+      "sha256": "e6d859eebbb4c8c6d28b2e9287623d85f211fc12ba8e3e8cb868ba3027aec5db"
+    },
+    {
+      "path": "fpl-live-update/scripts/preview-v105.cjs",
+      "bytes": 2155,
+      "sha256": "c8da81e7a4c2ba5cd243bd28f839a74e3f76dff982742da6e12d2b0e165d937d"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-favicons-http.cjs",
+      "bytes": 6864,
+      "sha256": "02b0efb505ad29b4aed2fb90e67b67c465fd27a2876311718ae367e3bdc6df6f"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v105-browser.cjs",
+      "bytes": 6005,
+      "sha256": "34cddd05e8a7b27fea291ee6c4463af7a5884b38db7413789fb84b675380ee26"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v105-production.cjs",
+      "bytes": 4718,
+      "sha256": "da3637c5c3ffa4a4f69ca05af550d617e7dd01b3f016c6b2e187730ea0dfe5af"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v106-browser.cjs",
+      "bytes": 5679,
+      "sha256": "d0edb4a88008ea837ad11727b355b5b9858ee43fff1e3efe62b956b2b6e39a7a"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v107-dialog.cjs",
+      "bytes": 6141,
+      "sha256": "b0cb562e09289709670d2d35132e7f4b764b5fa11b3c461f25bf9970a31a12b9"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v110-points.cjs",
+      "bytes": 5676,
+      "sha256": "41088ffe0b5e84fba84798ecca10644310c6d6a094e01345c2e9879ff7b53a68"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v111-points.cjs",
+      "bytes": 8125,
+      "sha256": "1b2f6d6b9311b68ef4c48ba983a3e50bd31b5718710d596fa5e937aa41ab3c4e"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v40-snapshot.cjs",
+      "bytes": 4088,
+      "sha256": "3c1650b48667c0d21358ea80396278e8857216803da241101fb4266578bdbcde"
+    },
+    {
+      "path": "fpl-live-update/scripts/verify-v98.cjs",
+      "bytes": 2956,
+      "sha256": "dc3d9d4c1cf6fbdbc19cce2aebdb90c49ff996f0d178e9186fc6d44de698840f"
+    },
+    {
+      "path": "fpl-live-update/server.js",
+      "bytes": 96173,
+      "sha256": "c8d357f473e440070c061165b0ff756ae552fd4628ea9f64213b5fcaca353b51"
+    },
+    {
+      "path": "fpl-live-update/server.production-v90-sso.js",
+      "bytes": 95593,
+      "sha256": "4e440df00ae0cce025064dad3c20d09e0afb9c36777cddc487a7839893e6d630"
+    },
+    {
+      "path": "fpl-live-update/site-routing.js",
+      "bytes": 1065,
+      "sha256": "ea0a8c4836acbb835bc0b2819ff07860620d39942c67dc06641f7dd72b6a5d39"
+    },
+    {
+      "path": "fpl-live-update/tests/admin-dashboard.test.js",
+      "bytes": 16609,
+      "sha256": "2f6515ec4cfc9bc4ee1ae07e668ddc96844112ced0726cedfd9299476158f191"
+    },
+    {
+      "path": "fpl-live-update/tests/analytics-backfill-cli.test.js",
+      "bytes": 3233,
+      "sha256": "1516df0d9fb9cbdd628f127a764d0d5f6d0650a52e6e81390243c7850e8c753a"
+    },
+    {
+      "path": "fpl-live-update/tests/analytics-backfill.test.js",
+      "bytes": 13912,
+      "sha256": "8f597f3cee456413e917a32d477f8430678cae6dfaa312e59292fe655de29b00"
+    },
+    {
+      "path": "fpl-live-update/tests/analytics-history.test.js",
+      "bytes": 4016,
+      "sha256": "eefcb21b073e942b127344ca038e17f64bf95d8ab04ce05046599701287ef5f2"
+    },
+    {
+      "path": "fpl-live-update/tests/analytics-identity.test.js",
+      "bytes": 3525,
+      "sha256": "bd6a0d33669f7fae53c0bc62d4a1026b0f77506615b49291d85e401847d44b96"
+    },
+    {
+      "path": "fpl-live-update/tests/analytics-ingestion.test.js",
+      "bytes": 19839,
+      "sha256": "c1f589c4e15776bcb4499ebeb4962c0401e8cdcacb89032aae2d012e034684a2"
+    },
+    {
+      "path": "fpl-live-update/tests/analytics-matchdays.test.js",
+      "bytes": 3516,
+      "sha256": "98cae2a716c9e61e209e21adc32696ef0f0d7731c884862a62cd42ae786a9dff"
+    },
+    {
+      "path": "fpl-live-update/tests/analytics-report.test.js",
+      "bytes": 14303,
+      "sha256": "b0284ac223a8ad03eeb8eb5030c574a751fa01424b114a986ce1c9ecf8828e3f"
+    },
+    {
+      "path": "fpl-live-update/tests/api-observation-expectations.test.js",
+      "bytes": 4253,
+      "sha256": "953153acf4905a776771c82e019cacb3d335aa82a24b76f8015c4d0173678cd1"
+    },
+    {
+      "path": "fpl-live-update/tests/auto-subs.test.js",
+      "bytes": 16003,
+      "sha256": "d0f21676e55ec12963a182aa873140da37496453035939006e9942f0dac28db8"
+    },
+    {
+      "path": "fpl-live-update/tests/brand-integration.test.js",
+      "bytes": 10133,
+      "sha256": "345d6f3b6ed10c112d6106b063ea8e7478ab7340ee862f6d23742e50c71d5fdc"
+    },
+    {
+      "path": "fpl-live-update/tests/defcon-scoring.test.js",
+      "bytes": 3673,
+      "sha256": "c152740ab696dd28b4b2a71813af120a502c55e06b6d3a4d6a9ca7a47154722d"
+    },
+    {
+      "path": "fpl-live-update/tests/favicon-assets.test.js",
+      "bytes": 8461,
+      "sha256": "131bb0fe6f01381b14598a94cd3c4cf8e9fcc32c87b6e7db7e40f1eb84c9b007"
+    },
+    {
+      "path": "fpl-live-update/tests/fixtures/api-audit-gw3-20260905.json",
+      "bytes": 8041,
+      "sha256": "761faeb62eb0334bcbbafd6542aa04ad73c4fd6e57128b3c727a7e59cb02db8f"
+    },
+    {
+      "path": "fpl-live-update/tests/fixtures/defcon-audit-20260905.json",
+      "bytes": 63426,
+      "sha256": "9db15e411b4b9fc830e0bfcc582aca6c9f29e71dc37f3a92f95cd683600f1b87"
+    },
+    {
+      "path": "fpl-live-update/tests/fixtures.test.js",
+      "bytes": 6894,
+      "sha256": "b877d3ac8ee29c4c1056d3913214bce46de46107c5c0ef8162e460e8635b96a4"
+    },
+    {
+      "path": "fpl-live-update/tests/free-agent-round.test.js",
+      "bytes": 3032,
+      "sha256": "112ea8cb443c73cf94309e1ddf384789114c93c482cb6e452f0da4ef92bd60cb"
+    },
+    {
+      "path": "fpl-live-update/tests/frontend-analytics.test.js",
+      "bytes": 5223,
+      "sha256": "f759e4a3253c1ac63b1bfd6afb01446a100f34d66795f71319ade007e2e96d0d"
+    },
+    {
+      "path": "fpl-live-update/tests/frontend-timeline.test.js",
+      "bytes": 4858,
+      "sha256": "f42294c6e76bf2f8b4f2ceca4e43002402f351f8dff6f32a7984846bc448d0ea"
+    },
+    {
+      "path": "fpl-live-update/tests/fun-rankings.test.js",
+      "bytes": 7982,
+      "sha256": "932e307b9df621e2087f7155a0ecefae38a83dec5aedc6502c4fa0b854c6cdec"
+    },
+    {
+      "path": "fpl-live-update/tests/gameweek-rollover.test.js",
+      "bytes": 6933,
+      "sha256": "ced99f5322e269bc9a996010eaaac74bcde3dbff156581f1bbb091f1ca3e5a9b"
+    },
+    {
+      "path": "fpl-live-update/tests/home-tab.test.js",
+      "bytes": 6518,
+      "sha256": "8fdb0eb5b3dbc39c8682d147cf7448eac0a67187fed81e46ce915f4c90622dfa"
+    },
+    {
+      "path": "fpl-live-update/tests/league-id-guide.test.js",
+      "bytes": 2847,
+      "sha256": "c19c6f918bcf8e11214d76f545865212e534f74b00ca28b7a31886c3945edcb5"
+    },
+    {
+      "path": "fpl-live-update/tests/live-scoring.test.js",
+      "bytes": 26333,
+      "sha256": "cc93fbbaf6118aab7d2b8b7a11ad3c8c41e2adf932a01f0f7f0b1cd4bd5bd591"
+    },
+    {
+      "path": "fpl-live-update/tests/loading-performance.test.js",
+      "bytes": 8321,
+      "sha256": "204df4248846810b9d6845de4e0cb5913ff592eaf442871f75ba2da2381b0fd8"
+    },
+    {
+      "path": "fpl-live-update/tests/manager-view.test.js",
+      "bytes": 5418,
+      "sha256": "c8142c89c9f9c3500fca3e5deaf337b6b60a941e4d6e69622627586fe1761e1f"
+    },
+    {
+      "path": "fpl-live-update/tests/manual-full-refresh.test.js",
+      "bytes": 1746,
+      "sha256": "3c27023455b628ee6e2bd9a7b7affdf5c1d3e68e86a2959cc8c9b77bc88c1e1c"
+    },
+    {
+      "path": "fpl-live-update/tests/match-centre-frontend.test.js",
+      "bytes": 31401,
+      "sha256": "4b85f19555da3de76f375ebe054bd044b1744364a58779b39899faa17861f92d"
+    },
+    {
+      "path": "fpl-live-update/tests/match-centre-refresh-v79.test.js",
+      "bytes": 20563,
+      "sha256": "9bfe87341c5d9a79f5f808345ecab6cbe260346b7efaf25dc5c384f1a4d31479"
+    },
+    {
+      "path": "fpl-live-update/tests/match-centre-share.test.js",
+      "bytes": 2463,
+      "sha256": "952a86b140a6cd91f5531400bac971541d9191cc8dc82bbaeaaffe528ccbc445"
+    },
+    {
+      "path": "fpl-live-update/tests/match-centre.test.js",
+      "bytes": 24259,
+      "sha256": "91939dd9483a2f6562a2de60fd55d93bc6ca3dc35382724f03bf1c5cd65a74b8"
+    },
+    {
+      "path": "fpl-live-update/tests/match-detail.test.js",
+      "bytes": 24902,
+      "sha256": "bfd446a5bbcb58e0fa0cfe35479c84a95771d2af2f1b265821a229e553900bcb"
+    },
+    {
+      "path": "fpl-live-update/tests/match-preview-copy.test.js",
+      "bytes": 2440,
+      "sha256": "39473b529397ce9e3f914d20ff5718b3f063e48f04f595884080fb54ce60e0ab"
+    },
+    {
+      "path": "fpl-live-update/tests/match-results.test.js",
+      "bytes": 1782,
+      "sha256": "9a217380b2f4e2fcc7a8c49804fd6f51d418e940ebd4388389c041b07183b386"
+    },
+    {
+      "path": "fpl-live-update/tests/match-share.test.js",
+      "bytes": 17928,
+      "sha256": "b058ba601be2ad1ee25eac7aa87a2cf55239ebb331e0dd5bb9015cc3edcceba6"
+    },
+    {
+      "path": "fpl-live-update/tests/match-view-refresh-v79.test.js",
+      "bytes": 14767,
+      "sha256": "366a8cecd7d2d79221e03658eb4ce0f485f4f38177f9a80e70edaa87cf72e43a"
+    },
+    {
+      "path": "fpl-live-update/tests/match-view.test.js",
+      "bytes": 18931,
+      "sha256": "b8c13fe987eb8cb2a6de3acc52d2e1164cad48bdd59da3c3f85b9463cc3d7f29"
+    },
+    {
+      "path": "fpl-live-update/tests/news-integration.test.js",
+      "bytes": 7453,
+      "sha256": "47041c32c69ef9a260a70a80d0b031f97af2e0cdd201aa061963753cce32a4a0"
+    },
+    {
+      "path": "fpl-live-update/tests/pitch.test.js",
+      "bytes": 717,
+      "sha256": "200d3d7b0850ae5c5d992aa61bd30433f34b3f34460892b63b28a9d68e917885"
+    },
+    {
+      "path": "fpl-live-update/tests/public-http.test.js",
+      "bytes": 5540,
+      "sha256": "057d101c87e30ad31173b76d4b56f9360e8f3924de037dbd915d9b4af161f8c4"
+    },
+    {
+      "path": "fpl-live-update/tests/public-snapshot-v79.test.js",
+      "bytes": 9972,
+      "sha256": "fdee6676238db5f479e1580d08734b1e5ed53f9e53b9d498ad7e013b97f67503"
+    },
+    {
+      "path": "fpl-live-update/tests/public-snapshot.test.js",
+      "bytes": 6492,
+      "sha256": "c7ac3c42a5c60949b9d6a0b9272af6abade39f7abd5e28d867d9bffdf172f7f4"
+    },
+    {
+      "path": "fpl-live-update/tests/refresh-backend-v79.test.js",
+      "bytes": 18417,
+      "sha256": "227956ea03043e4d1f787149d0bb15c0de0026386bb75bb483c884bbb19af89b"
+    },
+    {
+      "path": "fpl-live-update/tests/refresh-button.test.js",
+      "bytes": 4417,
+      "sha256": "d16f594815e4448e291821a19fd35dd2c8f6d41cd5c474a93ef0b207d666a51a"
+    },
+    {
+      "path": "fpl-live-update/tests/refresh-control-v79.test.js",
+      "bytes": 8128,
+      "sha256": "b0e6450eb288bc2f6c35947d2f0aa5dea4bc807a8a5ee6f3f04ca0caff34be9b"
+    },
+    {
+      "path": "fpl-live-update/tests/refresh-transport-v79.test.js",
+      "bytes": 13299,
+      "sha256": "c558f1c3294f85b2b022527ff05f50323fd2f71de2739e6cf2730ea65f51bf0d"
+    },
+    {
+      "path": "fpl-live-update/tests/share-brand.test.js",
+      "bytes": 7462,
+      "sha256": "6e4a0b5604a0f552600dc288f3710fb0b6b2b5884058935e6e5f8d1bcc81b99e"
+    },
+    {
+      "path": "fpl-live-update/tests/totw-ownership.test.js",
+      "bytes": 9332,
+      "sha256": "f6eff65469b3a191280715b2a4b8c137359c9942359abb2a03275374597622f1"
+    },
+    {
+      "path": "fpl-live-update/tests/totw-render.test.js",
+      "bytes": 1836,
+      "sha256": "d4fb3e01d4cb9114228af13de15497e1f18c1a99688ad13a9f01d5a6c17643d3"
+    },
+    {
+      "path": "fpl-live-update/tests/trade-countdown.test.js",
+      "bytes": 3553,
+      "sha256": "bcd218dace4329ee830e943bc2a9fd478fbe2356909a9612e04e17b20d5c9ef2"
+    },
+    {
+      "path": "fpl-live-update/tests/trade-manager-details.test.js",
+      "bytes": 5155,
+      "sha256": "70654f45d98fff225656e4e54adb259d793d3f7d6b5b122e9391b9a6f5e1f0e2"
+    },
+    {
+      "path": "fpl-live-update/tests/trade-returns.test.js",
+      "bytes": 16950,
+      "sha256": "663a61f377acec6a92459c3d56e14abb9c82d0c568b57b6a9df1b5b2065f1554"
+    },
+    {
+      "path": "fpl-live-update/tests/trade-round-selection.test.js",
+      "bytes": 10254,
+      "sha256": "7a717c78f123d142cbe30353f6c1cdcb7daa8cba91e51d884edacc636e68533b"
+    },
+    {
+      "path": "fpl-live-update/tests/update-stream.test.js",
+      "bytes": 10021,
+      "sha256": "fe43f887b454611e79820b6a62e9d8502dee0988ce9a6119d7ad5769a584155a"
+    },
+    {
+      "path": "fpl-live-update/totw-ownership.js",
+      "bytes": 8656,
+      "sha256": "4abf72e60d88e23a2cf9beec716566e0994c1dbaa16a2b18a37efde434374980"
+    },
+    {
+      "path": "fpl-live-update/trade-returns.js",
+      "bytes": 15566,
+      "sha256": "8a7b76cb8f78501b6719b9d80d3baae2a26ea22c194073937c19107ae2e8e8dc"
+    },
+    {
+      "path": "fpl-live-update/update-stream.js",
+      "bytes": 5894,
+      "sha256": "6fb1bb0e45dd9eaba74b26d09e72b17817e203b74f2fc4c564dc97580e324f56"
+    },
+    {
+      "path": "fpl-live-update/xhs/adapters.cjs",
+      "bytes": 1942,
+      "sha256": "ed0af1cf22fe3d1a76ac3d8e73b9c239f7e3116a4763a2a5ae1d11c970af3272"
+    },
+    {
+      "path": "fpl-live-update/xhs/backup.cjs",
+      "bytes": 967,
+      "sha256": "f34abe2b19137c36746d1f4f34c8dc4ce074cefe215f47f72d0ec782530ebf39"
+    },
+    {
+      "path": "fpl-live-update/xhs/deploy/env.example",
+      "bytes": 206,
+      "sha256": "255a6b0d28acd6e0ccd0a0f35dba9d6ca28d2786e3756d823239a157ed08acfe"
+    },
+    {
+      "path": "fpl-live-update/xhs/deploy/fpl-xhs-worker.production.service",
+      "bytes": 1347,
+      "sha256": "71cc78c04f9e54bb70c676908d72bf899611dae8fa7b34beac04ed89d21c9226"
+    },
+    {
+      "path": "fpl-live-update/xhs/deploy/xhs-worker.service.example",
+      "bytes": 719,
+      "sha256": "26630c6ca8ade4d3403b3d1dc533022b45ae958a857b1e4bcc7b7742bcc0735c"
+    },
+    {
+      "path": "fpl-live-update/xhs/docs/DEPLOYMENT.md",
+      "bytes": 5481,
+      "sha256": "ee1410b6d0aa7fa4e2c9d258b4189b0932bd6f68eb00b58ad1674ec9017c8691"
+    },
+    {
+      "path": "fpl-live-update/xhs/docs/browser-verification.json",
+      "bytes": 1296,
+      "sha256": "b18c3f0a012ac136fae50724a4bc4831167dbb22c3af6fa9c42c253a4832c261"
+    },
+    {
+      "path": "fpl-live-update/xhs/docs/desktop.jpg",
+      "bytes": 53603,
+      "sha256": "22c1ce6ea195f6b13e5efb0d12ec7a7794e69dae4fe181df28041d8ba1385607"
+    },
+    {
+      "path": "fpl-live-update/xhs/docs/mobile-calendar.jpg",
+      "bytes": 5744,
+      "sha256": "534cb1992745e4965fe86d724e4fb2d59eb11c702a966a7d53db3845438d388c"
+    },
+    {
+      "path": "fpl-live-update/xhs/docs/mobile-editor.jpg",
+      "bytes": 31369,
+      "sha256": "c942e207b0928f1a697491df93dd570f88bcac416c9ecd5aeec0cf9b7314e400"
+    },
+    {
+      "path": "fpl-live-update/xhs/docs/video-preview.jpg",
+      "bytes": 60838,
+      "sha256": "16b9c2cd99a7cc4914e0e35b0b7a925388e964972487f9cd9b994df01282b013"
+    },
+    {
+      "path": "fpl-live-update/xhs/domain.cjs",
+      "bytes": 3805,
+      "sha256": "188077cb62db3c81614485edc7c58318d77b46cf2410c146110a9ddee75b1980"
+    },
+    {
+      "path": "fpl-live-update/xhs/http.cjs",
+      "bytes": 5051,
+      "sha256": "dce08ed06cc5eefc1d1fa216e50ab7cbd1bcf4ee0cfad851e4d139d735f57985"
+    },
+    {
+      "path": "fpl-live-update/xhs/media.cjs",
+      "bytes": 2350,
+      "sha256": "ecf4806b1bf0a9423714711f0989498cc4eab39923982f0af09ea756ee1857d2"
+    },
+    {
+      "path": "fpl-live-update/xhs/quarantine-after-restore.cjs",
+      "bytes": 865,
+      "sha256": "fe4d963c6231b81a763743caf2a7cb6536561d7fbd71060ea0fdab5272f77a66"
+    },
+    {
+      "path": "fpl-live-update/xhs/rules.cjs",
+      "bytes": 2021,
+      "sha256": "21c1362bc413b7c2a86a17d3606fa78779d6d0134d0ae8bb6cce054645ce38ca"
+    },
+    {
+      "path": "fpl-live-update/xhs/schema.sql",
+      "bytes": 2490,
+      "sha256": "dd77614cc6e51977c06e080b938efcf3b43111b7f41303a7a7b4c0c32317bc27"
+    },
+    {
+      "path": "fpl-live-update/xhs/store.cjs",
+      "bytes": 10304,
+      "sha256": "156a88223b015f591c0ab407e81c5a1889a3138a95132a5662e6f50d7f347be3"
+    },
+    {
+      "path": "fpl-live-update/xhs/tests/fixtures/make-video.swift",
+      "bytes": 1624,
+      "sha256": "1a0b97f3fb90597f65efdb65c6796520cee7c89ac74df571ec5f46f16c240b9e"
+    },
+    {
+      "path": "fpl-live-update/xhs/tests/fixtures/synthetic.mp4",
+      "bytes": 2496,
+      "sha256": "6ccfb9b1f3906381cde19f29b0369e1d4430b355bb74fb47fa8393afd70da2ba"
+    },
+    {
+      "path": "fpl-live-update/xhs/tests/http.test.cjs",
+      "bytes": 5397,
+      "sha256": "b2badfd816ff54c0ddd979a560061c38998fcd80c1add967911fb275f04b4735"
+    },
+    {
+      "path": "fpl-live-update/xhs/tests/workflow.test.cjs",
+      "bytes": 15036,
+      "sha256": "3a8e2c1e4b3850c528b6901ec165b9ba4351c9815ca2ccc53535a77fc8402abc"
+    },
+    {
+      "path": "fpl-live-update/xhs/ui.css",
+      "bytes": 10707,
+      "sha256": "da60da93d258b83db9edccbc6397e38d52b59adcb5c4f7a456b53f32eaa2dd05"
+    },
+    {
+      "path": "fpl-live-update/xhs/ui.html",
+      "bytes": 11753,
+      "sha256": "22b4a8c4c1d14ee2c4f568795c90e81d6bfe8cb71a939980beada1cb7d379751"
+    },
+    {
+      "path": "fpl-live-update/xhs/ui.js",
+      "bytes": 22294,
+      "sha256": "aea71e98f8f48e98d5f2eea7353f3c49d187cf92f0bafe50c9a1fb93262fd200"
+    },
+    {
+      "path": "fpl-live-update/xhs/worker.cjs",
+      "bytes": 9340,
+      "sha256": "dd413b4336b3d114a94e4dac72675b70f76ce76b0dd04ff0751ce090d8a179fc"
+    },
+    {
+      "path": "fpl-news-v1/.dockerignore",
+      "bytes": 356,
+      "sha256": "fad2fd9cf083c529cbacdadd68abead237eb45dc8f76b82cf582972f69e702bb"
+    },
+    {
+      "path": "fpl-news-v1/.env.example",
+      "bytes": 6371,
+      "sha256": "b6f27b1a4386ea264f6526f5adaad591defa4f7bb7cb547c4a0fb74c6122ef68"
+    },
+    {
+      "path": "fpl-news-v1/.github/ISSUE_TEMPLATE/bug_report.yml",
+      "bytes": 1854,
+      "sha256": "e3ea22a8a190a96309afd11590590bc79fa62e887d7294a8e05d4dfa384cc849"
+    },
+    {
+      "path": "fpl-news-v1/.github/ISSUE_TEMPLATE/config.yml",
+      "bytes": 735,
+      "sha256": "a06f0c395c183225883e3c4cdf4aeff8cacb1e29863a986306f6deb92fd62a18"
+    },
+    {
+      "path": "fpl-news-v1/.github/ISSUE_TEMPLATE/feature_request.yml",
+      "bytes": 1156,
+      "sha256": "45062fd43e9079bc5bc244caf49f00ab4ec3eafd6a960fe6b5c4f8eeb0878831"
+    },
+    {
+      "path": "fpl-news-v1/.github/pull_request_template.md",
+      "bytes": 384,
+      "sha256": "95714d7ac4e7843633cadf5f83bb9fb74b5fff43f8bc749424d3b4fdd3e326dd"
+    },
+    {
+      "path": "fpl-news-v1/.github/workflows/check.yml",
+      "bytes": 4076,
+      "sha256": "2791262cf9ca74ce7b4aa1385c93c14245c532fd27786d8e7ee61da636c0f8bf"
+    },
+    {
+      "path": "fpl-news-v1/.gitignore",
+      "bytes": 858,
+      "sha256": "4e4e1aefb22eff6526611486b2a8ae812c2b3870c93affeec00644e22ce295eb"
+    },
+    {
+      "path": "fpl-news-v1/AGENTS.md",
+      "bytes": 18891,
+      "sha256": "118959ad0fdacf57daa0705fe74c88ad4f883fc48fa3b9a4bcff8744c40a1221"
+    },
+    {
+      "path": "fpl-news-v1/CLAUDE.md",
+      "bytes": 11,
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+    },
+    {
+      "path": "fpl-news-v1/CONTRIBUTING.md",
+      "bytes": 3049,
+      "sha256": "346ff75027098a681dfa3b6180f5e368195975ae5e546133c91a87b5e886d3da"
+    },
+    {
+      "path": "fpl-news-v1/Dockerfile",
+      "bytes": 1158,
+      "sha256": "2b1672f7e465fa62d9032f31fef10168c43d99950b1b86db37a255d5b6327a6d"
+    },
+    {
+      "path": "fpl-news-v1/LICENSE",
+      "bytes": 1078,
+      "sha256": "b7f53d07ea4ae2eef26a4f8b28cb7d4df95586e2aa713df408f1ffde9f5a0fea"
+    },
+    {
+      "path": "fpl-news-v1/NOTICE",
+      "bytes": 930,
+      "sha256": "eacc8a589ba389506648a5614c7bd5115942294fe7730b6418da6f7831a903f3"
+    },
+    {
+      "path": "fpl-news-v1/README.md",
+      "bytes": 12229,
+      "sha256": "39930b5672bf44ac58d6efa041b3982c452b70ede18f3a4a8e6f1ac30993dfc6"
+    },
+    {
+      "path": "fpl-news-v1/RELEASE-admin-workspace-20261008.txt",
+      "bytes": 7761,
+      "sha256": "cb57b0943f9847a13714220e6303976e643238cd366f15060c9ebeaa0f9f13b4"
+    },
+    {
+      "path": "fpl-news-v1/RELEASE.json",
+      "bytes": 673,
+      "sha256": "331b3790e677034f180392f71c422d496fe43120447dcf7e2fb27a735ff73ed3"
+    },
+    {
+      "path": "fpl-news-v1/SECURITY.md",
+      "bytes": 1042,
+      "sha256": "290fb4a4eda5bc05891eb3b24ba181be9249f2d130b0dd15de9784190c27b609"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/package.json",
+      "bytes": 486,
+      "sha256": "55321e15d5c2b6677cf96dbc73e8eec880670bcc6d58e93039adfd3ccc2f2197"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/app.ts",
+      "bytes": 4261,
+      "sha256": "86a62e0d3f7d8ad7eda6958a7bca6763a077bad61dbc03a6f1156710fa4037b3"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/http/respond.ts",
+      "bytes": 4969,
+      "sha256": "c457710f0eb03138f53ebae95e2b1995b603a87e66e993f67c2c9966a4833b04"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/main.ts",
+      "bytes": 1127,
+      "sha256": "3dfa5ce9cb09f43672be83a50bd9d876c967f434e1a1812aca0066c2e54154b8"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/og/poster.ts",
+      "bytes": 5578,
+      "sha256": "5794f21edc0908faefebf97fa191f4bd624a780e8f13826192b95cbd2f7240e7"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/og/render.ts",
+      "bytes": 6707,
+      "sha256": "48c14075674ac6f29ee21366c9d8dddc6309d4565f693cc55c68b96f20fa5671"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/admin-auth.ts",
+      "bytes": 8214,
+      "sha256": "1be7958027d67d1a757c5cdd20c99e83764a1e518b26f8184d433578e566c331"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/admin.ts",
+      "bytes": 12285,
+      "sha256": "40a60933dd68b1330bd7c9c8c6ecf45a5ca0023097a931512b018fc72ac393e7"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/feedback.ts",
+      "bytes": 2960,
+      "sha256": "d28b28c12a2bb0dd814219b27f4170d3305f50c16e7b56b29aa3005d935931c4"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/feeds.ts",
+      "bytes": 2563,
+      "sha256": "2be7a40ab0498d8d1503dbc6ece6536cf135fc5bb7fd71f2df7bae87133561ab"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/ingest.ts",
+      "bytes": 2163,
+      "sha256": "f784ecb18218211c30b156d156f45590f8554a3648e9d45d37a01296b7df9fde"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/leaderboard.ts",
+      "bytes": 2719,
+      "sha256": "2a3b7f3d16b773f44818e5cdd4928cc44f91fd86cfeea863a94569412279c9f9"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/mcp.ts",
+      "bytes": 17868,
+      "sha256": "4d2662196cc2b1a77de3ad4cc3ce04de56d2cc4b8b2611c1e7cdd8daffd75eb8"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/media.ts",
+      "bytes": 2409,
+      "sha256": "fe765feff6d6a789c7fab8cd72f6e8419a715e41c5f2b694d3be34e1ede5779b"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/og.ts",
+      "bytes": 8450,
+      "sha256": "f48c067652771a1b998067fe32250ba37b6e5d0d5b5ae45cb5c9a46a38c30bfa"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/site.ts",
+      "bytes": 17813,
+      "sha256": "ee58becb06b46009137b07eb567ef6e317f30703d28107f12dbe7db499d12cbc"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/static.ts",
+      "bytes": 8165,
+      "sha256": "4cf2be0602023631c269dd5593c31934f3faabeb44fe517c0767359a0e1510ee"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/src/routes/v1.ts",
+      "bytes": 10369,
+      "sha256": "d257a1559b1c4882c03ce61da4f07c65b65cd4cd0d241b306de15db68797bc5c"
+    },
+    {
+      "path": "fpl-news-v1/apps/api/tsconfig.json",
+      "bytes": 74,
+      "sha256": "88020c5d0c639e9fca3c8cc0425dc6233bbb30b14c5a0cb5dcb7d7530d4b788f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/app.css",
+      "bytes": 22527,
+      "sha256": "14bdd10dcb27c539532af670552deabf61cdd8b357dd700f2ea15261d06c86bf"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/CodeBlock.tsx",
+      "bytes": 1912,
+      "sha256": "1e546bdfcde6d3da2c6dba8aff720bc38b1870320bf509e36c44b329bcdbeee8"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/Logo.tsx",
+      "bytes": 1356,
+      "sha256": "fb011bdd9f86a2dc02a75c0ac220f7e3994efb7549dd3dae066a98e69eb9f7aa"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/TopicArtwork.tsx",
+      "bytes": 4643,
+      "sha256": "2118191d720bcdc87a5e7a075b1665069badfe38b4b8e0a2eefde92183d8f8af"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/icons.tsx",
+      "bytes": 5442,
+      "sha256": "8a9918f7c370b2cd71e02ea589171d28c315a560a03252d2024d6809bcccc26e"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/shell/Chrome.tsx",
+      "bytes": 2209,
+      "sha256": "0ecf7d2d284acb5f13e7c71be96ed6347547ca3ae9490161502c816a2641de3d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/shell/MobileTabBar.tsx",
+      "bytes": 1444,
+      "sha256": "1bcb83433c8f556d49f700c9d9d9ba8c7e21f513acb95ee0253fd00539a2b39d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/shell/Sidebar.tsx",
+      "bytes": 2684,
+      "sha256": "c5b67a2e8bc073a0e7dc878f748b964f221f37ab34ca406ab43b916431db091a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/shell/ThemeSwitch.tsx",
+      "bytes": 2522,
+      "sha256": "50c9ba13526952ded9c71a1d5d5303d6e27d04d9fe197470506afc35fb0070b8"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/shell/nav.ts",
+      "bytes": 2772,
+      "sha256": "2a03168f52f033016e4354b5ce1a3a771d56efe36f4d14f29546f64e5800b250"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Badge.tsx",
+      "bytes": 1113,
+      "sha256": "3ee83eb6f1b0a11c587fc45e4596729dd2b28e10feb6990e2a4571d0d00897a0"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Controls.tsx",
+      "bytes": 2185,
+      "sha256": "749ad4d76bb732b9fb351ca096df0b4c911d14a989b92254507c1b41e7b49e23"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/IntentLink.tsx",
+      "bytes": 1432,
+      "sha256": "172a896879c93b5719600bf98d1074339275cdc7ccb13baaa53b305dee003cc4"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Kicker.tsx",
+      "bytes": 485,
+      "sha256": "92dc39286326aa0ac9360b91f4b519199d8a6c67d72c471a852a3bd799483033"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Lightbox.tsx",
+      "bytes": 4469,
+      "sha256": "ace932c969061150be494091d1f01e78f212413171f00b64e50a56e9a36c7976"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Menu.tsx",
+      "bytes": 2656,
+      "sha256": "05612543ba4c84258e0e0b5b3e0421b35930e32a9a915aa1bc7c8a7882f85835"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Page.tsx",
+      "bytes": 4222,
+      "sha256": "95614c7edd08512e5c95243f9c490ea4b8e2220985f2541f6da82580abf37a42"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Presence.tsx",
+      "bytes": 2266,
+      "sha256": "e6b16ff66c4ee684a6c4426222aef1cb35ca8e3ac126e3a77b2ed8bd337fb19d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Score.tsx",
+      "bytes": 1335,
+      "sha256": "f7f66478352876aac7b5ca3a3c1b602a2041d0e627ba8839c1621ff7730b2f62"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/SourceAvatar.tsx",
+      "bytes": 1326,
+      "sha256": "9e85be6cd4b4de244e68a2cf712456b68831f5ef32e3a5a8350c455e54ed0c0a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/components/ui/Tabs.tsx",
+      "bytes": 6082,
+      "sha256": "e0ebbe79e4a5bc4e19436c2250e206b575928c4a88d0f7034587ef3e6bc8a94d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/about/SignalRiver.tsx",
+      "bytes": 20737,
+      "sha256": "e7278d70e432f5f24db9bde0fd42e2b2db5c2872ac73c89e1f26842b25019e7c"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/action.ts",
+      "bytes": 2981,
+      "sha256": "b326b52f1bfec51616bca1a6dedaa8619a01b81ef627edce76f47cb94f6f3e43"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/admin.css",
+      "bytes": 10758,
+      "sha256": "5426777d3b0042c0897a6476271f9f99988fb4909a804aec3252026f4f415ad0"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/charts.tsx",
+      "bytes": 9458,
+      "sha256": "08cb02f51fef5ef0c012e875da1d2fe83475745ea93a88f5d37bee8802d8fa60"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/format.ts",
+      "bytes": 2105,
+      "sha256": "a42aca3fc4982b87a3f5a3256ecb57153c4102e2f50a6b0dc9075ea927d18064"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/labels.ts",
+      "bytes": 1396,
+      "sha256": "e6c1a97627cb9449e1dde239a61456e86a4c6fb8194e423207e9b1238d47894c"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/source-tools.tsx",
+      "bytes": 13746,
+      "sha256": "d9d3841bbd92354f4120da909bb99e3e58c3b63e7f0b597393abe9ed3cd41497"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/toast.tsx",
+      "bytes": 1867,
+      "sha256": "03daaaab2227848cc09681152155e47879275cecbbd654f7a918a8096003592f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/ui.tsx",
+      "bytes": 15324,
+      "sha256": "96bacec94c9a4ce3b7e41de1034a19a3b86b8e6bb545c63fdfeef48d6ffd7fcd"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/admin/workspace.css",
+      "bytes": 13450,
+      "sha256": "ff46c9c86b33bbb07e89f9df8dc50f81c052c94aa0def3a1bc4399649d28c85f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/changelog/text.tsx",
+      "bytes": 574,
+      "sha256": "183112d5b63780b3d1dabc0721c7def16875770716c6eee8d4e8f58864dd59d4"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/copy/CopyPage.tsx",
+      "bytes": 3467,
+      "sha256": "2ebd85cf5dd2097d761d427b1df3ca9ea2785029f441624e02a96e8fb2b189ed"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/DayList.tsx",
+      "bytes": 3363,
+      "sha256": "45f855418a0d7fa0a07c693ef582add491986aae052ca7d4c23abf592a8c7f30"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/FeedItem.tsx",
+      "bytes": 5174,
+      "sha256": "0a33d90bab7ffb6fc37c295c3ef660bd886cb123c7837eba516367d201b56712"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/Filters.tsx",
+      "bytes": 7291,
+      "sha256": "50804977e063e325583d8af82c6e90d3068259b727a3933d887da3a7ed57c341"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/HotTopics.tsx",
+      "bytes": 4217,
+      "sha256": "005a4076ebed51f543d0e21a8f6a22c19f9894957d21cc09c4188be2d3938570"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/ReadingGroup.tsx",
+      "bytes": 12077,
+      "sha256": "8d6d174454d5bb3d9deded5fed1121b37e32093cfe067741f003279924efcc1e"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/Timeline.tsx",
+      "bytes": 15260,
+      "sha256": "29de10dad127ee5cb331e9f34091d3fd8efa4647d1b910bd6ba6f6792e0cf1c0"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/parts.tsx",
+      "bytes": 4756,
+      "sha256": "915dc6973c900947cac92bd86d11c3e37008a5b566eda36ccf77dd2706f2ad88"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/restore.ts",
+      "bytes": 2701,
+      "sha256": "fd2e0669dd048bf1005412c0daf9fe33de414666d2cec06863327b9cac739a71"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/feed/session-cache.ts",
+      "bytes": 2899,
+      "sha256": "7933208195a32a4c9eadd90529e7d8360e679a7b7caa24b320ad96d7e290d7f0"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/fpl/PriceBulletin.tsx",
+      "bytes": 1862,
+      "sha256": "d80433de4e57dd974635eca93042c4713d06f6c0d8d714c786d24081013ec6d9"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/fpl/price-bulletin.css",
+      "bytes": 2063,
+      "sha256": "0d823a8c2e9065998d4872ac2a0f33f6304d679beda2516a6ec86e68d9291158"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/hot/Delta.tsx",
+      "bytes": 1173,
+      "sha256": "8dc14d87c1b50ec020bb1dca95a127d4e23feed1405d8ea86b26e78d1b7c76ae"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/hot/Faces.tsx",
+      "bytes": 5203,
+      "sha256": "a3050da8512cfa04ffd5e1117c96e4637412b5c3cdefd1c54322a7954a96d0ce"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/hot/Sparkline.tsx",
+      "bytes": 2773,
+      "sha256": "7f9f00aeb5592916f5705f9d0b20b522e5cb26aade4c028538558d23c929e1eb"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/item/MediaGallery.tsx",
+      "bytes": 3027,
+      "sha256": "80157eb6c63459c0e8d631084b286566c581efa2fa474573777415e7476d2332"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/item/PosterSheet.tsx",
+      "bytes": 4801,
+      "sha256": "5a83632a09aad5a61696ec323ce6508f258e9d3140069411e08ffb654b19a170"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/item/QuotedPost.tsx",
+      "bytes": 2440,
+      "sha256": "5b5d9a3a948ff4ed1532845b268e8cb87cfeefbd13f17964400372363a9ad239"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/item/StoryFollowups.tsx",
+      "bytes": 3468,
+      "sha256": "4aa48ec8568e41d81a496ec483a5c52d3d81634b76be6e3a228b4da3d7d611fb"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/leaderboard/BoardTable.tsx",
+      "bytes": 10314,
+      "sha256": "8faac05aa620f724e59aedd4fd724b4ca210a39f17b745eb88f22d07cc269939"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/leaderboard/BoardTabs.tsx",
+      "bytes": 714,
+      "sha256": "8e29d4e55c9a6d39e938ed5cdb65f8093d61050e1303755b5fb0bcb9f3861d26"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/leaderboard/BrandMark.tsx",
+      "bytes": 1434,
+      "sha256": "b418eb7e9880488401e040e39a57d5af2633e7f2af4341baea3a9eeade982170"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/leaderboard/Evidence.tsx",
+      "bytes": 3350,
+      "sha256": "711ba70966c75165a7596e7c1ac6a5c0b3e3c405a02b9190c7ba88773ab2aca4"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/leaderboard/Podium.tsx",
+      "bytes": 2767,
+      "sha256": "7e297541ff5e61b100ccd4941ee0ec77b0f84a7e9c4b85da537d7a1e984896e8"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/leaderboard/StatusChip.tsx",
+      "bytes": 773,
+      "sha256": "9e633b944da2abcf3cf3669eac0d21d7aab8626534456599a02eb9f96067227d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/leaderboard/format.ts",
+      "bytes": 1744,
+      "sha256": "5e30cb4510012c3504682ef5758bf5b0ee124d8173ceac01a5af9f7c994a68b3"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/monitor/PostCard.tsx",
+      "bytes": 3953,
+      "sha256": "fe93663af52924bf563682a5b6ee1837bed64bf6e3759e12dd41fbea2aed80e5"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/monitor/ResetCalendar.tsx",
+      "bytes": 17316,
+      "sha256": "0e7592867ee67d487de24de4f8b32c5db17184145bab745c54a257cea76a2de1"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/monitor/format.ts",
+      "bytes": 1694,
+      "sha256": "c5031b361d9835166571ac32cddc0e8a3788def0beb286adc4fd0dc1a0b194f5"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/report/Halftone.tsx",
+      "bytes": 12840,
+      "sha256": "21ba848d75f9174e1556bef1963e797ada35ac8de6f1532449930ae93159691a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/report/IssueDots.tsx",
+      "bytes": 6546,
+      "sha256": "de49ddead2693a4128aa2ade286632700a484cb05c23b76e5fd61abc7f9bc9a9"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/report/Nameplate.tsx",
+      "bytes": 440,
+      "sha256": "e5085941b10a030d783546d0fae9c5723d561935f19e05ab4bc23d6988911705"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/report/ReportLayout.tsx",
+      "bytes": 1086,
+      "sha256": "83b898f1b36ad2b355b58a13ff5886c48ddbbda5c03eb9a6c111934bf8185dd9"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/report/ReportNav.tsx",
+      "bytes": 6777,
+      "sha256": "0c7f0dd06b217f19dc18342e0e3b2b0a6a04efe07f9346fa2d6155c236f709a3"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/report/ReportPaper.tsx",
+      "bytes": 22207,
+      "sha256": "5e6c3bae970ad19c48ad94e45f9cdc31d03133de470704da98ddfae19f194121"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/report/format.ts",
+      "bytes": 11001,
+      "sha256": "d1cb0c7c42fbae987e31976a86884bcf9f303959c78abea6123ec1d1c0de5a58"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/story/HeatChart.tsx",
+      "bytes": 8598,
+      "sha256": "5929d95460d0a1a9e59199be0d930c2552bbcb8578cd4e63f1b25ebeff880faf"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/features/topics.css",
+      "bytes": 1642,
+      "sha256": "4f717f7d8ca0c70d7eb86864f7581f0b417c2fe4cc6dbeaf160762052d58a7a1"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/admin.server.ts",
+      "bytes": 1132,
+      "sha256": "01e5b647ff11d23a2d6298c417832a363c823ac407335e4b29f1eac23bc8fef1"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/api.server.ts",
+      "bytes": 3674,
+      "sha256": "31edcfb298c65f74243bd67c25d3052ed7792d0cca38397a3205b2030ee4cd5b"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/format.ts",
+      "bytes": 1879,
+      "sha256": "e5e7fb28287dbb60e76c0973fbb0984ba82996e96d9e01d804099d72ac0572b2"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/hydration.ts",
+      "bytes": 561,
+      "sha256": "6ccbfaa6194c31eea66523ce90881b65052e3c25d52dbff96494cbfbdbc643dc"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/local-state.ts",
+      "bytes": 12235,
+      "sha256": "328bdf7e3d3a9ff2036f8be2886fc3efa888108ecb6acdf85e4f1a7972d5898f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/markdown.ts",
+      "bytes": 5038,
+      "sha256": "c989f02d72ff8225855013de77bc8640f33b655d8a27835bff039ad603c2e87f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/seo.ts",
+      "bytes": 4138,
+      "sha256": "b56ca31f0da4e8823bf3674781e687ce816e812ce58d5394a6c5bd85e4bdeb3f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/lib/site-copy.ts",
+      "bytes": 591,
+      "sha256": "5433ce3e2c9edd2054bb70d146cec177275ce9e24f85cbbf6d8bc052ad35738a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/public-site.css",
+      "bytes": 4996,
+      "sha256": "8dac30a60d393480df8958157550309f8b347cd5cb2293db7222bec2655c67da"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/root.tsx",
+      "bytes": 7094,
+      "sha256": "1da12264d97ba42f79740ead68eaaa04d7ed8813fc48176eb01d2869fc48b50d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/about.tsx",
+      "bytes": 12909,
+      "sha256": "6a476face2f21cc2d33089a3eb430c3bae5bcba2862502c26ab4bb83251b20da"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/audit.tsx",
+      "bytes": 2870,
+      "sha256": "12238b90e7fe1a65fbc7e691fbe9286bc9de3cf199beaeb1746ea1515845d5a9"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/content-item.tsx",
+      "bytes": 27776,
+      "sha256": "46f9b052e57a62d0913f1d8f709ec81e7fb5428a93d83a502c7482ca27312e28"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/content.tsx",
+      "bytes": 5944,
+      "sha256": "81170ac7e6e805c8b60242535ab0f4338315da773e3984056d49e3e046c576d3"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/feedback.tsx",
+      "bytes": 8047,
+      "sha256": "93ae38dbcc92abb414c2f7c24e3d83c853f60bb212c2eb374f7705cb56270836"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/index.tsx",
+      "bytes": 8367,
+      "sha256": "ab3b38e5b6fe78bbc58772838d443fada303773fab2e1f0b2f1a3059b4ac8104"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/layout.tsx",
+      "bytes": 8458,
+      "sha256": "6e142e9e9395611458193c59c7d106eb56f4114f0e5a76f0740aba42be67cf8c"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/models.tsx",
+      "bytes": 9601,
+      "sha256": "a7c78f08c3576126959d80acb4574e86a04fb002ac8a07d1ad7b2f02268b1716"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/monitor.tsx",
+      "bytes": 18701,
+      "sha256": "f5222b3652d6cc9e37149c8351c286e1b467b483cf309c25cc0c9c2ed605a583"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/runs.tsx",
+      "bytes": 17788,
+      "sha256": "3feb5a59547c7277ce350c4e44749f25e9687d1cf37927468df0b65ab79e4812"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/selectbench-run.tsx",
+      "bytes": 8193,
+      "sha256": "9d38edad8fbe190e8a6c3c29c8ebcbfb1fc031a27ec8a711cfcd991667384422"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/selectbench.tsx",
+      "bytes": 5429,
+      "sha256": "89fd5483e1996f5495f673bb3b6754f69bc73b942fb143dd0bf759ed517e00d2"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/settings.tsx",
+      "bytes": 7604,
+      "sha256": "31a6efa213b4ffffbf4b6419f7c994d0fe60ba75397059e05a56f1ebf4f29235"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/source-help.tsx",
+      "bytes": 8302,
+      "sha256": "be5d4909e7283c629d2fd19e2c3a6ff1ddc973f4e7ba97c48d08ab4267d6d971"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/source-new.tsx",
+      "bytes": 7333,
+      "sha256": "23d853f995a23c62963d164605f64505199774c023120168634aa66a7f23e988"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/source.tsx",
+      "bytes": 24547,
+      "sha256": "d4fa7addea72b05a7e62714700012e945b2c41e7cf219f9f8ecf406b17c4ade4"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin/sources.tsx",
+      "bytes": 8776,
+      "sha256": "df2f91075613ed893b71cc034ba949e68c5c0582221aee2995b2c5128a0d99d6"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/admin-login.tsx",
+      "bytes": 4496,
+      "sha256": "eba8fad1afff97c898d0559bbe4b6ed40d7c8e42f5ed6d94fe56d0f1a4693bf7"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/agent.tsx",
+      "bytes": 15481,
+      "sha256": "5e7eb9004405c8ec616a532bb0e68cbdc71854183b7e298b41aceb636acd8e7a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/all.tsx",
+      "bytes": 7735,
+      "sha256": "a1dc40d93b423532d7c0cb396f5a913cc301bc89f386dc9c2fd84a15ce965779"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/changelog.tsx",
+      "bytes": 7345,
+      "sha256": "55e1dde63ecbbae8d025d2d36bfdd69dc29d430e9bc087827653d4b5d8c5e016"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/codex-reset.tsx",
+      "bytes": 14234,
+      "sha256": "f931c64cdfb3af674f064570f8901523b191c3cc7583d2f7599f0fe25afc7e9d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/daily-archive.tsx",
+      "bytes": 3406,
+      "sha256": "410a750e3242633ed5c4d332cc63191d59eb549f42ae24869a80804abcda1b67"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/feedback.tsx",
+      "bytes": 12588,
+      "sha256": "953407e43df133148f78782d0e92f4150a66432cf2010479f2d1af67b5d4c084"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/home.tsx",
+      "bytes": 5044,
+      "sha256": "9e2db7f3e689b9874941d3cb70d3fc2461e37052bd3a15d705acfefe529de295"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/hot.tsx",
+      "bytes": 15892,
+      "sha256": "dc7176440adb069e9c64e7ea420b617315f3dd57d5c192c889b1ec053036901a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/item-original.tsx",
+      "bytes": 440,
+      "sha256": "87545248d1e43f9e563e967e488f985ff7d2604738af2c8b9505a1739a36bb99"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/item.tsx",
+      "bytes": 17916,
+      "sha256": "d6300ae322b558d9f03a13f5f2f9e4927dd4bcdf4fad152c389504e0484eba42"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/leaderboard-boards.tsx",
+      "bytes": 1600,
+      "sha256": "0d91829ba345b99f299cf10b68aa1f876a670ae68c4125c996c84c9323a5ba9a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/leaderboard-model.tsx",
+      "bytes": 20808,
+      "sha256": "de6e58573560ee31eb41e734006a67529fd8ac91dee3aae67b6680ae39eaf4cb"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/leaderboard-rules.tsx",
+      "bytes": 14945,
+      "sha256": "56f3da6330eb335f077145353dc3591239aa13c9b2475629dc57ee705bdb592b"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/leaderboard-source.tsx",
+      "bytes": 8145,
+      "sha256": "dad67d0779077dd7559e84269caf35afddcafacf45e0481c2defa724e07b297d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/leaderboard-sources.tsx",
+      "bytes": 5484,
+      "sha256": "e5e8bee195a28b42c61867cd3c5dca4db8e66d86c50418f9ef518da6c7ff5d03"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/leaderboard.tsx",
+      "bytes": 6485,
+      "sha256": "674bd990ebed9f879652c15358a9c56b87d26facd8a9eda985995de26fe45aa3"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/more.tsx",
+      "bytes": 3657,
+      "sha256": "6f49b6a039f184b3d2e7854480d02f2e5bfb1e3aa3a8d295b86a4239dffead1d"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/prices.tsx",
+      "bytes": 5041,
+      "sha256": "bc04fd636b936880b1f25d20487ce6e232b2819cd4a3e213962ba22e94a16741"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/privacy.tsx",
+      "bytes": 1086,
+      "sha256": "85b28222950a6291ef38922c63b5b8fd385eef1a1484efdea16a9d4b49818f79"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/report-detail.tsx",
+      "bytes": 2329,
+      "sha256": "494212d119761b1356294af64afc5577a6c947b4f67e33d50ee2156daa717f50"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/report-latest.tsx",
+      "bytes": 1977,
+      "sha256": "41c3a9e54149bdac76ec93a1cfe6cb4fd4f987bb51e7f48cb825dc853f7e4e0a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/search-busy.tsx",
+      "bytes": 354,
+      "sha256": "a87803764f227a4f8b6fe1cffd4bc3afbedfdac28e1c71dd7f126ce0e09aa0dd"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/sources.tsx",
+      "bytes": 2257,
+      "sha256": "d32980668e7ffa6c1aa35a6a4c6a4cc734484ccb38d47b0dad4b2558ead0b84f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/starred.tsx",
+      "bytes": 7573,
+      "sha256": "eed30579de4c79f93ab3581e2148d259f598308cd9945adb09c749268d6bb8b0"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/story.tsx",
+      "bytes": 21774,
+      "sha256": "d5fb08def3c11d180efbd4efdd5dad8861a198648e57ff3c9f549893ade255ce"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/terms.tsx",
+      "bytes": 1015,
+      "sha256": "a36f06622a2cec59b851c9fc4cf594e696bd3d5ce064054a9866cef6ebc9594a"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/topic.tsx",
+      "bytes": 4282,
+      "sha256": "b6f3e39722709bc941930c1783d7ef2d8678c21b51d9df34b6be7f8669f0716b"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes/topics.tsx",
+      "bytes": 3571,
+      "sha256": "7cccb6c49735a279a5f532af2ee659dd6b282503d11c01b55847a815e6f2fc61"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/app/routes.ts",
+      "bytes": 3288,
+      "sha256": "89f10366b63e643364eac7b530f3872cb46a9b05b19c70a8711063966085ddb5"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/package.json",
+      "bytes": 713,
+      "sha256": "831f55b24c55ef1f62332980dc774afe5f1b128b132997c6f76f12b640b71aec"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/public/admin-icon.svg",
+      "bytes": 219,
+      "sha256": "e4501e17fde8221b38538f072132f28f99fdd90fd29339936ecb61aa14d902dc"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/react-router.config.ts",
+      "bytes": 391,
+      "sha256": "26c948d63b2511a97bb4ad6adc9e4b05023bf75620c80bcd041fc222152aac37"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/server.ts",
+      "bytes": 9300,
+      "sha256": "c6c27aa687fd0fce9788bb9bdcc9c95f3faf0d0d10643a2879c7ded11b05a538"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/tests/cache.test.ts",
+      "bytes": 12419,
+      "sha256": "313f6d6897d9407b1dc7171c1bb2b969eebb34a44633058162a3da34325c3991"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/tests/local-state.test.ts",
+      "bytes": 3362,
+      "sha256": "bc48bb6c515cdfcae8ea34f86c09bae64c7f98239b18b1befac9050d6ab40ad2"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/tests/markdown.test.ts",
+      "bytes": 1107,
+      "sha256": "26df2702ebc583db476b5c706867092c51e07b1c29abedc890163ff556014050"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/tests/request-cancellation.test.ts",
+      "bytes": 1157,
+      "sha256": "1d1360c30c80cfb2a26bd6d0c69304e8a038cf28ec383e3472e28da922dce24f"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/tests/session-cache.test.ts",
+      "bytes": 2424,
+      "sha256": "85388c9eaf2952b93ca81ed85d78d9910042d43b711f93f3db9672ae67717a5e"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/tsconfig.json",
+      "bytes": 564,
+      "sha256": "91b22b5acb4c3e410adbd116fce6436f161cf1a42320a526cd0fb1c6a140858c"
+    },
+    {
+      "path": "fpl-news-v1/apps/web/vite.config.ts",
+      "bytes": 2947,
+      "sha256": "193bb45563119be5396cb711d2cc51bc5336a13a916bbe1ad12f3d73be6fb21d"
+    },
+    {
+      "path": "fpl-news-v1/apps/worker/package.json",
+      "bytes": 300,
+      "sha256": "6a82d3bb005a8ba9454cee3687289e0d775089e38d49f911b6abfa81dfb39f71"
+    },
+    {
+      "path": "fpl-news-v1/apps/worker/src/main.ts",
+      "bytes": 2181,
+      "sha256": "743c6d502abaad83c4869c0ce911188ece12a654e5de06fa0cfb4cd497a4180f"
+    },
+    {
+      "path": "fpl-news-v1/apps/worker/src/schedules.ts",
+      "bytes": 7016,
+      "sha256": "c22b7b7b2ce45630c5a9e68fd0e5ee9343d2b0ce6a6ab5a1c00fb7514cebd3fb"
+    },
+    {
+      "path": "fpl-news-v1/apps/worker/tsconfig.json",
+      "bytes": 74,
+      "sha256": "88020c5d0c639e9fca3c8cc0425dc6233bbb30b14c5a0cb5dcb7d7530d4b788f"
+    },
+    {
+      "path": "fpl-news-v1/assets/README.md",
+      "bytes": 629,
+      "sha256": "a4961282b885bbb33bfd14e85026c62b046ca6eeb5abb7424672beaf34d25429"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/NOTICE.md",
+      "bytes": 1334,
+      "sha256": "c8373f22bd9166be147ead1f19c7833f76619a12bbe4440a60a6f1dabe8c8b34"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/agents-last-exam.svg",
+      "bytes": 2840,
+      "sha256": "7682868d3ca48a64c530453a06f83142b86c7c8fae1231c771c2c08441e92fa5"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/arena.svg",
+      "bytes": 3300,
+      "sha256": "b818931c76bfd9d0ce4fad9fb8db512a1bd1884452d278c1599d51ff3848846b"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/artificial-analysis-purple-2026.svg",
+      "bytes": 633,
+      "sha256": "e8da4cc643f98fb6f3cd8c6239d43a26f7eef92ce9aaa9371b1b8ebff4492291"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/deepswe.svg",
+      "bytes": 863,
+      "sha256": "b25c9ac39910579ceb0273edd74691efa93824fe720da7683900cd2578ab3968"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/epoch.svg",
+      "bytes": 2039,
+      "sha256": "5267735e52798f7bf56a5fef7f2d3547769e0210e2f0992df6dc271644b077db"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/eqbench.svg",
+      "bytes": 9044,
+      "sha256": "23a60a58759fe3c5416ee946d0a382c1e51f6883de9278ecfc3e8a56107315d0"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/livebench.png",
+      "bytes": 5347,
+      "sha256": "c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/llm2014.svg",
+      "bytes": 720,
+      "sha256": "2cf45339fe31904c02896007f6e717840f55e3a8d3f22134be3dd74121ca5bad"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/mercor.svg",
+      "bytes": 3006,
+      "sha256": "70ea83c681065732d7969077397b89254e42afca3dcf62a18de663353d32500c"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/rapidata.svg",
+      "bytes": 786,
+      "sha256": "9229242d6238399c45987ffb9c61f6515a31bec4a77aaf1da75ad95893203c77"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/sierra.png",
+      "bytes": 1169,
+      "sha256": "e91c953ec269e82801c02373fe93bb156cb0a1ad79257ccd3766dffe21af00a9"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/taptap-maker.svg",
+      "bytes": 2587,
+      "sha256": "b18b4da68cd040fe341ebd1c8362259516dbdafc7212e692dca7e999bdbd0202"
+    },
+    {
+      "path": "fpl-news-v1/assets/leaderboard-sources/vals.svg",
+      "bytes": 613,
+      "sha256": "e33b882753a9eb95786d09eb4540abe9d12dedeee9dcf495560d632299ec9780"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/NOTICE.md",
+      "bytes": 692,
+      "sha256": "cc5495f961be27d750986ff894b4283b64df152db366cd441510a28387f6a2d8"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/anthropic.svg",
+      "bytes": 1697,
+      "sha256": "d4366130584b1027bbc376e3c06a48500d6e862403a69556726d7722610e5561"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/bytedance.svg",
+      "bytes": 874,
+      "sha256": "086ed1911b275f825f09a683974a69e4c84b4c8e939243ef8897961051226161"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/deepseek.svg",
+      "bytes": 2165,
+      "sha256": "0a47d55e6449ef97fb2185020f8118d75ad1ffe5cd711bef6862699f50d5217b"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/google.svg",
+      "bytes": 2837,
+      "sha256": "4fb5af9c85ca246667d2376d06fc785325e37ce9c9ef3d6606f07ba18602868e"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/meta.svg",
+      "bytes": 6023,
+      "sha256": "e688b9947034e5a1a6e43435da3cd5eeb0d1102290679903dc96c6d43447a99b"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/minimax.svg",
+      "bytes": 1571,
+      "sha256": "d066ca12e8cfb12c0027be49ea22e06bb62d382f5b3836ff01b9f18af01154ba"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/mistral.svg",
+      "bytes": 656,
+      "sha256": "cc39e69a73c3140bdded7ec5775579c185eacccdef43a0f94474bcf7231cb0fc"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/moonshot.svg",
+      "bytes": 774,
+      "sha256": "8149f95f8513573da9bcffb79a1b800c856e054d97633c8c43b6cd9ebe7b7859"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/nvidia.svg",
+      "bytes": 1026,
+      "sha256": "0cc710e73dc41650ae2178e9ab1617108ed70a3ad7f2d40db363d30bfad4cda9"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/openai.svg",
+      "bytes": 1688,
+      "sha256": "802335af1ddb4e135468f689aabe7ac7798a3177c1b71bbd4549fc602e9264ed"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/qianwen.svg",
+      "bytes": 1668,
+      "sha256": "3abbbb05dfde555971fb944880d1dfe85d2e97a795fa3fe4e96fa1a5912a0364"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/tencent.svg",
+      "bytes": 955,
+      "sha256": "0d95df884d51b92b84d65fb61a5603d74e833b386acba0808fb93c53dcfbfc7f"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/xai.svg",
+      "bytes": 373,
+      "sha256": "0410d14cf99a22d55d34712e9db5e4d0b8b156baa31e7d8c561848847e542edc"
+    },
+    {
+      "path": "fpl-news-v1/assets/model-providers/z-ai.svg",
+      "bytes": 3598,
+      "sha256": "3a0e993946e43e227f10414df38c29b9eae247218dd750815595583485d1beb1"
+    },
+    {
+      "path": "fpl-news-v1/assets/og-fonts/LICENSE",
+      "bytes": 702,
+      "sha256": "a7325951380d909135ad5226977bac872be1364c348abb27c7d4fa67c61aebd8"
+    },
+    {
+      "path": "fpl-news-v1/assets/og-fonts/noto-sans-sc-400.ttf",
+      "bytes": 3511700,
+      "sha256": "32cdffca3d0f8046d132acf6bfdc0a87ef6cc610c64340a7bf047ce3348405a4"
+    },
+    {
+      "path": "fpl-news-v1/assets/og-fonts/noto-sans-sc-700.ttf",
+      "bytes": 3602492,
+      "sha256": "5d05345f9128c81915d641e0dcbb4e2fdb2ab24baa1e8de0df194423185d8500"
+    },
+    {
+      "path": "fpl-news-v1/database/migration-compat.ts",
+      "bytes": 556,
+      "sha256": "cb6bc49a8a3e36c5feea6e55ff82089c1f59657620bc6a914f74c3df22473167"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0001_core.sql",
+      "bytes": 12349,
+      "sha256": "ba4cf0e345f0eaab32fac9150aab87808b398e635a0103e37d5eee2ee7c3a75d"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0002_events_reports.sql",
+      "bytes": 5879,
+      "sha256": "c0263f26018628788e569893d42179df91ef08cd0134a545b535b727807b2951"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0003_monitor_leaderboard_notify.sql",
+      "bytes": 7913,
+      "sha256": "452070bf5615f78c47a363daf60e8508cdc1c03db7f10dea16c6772423f70209"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0004_admin_ops.sql",
+      "bytes": 3511,
+      "sha256": "ad435396e832f83653519b24f973ed71a7bef89688e44f3bfb2bf7fdf64bfb74"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0005_grouping_state.sql",
+      "bytes": 498,
+      "sha256": "05b83d2e4af4e412d66166bd51b06e60e1e5dc97a3219a460b2eceb756d147bd"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0006_embeddings.sql",
+      "bytes": 959,
+      "sha256": "f8ff46c206b7c2d70b0ad620f959a5c24b0f80e68e97d324a8bddf525a4566a0"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0007_leaderboard_prices.sql",
+      "bytes": 755,
+      "sha256": "166ce24631a9b0bd49eb620d5eb55650d6c584a618547ac72af9425dad3dcfbe"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0008_monitor_display.sql",
+      "bytes": 554,
+      "sha256": "6c4a2aa29b6a3f3316b10880a770d2b9c7083df2836b79e10e4462f9df65e2b9"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0009_selectbench.sql",
+      "bytes": 815,
+      "sha256": "2b3ab0cd31660f469e2a7084cd95475e0961dc2449ad6983eaa22b63d94f90c5"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0010_service_prices.sql",
+      "bytes": 601,
+      "sha256": "70d5124065dd842102e52cf2e097ba9374a3b1fb99d1d365a445efba1957087b"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0011_lb_alias_unique.sql",
+      "bytes": 159,
+      "sha256": "069783d7ed49101c8aaebed9cf07eae988bf42111ec14a07893c33e296ddf5f9"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0013_translation_attempts.sql",
+      "bytes": 554,
+      "sha256": "58ce72ace64056c56aa353e4c8e82852a186e884e8f9c5e1448f343011abc8e7"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0014_pool_search.sql",
+      "bytes": 1050,
+      "sha256": "45546c4abe1e2c7346c1c6ea608a37349687c8d8ddddfbac3ee6cfdb7953385c"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0015_pool_freshness_idx.sql",
+      "bytes": 181,
+      "sha256": "91a897168dc017400c877b8db6a8f744f60079502843884f87979cae70ac1794"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0016_publication_fact_release_idx.sql",
+      "bytes": 336,
+      "sha256": "0748c6ef30f8fc7b329524ee0e1e42873b15d27a51af3811a1e4356c671901f7"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0017_sitemap_idx.sql",
+      "bytes": 181,
+      "sha256": "3868e8f38c061fd9990d875df601c5fabdf2b592a11506d8498288044d321c2e"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0018_publication_sort_at.sql",
+      "bytes": 1001,
+      "sha256": "139ec00a433381e952c2c27e688aa3f9aced7eefba1445f4a1b4a6e1c66e8452"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0019_seo_indexed.sql",
+      "bytes": 308,
+      "sha256": "a7a93ed796a9a6ba4d788f56aa5b027738b1e1b1466d8e305c4e0db1a39c8afd"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0020_story_summary.sql",
+      "bytes": 233,
+      "sha256": "f747851107388e5be3d56b1aa029c0326071c06461ae9b51907f310eb6012979"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0021_seo_auto_index.sql",
+      "bytes": 487,
+      "sha256": "28ea4c10fef5d8fdbe40d062e46d6b4f64b13e72193cdb9208d2226cc4e9f4e0"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0022_receipt_attempts_budgets.sql",
+      "bytes": 2810,
+      "sha256": "deb8ed2a4770f995b04639456ed842f2f9992f01a2300d08a038f3943cfc8385"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0023_processing_retry.sql",
+      "bytes": 647,
+      "sha256": "4563f5bc1da41e3e33f843705fbe38bcede8cea56ee9312dbe66e6c393b3fbd9"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0024_grouping_overrides_digest_inputs.sql",
+      "bytes": 685,
+      "sha256": "8e9510af8f5059738d29a58f726549fd0d0ea962b9c983655bfe333d6b7a2a5f"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0026_source_icon_checked.sql",
+      "bytes": 204,
+      "sha256": "4ed154a6ba499d8c062b66dae4a00c196cb5e9d5d86f6639a3e00841bbca8eeb"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0027_feedback_forward_error.sql",
+      "bytes": 206,
+      "sha256": "eae7d9ae326433adb86d3fbb0830a3d33b06d6350ff8de2ceaf0cb43a56a79e5"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0028_selectbench_mean_score.sql",
+      "bytes": 231,
+      "sha256": "3cd1fab13375a39a34413ddd17e0f0bc26d0f4fa1216ec6e3b19934268b08f4f"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0029_source_config_content_public.sql",
+      "bytes": 306,
+      "sha256": "ba55d3cb46da31b83d799fa4474426745b098045dbb70c7c733ed8b6afa1453c"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0030_collection_url_index.sql",
+      "bytes": 330,
+      "sha256": "29bdacc63c64916d86be0591308bdb9741034c6b79be5bd88b9af323e0ed0ea1"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0031_selected_ready_index.sql",
+      "bytes": 336,
+      "sha256": "0fe7f6996930bcafbc4391ea5e3bd21df8c13a8dc310b5c4dd8c0422fc01b273"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0032_regroup_pending.sql",
+      "bytes": 450,
+      "sha256": "aa7547725e449d6a842e8bfa4888e2a368d28456bb457c1f58252a2ee97e879f"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0033_receipt_budget_index.sql",
+      "bytes": 434,
+      "sha256": "5374022dc798f0e53d65f1872193f8bc3012edae98e23bf950835a1d8248c567"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0034_lz4_toast.sql",
+      "bytes": 516,
+      "sha256": "c8d50799c2f64a2ff20a642b1ee27069fb9a1ffe4ea6373380ea51536510bfee"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0036_open_source_defaults.sql",
+      "bytes": 522,
+      "sha256": "5c119eab2d95997e9af067744ceb552f6078b611b2deb83396f7f8954a92e94b"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0037_x_article.sql",
+      "bytes": 261,
+      "sha256": "ab21cc9e6d02f4276fea6f5d824809f3a7e6afa81c0fc6c000d5edafb7e1f163"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0038_quote_translations.sql",
+      "bytes": 536,
+      "sha256": "32f9674ba2e80c6faa7e53836f6b6124f5dcdbec83539dcc3ebb21e5f36c6ebe"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0039_fpl.sql",
+      "bytes": 1357,
+      "sha256": "d51ae4877e4f4c7f7d0f790a5160a80d9a7583e8fa09f07495bf449e87c41e4c"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0040_admin_sso.sql",
+      "bytes": 253,
+      "sha256": "b96c8d7a6c049d6dfaa31caa5c63b1c7e2f480c5df36d0854f75e4ab52b36fbc"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0041_source_tests.sql",
+      "bytes": 446,
+      "sha256": "523cc31a1c5cd645a8eb881569bff553b51d561d54a514b2c85d7542ddbee2b0"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0042_x_official_budget.sql",
+      "bytes": 326,
+      "sha256": "2c30534aada2f22936c7919bb6af9fc3ec4446998c22e21db8465f805edc4e3c"
+    },
+    {
+      "path": "fpl-news-v1/database/migrations/0043_x_collection_control.sql",
+      "bytes": 203,
+      "sha256": "a75f9ea656f749e272e676b51e1c8b2766bec64e2c66fcb50b6ca561e65db1f8"
+    },
+    {
+      "path": "fpl-news-v1/database/seeds/lb-models-2026-09-29.json",
+      "bytes": 493073,
+      "sha256": "ee486f37bfb6715fd839c79fe40f74026a5a8c7bbbdfd25955069d7572df1a90"
+    },
+    {
+      "path": "fpl-news-v1/database/seeds/lb-official-prices-2026-09-26.json",
+      "bytes": 5599,
+      "sha256": "65f7eb58a4f72744af6ca40383e41dfe07e653f252b13738eb1fd5c60750feb2"
+    },
+    {
+      "path": "fpl-news-v1/deploy/Caddyfile",
+      "bytes": 218,
+      "sha256": "82991ed2c631b6e85f3524bc08417f096c4700c6e31f22b190915f7d9d743326"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/PENDING-public-tools-20261002.md",
+      "bytes": 4267,
+      "sha256": "bfef3be0f3116eaa1be990658ddf08198d6869b2e5eb9e30572cd4c4c9ba3319"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/PENDING-v15-fpl-scope-dedup.md",
+      "bytes": 3362,
+      "sha256": "5a3c2ae399b1ec2072ceda44374cf44fa7dba31767d8d9f8149b4e52d1612560"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/RELEASE-v10-editorial-rules.md",
+      "bytes": 4002,
+      "sha256": "4cb8d0cfd2fc5f552e04d82dfa0295a47bedc964ced02ba9eaa97eab5fcab3de"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/RELEASE-v11-x-socks.md",
+      "bytes": 3509,
+      "sha256": "ac28f16befd6c931d268fb0b8c01cc9711b022bf93d44718b349e3df41272c9d"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/RELEASE-v12-editorial-gate.md",
+      "bytes": 3626,
+      "sha256": "4dd521dce8bfe1301a061f95e4100585c5e13958aca5fd66d1fa5af0823819ce"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/RELEASE-v13-price-mobile.md",
+      "bytes": 2478,
+      "sha256": "4a7b64bec7c72946f22f94fcc5ff89f0482c3350b9da193d6472b8c7a6a4986f"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/RELEASE-v14-rss-retry.md",
+      "bytes": 2538,
+      "sha256": "42a3ed82c752b032543543f629dc84183413941f3ca39b75fd8c2c6026891a3a"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/RELEASE-v9-light-mobile.md",
+      "bytes": 2623,
+      "sha256": "b814a33af3ba73c10a2504f671e64bc674ad13aeb8e3d6f9d22e6460574c149b"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/app.env.example",
+      "bytes": 975,
+      "sha256": "5b023ae5413b228b40f7088e51a7123a5992581e143a49bc5d7e5ef65de54fdf"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/backup.py",
+      "bytes": 1460,
+      "sha256": "8dcd886c4ab05b5f8e745f9fd017b71075ac43a0e76b67c8b97bd325a9b6c51c"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/nginx-http.conf",
+      "bytes": 418,
+      "sha256": "93fd8c83d010db59c8a94feacc7e69b7dd5a1e802766b7060c6cfc36e910b16e"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/nginx-https.conf",
+      "bytes": 920,
+      "sha256": "2ff61654f558a758380a6bdd5d4bdee6e7e1518ac5082b8e0b1fef1549a8c800"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-api.service",
+      "bytes": 497,
+      "sha256": "04d4f237b69baa2f1f21583555d2696bbacf3d3eb55b128e2f4fd78f27fc8f48"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-backup.service",
+      "bytes": 223,
+      "sha256": "f6c221e9c31016b5f5979f9aa360623130b11083f960336a9ce9f0d923a5d190"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-backup.timer",
+      "bytes": 200,
+      "sha256": "68ce1b4ea73db0c029f5525c6d1fb459501bb4ebb327c50ee42f09e32fd9d4c2"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-v9-check.service",
+      "bytes": 461,
+      "sha256": "44059368b853f8caecc34802c6c1e1b788345f5ae0b724337d227836e871ac7e"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-v9-check.socket",
+      "bytes": 173,
+      "sha256": "c07a14402e9d8514ef6b402626ec768f92d05d3ffc7e405fac68d24fe3517088"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-web.service",
+      "bytes": 586,
+      "sha256": "4cbfa91ba41a5f28608fb3bb6fdb0309131380b115d41347ddecdb7c5372ad2d"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-web.socket",
+      "bytes": 207,
+      "sha256": "fd08cb51720e986658882c56580734065d7d0ee74dbb3fb7c8d6a3416910bd3f"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/tql-news-worker.service",
+      "bytes": 633,
+      "sha256": "7ff5edb5e50e1d15b93baeabf57581fcd28f00e6f636af176e460555abc8af90"
+    },
+    {
+      "path": "fpl-news-v1/deploy/tql-news/web.env.example",
+      "bytes": 138,
+      "sha256": "8c03756409111fcf01497dc50a7efac37927ff5fec3dcfad6c2943b1824d72be"
+    },
+    {
+      "path": "fpl-news-v1/docker-compose.yml",
+      "bytes": 2369,
+      "sha256": "49952ac74b5aeabaed5d3c21d029eb66fedeb4563d2c822341ec0c7fea6ef818"
+    },
+    {
+      "path": "fpl-news-v1/docs/architecture.md",
+      "bytes": 5076,
+      "sha256": "3207251828c3d2cc7a946e0e7b98271cf5008c09279b8246a3a749284b7844eb"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/banner-dark.png",
+      "bytes": 112315,
+      "sha256": "5bcf9ee3145fb020e6ce9323d0068235f5f769e463255d291c82c018fe7227df"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/banner-light.png",
+      "bytes": 110294,
+      "sha256": "fc5c42a1c21d32aec13ea47d485368c3b549cdcbf1416703347a941cba33f649"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/cluster-dark.png",
+      "bytes": 97683,
+      "sha256": "cb9a3aaaf19a26ef588f322b93b52efd2db97cf1f6bc55a651f6c1d98118c921"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/cluster-light.png",
+      "bytes": 96925,
+      "sha256": "f06bcc02cf9257af0b67b758128a567a96450b550dc372ae98e97965d42d3470"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/how-dark.png",
+      "bytes": 66043,
+      "sha256": "8cee56e266f6263c6b6f90615be600646575dbe1da61292b6d641ee2b85b7c51"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/how-light.png",
+      "bytes": 68341,
+      "sha256": "e6942a9a15d99de8f437d64d9186373bf8b98f2a8a37065a8be4e5543454e3d5"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/perf-dark.png",
+      "bytes": 48098,
+      "sha256": "cf972e8c498ff2a98038142a2a1bbdf6eaa7e9c327741340c9ed12c37510a36f"
+    },
+    {
+      "path": "fpl-news-v1/docs/assets/perf-light.png",
+      "bytes": 46521,
+      "sha256": "ba887742b5da4e69db3bca730ef60459ed830dd74ef50d733b167a51696a6c60"
+    },
+    {
+      "path": "fpl-news-v1/docs/customize.md",
+      "bytes": 8920,
+      "sha256": "734ce766465234997ebe50b0a33683d5b7a7c43caaff4544b1d98165c3c32d1d"
+    },
+    {
+      "path": "fpl-news-v1/docs/deploy.md",
+      "bytes": 5300,
+      "sha256": "a87a04b29ba9410848c0b4ea68c8c1adea176db18e94efbb41f7bdbb6560a24f"
+    },
+    {
+      "path": "fpl-news-v1/docs/grouping.md",
+      "bytes": 4230,
+      "sha256": "6fdde62197c5ae8f98348a59cfde602215a9d4a6a12b5b235cab6ff7c78e717d"
+    },
+    {
+      "path": "fpl-news-v1/docs/leaderboard.md",
+      "bytes": 4667,
+      "sha256": "63b1cf01bcfad355f24a0d425cc6dcaa6f4033ff131891f8a04abc92bcd3e811"
+    },
+    {
+      "path": "fpl-news-v1/docs/selection.md",
+      "bytes": 6043,
+      "sha256": "448e08b113159ee4495e1ca12e0056a0cc3fce4bcb36434bb72963e8a190ef00"
+    },
+    {
+      "path": "fpl-news-v1/docs/sources.md",
+      "bytes": 5431,
+      "sha256": "40904627ed652acb640e02d4de1d6dede11bd2edfd0d22128f5bd3a81fd8977c"
+    },
+    {
+      "path": "fpl-news-v1/docs/tql-news-v1.md",
+      "bytes": 9001,
+      "sha256": "d2ff576c12d935ea9517be52f87c3bb36b66241e11b8d761082b32cfda38a7f3"
+    },
+    {
+      "path": "fpl-news-v1/industry/README.md",
+      "bytes": 936,
+      "sha256": "141177ff5d9d1680513e34671bae5eb2e27b13d4ef96bb0e8d5d500a9301c5f8"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/apple-icon.png",
+      "bytes": 3465,
+      "sha256": "6ca76b3f87feaf9ac8fbe4f9b725f9f87d1a239fba1ea87b5255c69246f10b7f"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/favicon.ico",
+      "bytes": 15086,
+      "sha256": "a2b68a05d16a8b38158b4a7bb61d41695fdeec8fec57972bba6979e2fe38acc2"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/icon-192.png",
+      "bytes": 16246,
+      "sha256": "f995455037952b82d5441ed8c6a596bf11fb75d3907bf07ea583739bac885b2c"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/icon.png",
+      "bytes": 16246,
+      "sha256": "f995455037952b82d5441ed8c6a596bf11fb75d3907bf07ea583739bac885b2c"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/logo.svg",
+      "bytes": 254,
+      "sha256": "9a2c5a1596491641e32404dc43b179c8a73354547e04c1ea9544076ed1522bf5"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/nameplates/archive.svg",
+      "bytes": 4717,
+      "sha256": "98ce5d90fdc589d26915bb04f7f5d9ed37518cdbc7e2b18089b7e847bc38d701"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/nameplates/daily.svg",
+      "bytes": 2524,
+      "sha256": "4ecbe4631c146005f7b1212a309cb1e2d2a3b8931f9f5a74e2d2780fb63c656d"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/nameplates/index.json",
+      "bytes": 149,
+      "sha256": "a02e5e4f70a84f6847de6f8b9b431d18a9e930618ba9e9934dd139fa3b861bd2"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/nameplates/monthly.svg",
+      "bytes": 3086,
+      "sha256": "248a125f28b42673d05a2abbf1f593e1007397be9b5fd7887622ce61c0b518ca"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/nameplates/weekly.svg",
+      "bytes": 3253,
+      "sha256": "cc42086e6a045ff9ca91f33a6af6bcae972f0e1cae045f55f570393909f26045"
+    },
+    {
+      "path": "fpl-news-v1/industry/brand/news-categories.css",
+      "bytes": 2279,
+      "sha256": "91ca8e365b45b3db3ea5442a8b969c29f3a5e312d2f07d53735d1de995bbbb5c"
+    },
+    {
+      "path": "fpl-news-v1/industry/changelog.json",
+      "bytes": 355,
+      "sha256": "7acd08bdf96d5b067eb30882461db540d65a5f3a2445d0d81f3f512afdb09410"
+    },
+    {
+      "path": "fpl-news-v1/industry/features.ts",
+      "bytes": 83,
+      "sha256": "67a6a0b0b3b981da4c5e5897e11c927c2c2f0d6c14edb5150a86ef98d548b567"
+    },
+    {
+      "path": "fpl-news-v1/industry/gold.example.jsonl",
+      "bytes": 1180,
+      "sha256": "173d4e87d50c12b1edcfda984d6358b1e8140c659941bc6c60920ae91feb07fb"
+    },
+    {
+      "path": "fpl-news-v1/industry/package.json",
+      "bytes": 171,
+      "sha256": "36d4ff2e09646d7cc26077fac4baee7f54371d59ef4c49f7ecb055ebe261254c"
+    },
+    {
+      "path": "fpl-news-v1/industry/pages/privacy.md",
+      "bytes": 836,
+      "sha256": "de3abf86ca937fb5e77f1f3864843f626db4d76d86f6aa95e0ae1fc4f4db3fe5"
+    },
+    {
+      "path": "fpl-news-v1/industry/pages/terms.md",
+      "bytes": 930,
+      "sha256": "25392628fb9a2bf4dd08c03d8473186072d6910e14d04001b36340270a537e72"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/content-understanding.md",
+      "bytes": 3051,
+      "sha256": "9cda942f665a5c9be42dc2ee30af597a2af7a81c7cd5d8521361e5d61423f86b"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/group-batch.md",
+      "bytes": 604,
+      "sha256": "13a5e1fc191523888bab1eed0296d06677ca27c6a7e213b87e20875e44b0a8bc"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/group-definitions.md",
+      "bytes": 1371,
+      "sha256": "456297753b3fb8d3720fc771d4e238027745adde173d3992235af7e9ff2c6c83"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/group-method.md",
+      "bytes": 311,
+      "sha256": "8c51856fbfa4b66f6f26ef36bc38fbb857090d7d7d42528233dc05b0284c0e05"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/group-pair.md",
+      "bytes": 777,
+      "sha256": "ef967620b842cb4ee9aaeb4716445dabade536ff7ec42bb0eb61e536f1ea77b3"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/group-signal.md",
+      "bytes": 701,
+      "sha256": "e5f3746474e6d18bc292254109b9b3f9fbb42c51384843879f2a6899a67f79c5"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/identity-context.md",
+      "bytes": 244,
+      "sha256": "6ac2adecce61231fa8ce50685eacf2871e386983dadb58977f522674f0b0ddc7"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/prefilter.md",
+      "bytes": 3794,
+      "sha256": "669f6ed98a3f3a2ed743417659b0ee6993dc7b773977b34d5d9798729e4ea3b5"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/report-daily-lead.md",
+      "bytes": 463,
+      "sha256": "f159b1f5f5a2010a62a45f3f042744cacc1c25f5fe9e0b9a01a2186943347611"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/report-period.md",
+      "bytes": 751,
+      "sha256": "f033bd8fb9b3ed76d26767df101c435b6711f5588e7cad170da985f7d44c2e2d"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/rules-answer-first-summary.md",
+      "bytes": 1131,
+      "sha256": "b8a517e60351e5adc453159e9d4e49a08d765c657a9b726044f04601d7f5a923"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/rules-anti-hallucination.md",
+      "bytes": 1746,
+      "sha256": "48772bc76a785347efa49b5681f701a49cf57117ce8748fda80085e501885860"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/rules-domain.md",
+      "bytes": 1211,
+      "sha256": "1bc61033cbe2503052f350c768cb7791b0faa3efefb08788d2e77d40003d9699"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/rules-self-contained-title.md",
+      "bytes": 1071,
+      "sha256": "dcde0a131799a85c90583e7c454c1e46c716c689943ef4455a580b752bde4a87"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/safety.md",
+      "bytes": 234,
+      "sha256": "3963b20e601f9bdde876ea9a9f2e68b58d6e618e59109791773ff6e1d4e7badd"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/selection-score.md",
+      "bytes": 4301,
+      "sha256": "c2dcc9c7c35b30acd0eb5d64e1215d138c8b715f89436064885088e3ff33d760"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/story-digest.md",
+      "bytes": 698,
+      "sha256": "d9ac5d47e848166ec428814ed1bf4ca958f1c367205c4a2a83ede22ed743b1dc"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/structure.md",
+      "bytes": 1685,
+      "sha256": "f33c972e2adeced3737a8a3f42d3caf0dd5aac0d71ae5b38b3ba001ea9535644"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/summarize-article-empty.md",
+      "bytes": 84,
+      "sha256": "776095e536b4c8d6305bef073b6c421d4da876b974a2395baf1befb2e7fdd71a"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/summarize-article.md",
+      "bytes": 1382,
+      "sha256": "3d515e0b97cd48dc1cc4c00911223b2732d4383850bd54fc89694163c5290cce"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/summarize-long-post-quoted.md",
+      "bytes": 108,
+      "sha256": "4b9d46e6f676d9ac021f29a669144d178398ba8490a07ada2764a5c2b9f46fd0"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/summarize-long-post.md",
+      "bytes": 1036,
+      "sha256": "6f6ba51e1711a77b0a73385830313b6213384c7b07502368c11d3aafd6ab0d6b"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/summarize-short-post-quoted.md",
+      "bytes": 545,
+      "sha256": "13932cd0485af8e8d249ce901d4eced7f61bb1844ba0abaf7976076879d8b992"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/summarize-short-post.md",
+      "bytes": 588,
+      "sha256": "b0555ac7545d3053549665ddcf3fd9115b4d359a487f6f44cf089203bce859e2"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/translate-body.md",
+      "bytes": 863,
+      "sha256": "36485f1e8373fc5d4e42d3178362eb628ac0427a64907c2f53908c31c582c090"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/translate-post.md",
+      "bytes": 268,
+      "sha256": "ebb220eeabad45b548c05b0e94337701af010d0b011434d4ea6ac3e03ffec993"
+    },
+    {
+      "path": "fpl-news-v1/industry/prompts/understand.md",
+      "bytes": 324,
+      "sha256": "39bbbd78478b7b4f9fcd236a31acad74f51e423f4bd91ab5946a9e09430abe50"
+    },
+    {
+      "path": "fpl-news-v1/industry/relation-gold.example.jsonl",
+      "bytes": 2161,
+      "sha256": "adaf5cb715fd1c28fca470abb983759f23078d8078f81cf89d33dafce6190c12"
+    },
+    {
+      "path": "fpl-news-v1/industry/selection.ts",
+      "bytes": 1220,
+      "sha256": "770195fcae042d4d64d765e9f3921055a85779509bd31dceb66ab853428fcc9b"
+    },
+    {
+      "path": "fpl-news-v1/industry/site.ts",
+      "bytes": 1903,
+      "sha256": "a4ce5b9c29ee16767301747bdaa22cc12ebbbb92a9854414ed863ad8f82475cc"
+    },
+    {
+      "path": "fpl-news-v1/industry/sources.json",
+      "bytes": 1063,
+      "sha256": "26f5d43d404be7f629ca8dd8b35565f4ebf4e7e76557e0f2295064452281c946"
+    },
+    {
+      "path": "fpl-news-v1/industry/taxonomy.ts",
+      "bytes": 8323,
+      "sha256": "44b9e6d0d0f1be0835d1238712856398b7c73491e520ed3a85602c0c933b61b6"
+    },
+    {
+      "path": "fpl-news-v1/industry/topics.json",
+      "bytes": 8500,
+      "sha256": "405dddc4f0a2ee91ad88d1a36c68fd6da243255b71f52e7f49c0ffb77c7af353"
+    },
+    {
+      "path": "fpl-news-v1/industry/tsconfig.json",
+      "bytes": 64,
+      "sha256": "487cd5319c8b830a4cf881e48aeb9ee9878d8fd93b414ac78033e1409db72f2b"
+    },
+    {
+      "path": "fpl-news-v1/package-lock.json",
+      "bytes": 199879,
+      "sha256": "6fcf265ddeb8468c8338b8119ce56b9dabd4032fa27e53529b3af21d09d0afe0"
+    },
+    {
+      "path": "fpl-news-v1/package.json",
+      "bytes": 882,
+      "sha256": "8373bc62e8d24b94c3ad78283a648f3cebadc4f7b242ee04dc3bd98d1a5ff3eb"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/package.json",
+      "bytes": 602,
+      "sha256": "e3eff00d12ea6a08e394b8f34653b5087e0e5fd9977e8fcf14bf125ea45f2d57"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/auth.ts",
+      "bytes": 9957,
+      "sha256": "d85897f14804f46125f2da81c832120b3dcc19bfb9e10985fabcadd5fda7218d"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/content.ts",
+      "bytes": 15477,
+      "sha256": "03de6e7bd651d7d8323258047b248b3718912b4f62f961c5ab183ef7fd3d06db"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/draft-sso.ts",
+      "bytes": 2817,
+      "sha256": "c237bcd2094481fb408c2f7721493afd8f3722eeabec2f6fffb00cc941119740"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/feedback.ts",
+      "bytes": 4906,
+      "sha256": "d8d61efa40588bdae5123fc684540ce35f41741b88ceba9a9d1022cfbebe7bad"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/models.ts",
+      "bytes": 5951,
+      "sha256": "53dd7a60b11236caf7a783f76d0e883e2fae46a3a38985105637a9d58f45c17e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/monitor.ts",
+      "bytes": 11544,
+      "sha256": "e1dca34581d38a5d370ce4101a26e6c4f8731edad1824d80ebfe490ba9176fe0"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/overview.ts",
+      "bytes": 2560,
+      "sha256": "7a54b42d71d06ab4f7f3f8799535eb40a5fde8704c71ba1af2d75148e1113fd7"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/runs.ts",
+      "bytes": 10397,
+      "sha256": "c260b6ce100bf04ee6b27b7e53f917df4747b8799e6dfe29c8b9262c80ec6a34"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/selectbench.ts",
+      "bytes": 4978,
+      "sha256": "f81039a14caac9b7513654fe129825793fa9e49bdde3fc3727379d6960c0776c"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/settings.ts",
+      "bytes": 4769,
+      "sha256": "c761e25ed6e9118f4d2ffbc0b3d939428562dad068d33e931d361652a4da64d5"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/sources.ts",
+      "bytes": 20727,
+      "sha256": "0c38dffea4184a0ba10e60c310d3be2778be801b833db65d0bf9081abc95a129"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/admin/x-collection.ts",
+      "bytes": 2933,
+      "sha256": "2461a3660620213291afc6dcf6ee556270be50a9869d683d5cc499d68d7250a9"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/config.ts",
+      "bytes": 5150,
+      "sha256": "da1da3beb1accff8c07c3d61964aa360d73806afa5516e2716576506b00ff1b6"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/content/editorial-material.ts",
+      "bytes": 2119,
+      "sha256": "e48c2ea9d90dd388bb0391c8189c5eaea7ec9ed3a8811e17ea59bfde76cc5fb8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/content/extract.ts",
+      "bytes": 7512,
+      "sha256": "77cdd452e78eb53643d4061590b934a8a50ba88cc0188bba009a94bc28fb5716"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/content/markdown.ts",
+      "bytes": 2245,
+      "sha256": "80fe9568dee90b1290a17db3bec6cb5b773a3bc88833267fdb88e3187c13aaef"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/content/materials.ts",
+      "bytes": 11503,
+      "sha256": "84c029ce0c995060c18ce7f7a1b52ea1eb7f0201d602775c2039a393331c72ec"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/content/sanitize.ts",
+      "bytes": 8504,
+      "sha256": "23deabdb8cc4ce50658cf1161ff7fd9a6f3be364d16b0662c5da57427148965e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/db.ts",
+      "bytes": 1800,
+      "sha256": "b04d24652386038066cfb69ddb5c755e4b90aad6fa3051649a7dbf34525c8189"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/editorial/analyze.ts",
+      "bytes": 26199,
+      "sha256": "2adbc657816e2780a92dd25a31c88af97591e9960741b66afb2c3b58c3b45503"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/editorial/input.ts",
+      "bytes": 6498,
+      "sha256": "6949f0c1600030d793f11024ee0e0e5377325529095132e9dfe8e6d51403f3c7"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/editorial/models.ts",
+      "bytes": 4393,
+      "sha256": "87e3b2fca576cd2201c568ed906ad6fd8bef5a67fcb8a2b24436498d9634eed1"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/editorial/prompts.ts",
+      "bytes": 2463,
+      "sha256": "dde539a023f475b29175a2d0f34162cae7859afcc5622c89476f0aed342e36c0"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/editorial/translate.ts",
+      "bytes": 18484,
+      "sha256": "e8ecb7f8a64376be9d40485163561c15cb14a9d780de9e4ef680724e4c0fb495"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/editorial/vocabulary.ts",
+      "bytes": 1671,
+      "sha256": "58d4cc58e1dce3b74e43188472b9834b9e64c6aaf10659acf4d4d2e27fe5ca94"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/editorial/writing.ts",
+      "bytes": 18928,
+      "sha256": "78ebc0f9d630806d7ebc4b22f729a5199db1296eb01aea50ddea6d219ac2b27a"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/events/digest.ts",
+      "bytes": 5790,
+      "sha256": "bde101e25bce1acc1d8641125be121d2830410f831f1e64a1feb53d058e34f53"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/events/group.ts",
+      "bytes": 46094,
+      "sha256": "e2992d7445ffec5ff8f291d98b5f9d2ae153bd245cf1c77d1f24fb0f977a379b"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/events/hot-read.ts",
+      "bytes": 6079,
+      "sha256": "dfbc6340be479603fb0dd650330a3ebdb7126c207af7939dfc4f112aedcbe122"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/events/hot.ts",
+      "bytes": 12726,
+      "sha256": "7336dd6378faebeaa03e30742351ab9cb0b8942ff9d402b9b4747aaf708fc645"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/events/merge.ts",
+      "bytes": 2782,
+      "sha256": "6cc7f71c0f8c4f96cd718dad9d7cd4b9f5054aec844a4748775d09bde4ceb6c8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/events/relate.ts",
+      "bytes": 8302,
+      "sha256": "20947ca5f05b483c154b337ecfe35b5d2f3b73179d49b0627ae8ed55196c5e9e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/fpl/collect.ts",
+      "bytes": 3756,
+      "sha256": "644532bcee669834867960d6b1155f8877d4499517813f99c101a4aad30ed0a8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/fpl/data.ts",
+      "bytes": 1838,
+      "sha256": "47788b456f95cdabccaf5fa301cd42051983a781aba6f2c910b24f0133a6313f"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/fpl/price-bulletins.ts",
+      "bytes": 7455,
+      "sha256": "b276f57664cfe4d2c19ecbe4f6f92ee5d844d0a0121cb5be71eaaf2b39e81466"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/fpl/tags.ts",
+      "bytes": 2893,
+      "sha256": "68e90dda3316d77bd66e7c7ddae870c932dcb18676386a4486d2b450abca4136"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/ingest/items.ts",
+      "bytes": 3361,
+      "sha256": "7fa66ee9d799f7803bbb81a3d8ba48df04e3e170b8adbe6cc4f42c14ceb9ac5e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/jobs/content.ts",
+      "bytes": 14449,
+      "sha256": "13d49b3856817a45be241c2c494aa311ce25e427278c68dfb5c4a6c19387a870"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/jobs/events.ts",
+      "bytes": 1815,
+      "sha256": "e80cc1c5a41deed21b23e6499d22e2e7cc4544580e2e91689a7e7a648976464a"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/jobs/notify.ts",
+      "bytes": 1384,
+      "sha256": "0fa560c350302afd88071de8d0aa9fa2d1e2056c1b307de8f69076cec86ea3fc"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/jobs/publication.ts",
+      "bytes": 1592,
+      "sha256": "86adf620b4a24e09d690c99585ecd085b9e3d5f0b214b5cec91bb0020f3cacb8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/jobs/queue.ts",
+      "bytes": 4748,
+      "sha256": "14401b9add15097be6e9eb7831a3cd40e5fb8d2b2b4522b70130dfe55916ea69"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/jobs/sources.ts",
+      "bytes": 1548,
+      "sha256": "b086456309cb1c224f31b82ff67ca6ea120e86fa3772f4e8658b1ceb32854afc"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/access.ts",
+      "bytes": 1406,
+      "sha256": "457164ea4abbd7adc1e14fabc9fc20433666f2e57c896d6e79f75bf1584ce639"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/directory.ts",
+      "bytes": 2628,
+      "sha256": "aa0e6455e6dea7645466cb074356488a715192c0be79d128fd6f733a4215512a"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/configuration.ts",
+      "bytes": 7585,
+      "sha256": "70f8ffa2526e40304cea55b6acfe6ca90c264367cdf2075d0e3b60100b7a2b3f"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/csv.ts",
+      "bytes": 1048,
+      "sha256": "50e0cff960aeec40ea7be3066a3144ddc1126356f6f4873b12f99480a47f6a73"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/github.ts",
+      "bytes": 1300,
+      "sha256": "b9e49db492217b5a6e032f537b99313e03e4b96d07539f0a64b17bb07b537ea0"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/hf.ts",
+      "bytes": 2573,
+      "sha256": "8fe8336a48b287ed84cb046c7e83b7141ba6aa4bd1ee302fcae4291cdb2c8392"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/identity.ts",
+      "bytes": 2979,
+      "sha256": "a199c68d09e9491d9897173fef7800a049b0f577a895ce150f6e971c007a8956"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/index.ts",
+      "bytes": 743,
+      "sha256": "f839216fb218fd6f8546c91005fa636f55513615c20c3d83cee6b21d0860f250"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/rank.ts",
+      "bytes": 244,
+      "sha256": "4b8a913395d4691de50c96f601f5fd9345e067774552c8ac3205feab709e4ad5"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/refresh.ts",
+      "bytes": 5529,
+      "sha256": "0c9764702ec3aecb919acde1cab78cf18d174ead4e99045c654d4dbe4665dfbd"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/arena.ts",
+      "bytes": 4567,
+      "sha256": "02fbf520505c05af2acbb9d4f5815780349d4e37c3d981e9d27f4ca8c601fc42"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/artificial-analysis.ts",
+      "bytes": 3150,
+      "sha256": "6f7a60960ae71f054cb3e2f401a22626331ff59e6df88ef199fa733981a3ee99"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/deepswe.ts",
+      "bytes": 2798,
+      "sha256": "899cb57bc56850e588aded9ed3bfc3c69f5076b49b559857e3c09acb097259d6"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/epoch.ts",
+      "bytes": 5455,
+      "sha256": "6020f2a994c32944b684b4a6bc00f3bd9c06ca3df533971f0ee198c00b5e031b"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/eqbench.ts",
+      "bytes": 2992,
+      "sha256": "f07fc2eefac14e579f2af088cd156ef40a7c3975f005a888df429f3fbd4f6ab4"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/livebench.ts",
+      "bytes": 4419,
+      "sha256": "43021698784b011e8ec646ca63fc257eb682ba0c1a4886274586bb2812cb6a9b"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/mercor.ts",
+      "bytes": 4758,
+      "sha256": "930c6b6a1ef6578d17bb09b2f72566b224d15daf4456d09494101254c5d40970"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/taptap.ts",
+      "bytes": 3162,
+      "sha256": "287cc1938c365bce9403b189a3778e2bbd29dfe0490663999b141f454c58745f"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/terminal-bench.ts",
+      "bytes": 6054,
+      "sha256": "ca7df9e23b1dd2db5a40846559871c004a861e821a796de7f8321850691dbc29"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/sources/vals.ts",
+      "bytes": 4950,
+      "sha256": "df6907cc60f059966f35b25afdbf7ae92ffc1d69d9549b233fb5cb9f4b86b2e6"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/store.ts",
+      "bytes": 8553,
+      "sha256": "aaaa195876110b989bb7cc3429e72c7669965b95b911552339c359322794642f"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/types.ts",
+      "bytes": 1561,
+      "sha256": "867e07f6e8299315e85abd9278507882ad5f6aa17b99146cabf68bbeabf75377"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/fetch/unzip.ts",
+      "bytes": 1487,
+      "sha256": "61d8395ad3012b2703f7ab488d2718ecd67785fab96736fb2603f47f2c2a7589"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/method/compute-worker.ts",
+      "bytes": 684,
+      "sha256": "5117626498b4bd6d1321670e4a3708d7a660630317580a518917a815bd611f8b"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/method/compute.ts",
+      "bytes": 1122,
+      "sha256": "9869cdb73ce62d80fa8a6b16a973d0b1807e42e1404151f9bf5b57e0fc9276fe"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/method/inputs.ts",
+      "bytes": 12148,
+      "sha256": "80c8f98d95a7a48d6cc6057efe430ff71c01733c7c4b204b573c434bb54a4690"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/method/kemeny.ts",
+      "bytes": 6037,
+      "sha256": "b895a830de0f5dba51d0e44a44ae60f44ff8488f8423dd1b5a2958dede76bd8d"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/method/ndtr.ts",
+      "bytes": 2328,
+      "sha256": "b626d304ecd59ef820cb59ace43eae7bea56663fef61721a4ae603e75a6ce294"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/method/run.ts",
+      "bytes": 5014,
+      "sha256": "f43cebbd8d03b3b829c30afdce7ee5eb8b1a991a76096d2e99c17a17cd2fe618"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/method/v15.ts",
+      "bytes": 19533,
+      "sha256": "79eaa436bd696c29b7836ed2a67a7df91da753ed0da5c224dedd5dc01e82c3a4"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/model-weights.json",
+      "bytes": 2059,
+      "sha256": "56e00fa51e12a92e1160993115a7903e02c827c810e33d2c0951a9b69e7140d5"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/prices.ts",
+      "bytes": 2174,
+      "sha256": "e9790d3b7fa91aae9bbb66fb6908de91e2e3d1d5364dba6a47922cdb716db52e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/read.ts",
+      "bytes": 22670,
+      "sha256": "5b6eed5db82d990590aeb06429fd674c0da80b393949896529a61bc4326130fe"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/registry.ts",
+      "bytes": 6141,
+      "sha256": "cfbd9a25b0c0904b0a2a8b14cb213ae10f6bcc112ba8939fed430a9d34e6cd84"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/leaderboard/source-registry.json",
+      "bytes": 66791,
+      "sha256": "6cccc872adce3b50b03c10b416925a09a6dab517b806e41454e684a4f3a2a016"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/cache.ts",
+      "bytes": 1472,
+      "sha256": "f87abaa8947152ba90de15101049fcf2789e56fe7098276340a2a0501a4b6a98"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/cursor.ts",
+      "bytes": 1004,
+      "sha256": "3b59f5b3e094a2a0e5b1ef089b2c758e0fb1c250e5264fe4883bad6a20818b70"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/http-fetch.ts",
+      "bytes": 6718,
+      "sha256": "aacca7d6a4185c84a4d82946d107f5ebb060fb3b4a4aff7ba52fe6e6d68b2870"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/ids.ts",
+      "bytes": 1090,
+      "sha256": "e14fbf18a75cf5744761722d65f0b50a13e14cc6d17c693404c618b77be5d779"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/network-retry.ts",
+      "bytes": 3162,
+      "sha256": "97464ce46e73e615bcb45525d8d75c32a51bd0c0420ff4328243fc36d6641b55"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/socks-fetch.ts",
+      "bytes": 4582,
+      "sha256": "48aaaac19be2ab9bf430d967f6676511549c74fb51b47f6e6b1fa06b8b094a0a"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/text.ts",
+      "bytes": 1781,
+      "sha256": "e012a381f747ca210c438fd2141d3ea8e5c6f06724827caab0b6eba875a85ef0"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/lib/url.ts",
+      "bytes": 10789,
+      "sha256": "e38b9979516502e1e8a4dcef577295d84a28c56ce4587fe58808afaaec7d705d"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/media/images.ts",
+      "bytes": 10258,
+      "sha256": "c827ab40130da9af5c2c09b3296e2dcae2f8a59800d72a2d4e1348bff0af2edb"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/media/imgproxy.ts",
+      "bytes": 5791,
+      "sha256": "97d2ebfc6a983aedd63502aa132deed25215c21c56d6863cd7402948ce4553c2"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/media/prepare.ts",
+      "bytes": 2493,
+      "sha256": "5c7283eba6debf0b4f1fce606c522c6ee1e0331ae5ad2aefed3e385ff34a21be"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/media/renditions.ts",
+      "bytes": 816,
+      "sha256": "35270213432b7073748d5bc68cb36b6173d41a78eb7228e87a2518fcaf1cac4b"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/monitor/assemble.ts",
+      "bytes": 18151,
+      "sha256": "67d0cc9815027e95b713552f4acb02e3df8ef237f0c2928aead1e6e55d6559f9"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/monitor/read.ts",
+      "bytes": 16709,
+      "sha256": "90f8e634761d6bd146b9b9d7c62972c0cf507487748eb9683e2691512df91c36"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/monitor/recognize.ts",
+      "bytes": 10360,
+      "sha256": "495753c8a728d44fb92ef09cf74ed19a38af03acb7e8fb8d479406b22a814b17"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/monitor/scan.ts",
+      "bytes": 12701,
+      "sha256": "c940ec8c68fadb6f925ccbe154dcf232b9c4829f9b74ea6d4fab5e45bda298cf"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/monitor/time.ts",
+      "bytes": 9817,
+      "sha256": "57310ca2f7aa4f5a9477c8b66c93dd69ccb00bdcda9d07397b5c49955e57307e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/notify/deliver.ts",
+      "bytes": 6397,
+      "sha256": "33c5da3ecab0431eefd7fe0c9a808ad2dd08c1885a0e24fec5b991048504f4e2"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/notify/feishu.ts",
+      "bytes": 10720,
+      "sha256": "f3d422b5c26c165eef7c7bdcbd6417c40a355794ef8df2e3ee17ade778523f4e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/notify/selected.ts",
+      "bytes": 4387,
+      "sha256": "8f7094853a3f0d51b2c694a3a7847f4533317f53395a59dff8b80eca816a00c8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/alerts.ts",
+      "bytes": 17367,
+      "sha256": "f5dba5ff23fc6a4d7ec4d653166b01bca13725e05b18f34007ce29fcc6d98249"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/backup.ts",
+      "bytes": 7566,
+      "sha256": "1fc361a8d3c72dc79be30895bc0f21ebf690907233b8d04b5ce86abc898ce358"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/feedback.ts",
+      "bytes": 4892,
+      "sha256": "b1145f33e42a3a81ebb66bddc6561ffc2a78de5447864f5385fec08aca39e120"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/heartbeat.ts",
+      "bytes": 954,
+      "sha256": "cf1c278bc7845c921af712b75cd455f6b4a32dc5c41ca5345e68fcf4518ba8a5"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/indexnow.ts",
+      "bytes": 2366,
+      "sha256": "be63243ca3718709a2509383411f2ecb5b698c36f5b47e19cc65ff098d662724"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/reports.ts",
+      "bytes": 3588,
+      "sha256": "a4a0b621ca2997311a5ffc493b0f9b929bd19b3865a8e03f07f72591a37f47e8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/retention.ts",
+      "bytes": 1989,
+      "sha256": "81d4ae0ef42a1ae92b60cf0ebd682aa4ed90ab40e864f5a40e70593b783df852"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/operations/watch.ts",
+      "bytes": 3095,
+      "sha256": "378e1d310d4e4c2302f9d8c3dcd1dfd3af4d7d833e810809ced2fd44ab5382ad"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/providers/dajiala.ts",
+      "bytes": 4793,
+      "sha256": "9750c390862ea1e1ffef777db225fd3de01241c975cb8b655f4206467c1738ea"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/providers/embeddings.ts",
+      "bytes": 6507,
+      "sha256": "973d75b278b8251edcfaf3576af916e7adb66eac57990c5b2b0736cd22075bf4"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/providers/jina.ts",
+      "bytes": 3680,
+      "sha256": "f0119f13dc35e2a91bfb22a285eaa74252c4fffe39f435976b12a18cec8527ed"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/providers/llm.ts",
+      "bytes": 10567,
+      "sha256": "927d72a96e529abf6fac867146011386bda595f52c5b6beaa57b55ee229e2c73"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/providers/receipts.ts",
+      "bytes": 12048,
+      "sha256": "c91dc4ed2c3aa07c38ab8a394ca4f741dd10232f23f3859ab62f0e7da39229ae"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/providers/socialdata.ts",
+      "bytes": 8563,
+      "sha256": "12c326e25e0b9a93d4c6b26ff028addc68c7a4d6f1f4f99bcfc03abcace5e434"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/providers/x-official.ts",
+      "bytes": 6779,
+      "sha256": "891e40dfb7321f985eb43ef1160f7905738586afbea446ecd6094cbbaa2bd7eb"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/availability.ts",
+      "bytes": 1142,
+      "sha256": "78aaacf9b81da4b26aa0826b7f4396c2bc50deefa4c98b53c4b54c4d15a5c75b"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/detail.ts",
+      "bytes": 8857,
+      "sha256": "abb011502049dbeb92e376b558791266186573218f2defde6ec89f0dcaf7a092"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/feeds.ts",
+      "bytes": 10677,
+      "sha256": "b93aeb5c867975c3f947b124fc65f2d984ba6e1f9d58d93892e8e218bc037a07"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/followups.ts",
+      "bytes": 755,
+      "sha256": "0f9fdda81ac16d31bc70ea3d43a6996cade3760a05f595a0b5d5e89c9cca9b88"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/fpl.ts",
+      "bytes": 2616,
+      "sha256": "81847b5bd22500d6f1f6891c677ec025abc8f476c8f0fb15e99217f89ff6c56e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/groups.ts",
+      "bytes": 8249,
+      "sha256": "dc6cfc6ef17849b67444b9f888c70f701ef84926840603c8a61406057148315b"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/items.ts",
+      "bytes": 11174,
+      "sha256": "832fc1a2bb1465c10a110c701f64a689cc34523da96474a980b2f0975dabcf64"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/links.ts",
+      "bytes": 595,
+      "sha256": "9b8b3df5c3f79346a5149bf566ae230a13df3ad3ba28412dd4594b8a1e1be31c"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/llms.ts",
+      "bytes": 5819,
+      "sha256": "f50591fd75f0f8d4f2531d350d8b5e83e050c502e0b22328b9e9e38921ed5c9e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/monitor.ts",
+      "bytes": 1096,
+      "sha256": "0a64cc899efbcca744c4b8cfb1888d4dbeacc0e555ce1ba47ff8fe19f58eb046"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/og.ts",
+      "bytes": 1265,
+      "sha256": "99b7446de3ac56cccddac1e3119903a479899a15811adf4c959469044268438f"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/pool.ts",
+      "bytes": 11401,
+      "sha256": "b051906fa08f214b879ebf409f471014889e5cec94031c217ddf839943dba0e8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/publish.ts",
+      "bytes": 19969,
+      "sha256": "bf2ba24daebd57a6dfa18504e11f74906d1647c33898ae85c0c52e9407078082"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/reports.ts",
+      "bytes": 18431,
+      "sha256": "40ba50af6a053d615ae7a73de5dd9732e30c9ef82b6bcbaff5680fdd9d9fb598"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/rules.ts",
+      "bytes": 2776,
+      "sha256": "3572891867b85ca44a73023228fd6d41fef2a913bee076f1e12640cfcc65fdaa"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/sitemap.ts",
+      "bytes": 6353,
+      "sha256": "875d1eb7df1e5c043e682c1f968f2cc605dc2076e4eccd9b69d1c84d1991812e"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/stories.ts",
+      "bytes": 16874,
+      "sha256": "66bea5b5ba645dee98e6311137157edb63ffa558ac7cd9c3a2143d8c64fd2b39"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/timeline.ts",
+      "bytes": 11440,
+      "sha256": "cb9379dca20a1a3842b052d75387f207a98828fb7b3be571958b5bbd7dfac34c"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/topics.ts",
+      "bytes": 6414,
+      "sha256": "1350554721c8957d7df481298da9682258b9ec1f8f7c8d890bfaa17666083766"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/publication/v1.ts",
+      "bytes": 10640,
+      "sha256": "eaa7a799a2f16bb505d1205009ba8ef77e358b3eeb368cab6a7bee30d29cf279"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/reports/compose.ts",
+      "bytes": 15441,
+      "sha256": "d092bae216b86d25f454d45b4414bf212dc10d5fc70eb3504565dd6fcb45119f"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/site/contact.ts",
+      "bytes": 1329,
+      "sha256": "c7b3e2a36a25b32074d1ea455511c90be7e9ebb250bed6888efb278182edfd94"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/site/meta.ts",
+      "bytes": 978,
+      "sha256": "19fa44357c9e259a523344ea30493e39eceb5fbfa9680fa62e49774a213d5903"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/site/stats.ts",
+      "bytes": 2882,
+      "sha256": "609b19d78d299d9198498725edfa879af6db61bedbfd4b5ca1ec7b4f934c23f8"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/collect.ts",
+      "bytes": 19794,
+      "sha256": "cc5d2d6a6168c44df0fb900fa4b16d3803cf41d50cd2c3ba868dda74fb320cfb"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/config-keys.ts",
+      "bytes": 5603,
+      "sha256": "519a269edc61e404f2b3674db7ae7a342569edc0f2b32830a72262954cd82a3f"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/icons.ts",
+      "bytes": 6246,
+      "sha256": "6e39a375c267a40a50e65d1ddf3fbea9678a714cbf7546d08a3b158f31e4f1e5"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/json-list.ts",
+      "bytes": 8059,
+      "sha256": "6d4394653e7fc1567630562f6429f39fc22a343f027adb10bbddb190a6c56326"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/mp.ts",
+      "bytes": 8172,
+      "sha256": "f08cd4348b35019d4264c6e7bbad988c48b758b7076e561af8f195dde4fd8c7d"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/prepare.ts",
+      "bytes": 2038,
+      "sha256": "b5515d87cb0c6402ca5f2ce387a4ab3377fa555d020d2a6f4a947022fa04b360"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/rss.ts",
+      "bytes": 9240,
+      "sha256": "e5c792818096d3bc5c4a1978412959d341eaf6748fe5ef90478b8d0608fb9476"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/types.ts",
+      "bytes": 932,
+      "sha256": "0d1aed284681aafd5466a05de52d69cb28797abdbd28f9ef16fe0e0fafcb9237"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/web-list.ts",
+      "bytes": 19323,
+      "sha256": "9ab658f813d9592075a08f11bd6f7096970c6cef56ec5ad205c733b3d7667e7a"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/x-control.ts",
+      "bytes": 945,
+      "sha256": "3e29cbd5d643143a3097d23214c873d9cf1eabf4656d2de9a330371680566cf9"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/src/sources/x.ts",
+      "bytes": 10898,
+      "sha256": "0bf42eb0e976dacbec2dea8a2bef72227692af62c9ff4454b98c43888677b442"
+    },
+    {
+      "path": "fpl-news-v1/packages/backend/tsconfig.json",
+      "bytes": 74,
+      "sha256": "88020c5d0c639e9fca3c8cc0425dc6233bbb30b14c5a0cb5dcb7d7530d4b788f"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/package.json",
+      "bytes": 195,
+      "sha256": "b039f84ae733efb39427a123c660ef1d903e107de544a9247801b4195ee8d06c"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/fpl.ts",
+      "bytes": 1076,
+      "sha256": "5bff6c13d9c2d9071b48327fb65c23f74daac58246f3e1a8088ea5d465bc6fb2"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/http-policy.ts",
+      "bytes": 5624,
+      "sha256": "a3971beee623534690837167af1a4692c6562fb61b261b6ee102cf741839837d"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/index.ts",
+      "bytes": 64,
+      "sha256": "685c5b8b8783f55f40464c0370cc2659817622d07b1e4beb0181bb751ad01074"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/leaderboard.ts",
+      "bytes": 5727,
+      "sha256": "dbfeee1ebca31367b2703c0c3a20b5ab44adfbd3e44b3cb03e5bd93581a70155"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/mcp.ts",
+      "bytes": 468,
+      "sha256": "b9e03afbe086d073f2fa2dca0ce6553aa6f2a2ffc36aebde5c7bdacab6ffd135"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/monitor.ts",
+      "bytes": 3715,
+      "sha256": "3997ff358f451c20cec140a41fd7c972c09a20bd2e7ac2bdde762896738a4a84"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/site.ts",
+      "bytes": 11959,
+      "sha256": "673f297bec83468580e2a191b3fe15b77dca532f3e7dcffc417025678cd5f4f0"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/taxonomy.ts",
+      "bytes": 2122,
+      "sha256": "efbd68250686ee29db5ce8c50e61a53fc83d11157f73b9123264b5c02087c60a"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/src/time.ts",
+      "bytes": 3064,
+      "sha256": "a88c799b3bc2d6c75e865476e3f91fca6636e8fcf12169fd5bf166e630b2ed6e"
+    },
+    {
+      "path": "fpl-news-v1/packages/contracts/tsconfig.json",
+      "bytes": 74,
+      "sha256": "88020c5d0c639e9fca3c8cc0425dc6233bbb30b14c5a0cb5dcb7d7530d4b788f"
+    },
+    {
+      "path": "fpl-news-v1/reference/public-v1.openapi.json",
+      "bytes": 105633,
+      "sha256": "a227900ab6f6b3cce20f4b230b9de4c3b633aca3b97f7c8677c58131239460c9"
+    },
+    {
+      "path": "fpl-news-v1/scripts/audit-fpl-scope-v15.mjs",
+      "bytes": 1213,
+      "sha256": "b6786dc64bf6087c18d602d841ff0731917a81edda1063badf98c43b9bf19b2c"
+    },
+    {
+      "path": "fpl-news-v1/scripts/collect.ts",
+      "bytes": 550,
+      "sha256": "c456346623b72c7838d3a719d8442599c5adb5070b2fd336e02e4275f1da984c"
+    },
+    {
+      "path": "fpl-news-v1/scripts/compare-v13-build-inputs.mjs",
+      "bytes": 1494,
+      "sha256": "2ac45a2c95f4c68d08021f9034cd823e2be54d4bdbc730f372453332be668dfc"
+    },
+    {
+      "path": "fpl-news-v1/scripts/delete-sources.ts",
+      "bytes": 2989,
+      "sha256": "7c0116070a30095134563b0c44a4affdefdd0aa83b76c992528f675218f8f5b2"
+    },
+    {
+      "path": "fpl-news-v1/scripts/deploy-v10-editorial.mjs",
+      "bytes": 3938,
+      "sha256": "ec31777a7f3e719d1edadd54f2c8c460783030a950cdcca2c10064bbfbcf0d53"
+    },
+    {
+      "path": "fpl-news-v1/scripts/deploy-v12-editorial.mjs",
+      "bytes": 4128,
+      "sha256": "4a280f49cceffb4e79c2bbafa2b3155340e9f34e47e638fdd5f68901e23e8874"
+    },
+    {
+      "path": "fpl-news-v1/scripts/deploy-v13-price-mobile.mjs",
+      "bytes": 4852,
+      "sha256": "412dbfdc498d038ff6b26eb87cfb1d211a25fd270f0a497c185424e9dec821ca"
+    },
+    {
+      "path": "fpl-news-v1/scripts/deploy-v14-rss-retry.mjs",
+      "bytes": 4107,
+      "sha256": "de0f9905a647348bbac0d5566f4151947722954a68599efc7f26d974a7d4d762"
+    },
+    {
+      "path": "fpl-news-v1/scripts/deploy-v8-rss.mjs",
+      "bytes": 1716,
+      "sha256": "e070dee09bc96e66f077b3addeff2bc0b3d7dbeed9541e26212bd732d9432807"
+    },
+    {
+      "path": "fpl-news-v1/scripts/deploy-v9-web.mjs",
+      "bytes": 4531,
+      "sha256": "743fa7997cb3a8ad18f25b6a70e8bc49a284298a3fc69680d7766422c3d5bc11"
+    },
+    {
+      "path": "fpl-news-v1/scripts/enqueue-analysis.ts",
+      "bytes": 997,
+      "sha256": "092fa4b83710d75678ae7b1e79884389cba1af9266bceb01de65823087415e0c"
+    },
+    {
+      "path": "fpl-news-v1/scripts/eval-relations-core.ts",
+      "bytes": 8277,
+      "sha256": "ea81683b926f036579cacfe7bd01d18282b58d3d91a252e06e1aba2ee4c29e31"
+    },
+    {
+      "path": "fpl-news-v1/scripts/eval-relations.ts",
+      "bytes": 7968,
+      "sha256": "4c515adeafa8266dc224adf13dba672b0cc4f7b6c0648c272ab8a862fcb7cbeb"
+    },
+    {
+      "path": "fpl-news-v1/scripts/eval-selection.ts",
+      "bytes": 8876,
+      "sha256": "a40060bf198befb6ccf93f92b6d3f7110d41b689c955562e4766bf4a1abe1491"
+    },
+    {
+      "path": "fpl-news-v1/scripts/fpl-launch-budget.ts",
+      "bytes": 478,
+      "sha256": "6e505d3a0f11f0b3b69c535bb0a8167bbff962ffe201d90778e819d843fef290"
+    },
+    {
+      "path": "fpl-news-v1/scripts/fpl-refresh-tags.ts",
+      "bytes": 597,
+      "sha256": "afff639ad0f14c921e0d1131935d52951511641848abda944f87ef30f43ef07d"
+    },
+    {
+      "path": "fpl-news-v1/scripts/import-leaderboard-prices.ts",
+      "bytes": 655,
+      "sha256": "b39378fe569c019798c2aff64a77956a1882552c717d5db6d1321f124beeb7f5"
+    },
+    {
+      "path": "fpl-news-v1/scripts/init-env.ts",
+      "bytes": 1381,
+      "sha256": "439e7e2feb204abeab8f7cbc88fab8ddd2375538922dffc0f71228b5bf675b4f"
+    },
+    {
+      "path": "fpl-news-v1/scripts/lb-fetch-check.ts",
+      "bytes": 5577,
+      "sha256": "6bc419ee14b132870c7281abe289cf64c4d9fabb960a316f17734e7e3dfb01f8"
+    },
+    {
+      "path": "fpl-news-v1/scripts/lb-round.ts",
+      "bytes": 681,
+      "sha256": "01b7d6643090979a98ba6887bbc671eab423766dd1fe43480a522a26286cdd9f"
+    },
+    {
+      "path": "fpl-news-v1/scripts/local-test-db.mjs",
+      "bytes": 1306,
+      "sha256": "7e9950ef0817ae3947bcd4690bb69d82b2fe33cdef95bb86b0d7bb286f34d203"
+    },
+    {
+      "path": "fpl-news-v1/scripts/mcp-check.ts",
+      "bytes": 1534,
+      "sha256": "8287b75863067c7e635ebb788c3fc8cb2eaca40687e9c45b4dc9c76d993dd918"
+    },
+    {
+      "path": "fpl-news-v1/scripts/migrate.ts",
+      "bytes": 1449,
+      "sha256": "9549de3ec9cf874f22325594be854d73a970ba9d87aa4b96762ea66654411252"
+    },
+    {
+      "path": "fpl-news-v1/scripts/nameplates.ts",
+      "bytes": 5106,
+      "sha256": "bc44877498d75d72d2a322285f9503bab3f121843d2223a86322783b72655b3d"
+    },
+    {
+      "path": "fpl-news-v1/scripts/preview-price-v13.ts",
+      "bytes": 1012,
+      "sha256": "e0c6e8a48917e77e37adfab5f278074fc681468f3522b0ccd40cbf2ecfecee4a"
+    },
+    {
+      "path": "fpl-news-v1/scripts/price-batch-release-v13.ts",
+      "bytes": 3110,
+      "sha256": "b7a14cacafe4b634661c49bf550ac13273484180baf81b5c6e32f079737653a4"
+    },
+    {
+      "path": "fpl-news-v1/scripts/refresh-editorial-v10.ts",
+      "bytes": 7814,
+      "sha256": "ceb8d6bc31bb863054bfa77f6e56f046760e56f41ce2c7edcb6487c92d9078d7"
+    },
+    {
+      "path": "fpl-news-v1/scripts/regroup-events.ts",
+      "bytes": 14264,
+      "sha256": "f16a4dc7eee5d069bbe16caf770b513781659a2279cc9faa3db2c2dbc90c5d73"
+    },
+    {
+      "path": "fpl-news-v1/scripts/retire-club-x-20261003.mjs",
+      "bytes": 4808,
+      "sha256": "ea4ea056d432902b0df16634b23e6ceeb32c90a7660fc041aaac2c6eb161114c"
+    },
+    {
+      "path": "fpl-news-v1/scripts/review-editorial-v12.ts",
+      "bytes": 6750,
+      "sha256": "02a4f9b5af1d265c85a52d99a5b3796a6257fedfb254490eadbdd7fa0a3edf54"
+    },
+    {
+      "path": "fpl-news-v1/scripts/review-fpl-scope-v15.ts",
+      "bytes": 3175,
+      "sha256": "df9106f1339bfbefa03a24b9c2fa7a6bffc96b91cb594a75481f8c5e9d52923f"
+    },
+    {
+      "path": "fpl-news-v1/scripts/seed.ts",
+      "bytes": 2522,
+      "sha256": "1b3706b42de3c6b429327b2cabd2d8202d0903f8683bb41bb6ef13b62ec912e8"
+    },
+    {
+      "path": "fpl-news-v1/scripts/smoke.ts",
+      "bytes": 3385,
+      "sha256": "6df2fbace935ea3ab22f698e1e0423071e0ea20ef46a9c1b7d9090a34476c534"
+    },
+    {
+      "path": "fpl-news-v1/scripts/verify-rss-v8.ts",
+      "bytes": 528,
+      "sha256": "28a8053ade9f6e1a6eba945718b494ffb2d2521ae3628c162d88b22531077366"
+    },
+    {
+      "path": "fpl-news-v1/tests/admin-redesign.test.ts",
+      "bytes": 3696,
+      "sha256": "2ac173f50fe8dbddc4db3cfc0ccd6a5ea58eae28cd4f81737b393057b3dd3d26"
+    },
+    {
+      "path": "fpl-news-v1/tests/admin-source-manager.test.ts",
+      "bytes": 7312,
+      "sha256": "fa5a7c1a0717d7fdee13d84d0d178cf1d48b96e731d2530426254c06171c0438"
+    },
+    {
+      "path": "fpl-news-v1/tests/alerts.test.ts",
+      "bytes": 3395,
+      "sha256": "1eb20c7d651c1d683f8911fe7e305b495ea1a336245ccaa605f14eadaba98318"
+    },
+    {
+      "path": "fpl-news-v1/tests/analyze-shutdown.test.ts",
+      "bytes": 11648,
+      "sha256": "7f83f46429724ba49b373a630cbeba403fb97584e274fa2a2b74b31801070ab7"
+    },
+    {
+      "path": "fpl-news-v1/tests/analyze.test.ts",
+      "bytes": 16360,
+      "sha256": "e53464cc60206f6a5e94be40628f01a3ae65e17e85a4e3e4cd76e70e5319d2ce"
+    },
+    {
+      "path": "fpl-news-v1/tests/collection.test.ts",
+      "bytes": 6829,
+      "sha256": "e1d4c418987031f0e866f652646479c022d8a969d6cc284896194cc6f6919d00"
+    },
+    {
+      "path": "fpl-news-v1/tests/default-model.test.ts",
+      "bytes": 3501,
+      "sha256": "8b098af7c32265abbe22771ccff3a1aff2750e60c5ac30cd89f3717587009340"
+    },
+    {
+      "path": "fpl-news-v1/tests/draft-sso.test.ts",
+      "bytes": 4237,
+      "sha256": "2ad49be5077e673165bd2be9eb25c7cc1b41eb65832fe0d5e0a35eebeb2f8937"
+    },
+    {
+      "path": "fpl-news-v1/tests/embeddings.test.ts",
+      "bytes": 2978,
+      "sha256": "f2bca6bd581ed6162cffec6c422dbdccb8239262ed9a316193b76e5e7243ddb9"
+    },
+    {
+      "path": "fpl-news-v1/tests/events.test.ts",
+      "bytes": 17979,
+      "sha256": "f17386ecf2e4b07aa94636a57542c928241e3ab0c602b05513c5f100dc935a82"
+    },
+    {
+      "path": "fpl-news-v1/tests/feedback-upload.test.ts",
+      "bytes": 3165,
+      "sha256": "2696ccc14bde3c4202bbb32a6863d45cf5af4a9fae9526036aed900e921a9b21"
+    },
+    {
+      "path": "fpl-news-v1/tests/feedback.test.ts",
+      "bytes": 6064,
+      "sha256": "6129147450797ee027edd082e1664cd30d0ac02b9299a0f7639df7bc3e90cf91"
+    },
+    {
+      "path": "fpl-news-v1/tests/fpl-collect.test.ts",
+      "bytes": 11849,
+      "sha256": "9fce381abf4c37668898f0f47f2b2d9cb31c534941eaa7650e39082cc381156d"
+    },
+    {
+      "path": "fpl-news-v1/tests/fpl-data.test.ts",
+      "bytes": 1961,
+      "sha256": "ad49e571ddc8274280deed18a67f74d7c8782d3f0940a39bdec8cebe4d5c3a50"
+    },
+    {
+      "path": "fpl-news-v1/tests/fpl-editorial-rules.test.ts",
+      "bytes": 8722,
+      "sha256": "1822766e3c1171f0cae8f231c9f1505af7287af5354f5e68546a092af04b6647"
+    },
+    {
+      "path": "fpl-news-v1/tests/hot-avatar-payload.test.ts",
+      "bytes": 4657,
+      "sha256": "4e9bdb7a45b89e8763b51c73a2964dc3f238c104fe0ded8d72579572c8560009"
+    },
+    {
+      "path": "fpl-news-v1/tests/icons.test.ts",
+      "bytes": 2875,
+      "sha256": "094defda347d349c52dab92fb77cb2fcdf7e2f9e1868625baf1b649a5ee74566"
+    },
+    {
+      "path": "fpl-news-v1/tests/leaderboard-access.test.ts",
+      "bytes": 1869,
+      "sha256": "4ca73689058a734ad7b110622be8f710db80317d81cb56576d88d7ccc5af1b07"
+    },
+    {
+      "path": "fpl-news-v1/tests/leaderboard-filter-pages.test.ts",
+      "bytes": 2458,
+      "sha256": "6256bc17cda98cbcf274ffb0c1d4eae64ece34a34ebeec9647e0c80f2921bc79"
+    },
+    {
+      "path": "fpl-news-v1/tests/leaderboard-worker.test.ts",
+      "bytes": 1601,
+      "sha256": "916fdf701a22a022e7e19cde4ebdad026e35fa17d0f4c337859210d8215bdec8"
+    },
+    {
+      "path": "fpl-news-v1/tests/listings.test.ts",
+      "bytes": 8034,
+      "sha256": "8345e18fc5d31c3b53427b75c569db93aa502c2e8fc7b4378696f77516d71be1"
+    },
+    {
+      "path": "fpl-news-v1/tests/local-only.mjs",
+      "bytes": 523,
+      "sha256": "1a87bbb08971d435843bf65b09400d4f95cafd7e3f3e7172f5834c28f9722121"
+    },
+    {
+      "path": "fpl-news-v1/tests/markdown-body.test.ts",
+      "bytes": 2651,
+      "sha256": "f37ad1e4a36a7ea153aa010f71ce603a78bc2aff0382a39c4dc042085edcda0c"
+    },
+    {
+      "path": "fpl-news-v1/tests/materials.test.ts",
+      "bytes": 11340,
+      "sha256": "b1a2f2db35f65035f14d077ace76e38b5773e33fb3c5e98f0e1464ee6b4f8d31"
+    },
+    {
+      "path": "fpl-news-v1/tests/mcp-shutdown.test.ts",
+      "bytes": 1483,
+      "sha256": "01b71508ec915d5bc3d79adf805956a624db02c242d8de8711ca580edbf8a3de"
+    },
+    {
+      "path": "fpl-news-v1/tests/media-performance.test.ts",
+      "bytes": 13903,
+      "sha256": "5b7938e1f0c6df0ff6016aec4985d7b1d3ad0ff8cdbba268b6d548ed63a41c95"
+    },
+    {
+      "path": "fpl-news-v1/tests/migration-compat.test.ts",
+      "bytes": 999,
+      "sha256": "5811bb5cfcaea463f835b73ddeb5c765483c89cbe9bc09f538b68c67c79a2c49"
+    },
+    {
+      "path": "fpl-news-v1/tests/monitor.test.ts",
+      "bytes": 2699,
+      "sha256": "bde019d5ff0cdf2ddc8f2c582e4554fd880aa82f578050515e81a77e877cc2eb"
+    },
+    {
+      "path": "fpl-news-v1/tests/pool-dedup.test.ts",
+      "bytes": 4703,
+      "sha256": "7a9228ed2c46b3b4d45df9c0cb5c8e876fab29b70fab7b058f715160a39fda75"
+    },
+    {
+      "path": "fpl-news-v1/tests/publication.test.ts",
+      "bytes": 24947,
+      "sha256": "0d530735da2c25db751a3c93cad19d05409adbe6e96a10002fd5a35398055a2d"
+    },
+    {
+      "path": "fpl-news-v1/tests/receipts.test.ts",
+      "bytes": 10216,
+      "sha256": "66bbcafddb4055f20a32ce90fcd64975541b4183d447c71420d598c48707b609"
+    },
+    {
+      "path": "fpl-news-v1/tests/relation-eval-runtime.test.ts",
+      "bytes": 4697,
+      "sha256": "6095904412e106ea4e8d222ab7f70c93274b22604d9f95f90ba318d2be04f83a"
+    },
+    {
+      "path": "fpl-news-v1/tests/relation-eval.test.ts",
+      "bytes": 4854,
+      "sha256": "2d5ad86f93712ae24688f9b3f08d22dd1d271df5459670b3404a74a0dc2d4bb1"
+    },
+    {
+      "path": "fpl-news-v1/tests/report-candidates.test.ts",
+      "bytes": 10108,
+      "sha256": "4b71b4c0c4fcb2d57cf323a11e3e4ab20d03a3c9895b9126d0ff45c6e34c2a5a"
+    },
+    {
+      "path": "fpl-news-v1/tests/report-lead.test.ts",
+      "bytes": 1289,
+      "sha256": "f52493840bcf74976ccec0a2262090ffa16f40035fe439512675894572e68491"
+    },
+    {
+      "path": "fpl-news-v1/tests/rss-conditional.test.ts",
+      "bytes": 5500,
+      "sha256": "f54443c6eef1f7426bf2974e52eed4b395ba0e2b426cc4a36d2393a29b89983c"
+    },
+    {
+      "path": "fpl-news-v1/tests/rss-network-retry.test.ts",
+      "bytes": 7980,
+      "sha256": "db5e63946811a6e4647ff575c0831ff52388a980b7c407f783f58ef5e8001ae5"
+    },
+    {
+      "path": "fpl-news-v1/tests/rss-slow-feed.test.ts",
+      "bytes": 1765,
+      "sha256": "4112cb36a60f17e8738617676ea7fb7c425dba926cf3a7b2e5081164729e0b57"
+    },
+    {
+      "path": "fpl-news-v1/tests/rss-xhtml.test.ts",
+      "bytes": 3464,
+      "sha256": "03da792c79b7a94f47a6e2eb4f74875adcc10c2b444f15a4f406fcf949faaebe"
+    },
+    {
+      "path": "fpl-news-v1/tests/setup.ts",
+      "bytes": 4196,
+      "sha256": "2efbbeb4a12ce1221ce72c895bed9be34b715d05972c3b16dd52fd15ccc9eaf4"
+    },
+    {
+      "path": "fpl-news-v1/tests/signals.test.ts",
+      "bytes": 8327,
+      "sha256": "5626964765706509f74d2c6e63ad77731dbbe83bcfb9350e56834c0e8fe5cc76"
+    },
+    {
+      "path": "fpl-news-v1/tests/socks-fetch.test.ts",
+      "bytes": 6268,
+      "sha256": "eca4b4d4759944016322793da0cd8a6097c1543debcd5c887e8334dd7a93ebc7"
+    },
+    {
+      "path": "fpl-news-v1/tests/source-rules.test.ts",
+      "bytes": 9511,
+      "sha256": "ee9c9b7539f65526b157d98dd764344cb80055ea590c23db2ed52edb123b27d5"
+    },
+    {
+      "path": "fpl-news-v1/tests/sources.test.ts",
+      "bytes": 18281,
+      "sha256": "714058869cadd744213ef465e9b4be1acb79ac5315abd516e4934db800864f39"
+    },
+    {
+      "path": "fpl-news-v1/tests/translate-shutdown.test.ts",
+      "bytes": 5370,
+      "sha256": "aa84a1e5f1410a4999501462954141e136086dbb62f5434301bfd743f6b324e5"
+    },
+    {
+      "path": "fpl-news-v1/tests/translate.test.ts",
+      "bytes": 8792,
+      "sha256": "ebe91ddf6d428a8b3d391a2fa72ad76d1300e2493feadbc31d35e1bc6e5a1034"
+    },
+    {
+      "path": "fpl-news-v1/tests/tsconfig.json",
+      "bytes": 64,
+      "sha256": "487cd5319c8b830a4cf881e48aeb9ee9878d8fd93b414ac78033e1409db72f2b"
+    },
+    {
+      "path": "fpl-news-v1/tests/url-identity.test.ts",
+      "bytes": 2289,
+      "sha256": "954fdb5e788be4320f153ceb35a2f23644144d72dfc9a10d7431cca63e9730c8"
+    },
+    {
+      "path": "fpl-news-v1/tests/url.test.ts",
+      "bytes": 3344,
+      "sha256": "ce40bbe90d81e189d27627e5595120892e22278965d3edd3cb47ae3190365f65"
+    },
+    {
+      "path": "fpl-news-v1/tests/web-list-date.test.ts",
+      "bytes": 1856,
+      "sha256": "62da3679fe9e28aba9201fa92a7fd7fc70eb103ac315e143b9489309350929e6"
+    },
+    {
+      "path": "fpl-news-v1/tests/x-article.test.ts",
+      "bytes": 5982,
+      "sha256": "99ed769d1b11107038b7aa08307879ca26ddaa36b52c6bb81be20da299d849b9"
+    },
+    {
+      "path": "fpl-news-v1/tests/x-control.test.ts",
+      "bytes": 9089,
+      "sha256": "1982e04e52dc0f9889fc27a970341e7e8f471cb5f30ba6c7fce4cc79777e8a32"
+    },
+    {
+      "path": "fpl-news-v1/tests/x-official.test.ts",
+      "bytes": 7096,
+      "sha256": "ed937d6cef3c251c939b565b029b7ea47b6388e2e1527e37e5b771ff01ce75bc"
+    },
+    {
+      "path": "fpl-news-v1/tests/x-shards.test.ts",
+      "bytes": 10929,
+      "sha256": "f48f3de0d81d9ab7de0a24971f6f1080846320233f98eabdef65d11494717780"
+    },
+    {
+      "path": "fpl-news-v1/tsconfig.base.json",
+      "bytes": 478,
+      "sha256": "aac65703ed5d28b7a7f9f695228d2b42509fd015d43939b008448a4c2732d0c3"
+    },
+    {
+      "path": "llms.txt",
+      "bytes": 673,
+      "sha256": "be397e916a176825b3935a4b00b36d1355d0b64a705ee057b8400821532d4ec4"
+    }
+  ]
+}

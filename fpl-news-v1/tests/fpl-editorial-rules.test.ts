@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {after, test} from 'node:test';
 import {closeDb} from '@aihot/backend/db';
 import {enforceIdentity, finalizeCopy, matchEntityIds} from '@aihot/backend/editorial/writing';
-import {ScoreSchema, normalizeAnalysis, type AnalysisRun} from '@aihot/backend/editorial/analyze';
+import {ScoreSchema, normalizeAnalysis, enforceScope, type AnalysisRun} from '@aihot/backend/editorial/analyze';
+import type {AnalyzeInputArticle} from '../packages/backend/src/editorial/input.ts';
 import {editorialText, hasMemberBoundary, PUBLIC_EXCERPT_MARKER} from '../packages/backend/src/content/editorial-material.ts';
 import {readable} from '@aihot/backend/content/extract';
 import {isPoolEligible} from '@aihot/backend/publication/rules';
@@ -74,4 +75,25 @@ test('team reviews and news briefs are distinct categories with one authoritativ
 test('eligibility policy covers promotional posts and unread media without excluding substantive reviews',()=>{
   const policy=promptText('prefilter');
   for(const phrase of ['赛季合影','国家队','Team news is in','未读取视频','xG/xGC','正式奖项','UNKNOWN 暂缓发布']) assert.ok(policy.includes(phrase),phrase);
+});
+
+test('foreign transfers cannot pass by an imagined FPL connection or an ungrounded quote',()=>{
+  const material:AnalyzeInputArticle={id:'scope-test',revision:1,title:'Getafe reach verbal agreement to sign Dani Carvajal',url:'https://example.com',author:null,publishedAt:null,bodyText:'Waiting for La Liga approval. Carvajal said yes to Getafe.',excerpt:null,xPost:null,media:[],source:{name:'Romano',kind:'x_search',tier:'T2',firstParty:false}};
+  const claim={label:'PASS' as const,scope:'OUT_OF_SCOPE' as const,scopeEvidence:'',reason:'Transfer news'};
+  assert.equal(enforceScope(material,claim).label,'BLOCK');
+  assert.equal(enforceScope(material,{...claim,scope:'PREMIER_LEAGUE',scopeEvidence:'Chelsea are signing Carvajal'}).label,'UNKNOWN');
+  assert.equal(enforceScope(material,{...claim,scope:'UNCONFIRMED'}).label,'UNKNOWN');
+  assert.equal(enforceScope(material,{...claim,scope:'PREMIER_LEAGUE'}).label,'UNKNOWN');
+});
+
+test('explicit FPL, Premier League and England connections retain their original evidence',()=>{
+  for(const [scope,text] of [
+    ['FPL','FPL has changed the Gameweek deadline.'],
+    ['PREMIER_LEAGUE','Arsenal agree to sign a player from Getafe.'],
+    ['ENGLISH_FOOTBALL','England announce a new national team squad.'],
+  ] as const){
+    const material:AnalyzeInputArticle={id:'scope-test',revision:1,title:text,url:'https://example.com',author:null,publishedAt:null,bodyText:text,excerpt:null,xPost:null,media:[],source:{name:'Source',kind:'rss',tier:'T1',firstParty:true}};
+    assert.equal(enforceScope(material,{label:'PASS',scope,scopeEvidence:text,reason:'Concrete connection'}).label,'PASS');
+    assert.equal(enforceScope(material,{label:'BLOCK',scope,scopeEvidence:text,reason:'Only promotional'}).label,'BLOCK');
+  }
 });

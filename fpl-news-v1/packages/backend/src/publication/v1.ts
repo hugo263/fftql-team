@@ -3,7 +3,7 @@ import type { PublicApiCategoryKey } from "@aihot/contracts/taxonomy";
 import { sql, type Db } from "../db.ts";
 import { decodeCursor, encodeCursor, InvalidCursorError, queryBinding } from "../lib/cursor.ts";
 import { newShortId } from "../lib/ids.ts";
-import { categoryCondition, API_ITEM_COLUMNS, API_ITEM_FROM, listedCondition, selectedCondition, type ApiItemRow } from "./items.ts";
+import { categoryCondition, API_ITEM_COLUMNS, API_ITEM_FROM, listedCondition, poolRepresentativeCondition, selectedCondition, type ApiItemRow } from "./items.ts";
 import { publicMatchCondition, searchTerms, withSearchCapacity } from "./pool.ts";
 import { v1Payload, type V1ItemPayload } from "./publish.ts";
 
@@ -48,10 +48,16 @@ export async function v1Items(query: V1ItemsQuery, now = new Date()): Promise<V1
   }
   const scope = query.mode === "selected" ? selectedCondition(now) : sql`${listedCondition(now)} AND p.eligible`;
   const terms = query.q ? searchTerms(query.q) : [];
+  const representative = query.mode === 'all' ? poolRepresentativeCondition(now, {category: query.category}, alias => {
+    const time = query.by === 'published'
+      ? sql`coalesce(${sql(alias + '.published_at')}, ${sql(alias + '.discovered_at')})`
+      : sql`${sql(alias + '.timeline_at')}`;
+    return sql`${publicMatchCondition(terms, alias)} AND ${time} >= ${windowStart} AND ${time} <= ${now}`;
+  }) : sql``;
 
   const run = (db: Db) => db<(ApiItemRow & { sort_at: Date })[]>`
     SELECT ${API_ITEM_COLUMNS}, ${sortCol} AS sort_at ${API_ITEM_FROM}
-    WHERE ${scope} ${categoryCondition(query.category, true)} ${publicMatchCondition(terms)}
+    WHERE ${scope} ${categoryCondition(query.category, true)} ${publicMatchCondition(terms)} ${representative}
       AND ${sortCol} >= ${windowStart} AND ${sortCol} <= ${now}
       ${after ? sql`AND (${sortCol}, p.article_id) < (${new Date(after.a)}, ${after.i})` : sql``}
     ORDER BY ${sortCol} DESC, p.article_id DESC

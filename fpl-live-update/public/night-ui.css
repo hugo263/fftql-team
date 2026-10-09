@@ -11,7 +11,11 @@
 
 /* One filter language: paper outline → deep green / lime selection. */
 :is(html.night-workspace.scout-workspace,.night-match) :is(.sort-switch,.picker-pos,.cmp-view-switch,.trade-history-tabs,.event-filters,.segmented) {
-  gap:8px; padding:0; border:0; background:none; border-radius:0;
+  gap:8px; border:0; background:none; border-radius:0;
+}
+/* Match-centre filters own their card gutters; do not reset them with compact tool switches. */
+:is(html.night-workspace.scout-workspace,.night-match) :is(.sort-switch,.picker-pos,.cmp-view-switch,.trade-history-tabs) {
+  padding:0;
 }
 :is(html.night-workspace.scout-workspace,.night-match) :is(.sort-switch,.picker-pos,.cmp-view-switch,.trade-history-tabs,.event-filters,.segmented) > button {
   display:inline-flex; align-items:center; justify-content:center; gap:6px;
@@ -237,7 +241,7 @@ html.night-workspace.scout-workspace #squadModal .cmp-stat b { color:var(--lime)
 }
 @media(max-width:760px) {
   .night-match .event-card,.night-match .event-card:has(.event-share-actions) { padding:11px 14px; grid-template-columns:30px minmax(0,1fr) 96px; gap:4px 8px; }
-  .night-match :is(.event-filters,.segmented) { padding-inline:14px; }
+  .night-match :is(.event-filters,.segmented) { padding-inline:16px; }
   :is(html.night-workspace.scout-workspace,.night-match) .event-filters>button { font-size:12px; padding-inline:10px; }
   .night-match .event-player-club { font-size:11px; }
   .night-match .event-owner-tag { font-size:10px; }

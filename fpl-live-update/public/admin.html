@@ -5,23 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
   <title>TQL 管理后台</title>
-  <meta name="theme-color" content="#171C26" />
+  <meta name="theme-color" content="#246b58" />
   <link rel="icon" type="image/svg+xml" href="/admin-icon.svg?v=20261002a" />
   <link rel="stylesheet" href="/admin.css?v=20261002a" />
   <link rel="stylesheet" href="/responsive.css?v=101.2" />
+  <link rel="stylesheet" href="/admin-workspace.css?v=20261008c" />
 </head>
-<body>
+<body class="tql-workspace">
   <section class="login-shell" id="loginView">
-    <form class="login-card" id="loginForm">
-      <a class="admin-brand" href="/admin" aria-label="TQL 管理后台"><span class="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>Admin Console</small></span></a>
+    <aside class="login-story"><a class="admin-brand" href="/"><span class="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>TEAM WORKSPACE</small></span></a><div><p class="eyebrow">YOUR CONTENT, IN ORDER</p><h2>让每一篇内容，<br>有序发布。</h2><p>汇集 Draft 数据与内容运营，<br>从创作到确认，让每一步清晰可见。</p><div class="login-workflow"><span>创作</span>→<span>确认</span>→<span>排期</span>→<span>复盘</span></div></div><footer>TQL ADMIN · FFTQL.TEAM</footer></aside><form class="login-card" id="loginForm">
+      <a class="admin-brand" href="/admin" aria-label="TQL 管理后台"><span class="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>TEAM WORKSPACE</small></span></a>
       <div>
         <p class="eyebrow">TQL ADMIN</p>
-        <h1>TQL 管理后台</h1>
-        <p class="login-copy">登录后管理 Draft 数据与 FPL 资讯。</p>
+        <h1>欢迎回到工作空间</h1>
+        <p class="login-copy">登录后管理 Draft 数据、FPL 资讯与小红书内容。</p>
       </div>
       <label class="field-label" for="adminPassword">管理员密码</label>
       <input class="admin-input" id="adminPassword" name="password" type="password" autocomplete="current-password" required />
-      <button class="admin-btn primary" type="submit" id="loginButton">登录</button>
+      <button class="admin-btn primary" type="submit" id="loginButton">登录工作空间</button>
       <p class="form-error" id="loginError" role="alert"></p>
       <a class="back-link" href="/">返回联赛页面</a>
     </form>
@@ -31,15 +32,10 @@
     <button class="admin-shade hidden" id="adminShade" aria-label="点击遮罩关闭导航" type="button"></button>
     <aside class="admin-side" id="admin-navigation" aria-label="管理后台导航">
       <button class="admin-menu-close" id="adminMenuClose" aria-label="关闭导航菜单" type="button">×</button>
-      <a href="/admin" class="admin-brand"><span class="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>Admin Console</small></span></a>
-      <nav class="admin-modules" aria-label="后台模块"><a href="/admin" class="on" aria-current="page">Draft 数据</a><a href="/admin/news">资讯管理</a></nav>
-      <nav class="admin-side-nav"><p class="admin-nav-group">Draft 数据</p>
-        <a href="#draft-overview" class="admin-nav-link on"><span class="admin-nav-icon">▣</span>数据总览</a>
-        <a href="#draft-leagues" class="admin-nav-link"><span class="admin-nav-icon">▦</span>联赛使用</a>
-        <a href="#draft-trend" class="admin-nav-link"><span class="admin-nav-icon">↗</span>流量趋势</a>
-        <a href="#draft-activity" class="admin-nav-link"><span class="admin-nav-icon">≡</span>最近活动</a>
-        <p class="admin-nav-group">资讯管理</p><a href="/admin/news" class="admin-nav-link"><span class="admin-nav-icon">⇄</span>进入资讯后台 ↗</a>
-      </nav><div class="admin-side-foot">只读数据统计 · 北京时间<br />匿名访客统计 · 排除本人流量</div>
+      <a href="/admin" class="admin-brand"><span class="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>TEAM WORKSPACE</small></span></a>
+      <nav class="admin-modules" aria-label="后台模块"><p class="admin-nav-group">内容运营</p><a href="/admin/xhs"><span class="admin-nav-icon" aria-hidden="true">▤</span>小红书内容</a><a href="/admin/news"><span class="admin-nav-icon" aria-hidden="true">▧</span>FPL 资讯管理</a><a href="/admin/xhs#calendar"><span class="admin-nav-icon" aria-hidden="true">▦</span>发布日历</a><p class="admin-nav-group">资源管理</p><a href="/admin/xhs#accounts"><span class="admin-nav-icon" aria-hidden="true">♙</span>账号与通道</a><a href="/admin/xhs#assets"><span class="admin-nav-icon" aria-hidden="true">▧</span>素材库</a><p class="admin-nav-group">数据洞察</p><a href="/admin" class="on" aria-current="page"><span class="admin-nav-icon" aria-hidden="true">▥</span>Draft 数据总览</a></nav>
+      <div class="admin-side-nav" aria-hidden="true"></div>
+      <div class="admin-side-foot"><div class="workspace-note"><strong>让每一篇内容，有序发布</strong><small>创作 → 确认 → 排期 → 复盘</small></div><div class="workspace-profile"><span class="admin-avatar">K</span><div>管理员<small>TQL 工作空间</small></div></div></div>
     </aside><div class="admin-workspace">
       <header class="admin-topbar"><button class="admin-menu" id="adminMenu" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="admin-navigation">☰</button><span class="admin-crumb">Draft 数据 / <b>数据总览</b></span><span class="admin-clock" id="adminClock">北京时间</span><div class="admin-actions"><a class="admin-front-link" href="/">查看前台 ↗</a><button class="admin-logout" id="refreshAnalytics" type="button">刷新</button><span class="admin-avatar" aria-label="管理员">K</span><button class="admin-logout" id="logoutButton" type="button">退出</button></div></header>
     <main id="draft-overview" class="admin-page" data-screen-label="网站流量总览">
@@ -147,6 +143,6 @@
   <div class="icp-footer" style="padding:16px 20px 24px;text-align:center;font-size:12px;line-height:1.8;color:#687b68"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">粤ICP备2026075584号-3</a></div>
 
   <script src="/vendor/chart.umd.js"></script>
-  <script src="/admin.js?v=20261002a"></script>
+  <script src="/admin.js?v=20261008c"></script>
 </body>
 </html>

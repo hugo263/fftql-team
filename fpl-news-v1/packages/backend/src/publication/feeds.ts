@@ -9,7 +9,7 @@ import { escapeXml } from "../lib/text.ts";
 import { proxyBodyImages } from "../media/imgproxy.ts";
 import { reportHeadline, reportIndex } from "./reports.ts";
 import { textToHtml } from "../content/sanitize.ts";
-import { categoryCondition, listedCondition, selectedCondition, xView, type ItemRow } from "./items.ts";
+import { categoryCondition, listedCondition, poolRepresentativeCondition, selectedCondition, xView, type ItemRow } from "./items.ts";
 import { dailyUrl, itemUrl, siteUrl } from "./links.ts";
 
 interface FeedMeta {
@@ -115,7 +115,9 @@ export async function itemFeed(kind: ItemFeedKind, category: PublicApiCategoryKe
   const includeContent = kind === "selected-full";
   const scope = kind === "all"
     ? sql`${listedCondition(now)} AND p.eligible AND coalesce(p.published_at, p.discovered_at) > ${now}::timestamptz - interval '7 days'
-        AND coalesce(p.published_at, p.discovered_at) <= ${now}`
+        AND coalesce(p.published_at, p.discovered_at) <= ${now}
+        ${poolRepresentativeCondition(now, {}, alias => sql`AND coalesce(${sql(alias + '.published_at')}, ${sql(alias + '.discovered_at')}) > ${now}::timestamptz - interval '7 days'
+          AND coalesce(${sql(alias + '.published_at')}, ${sql(alias + '.discovered_at')}) <= ${now}`)}`
     : sql`${selectedCondition(now)} ${categoryCondition(category, true)}
         ${category ? sql`AND coalesce(p.published_at, p.discovered_at) >= ${new Date(now.getTime() - 7 * 86400_000)}` : sql``}`;
   const rows = await sql<FeedRow[]>`

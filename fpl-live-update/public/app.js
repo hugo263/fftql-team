@@ -1847,8 +1847,10 @@ function comparePlayerCard(pick, options = {}) {
   const src = kitUrl(pl);
   const status = pl.status && pl.status !== 'a';
   const scoreLabel = options.scoreLabel || '上轮';
+  const scoreAbbr = options.scoreLabel ? 'GW' : 'LW';
   const scoreKey = Object.prototype.hasOwnProperty.call(options, 'scoreKey') ? options.scoreKey : 'lastGwPoints';
   const roundPoints = scoreKey ? pl[scoreKey] : null;
+  const pointsDescription = points => points == null ? '暂无得分' : `${points}pts`;
   return `
     <div class="cmp-pitch-player ${pick.position > 11 ? 'bench' : ''}" title="${esc(pl.teamName || pl.team)} · ${pl.pos}${pl.news ? ` · ${esc(pl.news)}` : ''}">
       <div class="cmp-kit ${src ? '' : 'kit-error'}">
@@ -1858,9 +1860,10 @@ function comparePlayerCard(pick, options = {}) {
       </div>
       <div class="cmp-player-plate">
         <div class="cmp-player-name" title="${esc(pl.name)}">${esc(pl.name)}</div>
-        <div class="cmp-player-scores">
-          <span>${esc(scoreLabel)} <b>${roundPoints ?? '—'}</b></span>
-          <span>总分 <b>${pl.totalPoints ?? '—'}</b></span>
+        <div class="cmp-player-scores" aria-label="${esc(scoreLabel)} ${pointsDescription(roundPoints)}，总分 ${pointsDescription(pl.totalPoints)}" title="${esc(scoreLabel)} ${pointsDescription(roundPoints)}，总分 ${pointsDescription(pl.totalPoints)}">
+          <span>${scoreAbbr} <b>${roundPoints ?? '—'}</b></span>
+          <span class="cmp-score-separator" aria-hidden="true">·</span>
+          <span>T <b>${pl.totalPoints ?? '—'}</b></span>
         </div>
       </div>
     </div>`;
@@ -1873,6 +1876,7 @@ function squadPitchSideHtml(m, options = {}) {
   const rows = { GKP: [], DEF: [], MID: [], FWD: [] };
   xi.forEach((p) => rows[p.player.pos]?.push(p));
   const formation = `${rows.DEF.length}-${rows.MID.length}-${rows.FWD.length}`;
+  const scoreLegend = options.scoreLabel ? `GW＝${options.scoreLabel}得分` : 'LW＝上轮得分';
   const playerCard = (pick) => comparePlayerCard(pick, options);
   if (options.managerView && !picks.length) return '<p class="manager-view-empty">暂无可用阵容，数据更新后会在此显示。</p>';
   return `
@@ -1884,6 +1888,7 @@ function squadPitchSideHtml(m, options = {}) {
           <div class="cmp-pitch-row cmp-pitch-${pos.toLowerCase()}">
             ${rows[pos].map(playerCard).join('')}
           </div>`).join('')}
+        <div class="cmp-pitch-legend"><span>${esc(scoreLegend)}</span><span>T＝赛季总分</span><span>单位：pts</span></div>
       </div>
     </div>
     <div class="cmp-bench-area">

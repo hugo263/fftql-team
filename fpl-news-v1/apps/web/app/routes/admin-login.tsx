@@ -3,9 +3,9 @@
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/admin-login";
 import "../features/admin/admin.css";
+import "../features/admin/workspace.css";
 import { SITE } from "@aihot/industry/site";
 import { apiGet } from "../lib/api.server";
-import { Wordmark } from "../components/Logo";
 import { buttonClass } from "../components/ui/Controls";
 
 const ERRORS: Record<string, string> = {
@@ -19,7 +19,7 @@ export async function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
   const returnTo = url.searchParams.get("return") ?? "/admin";
   const options = await apiGet<{ password: boolean; feishu: boolean; draftSso?: boolean }>("/api/auth/options", { signal: request.signal }).catch(() => ({ password: true, feishu: false, draftSso: false }));
-  return { returnTo: returnTo.startsWith("/admin") ? returnTo : "/admin", error: url.searchParams.get("error"), ...options };
+  return { returnTo: returnTo.startsWith("/admin") ? returnTo : "/admin", error: url.searchParams.get("error"), ...options, mainAdminUrl: process.env.TQL_MAIN_ADMIN_URL || "https://fftql.team/admin" };
 }
 
 export const meta: Route.MetaFunction = () => [{ title: `登录 · ${SITE.name} 后台` }, { name: "robots", content: "noindex, nofollow" }];
@@ -27,21 +27,18 @@ export const meta: Route.MetaFunction = () => [{ title: `登录 · ${SITE.name} 
 export const headers: Route.HeadersFunction = () => ({ "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow" });
 
 export default function AdminLogin() {
-  const { returnTo, error, password, feishu, draftSso } = useLoaderData<typeof loader>();
+  const { returnTo, error, password, feishu, draftSso, mainAdminUrl } = useLoaderData<typeof loader>();
   const message = error ? (ERRORS[error] ?? ERRORS.wrong) : !password && !draftSso ? ERRORS.unset : null;
   return (
-    <div className="admin-login flex min-h-dvh items-center justify-center bg-bg px-4">
+    <div className="admin-login tql-workspace flex min-h-dvh items-center justify-center bg-bg px-4">
       <div className="w-full max-w-[360px]">
-        <div className="flex items-center justify-center gap-2">
-          <Wordmark size={26} className="text-ink" />
-          <span className="text-[15px] font-semibold text-ink-3">后台</span>
-        </div>
+        <a className="admin-brand" href={mainAdminUrl}><span className="admin-mark">TQL.</span><span><strong>TQL 管理后台</strong><small>TEAM WORKSPACE</small></span></a><h1 className="text-[25px] font-semibold text-ink">欢迎回到内容工作空间</h1><p className="mt-3 text-[12px] text-ink-3">聚合、核验与编辑，让每条资讯都有据可查。</p>
         {draftSso && <div className="card mt-8 p-6">
-          <h1 className="text-[18px] font-semibold text-ink">资讯管理</h1>
+          <h2 className="text-[18px] font-semibold text-ink">资讯管理</h2>
           <p className="mt-2 text-[13px] leading-relaxed text-ink-3">与 Draft 数据共用管理员登录。</p>
           {message && <p role="alert" className="mt-3 text-[12px] text-hot">{message}</p>}
-          <a href="https://fftql.team/admin/news" className={`${buttonClass("primary", "lg")} mt-5 w-full`}>使用 TQL 管理后台登录</a>
-          <a href="https://fftql.team/admin" className="mt-4 block text-center text-[12px] text-ink-3">前往 Draft 数据</a>
+          <a href={`${mainAdminUrl}/news`} className={`${buttonClass("primary", "lg")} mt-5 w-full`}>使用 TQL 管理后台登录</a>
+          <a href={mainAdminUrl} className="mt-4 block text-center text-[12px] text-ink-3">前往 Draft 数据</a>
         </div>}
         {!draftSso && <form method="post" action="/api/auth/password" className="card mt-8 p-6">
           <input type="hidden" name="return" value={returnTo} />

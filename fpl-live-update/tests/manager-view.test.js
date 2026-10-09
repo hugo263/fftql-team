@@ -54,7 +54,9 @@ test('detail has no EP or prediction, explicitly explains current ownership and 
   assert.match(html, /截止前调整官方暂不公开/);
   assert.match(html, /GW3 实际得分与赛季总分/);
   assert.match(html, /官方 DEFCON 与奖励分/);
-  assert.match(html, /GW3 <b>8<\/b>/);
+  assert.match(html, /GW <b>8<\/b>/);
+  assert.match(html, /aria-label="GW3 8pts，总分 32pts"/);
+  assert.match(html, /GW＝GW3得分/);
   assert.doesNotMatch(html, /<b>17<\/b>/);
 });
 
@@ -63,17 +65,39 @@ test('actual zero and negative points remain distinct from missing data', () => 
   m.picks[3].player.liveGwPoints = null;
   m.picks[3].player.totalPoints = null;
   const html = context.managerSquadHtml(m, meta);
-  assert.match(html, /GW3 <b>0<\/b>/);
-  assert.match(html, /GW3 <b>-1<\/b>/);
-  assert.match(html, /GW3 <b>—<\/b>/);
-  assert.match(html, /总分 <b>—<\/b>/);
+  assert.match(html, /GW <b>0<\/b>/);
+  assert.match(html, /GW <b>-1<\/b>/);
+  assert.match(html, /GW <b>—<\/b>/);
+  assert.match(html, /T <b>—<\/b>/);
+  assert.match(html, /aria-label="GW3 暂无得分，总分 暂无得分"/);
 });
 
 test('compare view remains last-finished-GW based with its existing summary', () => {
   const html = context.squadPitchSideHtml(manager());
   assert.match(html, /Compare forecast/);
-  assert.match(html, /上轮 <b>17<\/b>/);
+  assert.match(html, /LW <b>17<\/b>/);
+  assert.match(html, /LW＝上轮得分/);
+  assert.match(html, /T＝赛季总分/);
+  assert.match(html, /单位：pts/);
   assert.doesNotMatch(html, /当前持有阵容|GW3 <b>/);
+});
+
+test('single-row player captions use abbreviations and retain accessible scope and units', () => {
+  const pick = manager().picks[0];
+  pick.player.lastGwPoints = 8;
+  pick.player.totalPoints = 27;
+  const html = context.comparePlayerCard(pick);
+  assert.match(html, /LW <b>8<\/b>/);
+  assert.match(html, /T <b>27<\/b>/);
+  assert.match(html, /cmp-score-separator" aria-hidden="true">·/);
+  assert.match(html, /aria-label="上轮 8pts，总分 27pts" title="上轮 8pts，总分 27pts"/);
+  assert.doesNotMatch(html, /cmp-score-unit/);
+  pick.player.lastGwPoints = undefined;
+  pick.player.totalPoints = null;
+  const missing = context.comparePlayerCard(pick);
+  assert.match(missing, /LW <b>—<\/b>/);
+  assert.match(missing, /T <b>—<\/b>/);
+  assert.match(missing, /aria-label="上轮 暂无得分，总分 暂无得分"/);
 });
 
 test('manager names are escaped and unavailable squads have a clear empty state', () => {

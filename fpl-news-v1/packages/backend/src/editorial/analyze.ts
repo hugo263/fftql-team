@@ -112,8 +112,25 @@ export function buildScoreInput(a: AnalyzeInputArticle): string {
 
 const PrefilterSchema = z.object({
   label: z.preprocess((v) => String(v ?? "").trim().toUpperCase(), z.enum(["PASS", "BLOCK", "UNKNOWN"])),
+  scope: z.enum(["FPL", "PREMIER_LEAGUE", "ENGLISH_FOOTBALL", "OUT_OF_SCOPE", "UNCONFIRMED"]).catch("UNCONFIRMED"),
+  scopeEvidence: z.string().max(1000).catch(""),
   reason: z.string().max(200).catch(""),
 });
+
+/** A relevant-looking event still needs a grounded FPL/English-football connection. */
+export function enforceScope(input: AnalyzeInputArticle, verdict: z.infer<typeof PrefilterSchema>) {
+  if (verdict.scope === "OUT_OF_SCOPE") return {...verdict, label: "BLOCK" as const};
+  if (verdict.label !== "PASS") return verdict;
+  if (verdict.scope === "UNCONFIRMED") return {...verdict, label: "UNKNOWN" as const, reason: "未提供具体的 FPL、英超或英格兰足球关联，暂缓发布。"};
+  const material = input.xPost
+    ? [input.title, String(input.xPost.text ?? ""), String(input.xPost.quoted?.text ?? "")].join("\n")
+    : [input.title, input.bodyText ?? input.excerpt ?? ""].join("\n");
+  const evidence = collapseWhitespace(verdict.scopeEvidence);
+  if (!evidence || !collapseWhitespace(material).includes(evidence)) {
+    return {...verdict, label: "UNKNOWN" as const, reason: "范围关联没有可核对的原文依据，暂缓发布。"};
+  }
+  return verdict;
+}
 
 const FactSchema = z
   .object({
@@ -157,7 +174,7 @@ const STRUCTURE_SYSTEM = promptText("structure", {
 });
 
 export interface AnalysisRun {
-  prefilter: { label: "PASS" | "BLOCK" | "UNKNOWN"; reason: string; model: string; receiptId: number; reused: boolean };
+  prefilter: { label: "PASS" | "BLOCK" | "UNKNOWN"; reason: string; scope?: z.infer<typeof PrefilterSchema>["scope"]; scopeEvidence?: string; model: string; receiptId: number; reused: boolean };
   /**
    * The independent score calls and the tier threshold they are held against; absent when the material
    * is not scored. `refused`: the model's content filter declined it, so it is not selected.
@@ -210,12 +227,13 @@ async function runPrefilter(a: AnalyzeInputArticle, opts: StepOpts): Promise<Ana
     user: prefilterUser(a),
     schema: PrefilterSchema,
     temperature: 0,
-    maxTokens: 512,
+    maxTokens: 768,
     attemptTag: opts.attemptTag,
   });
   // A BLOCK without material to back it counts as UNKNOWN (held for evidence).
-  const label = res.data.label === "BLOCK" && missingEvidence(a) ? "UNKNOWN" : res.data.label;
-  return { label, reason: res.data.reason, model: res.model, receiptId: res.receiptId, reused: res.reused };
+  const verdict = enforceScope(a, res.data);
+  const label = verdict.label === "BLOCK" && missingEvidence(a) ? "UNKNOWN" : verdict.label;
+  return { ...verdict, label, model: res.model, receiptId: res.receiptId, reused: res.reused };
 }
 
 async function runScores(a: AnalyzeInputArticle, threshold: number, opts: StepOpts): Promise<NonNullable<AnalysisRun["scores"]>> {
@@ -447,7 +465,7 @@ export async function analyzeArticle(articleId: string, opts: StepOpts = {}): Pr
   ];
   const w = run.writing;
   const detail = {
-    prefilter: { label: run.prefilter.label, reason: run.prefilter.reason },
+    prefilter: { label: run.prefilter.label, reason: run.prefilter.reason, scope: run.prefilter.scope ?? null, scopeEvidence: run.prefilter.scopeEvidence ?? null },
     scores: out.scores, scoreDetails:run.scores?.details ?? [], scoreModel: out.scoreModel, threshold: out.threshold, ...(out.scoreRefused ? { scoreRefused: true } : {}),
     publicExcerpt:input.publicExcerpt ?? false, copyStatus:out.summaryZh ? "ready" : "needs_review",
     ...(w?.repairReason ? {repairReason:w.repairReason} : {}),

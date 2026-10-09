@@ -80,8 +80,8 @@ export const ITEM_FROM = sql`
   LEFT JOIN quote_translations qt ON p.channel = 'x' AND qt.tweet_id = substring(a.x_post->'quoted'->>'url' from '/status/([0-9]+)')`;
 
 /** Listed items: public, and a selected item only after its release gate. */
-export function listedCondition(now: Date) {
-  return sql`p.visibility = 'public' AND (NOT p.selected OR p.visible_after <= ${now})`;
+export function listedCondition(now: Date, alias = "p") {
+  return sql`${sql(alias + '.visibility')} = 'public' AND (NOT ${sql(alias + '.selected')} OR ${sql(alias + '.visible_after')} <= ${now})`;
 }
 
 /** Selected set as shown on the home timeline, v1 selected mode and RSS. */
@@ -89,26 +89,45 @@ export function selectedCondition(now: Date) {
   return sql`p.visibility = 'public' AND p.selected AND p.visible_after <= ${now}`;
 }
 
-export function channelCondition(channel: ChannelKey | null | undefined) {
+export function channelCondition(channel: ChannelKey | null | undefined, alias = "p") {
   if (!channel || channel === "all") return sql``;
-  if (channel === "firstParty") return sql`AND p.first_party`;
-  return sql`AND p.channel = ${channel}`;
+  if (channel === "firstParty") return sql`AND ${sql(alias + '.first_party')}`;
+  return sql`AND ${sql(alias + '.channel')} = ${channel}`;
 }
 
-export function categoryCondition(category: CategoryKey | null | undefined, v1 = false) {
+export function categoryCondition(category: CategoryKey | null | undefined, v1 = false, alias = "p") {
   if (!category) return sql``;
   // v1 and RSS publish opinion as tip.
-  return sql`AND p.category = ${category}`;
+  return sql`AND ${sql(alias + '.category')} = ${category}`;
 }
 
-export function tagCondition(tag: string | null | undefined) {
+export function tagCondition(tag: string | null | undefined, alias = "p") {
   if (!tag) return sql``;
-  return sql`AND p.tags @> ${[tag]}::text[]`;
+  return sql`AND ${sql(alias + '.tags')} @> ${[tag]}::text[]`;
 }
 
-export function topicCondition(topicTags: string[] | null | undefined) {
+export function topicCondition(topicTags: string[] | null | undefined, alias = "p") {
   if (!topicTags || topicTags.length === 0) return sql``;
-  return sql`AND p.tags && ${topicTags}::text[]`;
+  return sql`AND ${sql(alias + '.tags')} && ${topicTags}::text[]`;
+}
+
+/** One card for an already identified occurrence, including repeated posts by the same author.
+ * Choose only among visible members of the current filter/search/window, before pagination/counts.
+ * Different facts in the same story remain separate developments; original detail links stay valid.
+ */
+export function poolRepresentativeCondition(now: Date, filters: {
+  channel?: ChannelKey | null;
+  category?: CategoryKey | null;
+  tag?: string | null;
+  topicTags?: string[] | null;
+} = {}, extra: (alias: string) => ReturnType<typeof sql> = () => sql``) {
+  return sql`AND (p.fact_id IS NULL OR p.article_id = (
+    SELECT d.article_id FROM publications d
+    WHERE d.fact_id = p.fact_id AND ${listedCondition(now, 'd')} AND d.eligible
+      ${channelCondition(filters.channel, 'd')} ${categoryCondition(filters.category, false, 'd')}
+      ${tagCondition(filters.tag, 'd')} ${topicCondition(filters.topicTags, 'd')} ${extra('d')}
+    ORDER BY d.first_party DESC, (d.body_mode = 'full') DESC, coalesce(d.score, 0) DESC,
+      d.timeline_at ASC, d.article_id ASC LIMIT 1))`;
 }
 
 function mediaView(m: Record<string, any>, mode: "card" | "thumb" | "full" = "thumb", responsive = false): MediaView | null {

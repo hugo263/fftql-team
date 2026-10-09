@@ -53,3 +53,7 @@ id_ed25519*
 # Documentation screenshots are excluded from this source-only candidate.
 /fpl-news-v1/docs/assets/board-*.png
 /fpl-news-v1/docs/assets/shots-*.png
+
+.local-xhs/
+*.sqlite-wal
+*.sqlite-shm

@@ -15,8 +15,8 @@ test('homepage is the first default tab while legacy league modules and deep lin
   assert.match(html, /data-portal-link aria-label="TQL FPL 主站首页"/);
   assert.equal((html.match(/<header id="top" class="night-site-head"/g) || []).length, 1);
   assert.equal((html.match(/\/analytics.js\?/g) || []).length, 1);
-  assert.ok(html.includes('/home-tab.js?v=105'));
-  assert.ok(html.indexOf('/home-tab.js?v=105') < html.indexOf('/app.js?v=105'));
+  assert.ok(html.includes('/home-tab.js?v=106'));
+  assert.ok(html.indexOf('/home-tab.js?v=106') < html.indexOf('/app.js?v=105'));
   const ui = read('public/workspace-ui.js');
   assert.match(ui, /addEventListener\('hashchange'/);
   assert.match(ui, /aria-selected/);

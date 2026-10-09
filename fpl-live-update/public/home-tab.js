@@ -46,7 +46,7 @@
       // unhandled module promise. Match centre consumes both dependencies below.
       const modules = Promise.all([script('/match-centre-share.js?v=105'), script('/live-render.js?v=79')])
         .then(() => script('/match-centre.js?v=105')).then(() => null, error => error);
-      const response = await fetch('/discover.html?v=101', { signal: AbortSignal.timeout(20000) });
+      const response = await fetch('/discover.html?v=106', { signal: AbortSignal.timeout(20000) });
       if (!response.ok) throw Error('首页内容暂时无法加载');
       const template = new DOMParser().parseFromString(await response.text(), 'text/html');
       const main = template.querySelector('main');
@@ -55,7 +55,7 @@
       root.replaceChildren();
       // Import only trusted, same-origin content nodes. Never run template scripts,
       // duplicate analytics, or add its standalone header/footer.
-      for (const href of ['/match-centre.css?v=63', '/home-tab.css?v=66', '/match-centre-layout.css?v=90', '/night-tokens.css?v=91', '/trade-countdown.css?v=97', '/night-match.css?v=95', '/night-ui.css?v=97', '/light-surfaces.css?v=105', '/responsive.css?v=105']) {
+      for (const href of ['/match-centre.css?v=63', '/home-tab.css?v=66', '/match-centre-layout.css?v=90', '/night-tokens.css?v=91', '/trade-countdown.css?v=97', '/night-match.css?v=95', '/night-ui.css?v=106', '/light-surfaces.css?v=105', '/responsive.css?v=105']) {
         const style = document.createElement('link'); style.rel = 'stylesheet'; style.href = href; root.append(style);
       }
       main.querySelector('h1').textContent = '比赛中心';

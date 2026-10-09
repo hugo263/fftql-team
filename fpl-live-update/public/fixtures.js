@@ -6,7 +6,36 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const state = { snapshot: null, start: null, manager: 'all', range: 6, detailGw: null, bound: false };
+  const state = { snapshot: null, start: null, manager: 'all', range: 6, detailGw: null, railStartGw: null, bound: false };
+  function railWindow(available, selected, startGw = null, revealEdge = false) {
+    if (!available.length) return [];
+    const size = Math.min(7, available.length), lastStart = available.length - size;
+    const selectedIndex = Math.max(0, available.indexOf(selected));
+    const previousStart = available.indexOf(startGw);
+    let start = previousStart < 0 ? Math.max(0, selectedIndex - 2) : previousStart;
+    start = Math.min(start, lastStart);
+    // Keep the existing window while selecting inside it. Edge clicks reveal just one neighbour.
+    if (selectedIndex < start) start = Math.max(0, selectedIndex - 1);
+    else if (selectedIndex >= start + size) start = Math.min(lastStart, selectedIndex - size + 2);
+    else if (revealEdge && selectedIndex === start && start > 0) start--;
+    else if (revealEdge && selectedIndex === start + size - 1 && start < lastStart) start++;
+    return available.slice(start, start + size);
+  }
+  function chooseRound(gw) {
+    const available = model(state.snapshot, state.start, state.range).available;
+    if (!available.includes(gw)) return;
+    state.railStartGw = railWindow(available, gw, state.railStartGw, true)[0] ?? null;
+    state.detailGw = gw;
+    render(state.snapshot);
+    // On narrow screens reveal an off-screen choice minimally, never centre the whole rail.
+    const container = document.getElementById('fxGwChoices');
+    const button = container?.querySelector(`[data-round="${gw}"]`);
+    if (button) {
+      const item = button.getBoundingClientRect(), viewport = container.getBoundingClientRect();
+      if (item.left < viewport.left + 3) container.scrollLeft += item.left - viewport.left - 3;
+      else if (item.right > viewport.right - 3) container.scrollLeft += item.right - viewport.right + 3;
+    }
+  }
   function schedule(snapshot) {
     const seen = new Set();
     return (snapshot.leagueSchedule || []).filter(m => {
@@ -104,7 +133,7 @@
     if (!$('fxTable')) return;
     const previous = state.snapshot;
     if (!previous || previous.meta.leagueId !== snapshot.meta.leagueId) {
-      state.start = null; state.manager = savedManager(snapshot); state.detailGw = null;
+      state.start = null; state.manager = savedManager(snapshot); state.detailGw = null; state.railStartGw = null;
     }
     state.snapshot = snapshot;
     if (!snapshot.managers.some(m => String(m.entryId) === state.manager)) state.manager = 'all';
@@ -118,9 +147,21 @@
     $('fxMatchGw').innerHTML = view.available.map(gw => `<option value="${gw}">GW${gw}</option>`).join('');
     $('fxMatchGw').value = String(detailGw);
     const selectedIndex = view.available.indexOf(detailGw);
-    const railStart = Math.max(0, Math.min(selectedIndex - 2, view.available.length - 7));
-    const rail = view.available.slice(railStart, railStart + 7).map(gw => `<button type="button" class="fx-gw-pill" data-round="${gw}" data-state="${phaseState(snapshot, gw)}" aria-pressed="${gw === detailGw}" aria-controls="fxRounds"><b>GW${gw}</b><small>${phase(snapshot, gw)}</small></button>`).join('');
-    if ($('fxGwChoices').innerHTML !== rail) $('fxGwChoices').innerHTML = rail;
+    const railGws = railWindow(view.available, detailGw, state.railStartGw);
+    state.railStartGw = railGws[0] ?? null;
+    const railRoot = $('fxGwChoices');
+    const existing = [...railRoot.querySelectorAll('[data-round]')];
+    if (existing.length !== railGws.length || existing.some((button, index) => Number(button.dataset.round) !== railGws[index])) {
+      railRoot.innerHTML = railGws.map(gw => `<button type="button" class="fx-gw-pill" data-round="${gw}" data-state="${phaseState(snapshot, gw)}" aria-pressed="${gw === detailGw}" aria-controls="fxRounds"><b>GW${gw}</b><small>${phase(snapshot, gw)}</small></button>`).join('');
+    } else {
+      // Preserve button nodes, their positions and focus during ordinary selection/data refresh.
+      existing.forEach(button => {
+        const gw = Number(button.dataset.round);
+        button.setAttribute('aria-pressed', String(gw === detailGw));
+        button.dataset.state = phaseState(snapshot, gw);
+        button.querySelector('small').textContent = phase(snapshot, gw);
+      });
+    }
     $('fxMatchPrev').disabled = selectedIndex <= 0;
     $('fxMatchNext').disabled = selectedIndex < 0 || selectedIndex === view.available.length - 1;
     $('fxMatchReset').disabled = !view.available.length;
@@ -173,19 +214,19 @@
       state.manager = button.dataset.manager; saveManager(state.snapshot, state.manager); render(state.snapshot);
       $('fxManagerChoices').querySelector(`[data-manager="${Number(state.manager)}"]`)?.focus({preventScroll:true});
     });
-    $('fxMatchGw').addEventListener('change', e => { state.detailGw = Number(e.target.value); render(state.snapshot); });
+    $('fxMatchGw').addEventListener('change', e => chooseRound(Number(e.target.value)));
     $('fxGwChoices').addEventListener('click', e => {
       const button = e.target.closest('[data-round]');
       if (!button) return;
-      state.detailGw = Number(button.dataset.round); render(state.snapshot);
+      chooseRound(Number(button.dataset.round));
       $('fxGwChoices').querySelector(`[data-round="${state.detailGw}"]`)?.focus({preventScroll:true});
     });
     for (const [id, delta] of [['fxMatchPrev', -1], ['fxMatchNext', 1]]) $(id).addEventListener('click', () => {
       const v = model(state.snapshot, state.start, state.range);
       const current = v.available.includes(state.detailGw) ? state.detailGw : defaultGw(state.snapshot);
-      state.detailGw = v.available[v.available.indexOf(current) + delta] ?? current; render(state.snapshot);
+      chooseRound(v.available[v.available.indexOf(current) + delta] ?? current);
     });
-    $('fxMatchReset').addEventListener('click', () => { state.detailGw = null; render(state.snapshot); });
+    $('fxMatchReset').addEventListener('click', () => { state.railStartGw = null; chooseRound(defaultGw(state.snapshot)); state.detailGw = null; });
     $('fxGw').addEventListener('change', e => { state.start = Number(e.target.value); render(state.snapshot); });
     $('fxRange').addEventListener('change', e => { state.range = Number(e.target.value); render(state.snapshot); });
     for (const [id, delta] of [['fxPrev', -1], ['fxNext', 1]]) $(id).addEventListener('click', () => {
@@ -197,8 +238,8 @@
       const team = e.target.closest('[data-manager]');
       if (team) { state.manager = team.dataset.manager; saveManager(state.snapshot, state.manager); render(state.snapshot); $('fxManagerPanel').scrollIntoView({block:'start', behavior:'smooth'}); return; }
       const round = e.target.closest('[data-gw]');
-      if (round) { state.detailGw = Number(round.dataset.gw); render(state.snapshot); $('fxDetailTitle').scrollIntoView({block:'start', behavior:'smooth'}); }
+      if (round) { chooseRound(Number(round.dataset.gw)); $('fxDetailTitle').scrollIntoView({block:'start', behavior:'smooth'}); }
     });
   }
-  return { render, model, schedule, opponent, result, defaultGw, dateText, managerSeason, rankText, managerChoices, matchTeam, savedManager, saveManager };
+  return { render, model, schedule, opponent, result, defaultGw, dateText, managerSeason, rankText, managerChoices, matchTeam, savedManager, saveManager, railWindow };
 });

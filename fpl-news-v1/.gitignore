@@ -69,3 +69,7 @@ id_ed25519*
 
 /docs/assets/board-*.png
 /docs/assets/shots-*.png
+
+.local-xhs/
+*.sqlite-wal
+*.sqlite-shm

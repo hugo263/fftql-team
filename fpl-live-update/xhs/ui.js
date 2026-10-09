@@ -1,0 +1,99 @@
+'use strict';
+const $=s=>document.querySelector(s),base='/api/admin/xhs';
+const labels={draft:'内容草稿',pending:'待确认',approved:'已批准',queued:'待调度',submitting:'提交中',platform_scheduled:'平台已排期',reviewing:'平台审核中',published:'已发布',cancelled:'已取消',expired:'已过期',manual_required:'需要人工处理',failed:'失败',unknown:'结果待核实'};
+const eventLabel={version_saved:'保存新版本',review_requested:'送交确认',approved:'批准最终版本',scheduled:'创建系统排期',approval_invalidated:'旧批准失效',submission_started:'开始提交',cancellation_requested:'请求平台取消',cancelled:'确认取消',source_changed:'重要信息变化',dispatch_paused:'执行暂停',lease_recovered:'恢复中断任务',manual_verification_required:'需要人工核实',restore_quarantined:'恢复备份后隔离任务'};
+const reasonLabel={MANUAL_HANDOFF_REQUIRED:'请在官方平台人工处理',SOURCE_CHANGED:'重要信息变化，请重新复核',ACCOUNT_EXPIRED:'账号登录已失效',MISSED_TIME_PAUSED:'错过计划时间，已暂停',CONTENT_EXPIRED:'内容已过期',FPL_RECONFIRM_REQUIRED:'资料复核有效期已过',ASSET_MISSING:'正式素材缺失',ASSET_CHANGED:'正式素材已变化',CANCEL_PENDING_CONFIRMATION:'等待核实平台取消',RECONCILIATION_LIMIT_MANUAL:'连续核实未果，请人工处理',TIMEOUT_OR_DISCONNECT:'提交超时或连接中断，禁止直接重发',PLATFORM_CANCELLATION_UNCONFIRMED:'尚未确认平台取消',ACCOUNT_CHANGED_RECONFIRM:'账号信息变化，请重新批准'};
+const errors={AUTH_REQUIRED:'请先登录后台。',APPROVAL_BINDING_MISMATCH:'最终版本已变化，请重新打开并确认。',CANCEL_PLATFORM_FIRST:'平台可能已接收，请先核实取消成功，再编辑或改期。',FRESHNESS_EXPIRES_BEFORE_SCHEDULE:'资料复核有效时间必须覆盖计划发布时间。',FPL_FRESHNESS_REQUIRED:'请填写有效的资料截至时间和复核有效时间。',STALE_VERSION:'内容已被另一窗口修改，请关闭后重新打开。',ACCOUNT_EXPIRED:'账号已失效，请先处理账号登录并重新确认。',SCHEDULE_IN_PAST:'计划时间已过去，请重新选择。',AMBIGUOUS_LOCAL_TIME:'该本地时刻因夏令时重复，请选择其他明确时刻。',NONEXISTENT_LOCAL_TIME:'该本地时刻不存在，请检查日期或夏令时。',IMAGE_ASSETS_INCOMPLETE:'图文至少需要一张图片，封面须在图片列表中。',VIDEO_ASSETS_INCOMPLETE:'视频需要 MP4 和封面，不可混用图片列表。',ASSET_MISSING:'正式素材缺失，请重新上传并确认。',URL_MUST_BE_PUBLIC_WITHOUT_QUERY:'请使用不带查询参数和访问令牌的公开链接。',CONTENT_EXPIRED:'内容已过期。',CSRF_REJECTED:'请求来源不正确。',NOT_READY_FOR_APPROVAL:'请先保存并送确认。',UPLOAD_TOO_LARGE:'文件超过本站存储大小限制。'};
+let data={contents:[],accounts:[],assets:[]},current=null,media={images:[],cover:null,video:null},busy=false,dirty=false;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function api(url,body,options={}){
+ const res=await fetch(base+url,{method:body===undefined?'GET':'POST',credentials:'same-origin',headers:body===undefined?{}:{'Content-Type':'application/json','X-XHS-Request':'1'},body:body===undefined?undefined:JSON.stringify(body),...options});
+ const json=await res.json();if(!res.ok)throw Error(errors[json.error]||json.error);return json;
+}
+async function run(fn){if(busy)return;busy=true;try{await fn();$('#status').textContent='';}catch(e){$('#status').textContent=e.message;alert(e.message);}finally{busy=false;}}
+function fmt(utc,zone='Asia/Shanghai'){return utc?new Intl.DateTimeFormat('zh-CN',{timeZone:zone,dateStyle:'medium',timeStyle:'short'}).format(new Date(utc)):'—';}
+function local(utc,zone){return utc?new Intl.DateTimeFormat('sv-SE',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(utc)).replace(' ','T'):'';}
+function accountName(id){return data.accounts.find(a=>a.id===id)?.label||'账号待确认';}
+function conflict(c){return data.contents.some(x=>x.id!==c.id&&!['cancelled','expired','failed','published'].includes(x.state)&&x.payload.accountId===c.payload.accountId&&Math.abs(Date.parse(x.payload.scheduledAt)-Date.parse(c.payload.scheduledAt))<900000);}
+async function refresh(){data=await api('');renderLibrary();renderAccounts();if(!$('#calendar').hidden)renderCalendar();}
+const groups={all:()=>true,draft:c=>c.state==='draft',pending:c=>c.state==='pending',scheduled:c=>['approved','queued','submitting','platform_scheduled','reviewing'].includes(c.state),published:c=>c.state==='published',attention:c=>['unknown','manual_required','failed','expired'].includes(c.state)};
+let selectedGroup='all';
+function setGroup(group){selectedGroup=group;$('#filter').value='';renderLibrary();}
+function renderLibrary(){
+ const q=$('#search').value.trim().toLowerCase(),type=$('#typeFilter').value;
+ const items=data.contents.filter(c=>groups[selectedGroup](c)&&(!$('#filter').value||c.state===$('#filter').value)&&(!type||c.payload.type===type)&&(!q||[c.payload.title,c.id,...c.payload.topics].join(' ').toLowerCase().includes(q)));
+ $('#navCount').textContent=data.contents.length;
+ $('#resultCount').textContent=`共 ${data.contents.length} 篇内容 · 当前 ${items.length} 篇`;
+ document.querySelectorAll('[data-group]').forEach(b=>{b.classList.toggle('active',b.dataset.group===selectedGroup);b.setAttribute('aria-pressed',String(b.dataset.group===selectedGroup));});
+ $('#cards').innerHTML=items.map(c=>`<tr><td><div class="content-cell">${c.payload.cover?`<img class="cover" src="${base}/assets/${esc(c.payload.cover)}" alt="${esc(c.payload.title)}封面" loading="lazy">`:'<span class="cover cover-placeholder">TQL.</span>'}<div><button data-open="${c.id}" class="content-title">${esc(c.payload.title)}</button><p class="row-meta">${esc(c.payload.topics.map(t=>'#'+t.replace(/^#/, '')).join(' '))||'暂无话题'}</p><p class="row-meta">${c.payload.type==='image'?'图文':'视频'} · v${c.version} · ${esc(c.id.slice(0,8))}</p></div></div></td><td><span class="badge ${c.state}">${esc(labels[c.state])}</span><p class="row-time">${esc(fmt(c.payload.scheduledAt,c.payload.timezone))}<br>${esc(c.payload.timezone)}</p>${conflict(c)?'<p class="warning">同账号时间接近</p>':''}</td><td>${esc(accountName(c.payload.accountId))}<p class="row-meta">${data.accounts.find(a=>a.id===c.payload.accountId)?.mode==='mock'?'模拟测试':'人工辅助'}</p></td><td><button data-open="${c.id}" class="text-action">${c.state==='pending'?'确认详情':'编辑 / 详情'} →</button></td></tr>`).join('')||'<tr><td colspan="4" class="empty"><h3>让下一篇内容在这里准备就绪</h3><p>没有符合条件的内容，可调整筛选或新建草稿。</p></td></tr>';
+ const count=g=>data.contents.filter(groups[g]).length;
+ $('#stats').innerHTML=[['pending','待确认',count('pending'),'确认最终版本、账号与计划时间'],['scheduled','排期与执行中',count('scheduled'),'系统排期与平台状态分别记录'],['attention','需要处理',count('attention'),'异常、过期与结果待核实'],['published','已发布',data.contents.filter(c=>c.state==='published'&&data.accounts.find(a=>a.id===c.payload.accountId)?.mode!=='mock').length,'按公开回执统计 · 模拟结果不计入']].map(([g,title,value,note])=>`<button class="stat-card ${g==='attention'?'attention':''}" data-stat="${g}"><span>${title}</span><b>${value}</b><small>${note}</small></button>`).join('');
+ const upcoming=data.contents.filter(c=>!['cancelled','expired','published','failed'].includes(c.state)).sort((a,b)=>Date.parse(a.payload.scheduledAt)-Date.parse(b.payload.scheduledAt)).slice(0,4);
+ $('#agenda').innerHTML=upcoming.map(c=>`<div class="agenda-item"><time>${esc(fmt(c.payload.scheduledAt,c.payload.timezone))}</time><button data-open="${c.id}">${esc(c.payload.title)}</button><small>${esc(labels[c.state])} · ${esc(c.payload.timezone)}</small></div>`).join('')||'<p class="muted">暂无内容安排，保存草稿后可在这里查看。</p>';
+ renderAssets();
+}
+function renderAssets(){
+ $('#assetCount').textContent=`${data.assets.length} 个私有文件`;
+ $('#assetGrid').innerHTML=data.assets.map(a=>`<article class="asset-card">${a.mime.startsWith('image/')?`<img src="${base}/assets/${a.id}" loading="lazy" alt="正式图片素材">`:`<video controls preload="metadata" src="${base}/assets/${a.id}"></video>`}<h3>${esc(a.id)}</h3><p>${esc(a.mime)} · ${Math.round(a.bytes/1024)} KiB</p><p>${data.contents.filter(c=>[...c.payload.images,c.payload.cover,c.payload.video].includes(a.id)).length} 篇当前内容引用</p></article>`).join('')||'<div class="empty"><h3>素材随内容独立保存</h3><p>在内容编辑器上传文件后，这里会显示正式素材。</p></div>';
+}
+function renderAccounts(){
+ $('#accountList').innerHTML=data.accounts.map(a=>`<article class="card"><h3>${esc(a.label)}</h3><p>${a.mode==='mock'?'模拟测试 · 无真实发布':'人工辅助'}</p><p>登录检查：${{unknown:'尚未检查',valid:'人工确认有效',expired:'已失效'}[a.auth]}</p><small>检查时间：${fmt(a.checked_at)}</small><div class="actions"><button data-account="${a.id}" data-auth="valid" class="secondary">已人工确认有效</button><button data-account="${a.id}" data-auth="expired" class="secondary">标记失效</button></div></article>`).join('');
+ if(data.allowMock&&!$('#accountMode option[value="mock"]'))$('#accountMode').insertAdjacentHTML('beforeend','<option value="mock">模拟测试（不真实发布）</option>');
+}
+function renderCalendar(){const month=$('#month').value,zone=$('#calendarZone').value;new Intl.DateTimeFormat('en',{timeZone:zone}).format();const [y,m]=month.split('-').map(Number),days=new Date(Date.UTC(y,m,0)).getUTCDate();let html=['一','二','三','四','五','六','日'].map(x=>`<div class="weekday">周${x}</div>`).join('');const leading=(new Date(Date.UTC(y,m-1,1)).getUTCDay()+6)%7;html+='<div class="day-spacer"></div>'.repeat(leading);
+ for(let d=1;d<=days;d++){const key=month+'-'+String(d).padStart(2,'0'),items=data.contents.filter(c=>local(c.payload.scheduledAt,zone).startsWith(key));html+=`<div class="day"><b>${m}月${d}日</b>${items.map(c=>`<button data-open="${c.id}">${esc(local(c.payload.scheduledAt,zone).slice(11))} ${esc(c.payload.title)}<br>${esc(labels[c.state])}${conflict(c)?' · 时间接近':''}</button>`).join('')}</div>`;}$('#calendarGrid').innerHTML=html;
+}
+function preview(){const f=$('#contentForm');$('#preview').innerHTML=`<div class="preview-media">${media.video?`<video controls preload="metadata" src="${base}/assets/${media.video}" ${media.cover?`poster="${base}/assets/${media.cover}"`:''}></video>`:media.images.map(id=>`<img src="${base}/assets/${id}" alt="正式素材预览">`).join('')}</div><h3>${esc(f.elements.title.value||'标题预览')}</h3><p class="preview-body">${esc(f.elements.body.value)}</p><p class="muted">${esc(f.elements.topics.value)}</p>`;}
+function renderMedia(){const ids=[...media.images,media.video,media.cover].filter((x,i,a)=>x&&a.indexOf(x)===i);
+ $('#mediaList').innerHTML=ids.map(id=>{const a=data.assets.find(x=>x.id===id);return `<div class="media-row">${a?.mime.startsWith('image/')?`<img src="${base}/assets/${id}" alt="素材">`:'<b>MP4</b>'}<span>${a?.mime||'素材'} · ${Math.round((a?.bytes||0)/1024)} KiB${id===media.cover?' · 封面':''}</span><button type="button" class="secondary" data-media="${id}" data-op="up">↑</button><button type="button" class="secondary" data-media="${id}" data-op="down">↓</button>${a?.mime.startsWith('image/')?`<button type="button" class="secondary" data-media="${id}" data-op="cover">设封面</button>`:''}<button type="button" class="secondary" data-media="${id}" data-op="remove">移除</button></div>`;}).join('');preview();}
+function showDetail(){
+ $('#detail').hidden=!current;$('#approve').disabled=!current||current.state!=='pending'||dirty;
+ $('#review').disabled=!!current&&!['draft','pending','queued','cancelled','expired','failed','manual_required'].includes(current.state);
+ if(!current){$('#versionMeta').textContent='保存后生成不可变版本。';return;}
+ $('#versionMeta').textContent=`v${current.version} · ${labels[current.state]} · ${dirty?'有未保存修改，请重新保存确认':'已保存最终版本'} · ${current.hash.slice(0,12)}`;
+ const j=current.jobs[0],p=current.payload;
+ $('#jobDetail').innerHTML=`<h3>${esc(labels[current.state])}</h3><p>批准对象：${esc(accountName(p.accountId))} / v${current.version}</p><p>计划：${esc(fmt(p.scheduledAt,p.timezone))} · ${esc(p.timezone)}<br>UTC：${esc(p.scheduledAt)}</p>${j?`<p>执行通道：${j.mode==='mock'?'模拟（全部回执均为测试数据）':'人工辅助'}<br>执行次数：${j.attempts} · 核实次数：${j.checks}</p><p>处理原因：${esc(reasonLabel[j.reason]||j.reason||'—')}</p><p>平台编号：${esc(j.platform_id||'尚无')} · 回执：${esc(j.receipt_kind||'尚无')}</p>${j.cancel_requested&&j.state!=='cancelled'?'<p class="warning">已请求取消，尚未确认平台取消，不能视为完全取消。</p>':''}${j.note_url?`<a href="${esc(j.note_url)}" target="_blank" rel="noreferrer">查看已核实笔记 ↗</a>`:''}`:'<p>尚未批准和创建任务。</p>'}`;
+ $('#cancel').disabled=!j||['cancelled','expired','failed','published'].includes(j.state);
+ $('#receiptBox').hidden=!j||j.mode!=='manual'||!['manual_required','unknown','platform_scheduled','reviewing'].includes(j.state);
+ $('#events').innerHTML=current.events.map(e=>`<div class="audit"><b>${esc(eventLabel[e.event]||(e.event.startsWith('receipt_')?'回执：'+(labels[e.event.slice(8)]||e.event):e.event))}</b> · ${esc(e.actor)}<br><small>${esc(fmt(e.at))} · ${esc(e.detail)}</small></div>`).join('');
+}
+async function openContent(id){current=id?await api('/contents/'+id):null;dirty=false;const f=$('#contentForm');f.reset();
+ f.elements.accountId.innerHTML=data.accounts.map(a=>`<option value="${a.id}">${esc(a.label)} · ${a.mode==='mock'?'模拟':'人工辅助'}</option>`).join('');
+ media=current?{images:[...current.payload.images],cover:current.payload.cover,video:current.payload.video}:{images:[],cover:null,video:null};
+ if(current){const p=current.payload;for(const key of ['title','body','type','accountId','source','sourceUrl','timezone','localTime','latePolicy','graceSeconds'])f.elements[key].value=p[key];f.elements.topics.value=p.topics.join(', ');f.elements.isFpl.checked=p.isFpl;f.elements.asOfLocal.value=local(p.asOf,p.timezone);f.elements.freshLocal.value=local(p.freshUntil,p.timezone);f.elements.expiryLocal.value=local(p.expiresAt,p.timezone);}
+ else{const now=Date.now();f.elements.localTime.value=local(now+3600000,'Asia/Shanghai');f.elements.expiryLocal.value=local(now+86400000,'Asia/Shanghai');f.elements.asOfLocal.value=local(now,'Asia/Shanghai');f.elements.freshLocal.value=local(now+7200000,'Asia/Shanghai');}
+ $('#editorTitle').textContent=current?'编辑与发布详情':'新建内容';$('#refreshDetail').hidden=!current;renderMedia();showDetail();if(!$('#editor').open)$('#editor').showModal();
+}
+async function save(review=false){const f=$('#contentForm');if(!f.reportValidity())return;const raw=Object.fromEntries(new FormData(f)),zone=raw.timezone;
+ const convert=async value=>value?(await api('/time',{localTime:value,timezone:zone})).utc:null;
+ const p={...raw,...media,topics:raw.topics.split(/[,，]/).map(x=>x.trim()).filter(Boolean),isFpl:f.elements.isFpl.checked,asOf:await convert(raw.asOfLocal),freshUntil:await convert(raw.freshLocal),expiresAt:await convert(raw.expiryLocal)};
+ current=await api('/contents'+(current?'/'+current.id:''),{payload:p,version:current?.version});dirty=false;
+ if(review)current=await api('/contents/'+current.id+'/review',{version:current.version});
+ await refresh();await openContent(current.id);
+}
+$('#refreshDetail').onclick=()=>run(async()=>{if(dirty)throw Error('请先保存或关闭未保存修改。');if(current)await openContent(current.id);});
+$('#filter').innerHTML='<option value="">全部状态</option>'+Object.entries(labels).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+$('#new').onclick=()=>run(()=>openContent());$('#refresh').onclick=()=>run(refresh);$('#filter').onchange=()=>{selectedGroup='all';renderLibrary();};
+$('#closeEditor').onclick=()=>{if(!dirty||confirm('有未保存修改，确认关闭？'))$('#editor').close();};$('#editor').addEventListener('cancel',e=>{if(dirty&&!confirm('有未保存修改，确认关闭？'))e.preventDefault();});
+$('#contentForm').oninput=()=>{dirty=true;preview();showDetail();};
+$('#contentForm').onsubmit=e=>{e.preventDefault();run(()=>save());};$('#review').onclick=()=>run(()=>save(true));
+$('#upload').onchange=()=>run(async()=>{for(const file of $('#upload').files){const a=await api('/assets',null,{headers:{'Content-Type':file.type,'X-XHS-Request':'1'},body:file});data.assets.push(a);if(a.mime.startsWith('video/'))media.video=a.id;else{if($('#contentForm').elements.type.value==='image')media.images.push(a.id);if(!media.cover)media.cover=a.id;}}dirty=true;renderMedia();showDetail();});
+$('#approve').onclick=()=>run(async()=>{if(dirty)throw Error('有未保存修改，请先保存并送确认。');const p=current.payload;
+ if(!confirm(`批准以下最终版本？\n${accountName(p.accountId)} / v${current.version}\n${p.title}\n${fmt(p.scheduledAt,p.timezone)} ${p.timezone}\n${p.scheduledAt}\n通道：${data.accounts.find(a=>a.id===p.accountId)?.mode==='mock'?'模拟测试':'人工辅助'}\n批准后不会自动修改内容。`))return;
+ current=await api('/contents/'+current.id+'/approve',{version:current.version,hash:current.hash,accountId:p.accountId,scheduledAt:p.scheduledAt,acknowledged:true});await refresh();showDetail();});
+$('#cancel').onclick=()=>run(async()=>{if(!confirm('确认取消本系统排期，或请求核实平台取消？'))return;current=await api('/contents/'+current.id+'/cancel',{});await refresh();showDetail();});
+$('#changed').onclick=()=>run(async()=>{current=await api('/contents/'+current.id+'/changed',{});await refresh();showDetail();});
+$('#receiptForm').onsubmit=e=>{e.preventDefault();run(async()=>{const f=e.target,raw=Object.fromEntries(new FormData(f));current=await api('/contents/'+current.id+'/receipt',{...raw,jobId:current.jobs[0].id,version:current.version,acknowledged:f.elements.ack.checked});await refresh();showDetail();f.reset();});};
+$('#accountForm').onsubmit=e=>{e.preventDefault();run(async()=>{await api('/accounts',Object.fromEntries(new FormData(e.target)));e.target.reset();await refresh();});};
+function showView(){const id=location.hash.slice(1),view=['calendar','accounts','assets'].includes(id)?id:'library';for(const name of ['library','calendar','accounts','assets'])$('#'+name).hidden=name!==view;document.querySelectorAll('[data-tab]').forEach(el=>{el.classList.toggle('on',el.dataset.tab===view);if(el.dataset.tab===view)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});const names={library:'小红书内容管理',calendar:'发布日历',accounts:'账号与通道',assets:'正式素材库'};const subtitles={library:'从灵感到发布，把内容运营的每一步安排清楚。',calendar:'明确时区、有效期与版本，让每一次安排都有据可查。',accounts:'集中查看目标账号与通道状态，发布前逐项确认。',assets:'正式文件独立保存，默认私有，随内容版本使用。'};$('#viewTitle').textContent=$('#crumb').textContent=names[view];$('#viewSubtitle').textContent=subtitles[view];if(view==='calendar')run(async()=>renderCalendar());closeNavigation();}
+let navigationPreviousFocus=null;
+function closeNavigation(){const opened=$('#xhsNavigation').classList.contains('is-open');$('#xhsNavigation').classList.remove('is-open');$('#xhsShade').hidden=true;$('#xhsMenu').setAttribute('aria-expanded','false');document.body.style.overflow='';if(opened)navigationPreviousFocus?.focus();}
+$('#xhsMenu').onclick=()=>{navigationPreviousFocus=document.activeElement;$('#xhsNavigation').classList.add('is-open');$('#xhsShade').hidden=false;$('#xhsMenu').setAttribute('aria-expanded','true');document.body.style.overflow='hidden';$('#xhsMenuClose').focus();};
+$('#xhsMenuClose').onclick=$('#xhsShade').onclick=closeNavigation;
+window.addEventListener('hashchange',showView);
+document.addEventListener('keydown',e=>{if(!$('#xhsNavigation').classList.contains('is-open'))return;if(e.key==='Escape')closeNavigation();if(e.key==='Tab'){const nodes=[...$('#xhsNavigation').querySelectorAll('a,button')];if(e.shiftKey&&document.activeElement===nodes[0]){e.preventDefault();nodes.at(-1).focus();}else if(!e.shiftKey&&document.activeElement===nodes.at(-1)){e.preventDefault();nodes[0].focus();}}});
+$('#search').oninput=$('#typeFilter').onchange=renderLibrary;
+$('#statusTabs').onclick=e=>{const b=e.target.closest('[data-group]');if(b)setGroup(b.dataset.group);};
+$('#stats').onclick=e=>{const b=e.target.closest('[data-stat]');if(b)setGroup(b.dataset.stat);};
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.open)run(()=>openContent(b.dataset.open));if(b.dataset.account)run(async()=>{const a=data.accounts.find(a=>a.id===b.dataset.account);await api('/accounts',{id:a.id,label:a.label,mode:a.mode,auth:b.dataset.auth,revision:a.revision});await refresh();});if(b.dataset.media){const id=b.dataset.media,op=b.dataset.op,i=media.images.indexOf(id);if(op==='cover')media.cover=id;if(op==='remove'){media.images=media.images.filter(x=>x!==id);if(media.cover===id)media.cover=null;if(media.video===id)media.video=null;}if(op==='up'&&i>0)[media.images[i-1],media.images[i]]=[media.images[i],media.images[i-1]];if(op==='down'&&i>=0&&i<media.images.length-1)[media.images[i+1],media.images[i]]=[media.images[i],media.images[i+1]];dirty=true;renderMedia();showDetail();}});
+$('#month').value=local(Date.now(),'Asia/Shanghai').slice(0,7);$('#showCalendar').onclick=()=>run(async()=>renderCalendar());run(refresh);showView();

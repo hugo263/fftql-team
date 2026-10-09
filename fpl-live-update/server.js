@@ -1748,11 +1748,19 @@ const MIME = {
   '.woff2': 'font/woff2',
 };
 
+const xhsHandler = process.env.XHS_ENABLED === '1' ? require('./xhs/http.cjs').createHandler({
+  isAdmin, enabled: process.env.XHS_ENABLED === '1',
+  allowMock: process.env.XHS_ALLOW_MOCK === '1', rulesFile: process.env.XHS_RULES_FILE,
+  dir: process.env.XHS_DATA_DIR || path.join(DATA_DIR, 'xhs-private'),
+  origin: process.env.XHS_ORIGIN || 'https://fftql.team',
+}) : async () => false;
+
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(url.pathname);
 
   try {
+    if (await xhsHandler(req, res, url)) return;
     const page = pageRoute(url);
     if (page.redirect) {
       res.writeHead(302, { Location: page.redirect, 'Cache-Control': 'no-store' });

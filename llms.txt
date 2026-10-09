@@ -1,0 +1,10 @@
+# fftql.team source and frontend redesign handoff
+
+Snapshot date: 2026-10-09 Asia/Shanghai.
+Repository: https://github.com/hugo263/fftql-team
+Read first: https://raw.githubusercontent.com/hugo263/fftql-team/main/README.md
+Frontend map: https://raw.githubusercontent.com/hugo263/fftql-team/main/FRONTEND_HANDOFF.md
+Download: https://github.com/hugo263/fftql-team/archive/refs/heads/main.zip
+Main site: fpl-live-update/public/ (plain HTML, CSS, JavaScript; frontend v111).
+News site: fpl-news-v1/apps/web/app/ (React / React Router; local v15 backend work remains undeployed).
+This is source only; no production secrets, databases, analytics or private uploads are included.
